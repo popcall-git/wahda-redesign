@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="NO5viN9WWampAGThPdootO">
+<head data-page-node-id="zJYmJDOH8W5k98oGs2RdG9">
+<meta charset="UTF-8" data-page-node-id="Tptu9aZocM6KIAHe2rzIin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="6IZyZYsf7UG6s8j8PkWFOL">
+<title>Feeds Detail 更新示意：身份透出 × 评论区</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; color:#161c28; letter-spacing:.3px; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13.5px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:52px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f1fb; color:#2264a8; border:1px solid #c6dcf2; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:20px; line-height:1.7; }
+
+  .orig { display:flex; gap:18px; flex-wrap:wrap; }
+  .orig .frame { flex:1; min-width:200px; max-width:300px; }
+  .phone { border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .phone img { width:100%; display:block; }
+  .frame .cap { text-align:center; margin-top:10px; font-size:13px; color:#3a4150; font-weight:700; }
+  .frame .cap span { color:#8a8f9c; font-weight:500; }
+
+  .compare { display:flex; gap:28px; align-items:flex-start; }
+  .col { flex:1; min-width:0; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12.5px; letter-spacing:1px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:12px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .muted { color:#8a8f9c; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body data-page-node-id="gBBd9YhEBQIkljWYGCQXHl">
+<div class="wrap" data-page-node-id="su4Z51Nd19IYE4Gdloa7tG">
+  <h1 data-page-node-id="gZee2n0vN5VUyx2SADZ4kZ">Feeds Detail 更新示意：身份透出 × 评论区 <span class="en" data-page-node-id="LPtFTLMTrNWxzO3H8MHKvx">One real Post card → identity rows + comments</span></h1>
+  <p class="sub" data-page-node-id="8OL0BLiXabSZi8Xk1m78kJ">本页按同一设计系统把 Feeds Detail 补成完整链路：<b data-page-node-id="VUiTnuuQx3bnWS82wLC4R7">Post 卡片基底 → 互动身份透出（Liked by / Reposted by 头像行）→ 评论区（评论 / 回复 / 下钻 / 输入条）</b>。</p>
+
+  <h2 data-page-node-id="FNXgkx25w5YBjtYEfO5PMW">设计来源：My Hub Post 卡片 × Your Comments 条目<span class="tag keep" data-page-node-id="76KXGHFLFcwmV5D9YKG6I5">原图直接裁切</span></h2>
+  <p class="desc" data-page-node-id="C4HlwOeBuSa0xAF07KXohI">Post 卡片、评论条目版式与头像均为原稿真实像素。</p>
+  <div class="orig" data-page-node-id="GePHMZuqDP7Bj2GzvcB2Hc">
+    <div class="frame" data-page-node-id="Bm21Y1jIBvCjjwbpjWiTRr"><div class="phone" data-page-node-id="ZNcotxzEO2nBf0za7KZ9u8"><img src="pages/hub-344.png" alt="" data-page-node-id="jJX3HTeKq4WMQzK4y7HUbh"></div><div class="cap" data-page-node-id="wZ1v0MNy3i4CZ1KOvYyq5c">① Post 卡片 <span data-page-node-id="9YMRpCme1P8mnPipu5RZuU">（评论区的内容主体）</span></div></div>
+    <div class="frame" data-page-node-id="p8fg2ahJoZU6LdCTLkyEQ9"><div class="phone" data-page-node-id="pQv5eWyw9ZWImS9Y7xOucD"><img src="pages/hub-155.png" alt="" data-page-node-id="bTrbuogphlIA8qPk8MXcGi"></div><div class="cap" data-page-node-id="5Dr8rFjE34re6YpJiUpzI0">② Your Comments · 第 155 页原图 <span data-page-node-id="f1QbTt27Gs1xlu4iHFu9Mf">（评论条目设计与真实文案来源）</span></div></div>
+  </div>
+  <div class="note" data-page-node-id="a3O99uTpXGxjZytSPL2VLO"><b data-page-node-id="8u7nFZ8ywZywmjoDgp0KZj">复用逻辑</b>：Feeds 信息流点任意帖子 → 进入 Feeds Detail，主体即这张 Post 卡片（同设计系统，用户零学习成本）；互动身份行与评论区均以该卡为基底叠加。</div>
+
+  <h2 data-page-node-id="4XpNr3REiDPYos3Z938BdH">① 互动身份透出（动作栏下方叠加）<span class="tag mod" data-page-node-id="kwcrevDzFGTlzFjQuHhbfb">原图打底 + 修改层</span></h2>
+  <p class="desc" data-page-node-id="xHbYWiDaAneLt4a7oeGbIw">左：原稿 Post 卡，动作栏只有数字、看不到谁在互动 → 右：动作栏下方叠加 Liked by / Reposted by 头像行，任一头像可点进主页。</p>
+  <div class="compare" data-page-node-id="EZvTzyPeToAB90AKZtiGpG">
+    <div class="col" data-page-node-id="kBVlZrpnMv9nrlif3xKzb1">
+      <div class="col-h before" data-page-node-id="WG7Epx0pntBzPlBkUTrJ2d">● 当前：只有数字，看不到谁互动</div>
+      <div class="stage" data-page-node-id="AMbyiGgnBRF8PG8giqGlzZ">
+        <img src="pages/feed-detail-post-orig.png" alt="Post 卡片原图" data-page-node-id="Ff0QhYlZUjBWFfOqnmyGVt">
+        <div class="dot red" style="left:26.7%; top:91.5%;" data-page-node-id="CQr6P4sH1jrwTifqVg13ui">1</div>
+      </div>
+    </div>
+    <div class="col" data-page-node-id="kEGYyCJbjTFHTOHG0ZIX5T">
+      <div class="col-h after" data-page-node-id="6TWEZBzFS8RPjDV8NCqKnQ">● 更新后：互动身份透出，头像可点</div>
+      <div class="stage" data-page-node-id="z1QreWFVs3yverxEigsu8d">
+        <img src="pages/feed-detail-post-updated.png" alt="更新示意" data-page-node-id="Aj42iC5mOJYz5WOF2r2Ik7">
+        <div class="dot green" style="left:10.7%; top:89%;" data-page-node-id="nkc4m1INkw1ij8sEheKA0U">1</div>
+        <div class="dot green" style="left:10.7%; top:95.5%;" data-page-node-id="ofAf4XrbCcq35ZOhN322CI">2</div>
+      </div>
+    </div>
+  </div>
+  <table data-page-node-id="q4fqmtHHUzoHrEupYWUBfP">
+    <tr data-page-node-id="xkp9EaxfeZKtmb4bInuhit"><th data-page-node-id="ZiBHrlOYC3IiGmp7KLZKKO">#</th><th data-page-node-id="MIvOLqSC1mupp9ia0xNnIy">更新点</th><th data-page-node-id="zSjj0QdnkjM5bOQHZgpDFG">说明</th></tr>
+    <tr data-page-node-id="qirIWxNWU1FcNdhZasXhyU"><td data-page-node-id="MGPs47i55RT3mqdhalVmSy">1</td><td data-page-node-id="ZEnuVgx3E2cEFtGHvOTpxn"><b data-page-node-id="8mf2Wa0bM3PnrZ1H27cT23">Liked by 头像行</b></td><td data-page-node-id="7G0PoUKV40WF8d5y15SfIh">动作栏下方新增点赞人头像堆叠（白描边、可点击）+ 文案「Liked by Amira K., Yusuf R. + 2,341 others」。点击任一头像 → 进入对方主页浏览；点击 › 或文案 → 下钻完整点赞列表。</td></tr>
+    <tr data-page-node-id="QAAVs43s9zMNn8YNwanLgy"><td data-page-node-id="Q1sD0vQgjGoNPpNH2Idg3z">2</td><td data-page-node-id="EVzHEF3VMZcs1LAcYFsdk0"><b data-page-node-id="MUiFISa88uzWSv8gYiwE7b">Reposted by 头像行</b></td><td data-page-node-id="AFKuB4LAAGykCH0LkLDezI">点赞行下方显示转发人头像 + 「Reposted by Sara Ali」。点击头像 → 转发人主页；点击 › → 完整转发列表。</td></tr>
+    <tr data-page-node-id="3SGzS5TQY3lwgTk0KGJRnv"><td data-page-node-id="zctbggEX1z48U0zN3otN7L">3</td><td data-page-node-id="QKBU2XAcWDBdeT2jN4oGIY"><b data-page-node-id="kUVAiIwWeyHE9aGBCzjg6G">动作栏保持原样</b></td><td data-page-node-id="AVt4aJltwhBulG4OzTq6x0">Like / Comment / Repost / Share / Save 的位置、图标、10k 计数均为原图像素——新增行是纯叠加，不挤压原布局。</td></tr>
+    <tr data-page-node-id="5ZpOVHj7UYd5UQAbHtm0Ae"><td data-page-node-id="2qsMMK3hbSh91DImo7F3AC">4</td><td data-page-node-id="C7st98sKbOgiWGyM1T8reA"><b data-page-node-id="sURw3J5pTSxywYFpQN6bZS">头像点击进主页</b></td><td data-page-node-id="WdviRVqMFd7V8DI1Rf874V">与之前确认的规范一致：所有头像（作者、点赞人、转发人）均可点击进入对方主页；游客点 Follow 仍走 GUEST-FLOW 注册墙。</td></tr>
+  </table>
+
+  <h2 data-page-node-id="kcGUN5E9H6ao84ZmiDS8c1">② 评论区补齐（同卡下方叠加）<span class="tag mod" data-page-node-id="aOkKDFbsbNw7kc1qeUiULU">原图打底 + 修改层</span></h2>
+  <p class="desc" data-page-node-id="G5l8SAYAykXbFiXGW4chw3">左：上一步的互动身份行版本，评论无处可看 → 右：同卡下方叠加评论区（评论 / 回复 / 下钻 / 输入条，+600px），原像素一概未动。</p>
+  <div class="compare" data-page-node-id="TLhWGllW4WIzgcOTVSjuiJ">
+    <div class="col" data-page-node-id="DqWhdvtS2ExcFQuaqOkz9S">
+      <div class="col-h before" data-page-node-id="brpyfE3QRayV3V0mo7SpNE">● 当前：互动身份可见，但评论无处可看</div>
+      <div class="stage" data-page-node-id="bB6IezDfYN2LuM1jOnRuH9">
+        <img src="pages/feed-detail-post-updated.png" alt="" data-page-node-id="waqB4ogHOQ280gj0vVmoNB">
+        <div class="dot red" style="left:50%; top:92%;" data-page-node-id="75ilTcyV7LyF1TUV2o6jfj">1</div>
+      </div>
+    </div>
+    <div class="col" data-page-node-id="wAM7yF7P3mgE5sS8TEQjTK">
+      <div class="col-h after" data-page-node-id="bjbWlBpUiOV8w03AVroJYf">● 更新后：完整评论区（评论 / 回复 / 下钻 / 输入）</div>
+      <div class="stage" data-page-node-id="MpdxQm3DpD7RZfEuJC1IVx">
+        <img src="pages/feed-detail-comments.png" alt="" data-page-node-id="2NLT9c7KLdAsSGWxvYZTor">
+        <div class="dot green" style="left:32%; top:59%;" data-page-node-id="B709J1c27lqIGDvjyTQPzM">1</div>
+        <div class="dot green" style="left:88%; top:67%;" data-page-node-id="cW1FpTEYrurPtXG0JCWD8u">2</div>
+        <div class="dot green" style="left:88%; top:79%;" data-page-node-id="xmY2kEBNS8HlRYQFaVDegc">3</div>
+        <div class="dot green" style="left:70%; top:88.6%;" data-page-node-id="wF8fRF7jvZkJbd20uceizd">4</div>
+        <div class="dot green" style="left:42%; top:94.2%;" data-page-node-id="i3oQS89Ptl7q4lnxUNGLjj">5</div>
+      </div>
+    </div>
+  </div>
+  <table data-page-node-id="RMvn76UoqG0V6fghRy1jwr">
+    <tr data-page-node-id="YQHo2KyKJEgCsPdPb4wh0t"><th data-page-node-id="BJZbCQ4c5lXF9a5g5oFEan">#</th><th data-page-node-id="lE9tHJBkwVZLEX6gPLrFGQ">更新点</th><th data-page-node-id="Uf9yGziBXs0MilZt1nN9ES">说明</th></tr>
+    <tr data-page-node-id="P5HqwUYt722mK7YI6FzrJD"><td data-page-node-id="9cCP73e1vybRtMGMTuZm8m">1</td><td data-page-node-id="VDBFeVsvxB2JEHmrkIlqpA"><b data-page-node-id="SNVUh4RHjyjAFPDw0zGKcd">Comments 区块标题</b></td><td data-page-node-id="j9kdv5G8SLZFnEDHCB5HTd">「Comments 1,204」+ 右侧「Most relevant」排序切换，与动作栏 Comment 数同口径。</td></tr>
+    <tr data-page-node-id="CgAmXJJwxQk0JN0FKg3v3v"><td data-page-node-id="20ed8DNCDE5RY9YMg35xIn">2</td><td data-page-node-id="xwULm5suRN2lDR0H0dswF1"><b data-page-node-id="tNiBhs9MkxIGhmH2ZWOAUD">真实评论条目</b></td><td data-page-node-id="ltpa6pjE3Rha1dYrkOe9BD">Brooklyn Simmons · 4m ago ·「How can I reach the destination…halal restaurants…」。</td></tr>
+    <tr data-page-node-id="HMdvpSZJhytF4AGC8RQVdF"><td data-page-node-id="xoGEnXoQBaZwB2Y7mPJE0U">3</td><td data-page-node-id="cPpQm3dXoHwCXFAPOYw7AL"><b data-page-node-id="sK3sUkWscSksOLXHWxmSra">嵌套回复</b></td><td data-page-node-id="MyJ2l9BZnsdmniBfjYoxiZ">Leslie Alexander 回复（「Yes, you are allowed to bring your kids…」第 155 页原文案），缩进 + 分隔线体现层级；Like 28 / Reply。</td></tr>
+    <tr data-page-node-id="tT3NqOpLLqnpFuc1ZBcdM3"><td data-page-node-id="elQoO3kTGxuXTX6kZCn2i0">4</td><td data-page-node-id="aXDe2PnuLCS4uT7NQyK4e1"><b data-page-node-id="QYPzcRFlbUEHuCQqt36mFv">View all 1,204 comments</b></td><td data-page-node-id="9eWUZn2xbUNH2bGOlRHOXO">点 › 下钻完整评论列表页。</td></tr>
+    <tr data-page-node-id="fYzDrvI0JRnFStmzcbmC4I"><td data-page-node-id="PwutbpXCY0HCBYXQmPdNxj">5</td><td data-page-node-id="VFBQJkgZT1tMAVfPgaF218"><b data-page-node-id="99C80Scfb6VFna573YIv3Y">输入条 + Send</b></td><td data-page-node-id="aIf5KB7f9rS6GfS69hrLEl">「Add a comment...」胶囊输入框（含图片/相机入口）+ 品牌绿 Send，固定于详情页底部。</td></tr>
+    <tr data-page-node-id="nixJGQ7VCA5aW35DGrgzUr"><td class="muted" data-page-node-id="B8Y3OgfaZynWptv7yEWi4k">–</td><td class="muted" data-page-node-id="5uiHINpb4ubd1mYDeSImv5">保持不变</td><td class="muted" data-page-node-id="fcMevV2NMSXhceJUbXXFNe">Post 卡片、动作栏、Liked by / Reposted by 行均为原图或上方产出，未改动任何像素。</td></tr>
+  </table>
+
+  <div class="note" data-page-node-id="O9uGVXq6hfLBNVxt3U60ms"><b data-page-node-id="Z8TIr7AnmkNLZmOqx7DFDz">页面级下钻</b>：Feeds Detail 顶部返回 Feeds 信息流；Comment 10k 下钻进入评论区；任一头像 / 名字 / › 可点 → 对方主页或完整列表。游客在评论区点头像 / Reply 同样走 <b data-page-node-id="SHa74rgp6Jl9s7WI1KCD8l">Guest Mode 注册墙</b>（Deferred Follow），与既有规范一致。</div>
+</div>
+</body>
+</html>

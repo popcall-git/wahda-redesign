@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图7 · 位置展示与隐私</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:44px 30px 80px; }
+  .wrap { max-width:1240px; margin:0 auto; }
+  h1 { font-size:29px; font-weight:800; color:#161c28; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:19px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:44px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:18px; line-height:1.7; }
+  .compare { display:flex; gap:26px; align-items:flex-start; }
+  .col { flex:1; }
+  .col-h { font-size:14.5px; font-weight:800; margin-bottom:12px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+  .cap { text-align:center; margin-top:10px; font-size:12.5px; color:#6b7280; font-weight:700; }
+  table { width:100%; border-collapse:collapse; margin-top:16px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12px; letter-spacing:.6px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:11px 12px; border-bottom:1px solid #eef0f4; line-height:1.6; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>图7 · 位置展示与隐私 <span class="en">Location display & privacy</span></h1>
+  <div class="badge">20 大改进点规划示意 · #12 多账号与身份体系 · 原图打底（My Hub 个人主页 P80）+ 局部修改层</div>
+  <p class="sub"><b>REQ-053 / 124</b>：现状主页位置只有孤立的「London」胶囊——无国家维度、无隐私档位（要么全展示要么全不展示）、点击无动作。改造为<b>国家 + 城市完整展示 + 隐私档标注 + 三档可见性控制</b>；点击位置直达同城用户与活动发现。位置隐私默认<b>Friends Only</b>，用户完全控制可见范围。</p>
+
+  <h2>前后对比 <span class="tag mod">原图打底 + 修改层</span></h2>
+  <p class="desc">左：主页现状 → 中：主页更新后（原生位置胶囊扩展 + 隐私档标注）→ 右：新增 Location & Privacy 三档设置页（沿用 Settings 行样式）。</p>
+  <div class="compare">
+    <div class="col">
+      <div class="col-h before">● 当前：孤立城市名，无国家、无隐私控制</div>
+      <div class="stage">
+        <img src="pages/location-profile-before.png" alt="">
+        <div class="dot red" style="left:44%; top:34.7%;">1</div>
+      </div>
+      <div class="cap">My Hub · Personal Account（P80 原图）</div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● 更新后：国家 + 城市 + 隐私档标注</div>
+      <div class="stage">
+        <img src="pages/location-profile-after.png" alt="">
+        <div class="dot green" style="left:9%; top:33.4%;">1</div>
+        <div class="dot green" style="left:80.5%; top:35%;">2</div>
+        <div class="dot green" style="left:30.5%; top:34.6%;">3</div>
+      </div>
+      <div class="cap">同一主页 · 仅位置胶囊被更新</div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● 新增：Location & Privacy 三档设置</div>
+      <div class="stage">
+        <img src="pages/location-privacy-sheet.png" alt="">
+        <div class="dot green" style="left:50%; top:48%;">4</div>
+        <div class="dot green" style="left:85%; top:62%;">5</div>
+        <div class="dot green" style="left:50%; top:88.5%;">6</div>
+      </div>
+      <div class="cap">Settings › Who can see your content 组内新增入口</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>更新点</th><th>说明</th></tr>
+    <tr><td>1</td><td><b>国家 + 城市</b></td><td>原生「London」胶囊扩展为「London, United Kingdom」，补齐地域维度（REQ-053；与主页已有城市信息同源，不新增数据字段）。</td></tr>
+    <tr><td>2</td><td><b>隐私档标注</b></td><td>胶囊右侧绿色 Friends 标签，即三档设置的当前值，主页上直接可见当前可见范围。</td></tr>
+    <tr><td>3</td><td><b>点击发现同城</b></td><td>点位置胶囊 › 进同城发现：同城用户 / 活动 / 地点（REQ-053）；配合 Places 语言与位置推荐（REQ-073）。</td></tr>
+    <tr><td>4</td><td><b>三档可见性</b></td><td>Don't Show / Friends Only / Everyone 三档，替代「全展示或全不展示」；设置页入口加在 Settings「Who can see your content」分组（REQ-053 / 009 同型）。</td></tr>
+    <tr><td>5</td><td><b>默认档位</b></td><td>默认 Friends Only，首次设置有引导；地图与同城推荐只使用大致位置。</td></tr>
+    <tr><td>6</td><td><b>保存即生效</b></td><td>Save 后主页标注同步更新（中图 ② 与右图选项联动）。</td></tr>
+  </table>
+  <div class="note">首次设置引导（REQ-053）走 Coachmark 序列（与 20 大改进点 #01 首启引导共用组件）；主页位置数据与 Places 收藏地点（REQ-114）互不公开，收藏列表另有独立可见性控制。</div>
+</div>
+</body>
+</html>

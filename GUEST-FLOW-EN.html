@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="UbhyekjBNT7dmJypfdmltb">
+<head data-page-node-id="RTPJQVCyDnVomCx9IConAJ">
+<meta charset="utf-8" data-page-node-id="MCpbIA6X2BwWiFYPaHhvVg">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="64HiKn9FXmw7RV67BirXpm">
+<title>Guest Mode · Feeds Home → Follow Triggers Sign Up · Design Spec</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7; --lime:#cdf549;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:14px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+
+  .flowbar{margin:22px 0 26px; background:#fff; border:1px solid var(--line); border-radius:14px;
+           padding:16px 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:15px;}
+  .flowbar .step{display:flex; align-items:center; gap:10px;}
+  .flowbar .sn{width:26px; height:26px; border-radius:50%; background:#e9e9f5; color:#5a4bd1;
+               font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center;}
+  .flowbar .sn.cur{background:var(--lime); color:#14151a; box-shadow:0 0 0 3px rgba(205,245,73,.4);}
+  .flowbar .sn.done{background:var(--green); color:#fff;}
+  .flowbar .arrow{color:#c2c6cf; font-weight:700;}
+  .flowbar .tag{font-size:12.5px; background:#f0edff; color:#5a4bd1; border-radius:6px; padding:3px 9px; font-weight:700;}
+
+  .stages{display:flex; flex-direction:column; gap:26px;}
+  .row1{display:flex; align-items:center; justify-content:center; gap:26px; flex-wrap:wrap;}
+  .row1 .arrow-big{font-size:40px; color:#c2c6cf; font-weight:700; flex:0 0 auto;}
+  .row2{display:flex; gap:34px; justify-content:center; flex-wrap:wrap;}
+  .col-s{flex:0 1 auto; display:flex; flex-direction:column; gap:10px;}
+  .branch-label{font-size:14.5px; font-weight:800; text-align:center; padding:7px 12px; border-radius:10px;}
+  .branch-label.b1{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .branch-label.b2{background:#eef1fb; color:#4a5fc1; border:1px solid #d5ddf3;}
+  .shot{position:relative; border-radius:26px; overflow:hidden; box-shadow:0 10px 30px rgba(20,21,26,.14); background:#fff; width:286px; margin:0 auto;}
+  .shot svg{display:block; width:286px; height:auto;}
+  .cap{font-size:15px; color:var(--sub); text-align:center; line-height:1.75;}
+  .cap b{color:var(--ink);}
+  .dot{position:absolute; width:26px; height:26px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; color:#fff; font-size:13px; font-weight:800;
+       box-shadow:0 2px 8px rgba(0,0,0,.35); border:2.5px solid #fff; transform:translate(-50%,-50%);}
+  .dot.green{background:var(--green);}
+
+  .merge-note{margin:26px auto 0; max-width:960px; background:#f4f1ff; border:1px dashed #b9aef0; color:#4a3f8f;
+              font-size:15px; line-height:1.8; border-radius:14px; padding:15px 22px; text-align:center;}
+
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:250px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+</style>
+</head>
+<body data-page-node-id="f2nqUkdOeCpz4Vj77KBVky">
+<div class="wrap" data-page-node-id="gKA82MJxJGdQiJBQdBYpVW">
+  <header data-page-node-id="uucT1gW9JMBjW8ZzD9xunw">
+    <div class="kicker" data-page-node-id="IVhgwGCbo8Uhl8IfwmQc0A">WAHDA · INTERACTION REFINEMENT · GUEST MODE</div>
+    <h1 data-page-node-id="fihaOzydjunSExZRpzLP2k">Guest Mode Home (Feeds) → Follow Triggers Standard Sign Up → Auto Follow on Return · Design Spec</h1>
+    <div class="meta" data-page-node-id="SXM5nNFTw1lV5wXOSUhWMj">Feeds as the guest home page (browse without sign-in) · Restricted actions like Follow trigger the full sign-up flow (chained into Sign Up Step 1-3 and the Step 2-3 dual branch) · Feed content taken from real posts on PDF P463-464 · Basis: Top 20 Improvements #3 sign-up &amp; sign-in · #1 onboarding · #5 notifications · V4 report · 2026-09-04</div>
+  </header>
+
+  <div class="flowbar" data-page-node-id="gdQWZDI9bT0albeFP2RoBf">
+    <div class="step" data-page-node-id="1D5oYtRoPcQLc9uySj90xD"><span class="sn cur" data-page-node-id="wFoj7NeFWqcKTMv6ObMbAk">G</span><span data-page-node-id="3BFIP1Up0qkvjpBlzKkfcN"><b data-page-node-id="R9HgKldT6hHrWB7OazfNsk">Guest opens app</b><br data-page-node-id="YY6eHHzPGRsxG8lMJXTOIg"><small style="color:#9aa0ac;" data-page-node-id="ObWH8PY62XBdQnD9H8VhyK">Feeds guest home</small></span></div>
+    <span class="arrow" data-page-node-id="Uh3vAQwH0xysNjoVCHTmkH">→</span>
+    <div class="step" data-page-node-id="KtDo8MfC9LF6MP5QaRNljL"><span class="sn done" data-page-node-id="lSCFhDdEhdZ9SFxDBNrFpU">1</span><span data-page-node-id="6tIN6T5TTYjJeAoycTMiNA">Browse without sign-in<br data-page-node-id="pHvrR8VxVRbg0nHnpmxJXm"><small style="color:#9aa0ac;" data-page-node-id="Hgblu7XNXljiwJEdaX3iIv">See 100% of content</small></span></div>
+    <span class="arrow" data-page-node-id="FuAHSzIbbdLRiQAiNisW5l">→</span>
+    <div class="step" data-page-node-id="WTwZYTv60MQe0SHrRWCv2z"><span class="sn done" data-page-node-id="Q1yebCDTaCf13UgCRLmFn8">2</span><span data-page-node-id="cv9y7kjWamspeal9kY2EcC">Tap Follow<br data-page-node-id="0GF1QX3M40pu9dAZR2r5n2"><small style="color:#9aa0ac;" data-page-node-id="MiHyM5qnuKbFAwVjJpITQH">Sign-in wall · intent kept</small></span></div>
+    <span class="arrow" data-page-node-id="a4eskHqo13VDlUGZaD5QQz">→</span>
+    <div class="step" data-page-node-id="sxt0k3OSZ1TEcauN85M7Tu"><span class="sn done" data-page-node-id="mQSlbwBsYOxGwIRCXfE60E">3</span><span data-page-node-id="8OEl1mH7sVtIgLFlEoJnCD">Create account<br data-page-node-id="m9A1xtheuvF8Of4mJxumCj"><small style="color:#9aa0ac;" data-page-node-id="o9A8ILDDj9TNm1YmKEWj2r">Standard sign-up Step 1-3</small></span></div>
+    <span class="arrow" data-page-node-id="G3UoaJPrL7vhtT7FScStL3">→</span>
+    <div class="step" data-page-node-id="kHeobpF0Lh4DYs6MY2mvXx"><span class="sn" data-page-node-id="fcI84Pqcz1QOLmOisqAEgD">4</span><span data-page-node-id="NFL0Kht0aTaLZERmSO7TOG"><b data-page-node-id="FKfKUzzKyHssnQ52WvwtUk">Auto Follow on return</b><br data-page-node-id="JzviXbfOdFHImdP3NXRMF4"><small style="color:#9aa0ac;" data-page-node-id="tdjc6vIJkWoxeS4CqZA5vC">Original position + Toast</small></span></div>
+    <span class="tag" data-page-node-id="tzVwDiKhaht2rzQUPzlBmO">Guests see all content · block "actions", never "browsing"</span>
+  </div>
+
+  <div class="stages" data-page-node-id="x1aTtRyWZByFNSqVGcHemZ">
+    <!-- ================= Row1: A → B → C ================= -->
+    <div class="row1" data-page-node-id="yyBRk9w0AthBsGyGGg3IGw">
+      <!-- A guest Feeds home -->
+      <div class="col-s" data-page-node-id="hbzbtD23jYxDiQOtRmsgUb">
+        <div class="shot" data-page-node-id="otqCRfAkj5V3XYaYmL1j3F">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="Q5dtf422mDcCBknhwGQVhp">
+            <defs data-page-node-id="aAUcdnEFj4NQXPGtRCYjS6">
+              <linearGradient id="gav1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="pX2utytpb24fXlwkfOW8WQ">
+                <stop offset="0" stop-color="#d9a06b" data-page-node-id="W3EBxFEhEHFgqgq707D95w"/><stop offset="1" stop-color="#8a5a34" data-page-node-id="wIklEePzKkpzLoRgLgzIUY"/>
+              </linearGradient>
+              <linearGradient id="gav2" x1="0" y1="0" x2="1" y2="1" data-page-node-id="8cpCsWIxaXOEqOfZDnLVgc">
+                <stop offset="0" stop-color="#a58bd6" data-page-node-id="7T1cv8GDLhPRoea6XbOvtm"/><stop offset="1" stop-color="#5a4bd1" data-page-node-id="R8DDAPwChyJ935tujlEPeb"/>
+              </linearGradient>
+              <linearGradient id="gimg1" x1="0" y1="0" x2="0" y2="1" data-page-node-id="0KiD9NDQBWcVNwVd5MG0hI">
+                <stop offset="0" stop-color="#e8c98a" data-page-node-id="PVRaeSvuzQ2inxUeiFvrSJ"/><stop offset="1" stop-color="#7a5530" data-page-node-id="i71Z84tWZ436n8BuoW7e7e"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="780" fill="#fafafc" data-page-node-id="pdrHs1uShbLtL4JfB8Qpvg"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="BBE6uHC1acABOcw5HIO1hJ">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="u3vKlzvYuhNo0Q14ELwMh4"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" fill="#111" data-page-node-id="35mcby3w11F6rYYauj74zm"/>
+
+            <!-- Top bar: logo + Guest chip + Sign in -->
+            <circle cx="36" cy="86" r="14" fill="#0a8f4c" data-page-node-id="1WTVpHfGqRy8It6pR9Absy"/>
+            <circle cx="34" cy="86" r="7" fill="#ffffff" data-page-node-id="FUscHEidKeDKLdog2zDeDi"/>
+            <circle cx="37.5" cy="84" r="6" fill="#0a8f4c" data-page-node-id="Y0uIOf55enXuTsbpxkJsfg"/>
+            <path d="M42 79 l1.4 3.6 3.6 1.4 -3.6 1.4 -1.4 3.6 -1.4 -3.6 -3.6 -1.4 3.6 -1.4 z" fill="#ffffff" data-page-node-id="zS6v81EMkU7uHVF51swC2f"/>
+            <text x="58" y="93" font-size="20" font-weight="800" fill="#14151a" data-page-node-id="FkFJi7WEJsHXbkG2vKKGVr">Wahda</text>
+            <rect x="236" y="70" width="54" height="32" rx="16" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="OZ1CaRojKGFLSHLSUHmj0D"/>
+            <circle cx="252" cy="82" r="4.5" fill="none" stroke="#5a5f6b" stroke-width="2" data-page-node-id="wiHFwznctDh0aYOHBGW8Qf"/>
+            <path d="M245 94 c1-5 13-5 14 0" fill="none" stroke="#5a5f6b" stroke-width="2" stroke-linecap="round" data-page-node-id="14glN8fp7sIOfuHuqlg6Fo"/>
+            <text x="263" y="91" font-size="13" font-weight="600" fill="#5a5f6b" data-page-node-id="sn9n91EHZA2hyfzlCVqVjC">Guest</text>
+            <text x="300" y="91" font-size="13.5" font-weight="700" fill="#6C5CE7" data-page-node-id="zV6w6WNchPbn1GTfx6BgnD">Sign in</text>
+
+            <!-- Guest banner -->
+            <rect x="20" y="118" width="320" height="62" rx="14" fill="#f0edff" data-page-node-id="i92gY1SA1X8FJnZ0EgDoWb"/>
+            <path d="M326 132 l8 8 M334 132 l-8 8" stroke="#7a72d6" stroke-width="2.2" stroke-linecap="round" data-page-node-id="o6KKvSM3hdYdaxBNA60npe"/>
+            <text x="36" y="144" font-size="14.5" font-weight="800" fill="#14151a" data-page-node-id="QMNNZv5perUXnpGfCliSHE">You're browsing as a guest</text>
+            <text x="338" y="144" font-size="12" font-weight="700" fill="#0a8f4c" text-anchor="end" data-page-node-id="xKLIxS7GK6TcRutxpfn02w">Create account →</text>
+            <text x="36" y="166" font-size="12" fill="#5a5f6b" data-page-node-id="MXDL2vzPWNgdQLud6MW8wO">Follow, chat &amp; save — it takes under a minute.</text>
+
+            <!-- Search box -->
+            <rect x="20" y="196" width="320" height="44" rx="22" fill="#f1f0f5" data-page-node-id="Qk7eRonByRFYxHoZU7lObk"/>
+            <circle cx="44" cy="216" r="7" fill="none" stroke="#9aa0ac" stroke-width="2.5" data-page-node-id="0ipMiOKUhGZ5Qde5kNRvT9"/>
+            <path d="M49 222 l6 6" stroke="#9aa0ac" stroke-width="2.5" stroke-linecap="round" data-page-node-id="OliddOEQvoZ1Ro5gbbEQSQ"/>
+            <text x="64" y="224" font-size="13.5" fill="#9aa0ac" data-page-node-id="RqeKasOIdhy9iVfWYyEeaO">Search feeds, creators &amp; topics</text>
+
+            <!-- Post card 1 -->
+            <rect x="20" y="256" width="320" height="306" rx="18" fill="#fff" stroke="#ececf1" stroke-width="1.5" data-page-node-id="VDqhD3Dnj9gpVjsEJEmjTX"/>
+            <circle cx="48" cy="296" r="18" fill="url(#gav1)" data-page-node-id="eNLoW7Ew4ZLigFZihq451N"/>
+            <text x="74" y="294" font-size="15" font-weight="800" fill="#14151a" data-page-node-id="Uc1dRGkPthFRckBrwos2MX">Brooklyn Simmons</text>
+            <circle cx="214" cy="289" r="7.5" fill="#4a90d9" data-page-node-id="1DEwoZCepnJUiDdBamfNrn"/>
+            <path d="M210.5 289 l2.6 2.6 4.6 -5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="TeUUAED2UiKutmSDtL0H4j"/>
+            <text x="74" y="313" font-size="12" fill="#9aa0ac" data-page-node-id="scLDiNvDU4fd1dD91r9PrK">13 Nov 2025 · 15:00 WIB</text>
+            <rect x="262" y="282" width="64" height="30" rx="15" fill="#cdf549" data-page-node-id="7iGidk3W8IEfbGPC5ZN4Jw"/>
+            <text x="294" y="301" font-size="11.5" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="72sAfsK2iN2IQ9UeutKPLr">＋ Follow</text>
+            <text x="36" y="348" font-size="13" fill="#3c4048" data-page-node-id="PUDt00MAaiFDeDJ27hOtfJ">I just realized that there's an affordable</text>
+            <text x="36" y="368" font-size="13" fill="#3c4048" data-page-node-id="uU0hY9746FeICT3Ju2lEso">decorative chandelier that fits small spaces.</text>
+            <rect x="36" y="384" width="288" height="112" rx="12" fill="url(#gimg1)" data-page-node-id="TiWth0Ry36Oi6ftoSzKlgp"/>
+            <path d="M180 384 v26" stroke="#fff8ec" stroke-width="2.5" data-page-node-id="LwMYaWOu1E9VreroaBRMsI"/>
+            <circle cx="180" cy="424" r="15" fill="#f6d989" data-page-node-id="6BHBmfCL9Yst0McSxSvub1"/>
+            <circle cx="180" cy="424" r="24" fill="#f6d989" opacity="0.25" data-page-node-id="d042NTI44Qar5lGOdKds0n"/>
+            <path d="M162 446 h36" stroke="#fff8ec" stroke-width="2" stroke-linecap="round" data-page-node-id="W6t6e5imTWW1SFregRScRz"/>
+            <circle cx="60" cy="404" r="2.5" fill="#fff8ec" opacity="0.7" data-page-node-id="Z4bdR27VQl5XnxaFODWSsJ"/>
+            <circle cx="298" cy="470" r="2.5" fill="#fff8ec" opacity="0.7" data-page-node-id="at7Wr3Pqm5TW5GpOKG08Et"/>
+            <g stroke="#5a4bd1" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="nR2ht0XzJY1JIg5AUitB9u">
+              <path d="M42 528 c-3.5-6-13-3.5-13 2.5 0 5 8.5 9 13 12.5 4.5-3.5 13-7.5 13-12.5 0-6-9.5-8.5-13-2.5 z" data-page-node-id="j08XFwW0HsJ9NoYJxVDYXL"/>
+              <path d="M104 522 a9 9 0 1 0 9 9 M113 522 l4.5 4.5 M113 513 v9 h-9" data-page-node-id="OK0QDJsTmxEUAATOcn1H9k" />
+              <path d="M172 534 l26 -10 -26 -9 5 9.5 z" data-page-node-id="2ApWAwrbHXr9BofN6gc3YX"/>
+              <path d="M246 516 h15 v23 l-7.5 -6.5 -7.5 6.5 z" data-page-node-id="xooZhfbmhN38DZsXGlhuuz"/>
+            </g>
+            <text x="64" y="535" font-size="12" fill="#5a5f6b" data-page-node-id="xqUJfsM10kNtSyZhFlNAWC">10k</text>
+            <text x="130" y="535" font-size="12" fill="#5a5f6b" data-page-node-id="ItOJ6Iv6u6hFppKX5Jrrtq">10k</text>
+            <text x="208" y="535" font-size="12" fill="#5a5f6b" data-page-node-id="Js5lup1po58jRAu9CiY7MH">10k</text>
+
+            <!-- Post card 2 -->
+            <rect x="20" y="580" width="320" height="104" rx="18" fill="#fff" stroke="#ececf1" stroke-width="1.5" data-page-node-id="YuIw4ZnRR65V8xl79DRyav"/>
+            <circle cx="48" cy="616" r="18" fill="url(#gav2)" data-page-node-id="slSu14EIGLIvhmxZgOTS7Z"/>
+            <text x="74" y="614" font-size="15" font-weight="800" fill="#14151a" data-page-node-id="FyFSPeTwshvnHtSSV8z40K">Siti Fatimah</text>
+            <text x="168" y="614" font-size="12" fill="#9aa0ac" data-page-node-id="89e2GpXq5VvlgfYqjfa6NZ">1h</text>
+            <rect x="262" y="602" width="64" height="30" rx="15" fill="#cdf549" data-page-node-id="hszexGPJQvgPGQOhWA8PSr"/>
+            <text x="294" y="621" font-size="11.5" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="qEmJ0fKKVbCBCqNrsbUX6p">＋ Follow</text>
+            <text x="36" y="646" font-size="12.8" fill="#3c4048" data-page-node-id="yXIYrL4FMCdsaIOaWLirXM">Alhamdulillah, weekly halaqa is back this</text>
+            <text x="36" y="664" font-size="12.8" fill="#3c4048" data-page-node-id="sLNP4LPkU5ZL2gR7BoAbmq">Saturday after Maghrib. Everyone welcome!</text>
+
+            <!-- Fixed dark bottom bar (WeChat-style, P002 global spec) -->
+            <rect x="0" y="696" width="360" height="84" fill="#12121a" data-page-node-id="fHZXsY3GveypeXifw2YYWl"/>
+            <rect x="150" y="696" width="60" height="4" rx="2" fill="#cdf549" data-page-node-id="S54rRLpc0umlO4HIP2X7Ln"/>
+            <g stroke="#8b8f9a" stroke-width="2" fill="none" stroke-linecap="round" data-page-node-id="P7jhAdkRABsgMChxucfv74">
+              <circle cx="36" cy="728" r="11" data-page-node-id="Rc4BBU49NVmUVSABtJN5PS"/>
+              <path d="M32 732 l8 -8" data-page-node-id="TmNtgx36zGN2p4uB1rleI8"/>
+            </g>
+            <text x="36" y="758" font-size="11" fill="#8b8f9a" text-anchor="middle" data-page-node-id="YGnEHDBbVQ0xzDiO6W7aOl">Discover</text>
+            <g stroke="#8b8f9a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="7jrq3Xf0HNxbRpIA97q3EI">
+              <path d="M108 716 c-6 0-10 4.5-10 10 0 7 10 15 10 15 s10 -8 10 -15 c0 -5.5 -4 -10 -10 -10 z" data-page-node-id="JJpX9JBqMkcuRDO2MBh1oT"/>
+              <circle cx="108" cy="726" r="3.5" data-page-node-id="KBEhMDhQRkXNH9McMTd1bG"/>
+            </g>
+            <text x="108" y="758" font-size="11" fill="#8b8f9a" text-anchor="middle" data-page-node-id="SfxoFUzOJ6JPeOMSG6HOAr">Places</text>
+            <g stroke="#8b8f9a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="5sPvMxZd2HKqbvqxrXPgNR">
+              <path d="M99 718 h18 a5 5 0 0 1 5 5 v8 a5 5 0 0 1 -5 5 h-10 l-6 6 v-6 h-2 a5 5 0 0 1 -5 -5 v-8 a5 5 0 0 1 5 -5 z" data-page-node-id="rdjhemOjtAamumq6yMiDgP"/>
+            </g>
+            <rect x="117" y="712" width="12" height="10" rx="2" fill="#e8b84a" data-page-node-id="9MagbwX76xGVfn2vdAi2cB"/>
+            <path d="M119 712 v-2.5 a4 4 0 0 1 8 0 v2.5" fill="none" stroke="#e8b84a" stroke-width="2" data-page-node-id="cRxN9LGtIasKseQ8YKZmvx"/>
+            <text x="108" y="758" font-size="11" fill="#8b8f9a" text-anchor="middle" data-page-node-id="E9HwQz372WE3jmk2d2Wzwj">Chats</text>
+            <g data-page-node-id="W4GSk32Tzad2BRsXTFcY0s">
+              <rect x="0" y="0" width="0" height="0" fill="none" data-page-node-id="8bTEretoWSTno8WkA9rG59"/>
+              <g stroke="#cdf549" stroke-width="2.6" fill="none" stroke-linecap="round" data-page-node-id="0P3XJBPXbRxAyrjXxeaNJx">
+                <path d="M171 718 h18 M171 727 h18 M171 736 h12" data-page-node-id="WjAAbxPAdyyY63toLQ3LUr"/>
+              </g>
+              <text x="180" y="758" font-size="11" font-weight="700" fill="#cdf549" text-anchor="middle" data-page-node-id="oUZZ1lBaGRiWrksPVyoepr">Feeds</text>
+            </g>
+            <g stroke="#8b8f9a" stroke-width="2" fill="none" stroke-linecap="round" data-page-node-id="BorNYdp3RxFERClP9sqkLe">
+              <circle cx="322" cy="722" r="5.5" data-page-node-id="y7zEkxh9KHf0tHOz4sfPsn"/>
+              <path d="M312 738 c1.5-7 18.5-7 20 0" data-page-node-id="mXpkyv1zslWRdC9prGX0x4"/>
+            </g>
+            <rect x="328" y="708" width="11" height="9" rx="2" fill="#e8b84a" data-page-node-id="wpQC4vtZHdGWu9cfyZAY7W"/>
+            <path d="M330 708 v-2 a3.5 3.5 0 0 1 7 0 v2" fill="none" stroke="#e8b84a" stroke-width="2" data-page-node-id="KZKz12VlLwEmAy6tE7pUcP"/>
+            <text x="324" y="758" font-size="11" fill="#8b8f9a" text-anchor="middle" data-page-node-id="nFjHQxIkn21l2sYOB55p1O">My Hub</text>
+            <rect x="120" y="768" width="120" height="5" rx="2.5" fill="#ffffff" opacity="0.85" data-page-node-id="S3pFWIQhQEmpettyXQWiTV"/>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="d87VNF1MNjA2bnQAmNavsc"><b data-page-node-id="ZTSzpu5XsECXAErHwWazFg">① Guest Feeds home</b> · browse 100% of content without sign-in<br data-page-node-id="qk3tDjR55CTB8GW4QOlYaX">Guest identity chip + Sign in · dismissible banner<br data-page-node-id="3CVaOLVYS9hfsGbtPXe22Y">Every post card carries a Follow trigger · fixed dark bottom bar (P002 spec)<br data-page-node-id="nfpm5ohRxRbOHJudrehKT7">Restricted tabs (Chats / My Hub) carry lock icons</div>
+        <span class="dot green" style="left:83%; top:8%;" data-page-node-id="2PUL4g6gMHtw6gZuveSkH8">1</span>
+        <span class="dot green" style="left:94%; top:15.6%;" data-page-node-id="ADZAz7HCG7uwjMy34WpmCm">2</span>
+        <span class="dot green" style="left:93%; top:36.5%;" data-page-node-id="UZWr85c7itBKAt6IBNr9Q3">3</span>
+        <span class="dot green" style="left:94%; top:47.5%;" data-page-node-id="fSePpx0foi7pBOL0U0SPvF">4</span>
+        <span class="dot green" style="left:92%; top:89.5%;" data-page-node-id="IaaSyxk5TFb1FMVPqroOMq">5</span>
+      </div>
+
+      <div class="arrow-big" data-page-node-id="FhHCCJPocDj26oo7gkYqf2">→</div>
+
+      <!-- B sign-in wall bottom sheet -->
+      <div class="col-s" data-page-node-id="hUPcC2stM9G0uFjnJxlPNe">
+        <div class="shot" data-page-node-id="qe6IHM0kNuGCzy0ytGGBLE">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="T2abPVBB8a1ENyBb1Ua7d7">
+            <defs data-page-node-id="PIgfnuqPM8aGc7ugt42jIn">
+              <linearGradient id="gav1b" x1="0" y1="0" x2="1" y2="1" data-page-node-id="yDQFNVJfExkDMqc2UaGZzq">
+                <stop offset="0" stop-color="#d9a06b" data-page-node-id="tf8JNqnHNGcpChityxDyNP"/><stop offset="1" stop-color="#8a5a34" data-page-node-id="2rDdvdUQLgZBNyhxSdNJdI"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="780" fill="#fafafc" data-page-node-id="D2cwmiBCo7N7wBDw3QA46o"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="Ghzd6uF4C8pLrQ88vZiNQQ">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="qXynkaVecLCzUhgBqTOqyL"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" fill="#111" data-page-node-id="OVGWboQwPtjLu01VzVCbZg"/>
+            <!-- Background same as A (simplified) -->
+            <circle cx="36" cy="86" r="14" fill="#0a8f4c" data-page-node-id="IHN4i0BsV537U83vXZ1QU8"/>
+            <circle cx="34" cy="86" r="7" fill="#ffffff" data-page-node-id="gPIn6fQPN7zshKzP8zFWyw"/>
+            <circle cx="37.5" cy="84" r="6" fill="#0a8f4c" data-page-node-id="WnQIVzN4r6fwYR386jzuMc"/>
+            <text x="58" y="93" font-size="20" font-weight="800" fill="#14151a" data-page-node-id="BFBHnSygG38XSgQKqyIZXO">Wahda</text>
+            <rect x="236" y="70" width="54" height="32" rx="16" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="viEHLu4QEn6Y9cGRi4VbKy"/>
+            <text x="263" y="91" font-size="13" font-weight="600" fill="#5a5f6b" data-page-node-id="R0mvzWyL6lgt8OV5N1oqxJ">Guest</text>
+            <text x="300" y="91" font-size="13.5" font-weight="700" fill="#6C5CE7" data-page-node-id="ghCyZBXdNRix9Js2mNnbhs">Sign in</text>
+            <rect x="20" y="196" width="320" height="44" rx="22" fill="#f1f0f5" data-page-node-id="ty2QLTpYgahCegJqKckpAB"/>
+            <circle cx="48" cy="296" r="18" fill="url(#gav1b)" data-page-node-id="8Yd5qKtjzSxMeiSBa8oqGD"/>
+            <text x="74" y="294" font-size="15" font-weight="800" fill="#14151a" data-page-node-id="EbAiQHnN7UKuyKzod0xwNH">Brooklyn Simmons</text>
+            <rect x="262" y="282" width="64" height="30" rx="15" fill="#fff" stroke="#14151a" stroke-width="2" data-page-node-id="bosNvVr4g5i2GoeCFZJjT2"/>
+            <text x="294" y="301" font-size="11.5" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="osooWGhSFZbuRKlKfP8xnj">Follow</text>
+            <text x="36" y="348" font-size="13" fill="#3c4048" data-page-node-id="b0RGJ8ESaXMZ4n1z3y3N3u">I just realized that there's an affordable</text>
+            <text x="36" y="368" font-size="13" fill="#3c4048" data-page-node-id="7B8LpUgyPMugUoFnl3JDAy">decorative chandelier that fits small spaces.</text>
+            <!-- Dim overlay -->
+            <rect x="0" y="0" width="360" height="780" fill="#0a0a12" opacity="0.55" data-page-node-id="UKtFeKj3CTUu2MxSl4XWbx"/>
+            <!-- Bottom sheet -->
+            <path d="M0 396 Q0 368 28 368 H332 Q360 368 360 396 V780 H0 Z" fill="#ffffff" data-page-node-id="s8EuY4xWJcfZTY4hqG5Hlc"/>
+            <rect x="150" y="382" width="60" height="5" rx="2.5" fill="#d9d9de" data-page-node-id="JbjlTMRJ1qRBUd7brbNiHd"/>
+            <circle cx="44" cy="436" r="24" fill="url(#gav1b)" data-page-node-id="DSKEVJquEiixP0dRaww77S"/>
+            <text x="80" y="430" font-size="17" font-weight="800" fill="#14151a" data-page-node-id="PvvUEZA9eUWEIHgIe2uYtj">Follow Brooklyn Simmons?</text>
+            <text x="80" y="454" font-size="13" fill="#5a5f6b" data-page-node-id="jK9R72LwOZaagy53u7qBau">Their posts will appear in your feed.</text>
+            <g data-page-node-id="ABBlukxzoGwAUCOR4vVEKZ">
+              <circle cx="40" cy="494" r="9" fill="#e9f7ef" data-page-node-id="6brfMgUI0BX3kOAtmHPsO7"/>
+              <path d="M36 494 l3 3 5 -6" stroke="#0a8f4c" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="gVecQW23TEmx3Yao8oV4eY"/>
+              <text x="58" y="499" font-size="13.5" fill="#3c4048" data-page-node-id="qx8FFWs3pEi9OFIjJNxZvA">Follow creators &amp; get a personal feed</text>
+            </g>
+            <g data-page-node-id="t61kVkmrAPy771yze58Kta">
+              <circle cx="40" cy="524" r="9" fill="#e9f7ef" data-page-node-id="xI0QHUnkmQprJY5WGawccL"/>
+              <path d="M36 524 l3 3 5 -6" stroke="#0a8f4c" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="UVbmeXZDNkojIvHjiwKv0y"/>
+              <text x="58" y="529" font-size="13.5" fill="#3c4048" data-page-node-id="S28DiXSEgH7VOK36mlkHJY">Join discussions &amp; group chats</text>
+            </g>
+            <g data-page-node-id="2NyZLDrXdbQr89ezljTnnn">
+              <circle cx="40" cy="554" r="9" fill="#e9f7ef" data-page-node-id="RVGl3oCTV2tylFUjnYvSG7"/>
+              <path d="M36 554 l3 3 5 -6" stroke="#0a8f4c" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="0IlVBJ5BAilPak0fMDjMGX"/>
+              <text x="58" y="559" font-size="13.5" fill="#3c4048" data-page-node-id="pKcaAMPGRtA8dAUEvAdjgW">Save events, places &amp; posts</text>
+            </g>
+            <rect x="22" y="584" width="316" height="58" rx="29" fill="#cdf549" data-page-node-id="heMYulmuEh4pvGY1BWpRjl"/>
+            <text x="180" y="620" font-size="17" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="GBWzNALI2Az2os3X4fwHpP">Create free account</text>
+            <rect x="22" y="656" width="316" height="52" rx="26" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="aKVtP9IaCzdefWal4NZdme"/>
+            <text x="180" y="688" font-size="15" font-weight="700" fill="#14151a" text-anchor="middle" data-page-node-id="bw5cLW2J8KCHUewNb6RyVG">I already have an account</text>
+            <text x="180" y="738" font-size="13" fill="#9aa0ac" text-anchor="middle" data-page-node-id="ir0joohjzQRQi9A6XG8TZ9">Not now — keep browsing</text>
+            <text x="180" y="762" font-size="11" fill="#c2c6cf" text-anchor="middle" data-page-node-id="eI8mQqgbED8IJ5ZdyGaNaR">Your browsing history stays on this device</text>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="uFoHoYNYMLOc14jfkM4RLH"><b data-page-node-id="XoViV7fWg7G705fF4PQC15">② Follow → Sign-in Wall Bottom Sheet</b><br data-page-node-id="67XGDqhpRebmmMBAhJZ1DC">Action intent is recorded (pending: creator)<br data-page-node-id="gWrLbgitKBywwCYSHeZfqS">Primary button goes straight to sign-up · existing users go to Sign in<br data-page-node-id="skZIshxmLaQEMm2qRLXcDT">"Not now" returns to browsing, never interrupting the flow</div>
+        <span class="dot green" style="left:93%; top:50.5%;" data-page-node-id="moE4JO2xAhlrfIPFauxSFV">1</span>
+        <span class="dot green" style="left:93%; top:85.5%;" data-page-node-id="80QGm27lpyIcfz2r5ykPGH">2</span>
+        <span class="dot green" style="left:10%; top:94.5%;" data-page-node-id="bxjppnTLWY9MAt2CU8q1Ub">3</span>
+      </div>
+
+      <div class="arrow-big" data-page-node-id="wBIoBoTBrz5mBR6kQOjffK">→</div>
+
+      <!-- C Create your account Step1 -->
+      <div class="col-s" data-page-node-id="iBW3nFLPvfFCVFZI1uFakq">
+        <div class="shot" data-page-node-id="Qwwk4uQP0tljBnoK234mPB">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="SC8KHnwwaxI8peQK1XgMG8">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="aaiSvLIswCewjpWFWZaaKW"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="NSVbd7BHiVvPRw45q63AGQ">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="shmSRxW83l1O5CR6O7eJgo"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" fill="#111" data-page-node-id="fRd2OrP4Awx8fDqYItpvUS"/>
+            <path d="M24 88 l-12 13 12 13 M12 101 h26" fill="none" stroke="#14151a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="SCIlOy8GAp3I5IcBQNbrxS"/>
+            <text x="52" y="108" font-size="21" font-weight="800" fill="#14151a" data-page-node-id="F0jX3gMzJ8C16lUH0XaRfK">Create your account</text>
+            <!-- Pending context bar -->
+            <rect x="20" y="124" width="320" height="48" rx="12" fill="#f0edff" data-page-node-id="vbCeDUF0LoFcmgzpBSChsi"/>
+            <circle cx="42" cy="148" r="9" fill="none" stroke="#5a4bd1" stroke-width="2.2" data-page-node-id="xu9dD3gHlkfpE9B2TTNgWx"/>
+            <path d="M42 143 v5 l4 2.5" stroke="#5a4bd1" stroke-width="2" fill="none" stroke-linecap="round" data-page-node-id="GdqoOln3dTtDy124TiwqgJ"/>
+            <text x="60" y="144" font-size="12.5" font-weight="700" fill="#5a4bd1" data-page-node-id="s1ADi2qJ7X9QiT7y6P1Z8f">Pending: Follow Brooklyn Simmons</text>
+            <text x="60" y="162" font-size="12" fill="#7a72d6" data-page-node-id="j4F2x6rweGl1qcQksoCWJ0">We'll finish this right after sign-up.</text>
+            <!-- Step bar -->
+            <rect x="20" y="196" width="100" height="8" rx="4" fill="#0a8f4c" data-page-node-id="hUa8rKDWyYRmFy9jUQpnM4"/>
+            <rect x="130" y="196" width="100" height="8" rx="4" fill="#e8e8ee" data-page-node-id="JrshHaHOr6iUoqpDFx08sD"/>
+            <rect x="240" y="196" width="100" height="8" rx="4" fill="#e8e8ee" data-page-node-id="Rgg7Os7BZyfdtDFiHsAaEJ"/>
+            <text x="20" y="226" font-size="12.5" fill="#9aa0ac" font-weight="600" data-page-node-id="V1jGGLCEqHA3UODmwHBSit">Step 1 of 3 · Account</text>
+            <!-- Greeting -->
+            <text x="20" y="268" font-size="22" font-weight="800" fill="#14151a" data-page-node-id="Kowsiw9e22w13KYzHSNDHt">Assalamu alaikum 👋</text>
+            <text x="20" y="294" font-size="14" fill="#5a5f6b" data-page-node-id="Am6ODdAOfGsgMNiy4b6Xwy">Create a free account to keep browsing.</text>
+            <!-- Phone / Email tabs -->
+            <rect x="20" y="316" width="154" height="42" rx="21" fill="#fff" stroke="#14151a" stroke-width="2" data-page-node-id="JVfY1Cd05ix13HoftbgcsB"/>
+            <text x="97" y="342" font-size="14.5" font-weight="700" fill="#14151a" text-anchor="middle" data-page-node-id="arQiqYInwzjylwYN89CUGE">Phone</text>
+            <rect x="186" y="316" width="154" height="42" rx="21" fill="#f1f0f5" data-page-node-id="XW7EG7YKtbM5LLR8EYbvOA"/>
+            <text x="263" y="342" font-size="14.5" font-weight="600" fill="#5a5f6b" text-anchor="middle" data-page-node-id="jKJFosEESiuMCQGRdsybeo">Email</text>
+            <!-- Input -->
+            <rect x="20" y="374" width="96" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="b8zAMaRj2hyZVFlTxOTpI8"/>
+            <text x="52" y="406" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="X5HBqM0iQjALjvnNdzfBRd">+62</text>
+            <path d="M88 396 l6 7 6 -7" fill="none" stroke="#9aa0ac" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="37RRS5ySpabYkCvCrfV7xY"/>
+            <rect x="128" y="374" width="212" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="Ng00dxYlYLSFCBwe66DO7Q"/>
+            <text x="146" y="406" font-size="16" fill="#14151a" data-page-node-id="oo459rxmojFTATJOJYcDug">812 3456 789</text>
+            <!-- Continue -->
+            <rect x="20" y="450" width="316" height="56" rx="28" fill="#cdf549" data-page-node-id="52hg3MlUDzJWGJPSPgJ47B"/>
+            <text x="180" y="485" font-size="17" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="dnjpQYRACaAL1HeWTWIHrK">Continue</text>
+            <!-- or -->
+            <rect x="140" y="530" width="80" height="18" fill="#fff" data-page-node-id="mp3aieDP7LtSOSij1VIxkF"/>
+            <text x="180" y="543" font-size="12" fill="#9aa0ac" text-anchor="middle" data-page-node-id="SkNDLcxYUHoJE2ZdGPlhoq">or sign up with</text>
+            <path d="M20 539 H136 M224 539 H340" stroke="#e4e6ec" stroke-width="1.5" data-page-node-id="0XpVgxRP4fII9GQCjpsUNV"/>
+            <!-- Apple -->
+            <rect x="20" y="562" width="316" height="52" rx="26" fill="#14151a" data-page-node-id="7f1IzD6QrIU4BDkEoUXl5I"/>
+            <g transform="translate(96,574) scale(0.75)" fill="#ffffff" data-page-node-id="MVquOhdJX4okP2tIwVPvwG">
+              <path d="M15.7 8.6c0-2 1.1-3.5 2.6-4.4-.9-1.3-2.3-2-3.7-2-1.6-.1-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C5.6 2.2 4 3.3 3.1 5c-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.4-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.2 3.2-2.5.7-1 1.2-2 1.5-3-2.1-.8-3.5-2.9-3.5-5.1zM13.9 1.9c.7-.9 1.2-2.1 1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.2.1 2.4-.6 3.1-1.5z" data-page-node-id="BGE7vVU9ONsRgFS8tAJ611"/>
+            </g>
+            <text x="192" y="594" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle" data-page-node-id="arNoYpPWAa3TkTH50PPtuM">Sign up with Apple</text>
+            <!-- Google -->
+            <rect x="20" y="624" width="316" height="52" rx="26" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="pNx603N2UuPnq6yKONbrT6"/>
+            <text x="112" y="656" font-size="16" font-weight="800" fill="#4285F4" data-page-node-id="tO9dZAiyeZlHLaDXSyAZcj">G</text>
+            <text x="192" y="656" font-size="15" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="GpZIGSNwSo8TZyq5Nx6ldC">Continue with Google</text>
+            <!-- WhatsApp -->
+            <rect x="20" y="686" width="316" height="52" rx="26" fill="#fff" stroke="#25D366" stroke-width="2" data-page-node-id="zuHYWofrSCAV9r5v2gbytL"/>
+            <circle cx="112" cy="712" r="12" fill="#25D366" data-page-node-id="iATl3QKnz2ru0vWbxB2on0"/>
+            <path d="M106 718 l1.6-4.6 a7 7 0 1 1 3.4 3.4 z" fill="#ffffff" opacity="0.9" data-page-node-id="jwCeeqaAbE5DAcT3tboJ3G"/>
+            <text x="196" y="718" font-size="15" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="9H6BxOd4bIWTHF8HiPeohy">Continue with WhatsApp</text>
+            <text x="180" y="760" font-size="11" fill="#9aa0ac" text-anchor="middle" data-page-node-id="HxHXMJ8HNp5TcTb9QnvGEV">By continuing you accept Terms &amp; Privacy Policy</text>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="tWYz0BeXwPoodTvwh73mmC"><b data-page-node-id="YDswWY5oh2eRFFIE7BqaCw">③ Create your account · Step 1/3</b><br data-page-node-id="UeqNFGxhxyEWskO9Dts5eq">Top purple bar keeps the pending action (pending follow) throughout<br data-page-node-id="CpjPnHv3hGgQOtj7jdidB1">Phone / Email dual channel + Apple / Google / WhatsApp<br data-page-node-id="pL0JVGSBRFFU1E6FE6Egrs">Country code auto-detected from SIM / location · chains into the standard sign-up flow</div>
+        <span class="dot green" style="left:93%; top:19%;" data-page-node-id="ayRuXo3TWbj7ZR6qOGyAuA">1</span>
+        <span class="dot green" style="left:93%; top:25.5%;" data-page-node-id="GBIag1hLruCqT7aaQnpEwr">2</span>
+        <span class="dot green" style="left:93%; top:72.5%;" data-page-node-id="AFEPTmBFCl8Ttt2OvWzYvP">3</span>
+      </div>
+    </div>
+
+    <!-- ================= Row2: registration-complete dual branch (reuses Step 2-3 design) ================= -->
+    <div class="row2" data-page-node-id="kzmmSpVcmm8PvAhyvZahsw">
+      <div class="col-s" data-page-node-id="b6EaEIORp5wfR0yYxjF9hs">
+        <div class="branch-label b1" data-page-node-id="aZrlSKNzlCmeTp5iqkqGBW">↳ Step 2 · Verification code (standard flow)</div>
+        <div class="shot" data-page-node-id="oBTeWGbXCT5ZFT4DK2nnE0">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="DHS3ydvwPqP2pyGO5vPaAT">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="hUEex3xGjqCNKNmqsoZd2c"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="I7mRCDmJBKZK2mGFMP2PcI">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="C7875LIiV4vDT0G1rmlJBH"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" fill="#111" data-page-node-id="sIbSXgtBgX7jtmOzgB2bgI"/>
+            <path d="M24 88 l-12 13 12 13 M12 101 h26" fill="none" stroke="#14151a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="fq2WXF8LOHw0i1PvjTluCB"/>
+            <text x="52" y="108" font-size="21" font-weight="800" fill="#14151a" data-page-node-id="HGHJyNRgV3RQ70CXV0E6hg">Verify your number</text>
+            <rect x="20" y="132" width="100" height="8" rx="4" fill="#0a8f4c" data-page-node-id="qwYqO2cIe7SoC754pRRlz4"/>
+            <rect x="130" y="132" width="100" height="8" rx="4" fill="#0a8f4c" data-page-node-id="B1UkunrmLn16t39P223pos"/>
+            <rect x="240" y="132" width="100" height="8" rx="4" fill="#e8e8ee" data-page-node-id="OxaFR8mCSuKEvTVNGWxYzI"/>
+            <text x="20" y="162" font-size="14" fill="#9aa0ac" font-weight="600" data-page-node-id="rEAGVFCMVbMdbWdhssOWjQ">Step 2 of 3 · Verify</text>
+            <text x="20" y="212" font-size="16" fill="#5a5f6b" data-page-node-id="S14oTJWixKD5AftSClg9fy">Enter the 6-digit code sent to</text>
+            <text x="20" y="242" font-size="19" font-weight="800" fill="#14151a" data-page-node-id="OH8Mr3ZEzFNsQfCnoo2P9d">+62 812 3456 7890</text>
+            <text x="340" y="242" font-size="16" font-weight="700" fill="#6C5CE7" text-anchor="end" text-decoration="underline" data-page-node-id="P96bDkmV3bmsJjqIhmNDwY">Edit</text>
+            <rect x="20" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="vVUpIYcM6MmfUwAvhgKLzs"/><text x="44" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="Q4IGn8XGpLbDWYB06kMXcY">8</text>
+            <rect x="76" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="yysxQMtidaJPw3aUJqIQQJ"/><text x="100" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="QkjiUC407HM5tMD77yoDAf">1</text>
+            <rect x="132" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="8taMDq3f3XLU1CmI21Ko1k"/><text x="156" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="ftJgdHEk5mhGxBS2HNEO5L">2</text>
+            <rect x="188" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="8XjtXtb73Af84ZkISJWGvV"/><text x="212" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="pLQlMDREprppElpeuuPj9x">3</text>
+            <rect x="244" y="272" width="48" height="60" rx="12" fill="#fff" stroke="#6C5CE7" stroke-width="3" data-page-node-id="rxnaxEuAMSQHItbK49PoMx"/>
+            <rect x="268" y="290" width="3" height="24" fill="#6C5CE7" data-page-node-id="lnatYM96UvLRJFcHjaSYvJ"/>
+            <rect x="300" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="z3hXxKDokS8U8sftdF1zn0"/>
+            <text x="20" y="380" font-size="15" fill="#9aa0ac" data-page-node-id="wSoVSkSVf7xFGKB8PvyO0A">Resend code in <tspan font-weight="700" fill="#5a5f6b" data-page-node-id="hP6ql1HohU6y1v1UDJJE8g">0:23</tspan></text>
+            <text x="340" y="380" font-size="15" font-weight="700" fill="#6C5CE7" text-anchor="end" data-page-node-id="3xYprvT4tvVsBp10AjuK5p">Resend</text>
+            <!-- Pending bar -->
+            <rect x="20" y="424" width="320" height="48" rx="12" fill="#f0edff" data-page-node-id="L23KXbADw7clH4CCv5DfGd"/>
+            <circle cx="42" cy="448" r="9" fill="none" stroke="#5a4bd1" stroke-width="2.2" data-page-node-id="CnTZAX98EVOIi9UpdylyeW"/>
+            <path d="M42 443 v5 l4 2.5" stroke="#5a4bd1" stroke-width="2" fill="none" stroke-linecap="round" data-page-node-id="PRqqXiDvEPMekNiCyuPcGg"/>
+            <text x="60" y="453" font-size="12.5" font-weight="700" fill="#5a4bd1" data-page-node-id="nVlTBh9xH5bAikdfhtOrDf">After this: Follow Brooklyn Simmons ✓</text>
+            <rect x="20" y="500" width="316" height="64" rx="32" fill="#cdf549" data-page-node-id="YgKfT7xFaKottv1Pg8EDkM"/>
+            <text x="178" y="539" font-size="19" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="85ArVnb2MnlEsDw06E3F8O">Verify &amp; Continue</text>
+            <text x="178" y="586" font-size="12.5" fill="#9aa0ac" text-anchor="middle" data-page-node-id="5pgKF9AlXcTMZgKDszFF7O">By verifying you accept the Terms &amp; Privacy Policy</text>
+            <rect x="120" y="740" width="120" height="6" rx="3" fill="#14151a" data-page-node-id="JAwihDwlNs0qGTCGkO83YA"/>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="nsYA6oFMXWDzEnKCwRsGUQ"><b data-page-node-id="zM0nCuOY4lz9mQPYVmckNL">④ Verify — verification code</b> · 6 digits, auto-advance / full paste<br data-page-node-id="8SnfxsjjS4PWqgneQOJKf6">30s resend countdown · WhatsApp alternative channel<br data-page-node-id="YFjh9dH7V490XWVoqN6lhY">Purple bar notes the Follow will complete automatically after sign-up</div>
+        <span class="dot green" style="left:93%; top:57%;" data-page-node-id="NUzHRApOwxf6Jbnu7cwFga">1</span>
+      </div>
+
+      <div class="col-s" data-page-node-id="pCupfdQYecn174k2iiMWBo">
+        <div class="branch-label b2" data-page-node-id="UDZ8GnnRexrKyDw4WPxdFe">↳ Step 3 · Registration complete → Complete Profile / Do It Later (reuses the finalized dual branch)</div>
+        <div class="shot" data-page-node-id="1Y7PA0WfgQHuEUAQt7h3Ld">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="nLBxDzPXi7E8KghzVp56aL">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="b30DQP8ZsYCWmRXVLpfesf"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="uSbYROTg555C3RStPirwqZ">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="FqOAYtXviWdHEFYfDWpZJ5"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" fill="#111" data-page-node-id="F3D5fx2tFHxuxcV9ZlCrDK"/>
+            <text x="180" y="88" font-size="12" font-weight="700" fill="#5a4bd1" text-anchor="middle" data-page-node-id="vo8zcjI2SxG3SKgWgluuoW">Pending: Follow Brooklyn Simmons — after sign-up</text>
+            <circle cx="180" cy="150" r="42" fill="#0a8f4c" data-page-node-id="diwEkA7xVauuhHjvhpCdOk"/>
+            <path d="M159 150 l15 15 27 -30" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="VSJZ0oeTi33QGTBj51rz1w"/>
+            <text x="180" y="236" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="m4bCZwNcwoZcrMOiIoZaZF">Account created! 🎉</text>
+            <text x="180" y="266" font-size="15.5" fill="#5a5f6b" text-anchor="middle" data-page-node-id="fC7DIIiUMZMBdrNo0dCq5O">Make it yours — 2 minutes now,</text>
+            <text x="180" y="288" font-size="15.5" fill="#5a5f6b" text-anchor="middle" data-page-node-id="IQPZgpCvZDtATYDYvcsXg5">or anytime later. Your choice.</text>
+            <rect x="22" y="322" width="316" height="158" rx="20" fill="#f2fbff" stroke="#0a8f4c" stroke-width="2.5" data-page-node-id="cqiSTGNEdVf6vwLyZXQIkP"/>
+            <circle cx="52" cy="360" r="20" fill="#0a8f4c" data-page-node-id="T5ijUJOKavrKy4TW8vpj0g"/>
+            <path d="M44 356 l6 6 10 -12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="FNUk7Qz3tsao1gDggsqZXx"/>
+            <text x="84" y="360" font-size="19" font-weight="800" fill="#14151a" data-page-node-id="d8V1hfBDRBsZkBtwTfFWZ8">Complete my profile</text>
+            <rect x="246" y="338" width="78" height="24" rx="12" fill="#cdf549" data-page-node-id="70tHMYZcg3ypC7sxorKpXf"/>
+            <text x="285" y="354" font-size="12" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="fJ40wFADfUxhFoGV1qsOtO">~2 min</text>
+            <text x="52" y="404" font-size="13.5" fill="#5a5f6b" data-page-node-id="CJqq9cMAy82oBz6ix5QESu">Set username, password &amp; personal</text>
+            <text x="52" y="424" font-size="13.5" fill="#5a5f6b" data-page-node-id="58rk9bdfTCDXAZ5p0LXaSn">details to unlock the full experience.</text>
+            <text x="52" y="456" font-size="13.5" font-weight="700" fill="#0a8f4c" data-page-node-id="IJQ9FKhll44tvsgQxRiiTD">Recommended</text>
+            <rect x="22" y="502" width="316" height="158" rx="20" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="nfzXKMpLpIbQuW00JWALVB"/>
+            <circle cx="52" cy="540" r="20" fill="#f1f0f5" data-page-node-id="euhpchxP8HfNYB87ji9rLl"/>
+            <path d="M52 534 v12 M46 540 h12" stroke="#14151a" stroke-width="3.5" stroke-linecap="round" data-page-node-id="KMPtBnXbfU85uDJs82gqmU"/>
+            <text x="84" y="536" font-size="19" font-weight="800" fill="#14151a" data-page-node-id="4O364pB2tW80sduyy4XDet">Do it later</text>
+            <text x="52" y="584" font-size="13.5" fill="#5a5f6b" data-page-node-id="yCNLIxGRAjdqoiJYqu6UWU">Jump back to your feed — Brooklyn</text>
+            <text x="52" y="604" font-size="13.5" fill="#5a5f6b" data-page-node-id="N9rGCMHGEabHvkEaRE7NbA">Simmons will be followed right away.</text>
+            <text x="52" y="636" font-size="13.5" font-weight="700" fill="#6C5CE7" data-page-node-id="okJt5d4yyqXHeXF6ENqw6I">Finish anytime in Settings</text>
+            <text x="180" y="704" font-size="13" fill="#9aa0ac" text-anchor="middle" data-page-node-id="XeeDOA7vejxXyd237PC5hV">No wrong choice — your profile can be</text>
+            <text x="180" y="722" font-size="13" fill="#9aa0ac" text-anchor="middle" data-page-node-id="vBaNiOWsz7gZUvDIGTeCRC">completed any time.  ⚙ Settings → Basic Info</text>
+            <rect x="120" y="740" width="120" height="6" rx="3" fill="#14151a" data-page-node-id="8l1eNc0gbtlAzaDE6O9h4B"/>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="O3AbcX7fMyFV6d50LLzGCw"><b data-page-node-id="uBmN70yCH1tZTKeNXMC6yy">⑤ Account created · pick one</b> (consistent with the Sign Up Step 2-3 design)<br data-page-node-id="RGVP02da9W2FjShdCw3N6G">After either branch completes → returns to the original Feeds position and auto-Follows<br data-page-node-id="o67qAokZdyPB05uxK1af5N">"Do it later" copy states the return outcome, easing decision anxiety</div>
+        <span class="dot green" style="left:93%; top:11%;" data-page-node-id="83SSQz2rPjWDl5kCnvSfO2">1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="merge-note" data-page-node-id="hE55WgM4WySHOStbCNgQad">
+    <b data-page-node-id="Y9SEIeMikqN8GtQ0CCNs8b">Deferred Follow closes the loop:</b> once registration completes (via "Complete Profile" or "Do It Later") → auto-return to the original Feeds position the guest was browsing → the Brooklyn Simmons button has changed to "Following ✓" + Toast "<b data-page-node-id="FiNisuY4KC2BnHcySIZNIZ">Ahlan wa Sahlan! You're now following Brooklyn Simmons</b>" → the top guest banner disappears, bottom-bar locks are lifted, and the tab badge system activates (Chats unread counts, etc.).<br data-page-node-id="56ggGTPovvU6SDsEfUB63g">
+    Guest-session local data (browsing history / searches / viewed posts) merges automatically into the new account to power personalized recommendations; profile completion is never mandatory — Settings → Basic Information is available any time (same data model as the P008 form).
+  </div>
+
+  <div class="notes" data-page-node-id="URgqyyJYmcBnBZvfgaSfNg">
+    <h2 data-page-node-id="HmT9Oml4MEg55iwKf5uH5B">Interaction Spec Checklist · Guest Mode</h2>
+    <div class="src" data-page-node-id="l5HXwJMOGF0WkGGiuFhgsj">Basis: Top 20 Improvements #3 sign-up &amp; sign-in · #1 onboarding · #5 notification center · #7/8 recommendations · V4 analysis report; feed card content taken from real posts on PDF P463-464 (Brooklyn Simmons / Siti Fatimah)</div>
+    <table data-page-node-id="ap0l0EOdoj2nYbWrAS7VXg">
+      <tr data-page-node-id="pl4hWyqqIsxgKtDaCS8E3Y"><th data-page-node-id="DjHhMIQ2KuDnVKAMBeFiM5">#</th><th data-page-node-id="391BJ9lN2EArxUZoFIuZXG">Interaction Definition</th><th data-page-node-id="RF3RJjhfC8dzEhR1lCjehS">Basis</th></tr>
+      <tr data-page-node-id="kBqbxWqUQ9fFwblAQXIONw"><td class="no" data-page-node-id="mei3Zx6MV4Z0Pk82WEfW5H"><span class="n2" data-page-node-id="NAepA7jY7ZIESBZTHz9TUO">1</span></td><td data-page-node-id="Ks8XcKeneYhpAESvL7J5qT"><b data-page-node-id="9q9ER8p4x6I07GsALA1FFE">Guest Mode positioning:</b> signed-out users land on the <b data-page-node-id="KI9SBCVcJfDFJZOnOKBVel">Feeds page</b> by default, where they can browse all posts, search, view post details, and view Discover / Places / Events without signing in — block "actions", never "browsing"</td><td class="basis" data-page-node-id="CFmEjjSNjrSrzjebnZEBC9">#3 sign-up &amp; sign-in · #1 onboarding <span class="tag" data-page-node-id="DGiajxeQNVEEDEtDtANfOq">Lowers cold-start barrier</span></td></tr>
+      <tr data-page-node-id="YSAGvB3lnh1WERvaHOnTk9"><td class="no" data-page-node-id="6OIkTBbRpg9kGXFvhqNE5F"><span class="n2" data-page-node-id="WuHqtjqDJn782yuZgEOP5C">2</span></td><td data-page-node-id="43ky7nZKm8UEYEeQnoHXaF"><b data-page-node-id="Mrqm5Jc7DLiKnbVMlDfe6i">Guest permission matrix:</b> allowed → browse / search / view details; restricted → Follow · Like · Comment · Share · Chat · Bookmark · Create Event · My Hub. Any restricted action opens the unified <b data-page-node-id="yArnE0DJ7L1gS9zzGgR8kY">sign-in wall bottom sheet</b></td><td class="basis" data-page-node-id="VmtmS3H2q4MdxovL2AoQCf">#3 <span class="tag" data-page-node-id="hV99jFVd7tpa8br1mW5w6Z">Unified interception pattern</span></td></tr>
+      <tr data-page-node-id="RlqvlZhA2qQBDmHIX8Zqv8"><td class="no" data-page-node-id="9vtA36DSUDdkaJ0W4auhxk"><span class="n2" data-page-node-id="le2jPSiH3kcYXHFkqI6EOI">3</span></td><td data-page-node-id="Pl1OFNyYHOhVKS5HBwcpB7"><b data-page-node-id="2uGfZDbji6mB80283bHOnv">Sign-in wall rules:</b> the sheet keeps the action context (pending action: creator id); primary button "Create free account" goes straight to sign-up Step 1, secondary "I already have an account", ghost "Not now — keep browsing" returns to browsing</td><td class="basis" data-page-node-id="THnwJpGldE0R4EmNFtdMyI"><span class="tag" data-page-node-id="mO5QFxSHss3BiCDKAdnjUl">X / IG / TikTok deferred-action pattern</span></td></tr>
+      <tr data-page-node-id="MLZKxt7IFKrPNkZuGUkHN7"><td class="no" data-page-node-id="Sn2E3XGpZYO3ghRO0Dp2rR"><span class="n2" data-page-node-id="TpVM0BG0c6G1ggWmBwCKKv">4</span></td><td data-page-node-id="tRxzf4zHBd36I4RjwGOCuL"><b data-page-node-id="QKIACkZx4zwSHCjHd1O2kK">Follow → full standard sign-up flow:</b> Create account → Step 1 account creation (Phone/Email + third-party sign-in) → Step 2 verification code → Step 3 Complete Profile / Do It Later dual branch — the exact same chain as the Sign Up design specs, with no separate guest-only flow</td><td class="basis" data-page-node-id="wC0H6i3C8TRnEg1GkrgWR9">#3 <span class="tag" data-page-node-id="djSKYI6Evgi8vjaWKRitA2">One flow, two entry points</span></td></tr>
+      <tr data-page-node-id="wY5RTUzfr9YXSAXGXGgcQ0"><td class="no" data-page-node-id="qTWBOhmU04SWlHRYy4gHoC"><span class="n2" data-page-node-id="HTJO80EVR6EukoK8xdcukp">5</span></td><td data-page-node-id="MmAQ3Gay9z8iWkUTLXH4m3"><b data-page-node-id="BIrbVrsHBAOPWlsbOXi5N8">Deferred follow-through:</b> a pending context bar stays at the top throughout the sign-up chain; on completion, auto-return to the original Feeds position and complete the Follow — button becomes Following ✓ + welcome Toast; the recommendations page (Do It Later branch) displays only, never interrupting the return</td><td class="basis" data-page-node-id="5yNUfgfWMem1z1KcvZUSlw">#3 · #1 <span class="tag" data-page-node-id="KNlGq6AaTJ5JEtZ7Flr1xg">Zero intent loss</span></td></tr>
+      <tr data-page-node-id="iDKnmF3OOHPd7uDgAkSUze"><td class="no" data-page-node-id="5Lle7WHj8Rukcl5uTNOr2X"><span class="n2" data-page-node-id="B00e22i7zDu1gslEsHQ0tF">6</span></td><td data-page-node-id="yG0cGbqrDt2wO48ZpFex90"><b data-page-node-id="BKk4pHBJoUkDQr2MvP9B3m">Guest identity visualization:</b> persistent Guest chip + Sign in in the top bar; dismissible banner that disappears after successful sign-up; gold lock icons on restricted bottom-bar tabs (Chats / My Hub); no unread badges in guest state (no readable notification source)</td><td class="basis" data-page-node-id="uCBPuVvnnos8NR2N1y1GxU">#5 notification center · #12 <span class="tag" data-page-node-id="r3WHASvFFn7CbqKksioHJ2">P002 bottom-bar spec continued</span></td></tr>
+      <tr data-page-node-id="TDaQFBaa9F9F9AjglFrJ9I"><td class="no" data-page-node-id="CFFg5mP8MpcnmZr81H5bHu"><span class="n2" data-page-node-id="CB9BtP3BZsQjY9xC6Z95PV">7</span></td><td data-page-node-id="93cgmWs2B2WKL1DBCdfHJU"><b data-page-node-id="QlZcCpJmjW9Be4pe5mFMF9">Data continuity:</b> guest browsing/searches are cached locally and merge into the account profile after sign-up to drive recommendations (chained into the Step 3 recommendations page and the #7/8 recommendation systems); clearing app data = guest data lost, compliant with no sign-up prompt (local only)</td><td class="basis" data-page-node-id="HWBxOGksoGPMvCfqJnkjMz">#7/8 recommendations <span class="tag" data-page-node-id="bEfRbfiNa3GwQVvwUTQhmP">Privacy-friendly</span></td></tr>
+      <tr data-page-node-id="enYYB28ORE9EEEcWO01iF9"><td class="no" data-page-node-id="yORgxaVAj4cs9UBYGGTRZc"><span class="n2" data-page-node-id="j4tol3ulr4gBfL1jI5UGGZ">8</span></td><td data-page-node-id="L7xhZZGITvTwvUCIrkkGHM"><b data-page-node-id="FqPZFq7XGH8aOu9uf3WDLB">Source-deck issues fixed alongside the guest version:</b> duplicated surname "Brooklyn Simmons Simmons" → Brooklyn Simmons; corrupted text "thereˇs / d ecorative / alled t bring y ur kid" → proper apostrophes and complete words; truncated text restored (verified against P463-464)</td><td class="basis" data-page-node-id="BocJ55rDETR0SjJ7JNdfC1">V4 · P0 copy quality <span class="tag" data-page-node-id="DoTkk7Cq5otR6BS2GgIhmS">Full copy-proofing checklist</span></td></tr>
+    </table>
+  </div>
+
+  <footer data-page-node-id="FtDKRLGimDAQsPMKjvMKN2">WAHDA · GUEST MODE INTERACTION SPEC · 2026-09-04</footer>
+</div>
+</body>
+</html>

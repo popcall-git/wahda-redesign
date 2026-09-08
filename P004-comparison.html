@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="uJrkfCwDaGhkH9dULebhTG">
+<head data-page-node-id="LRw02TKZoPHl37KwdNGA00">
+<meta charset="utf-8" data-page-node-id="umR3NZcgbCLEGncLETvsJG">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="qj73WHuTLiurIPsHztj3tJ">
+<title>P004 · 个人主页(Personal)× Community 浮层 · 前后对比</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:26px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+  .duo{display:flex; gap:28px; align-items:flex-start; justify-content:center; flex-wrap:wrap;}
+  .col{flex:0 1 460px; min-width:380px;}
+  .col-head{font-size:19px; font-weight:800; padding:12px 16px; border-radius:12px; margin-bottom:14px; text-align:center;}
+  .col-head.before{background:#fdeeee; color:#b03030; border:1px solid #f3caca;}
+  .col-head.after{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .shot{position:relative; border-radius:18px; overflow:hidden; box-shadow:0 8px 28px rgba(20,21,26,.12); background:#fff; width:352px; margin:0 auto;}
+  .shot img{display:block; width:352px; height:auto;}
+  .dot{position:absolute; width:30px; height:30px; border-radius:50%;
+       display:flex; align-items:center; justify-content:center;
+       color:#fff; font-size:15px; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.35);
+       border:2.5px solid #fff; transform:translate(-50%,-50%); cursor:default;}
+  .dot.red{background:var(--red);}
+  .dot.green{background:var(--green);}
+  .legend{margin-top:14px; font-size:14.5px; color:var(--sub); line-height:1.9; padding:0 6px;}
+  .legend b{color:var(--ink);}
+  .legend .n{display:inline-flex; width:21px; height:21px; border-radius:50%; color:#fff; font-size:12px;
+             align-items:center; justify-content:center; margin-right:7px; vertical-align:-4px; font-weight:800;}
+  .legend.red .n{background:var(--red);}
+  .legend.green .n{background:var(--green);}
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:280px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  .tag.new{background:#e8f7ef; color:#0a7a44;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+</style>
+</head>
+<body data-page-node-id="ygNAlJj2FIKibEkvx04JRX">
+<div class="wrap" data-page-node-id="q4OgNiGXPCUtrvpXJj4hJB">
+  <header data-page-node-id="wNA0Hfl2A21eWoFX9A4iwV">
+    <div class="kicker" data-page-node-id="yojZ1U41ihz7tgafwWuYIG">WAHDA · 交互优化 · 逐页推进 4 / 602</div>
+    <h1 data-page-node-id="uZXfN4elsPgA4ydHL3RZlN">P004 · 个人主页(Personal)× Community 浮层 — 前后对比</h1>
+    <div class="meta" data-page-node-id="jTmQCcDasx3jjAuOAZGGS3">来源:UI Design - Summary.pdf(Figma 导出)· P004 · 红点按 PDF 文本层坐标定位 · 依据:《20 大改进点》+ V4 报告 + P002 新指令(固定底栏 / Tab 徽章)· 2026-09-04</div>
+  </header>
+
+  <div class="duo" data-page-node-id="E6Dr44fzB5YEOHaKmS9k26">
+    <!-- ============ 左:当前 ============ -->
+    <section class="col" data-page-node-id="6w4mh2AyLHeGkYtHETs3cf">
+      <div class="col-head before" data-page-node-id="wQJgMcwU1FqXYu9Pu4avwV">当前设计 · Figma P004</div>
+      <div class="shot" data-page-node-id="BkFKvGBfREWojJaRnR6CxM">
+        <img src="pages/P004.png" alt="P004 当前设计" data-page-node-id="ZIDaHcpWyDTVKbX7oxzt3F">
+        <span class="dot red" style="left:16%; top:16%;" data-page-node-id="FEpAIIxcDJCcQsv3NkYdIo">1</span>
+        <span class="dot red" style="left:37%; top:23.5%;" data-page-node-id="eLi6wM1HgHYrh4vaQpLrU9">2</span>
+        <span class="dot red" style="left:50%; top:30%;" data-page-node-id="O0dB9TIuGbzcjwtge0sOiK">3</span>
+        <span class="dot red" style="left:17%; top:34%;" data-page-node-id="THFGdYBEdIMsBrXo7veFQ7">4</span>
+        <span class="dot red" style="left:42%; top:47%;" data-page-node-id="VNoIBx0W8n2cmMsWJf1pbd">5</span>
+        <span class="dot red" style="left:53%; top:54.5%;" data-page-node-id="4TuOEwAX0TPRtJjdaHBPwR">6</span>
+        <span class="dot red" style="left:38%; top:89.3%;" data-page-node-id="IJghK6Fcij6uKBFYycJnH0">7</span>
+      </div>
+      <ul class="legend red" style="list-style:none;" data-page-node-id="GC4L73EYSGRQcSId4Vnufp">
+        <li data-page-node-id="B4iwzzdwLII2jN01BzfMn8"><span class="n" data-page-node-id="hoHXZytfNVuTL42ZNiYlwm">1</span><b data-page-node-id="LgeZ6T04KusnlaKPfSr4wf">"Post your first note" 气泡遮挡头像</b></li>
+        <li data-page-node-id="rBCTRNWI0ZCGFHquOXFGsV"><span class="n" data-page-node-id="q345gDRbC1twQc8RmJW4MD">2</span><b data-page-node-id="qJWHAAQBplU5kBxqI3HaDM">"2.4K follower"</b> 未用复数</li>
+        <li data-page-node-id="zpaB2gYNqkJ6LJlIJuJFyC"><span class="n" data-page-node-id="daNpo4fLG4vtiyOaI09HUE">3</span><b data-page-node-id="cCkNh3QuQunglIB6mZc9NB">Bio 为 Lorem Ipsum</b> 占位文本</li>
+        <li data-page-node-id="2j8Qru7U4Zqmy4NPQ186om"><span class="n" data-page-node-id="vsjH94CyS76GEL3wc4DCGc">4</span>位置仅显示 <b data-page-node-id="xIgf1h68yUnXbnNQxaw38E">London</b>,无国家/可见档</li>
+        <li data-page-node-id="42ha1WrNIbzn51FA8lMP8u"><span class="n" data-page-node-id="16h3SghrIaTDu6ayEbhTfd">5</span>Tab 栏<b data-page-node-id="4U3lbMzELgir7d7jhKTEzN">文字断裂</b>:"Sav ed"、"Event s"(字间被插入空格)</li>
+        <li data-page-node-id="FuMMxI2LXVTKoyHdoQcYUS"><span class="n" data-page-node-id="HhFY0MvPNQKDZUK7UtZZEc">6</span>Feed 正文<b data-page-node-id="r7xfvKDSbSKiAdXH4bu5xw">乱码字符</b>:"thereˇs"、"thatˇs"</li>
+        <li data-page-node-id="4qS221GuKqIinRQkmC7MjH"><span class="n" data-page-node-id="9TIPiiDlwYjwHdKuF2oems">7</span>浮层小组名<b data-page-node-id="MCG1QzmtD9lQv3RRaqdooS">断字</b>:"Learning L anguage"</li>
+      </ul>
+    </section>
+
+    <!-- ============ 右:优化后 ============ -->
+    <section class="col" data-page-node-id="oqYBRE7AJgX7xHvpUKJ8i8">
+      <div class="col-head after" data-page-node-id="bS0Vra8BQFehTyb9YNSdbv">优化后 · 重绘示意</div>
+      <div class="shot" data-page-node-id="VGfxsMYmhf01gx6jijjMrW">
+        <svg viewBox="0 0 750 1624" width="352" xmlns="http://www.w3.org/2000/svg" style="display:block;" data-page-node-id="SEAwqGnlUeT9QVbW5Vg8yo">
+          <defs data-page-node-id="meu6aYWLULBnNSGEHRPW8D">
+            <linearGradient id="av1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="fbdVQUlEwfdSl3RpjYWBX9">
+              <stop offset="0" stop-color="#8e7cf3" data-page-node-id="VE1Mrh1FVgWVCxjrz2DIty"/><stop offset="1" stop-color="#5a4bd1" data-page-node-id="Tfgl6qHtGieflXJFcVmpwb"/>
+            </linearGradient>
+            <linearGradient id="gv1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="NQ1NIYbLJXIz5YZ8bE68Ob">
+              <stop offset="0" stop-color="#f2a6a0" data-page-node-id="3SFaQjE2wBoS537u5guoXs"/><stop offset="1" stop-color="#d96a62" data-page-node-id="HsP4QiuGfF6PlMLbbtDlpf"/>
+            </linearGradient>
+          </defs>
+
+          <rect width="750" height="1624" fill="#ffffff" data-page-node-id="pPXW6hOAFjza1EphrqsREx"/>
+
+          <!-- 状态栏 -->
+          <text x="55" y="52" font-size="28" font-weight="600" fill="#111" data-page-node-id="708Dbfyf4Y0CrCBfMwQ3EX">9:41</text>
+          <g fill="#111" data-page-node-id="fnKXPEASKW83X2RkNseVna">
+            <rect x="596" y="30" width="6" height="14" rx="2" data-page-node-id="5MvjhEU2TP6kyTbsceosYF"/><rect x="606" y="25" width="6" height="19" rx="2" data-page-node-id="tqP3VqJ0tD7QVj6va5c6Bh"/>
+            <rect x="616" y="20" width="6" height="24" rx="2" data-page-node-id="csujLzavnhjQl2MumIBgI9"/><rect x="626" y="15" width="6" height="29" rx="2" data-page-node-id="TQlQPYgf5twqXFqoFcpsAw"/>
+            <path d="M652 34 a20 20 0 0 1 28 0 l-5 6 a13 13 0 0 0 -18 0 z" transform="translate(0,-8)" data-page-node-id="19uQnxC4z0afnlqAc9DpE6"/>
+            <rect x="692" y="20" width="34" height="18" rx="6" fill="none" stroke="#111" stroke-width="3" data-page-node-id="LuCasXODvnt3zEGGivK4xE"/>
+            <rect x="696" y="24" width="22" height="10" rx="3" data-page-node-id="62nuCCN4PQvZ62wIAPWUtF"/>
+          </g>
+
+          <!-- Header -->
+          <text x="50" y="128" font-size="46" font-weight="800" fill="#14151a" data-page-node-id="gQM5JslasgLXZo3SLWSvpu">Leslie Alexander</text>
+          <path d="M486 108 l14 16 14 -16" fill="none" stroke="#14151a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="Y1ypWMTDC9y6xycD9JJqRG"/>
+          <g stroke="#14151a" stroke-width="4.5" fill="none" data-page-node-id="0DmetI9r7t3W7vArF3f8Yf">
+            <circle cx="680" cy="114" r="22" data-page-node-id="RPlq7RZ2EGSwG6ErcL8Mk5"/>
+            <circle cx="680" cy="114" r="7" data-page-node-id="D9ND0vJszZXigN3X0qBDJZ"/>
+            <line x1="680" y1="84" x2="680" y2="94" data-page-node-id="Fk7buuPDLBV068e53n03Mk"/><line x1="680" y1="134" x2="680" y2="144" data-page-node-id="IlGJiNSaSJIpmUqb6x33bo"/>
+            <line x1="650" y1="114" x2="660" y2="114" data-page-node-id="gOb5uAJn6H4YdKASmZqtMf"/><line x1="700" y1="114" x2="710" y2="114" data-page-node-id="UzjHxEdiBMp7SWC5zjICtz"/>
+            <line x1="659" y1="93" x2="666" y2="100" data-page-node-id="5gL6U9FsDF8VaKT1Hb1JeX"/><line x1="694" y1="128" x2="701" y2="135" data-page-node-id="zLZicKQkyNW6YCQr2jdgyG"/>
+            <line x1="701" y1="93" x2="694" y2="100" data-page-node-id="3z71ZBpFLm3hiHLqPKwZ2L"/><line x1="666" y1="128" x2="659" y2="135" data-page-node-id="0vjCeUFrPW69VArazaeKi4"/>
+          </g>
+
+          <!-- 大头像(月亮徽章在外沿,零遮挡)-->
+          <circle cx="126" cy="300" r="94" fill="url(#av1)" data-page-node-id="1D2bUb5senptJwwDTUs3uJ"/>
+          <text x="126" y="322" font-size="72" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="B83c9McnDspuOGddBELYuU">S</text>
+          <g data-page-node-id="HGHGBFKRirlUNsl0uXKRx9">
+            <circle cx="46" cy="222" r="24" fill="#1a1a28" stroke="#fff" stroke-width="3.5" data-page-node-id="XHUYpeXYJRozQEUjGnFMPL"/>
+            <path d="M53 208 a15 15 0 1 0 9 25 a12.5 12.5 0 0 1 -9 -25 z" fill="#f2c94c" data-page-node-id="blps0xebjJyDpDZ40E1vLY"/>
+          </g>
+
+          <!-- 徽章 + 名字 + 数据 -->
+          <g data-page-node-id="JXclG56nK7TJdrMjYkkSbx">
+            <rect x="250" y="206" width="236" height="46" rx="10" fill="#f1f0f5" data-page-node-id="K33FOQx0gCrSSUqX3f9mXG"/>
+            <circle cx="278" cy="229" r="8" fill="none" stroke="#555" stroke-width="3" data-page-node-id="xZjdhPsIONpt23idduzo4C"/>
+            <path d="M267 247 a11 8 0 0 1 22 0" fill="none" stroke="#555" stroke-width="3" stroke-linecap="round" data-page-node-id="XcHqHRCeYm7GvwYl8Vj8kF"/>
+            <text x="298" y="239" font-size="22" fill="#555" font-weight="600" data-page-node-id="ZqpMalDUoX0A6XQZhI26Lh">Personal Account</text>
+          </g>
+          <text x="250" y="308" font-size="36" font-weight="800" fill="#14151a" data-page-node-id="mvCOaTKiXUgrTaD97MNXPU">Leslie Alexander</text>
+          <text x="250" y="360" font-size="27" font-weight="700" fill="#14151a" data-page-node-id="uyukSnHd6AnPFBmNu1JsOX">2.4K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="HfEvAxIaokPWEOFTqyouhS">followers</tspan></text>
+          <text x="470" y="360" font-size="27" font-weight="700" fill="#14151a" data-page-node-id="KEFuzh7lDNsSU9mlMErt5b">2.1K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="Sl6IvzHMxN932LovryQXuP">following</tspan></text>
+
+          <!-- Bio(真实文案)-->
+          <text x="50" y="486" font-size="24" fill="#3c4048" data-page-node-id="0qI3E6sGCDxmmPr4dcFWHP">Sharing faith, food &amp; daily life from London 🌙</text>
+          <text x="50" y="526" font-size="24" fill="#3c4048" data-page-node-id="zPxyCMyVMfzN69UftRwg0R">Building a halal lifestyle community <tspan fill="#6C5CE7" font-weight="600" data-page-node-id="5uVqCquaJAHQ7uvEKGJwHB">more</tspan></text>
+
+          <!-- 引导小卡(头像下方,不遮挡)-->
+          <rect x="50" y="560" width="470" height="58" rx="29" fill="#f1f0f5" data-page-node-id="rCmZeHmGvf7PbPjWpFe9Xw"/>
+          <circle cx="90" cy="589" r="15" fill="#1a1a28" data-page-node-id="pEnJoXBNqGXB7zXpJZ9ENn"/>
+          <path d="M95 580 a9 9 0 1 0 6 15 a7.5 7.5 0 0 1 -6 -15 z" fill="#f2c94c" data-page-node-id="RMcQELfHSQT36ZiXJ9upuA"/>
+          <text x="120" y="597" font-size="23" font-weight="600" fill="#14151a" data-page-node-id="GJYYbgAb5O9kI3vrbRR3Hn">Post your first note</text>
+          <g stroke="#9aa0ac" stroke-width="3.5" stroke-linecap="round" data-page-node-id="WvoI3vRffIvLLNPHCH2QTk">
+            <line x1="480" y1="580" x2="496" y2="596" data-page-node-id="WZ3KtYkRr14NLa3MnOmtLJ"/><line x1="496" y1="580" x2="480" y2="596" data-page-node-id="j37Uj206PQ82ZURO9oaX2k"/>
+          </g>
+
+          <!-- 位置 + 可见性 -->
+          <g data-page-node-id="lIPPKkzv3bRDnxhafYIVJk">
+            <path d="M60 680 c0 -12 9 -20 19 -20 s19 8 19 20 c0 14 -19 30 -19 30 s-19 -16 -19 -30 z" fill="none" stroke="#6C5CE7" stroke-width="3.5" data-page-node-id="B5YkLiv36CiPjen3E3gZjx"/>
+            <circle cx="79" cy="679" r="6" fill="#6C5CE7" data-page-node-id="AyPqPZeZfaYKnK65wP9vsO"/>
+            <text x="96" y="688" font-size="24" fill="#555" data-page-node-id="fGdryXaEzDLdipHXzFF9dA">London, United Kingdom</text>
+          </g>
+          <g data-page-node-id="XQjm1Gj6Wp7msfiIZrjl2X">
+            <circle cx="556" cy="680" r="11" fill="none" stroke="#0a8f4c" stroke-width="3" data-page-node-id="YK96ixQE6qIFCkKVqcftt7"/>
+            <circle cx="556" cy="680" r="4" fill="#0a8f4c" data-page-node-id="30PcraNH0Ymi8CdzqKRjxz"/>
+            <path d="M539 680 q17 -14 34 0 q-17 14 -34 0 z" fill="none" stroke="#0a8f4c" stroke-width="3" stroke-linejoin="round" data-page-node-id="cQQgJ9IbxMWICiHjnQJrvW"/>
+            <text x="576" y="688" font-size="21" fill="#0a8f4c" font-weight="600" data-page-node-id="BjG9EM9vo7QD8QEjql9k0q">Everyone</text>
+          </g>
+
+          <!-- Drafts 卡片 -->
+          <rect x="50" y="720" width="650" height="88" rx="20" fill="#f6f6f8" stroke="#ececf1" data-page-node-id="SIZVDi4sIWh0k6WqdGWil5"/>
+          <rect x="72" y="740" width="46" height="46" rx="12" fill="none" stroke="#14151a" stroke-width="3.5" data-page-node-id="iZIlY40yulIj7eCuX3JKoy"/>
+          <path d="M84 776 l24 -24 8 8 -24 24 -10 2 z" fill="#14151a" data-page-node-id="3iBsUvKN9ZNTD5X9Xf7mcu"/>
+          <text x="140" y="774" font-size="26" font-weight="600" fill="#14151a" data-page-node-id="8W4jAWCQgHTcRaSWCGco2o">Drafts &amp; Scheduled Post</text>
+          <circle cx="500" cy="764" r="18" fill="#6C5CE7" data-page-node-id="Z8IHsJnXQIBdiy6SedOziy"/>
+          <text x="500" y="772" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="tup1ijn0mvLRhAeVgnxHPU">10</text>
+          <path d="M655 764 h40 m-12 -12 l12 12 -12 12" stroke="#14151a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="DZH0Gt2983QrnXNFDKsTfj"/>
+
+          <!-- Tabs(完整无断裂)-->
+          <text x="50" y="868" font-size="27" font-weight="800" fill="#14151a" data-page-node-id="yvAB4qEXtKoNMPh0E1lOH6">Posts</text>
+          <rect x="50" y="884" width="88" height="5" rx="2.5" fill="#6C5CE7" data-page-node-id="uOiMq7O0V8I0Q0AxMSoAm5"/>
+          <text x="190" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="a4sQ1OYBUWRB114p1MpES6">Saved</text>
+          <text x="320" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="PzV5xGZ9gqTNHUtEuQ259m">Community</text>
+          <text x="530" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="G6im4IF5MZeP6jOXgeDB4J">Events</text>
+
+          <!-- Feed 卡(乱码修复)-->
+          <rect x="50" y="920" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2" data-page-node-id="ULBAwbatWuGQIMSeTgL95x"/>
+          <circle cx="90" cy="972" r="30" fill="url(#av1)" data-page-node-id="4LhsXFBjXPAiRP5FVlazwi"/>
+          <text x="136" y="966" font-size="24" font-weight="700" fill="#14151a" data-page-node-id="XI32Bh5axA34upPvBE4taK">Leslie Alexander</text>
+          <circle cx="360" cy="958" r="12" fill="#3b82f6" data-page-node-id="OgM4qRdqCriUY4kHQUKKtE"/>
+          <path d="M354 958 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="AU6DvD0MlzlGzNwP3u7dPm"/>
+          <text x="382" y="966" font-size="20" fill="#9aa0ac" data-page-node-id="l8mVGR67V2NITmvXiSF5s3">1h</text>
+          <path d="M672 948 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none" data-page-node-id="SQwgxdG3rTkdkz8tdcvyH7"/>
+          <text x="136" y="1012" font-size="22" fill="#3c4048" data-page-node-id="9O0w64sci9Vw8y8iCvDs0g">I just realized that there's an affordable</text>
+          <text x="136" y="1044" font-size="22" fill="#3c4048" data-page-node-id="6kVwhfbglV7QB6ar8YQqsR">decorative chandelier that's available…</text>
+
+          <!-- ============ Community 浮层(半屏 sheet,固定底栏可见)============ -->
+          <rect x="0" y="1096" width="750" height="334" rx="36" fill="#ffffff" stroke="#e8e8ee" stroke-width="2" data-page-node-id="77burh4WOoX3DOyHUinPYE"/>
+          <rect x="0" y="1400" width="750" height="30" fill="#ffffff" data-page-node-id="fmfVG8nr66aK7DhEFD92Iv"/>
+          <rect x="307" y="1122" width="136" height="10" rx="5" fill="#d9d9de" data-page-node-id="SU31mUv6DV98cJvntLxt1M"/>
+
+          <text x="50" y="1190" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="7ccshJkYWT3GBuabRbN2KD">Community · Group</text>
+          <circle cx="100" cy="1270" r="46" fill="url(#gv1)" data-page-node-id="8jLPwCUYCAq9WktDDvqG6C"/>
+          <text x="100" y="1284" font-size="38" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="3aBmnSCErKAOb6tGzh4upl">L</text>
+          <text x="172" y="1258" font-size="30" font-weight="700" fill="#14151a" data-page-node-id="QIDRE98OtYKdXJlTqU5Uz6">Learning Language</text>
+          <text x="172" y="1296" font-size="22" fill="#9aa0ac" data-page-node-id="H2iyXGPsXqG8i2QmVv17tb">Community Group · Language Exchange</text>
+
+          <g data-page-node-id="sunI8LkgHN0CADL9jGGj2H">
+            <rect x="50" y="1328" width="650" height="100" rx="16" fill="#f8f8fa" data-page-node-id="buCklviEOZ615mHrH2ZlpX"/>
+            <circle cx="90" cy="1378" r="24" fill="url(#av1)" data-page-node-id="HkErQ6S7gsrWsiHpnWY1Ph"/>
+            <text x="130" y="1370" font-size="22" font-weight="700" fill="#14151a" data-page-node-id="yM7dcZ0lZcu29gDxulw5aL">Overcoming Language Barriers:</text>
+            <text x="130" y="1398" font-size="20" fill="#3c4048" data-page-node-id="J7trbCZBJPgVtH3qGGd0pd">Tips for Muslim Students Studying in</text>
+            <text x="130" y="1419" font-size="20" fill="#3c4048" data-page-node-id="U9P9Kjhs8USb5ZaXIovJV8">Non-English-Speaking Countries</text>
+            <text x="602" y="1370" font-size="19" fill="#9aa0ac" data-page-node-id="1jcjRM7Wxx9IT86HG6VCaj">1h</text>
+          </g>
+
+          <!-- ============ 固定底部导航(微信式)+ Tab 徽章 ============ -->
+          <rect x="0" y="1430" width="750" height="194" fill="#16161f" data-page-node-id="nWCAQTy5lrAx2tfLNqcAZx"/>
+          <line x1="0" y1="1430" x2="750" y2="1430" stroke="#2a2a38" stroke-width="2" data-page-node-id="uCceG66IMkmNcLqs9SBfE0"/>
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="9m8gT2NsiaW9jcI5H5RwTC">
+            <circle cx="75" cy="1500" r="26" data-page-node-id="iP1BnbEcOY59kLG13ecpwJ"/>
+            <path d="M64 1511 l8 -16 14 -6 -8 16 z" fill="#8a8f9a" stroke="none" data-page-node-id="MjUNvfuSMeQakzXOlGVeYH"/>
+          </g>
+          <text x="75" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="zEeY2LDuhLCajnGYkMzbSL">Discover</text>
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="1GIfSWymkX1xvmN1JwNn4m">
+            <path d="M225 1478 c-13 0 -22 9 -22 21 c0 15 22 33 22 33 s22 -18 22 -33 c0 -12 -9 -21 -22 -21 z" data-page-node-id="HqK8Ji5STQyGkRVWQAxRKU"/>
+            <circle cx="225" cy="1499" r="7" fill="#8a8f9a" stroke="none" data-page-node-id="6dRsoeDy2iBSc3r8IzFk9G"/>
+          </g>
+          <text x="225" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="odZWVHlFUTx4vY5BReGb8L">Places</text>
+          <path d="M351 1484 a24 24 0 0 1 48 0 a24 24 0 0 1 -24 24 h-12 l-12 10 v-16 a24 24 0 0 1 0 -18 z" fill="none" stroke="#8a8f9a" stroke-width="4" stroke-linejoin="round" data-page-node-id="BaywVhuBgS2DLAaQwAfjfC"/>
+          <circle cx="398" cy="1478" r="17" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="POc8pZW6Fy2BEvZAfff6Ct"/>
+          <text x="398" y="1486" font-size="20" font-weight="800" fill="#fff" text-anchor="middle" data-page-node-id="e7IslDghPUbJ9htoGDmc8V">3</text>
+          <text x="375" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="XWjsVVo3vmR4d5tNmEaySs">Chats</text>
+          <g fill="#8a8f9a" data-page-node-id="VcjNIXWZiuCCrgSgo3gVdy">
+            <rect x="508" y="1480" width="34" height="8" rx="4" data-page-node-id="WOGMFhr5Hg86xJFGn4hLu6"/><rect x="508" y="1496" width="34" height="8" rx="4" data-page-node-id="Xsg8DqHcj58rr6d3lXtGGj"/><rect x="508" y="1512" width="22" height="8" rx="4" data-page-node-id="0YZjG0lmaT6bTkFQK2oNe8"/>
+          </g>
+          <circle cx="545" cy="1482" r="8" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="75WBVnZvAOCQ9J9Sq5Yzvi"/>
+          <text x="525" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="a2U2CERDYymdV1js7Wq5q1">Feeds</text>
+          <circle cx="675" cy="1500" r="15" fill="none" stroke="#22c55e" stroke-width="4" data-page-node-id="Yg0wdLuyBFFwBEZEo1vzgx"/>
+          <path d="M652 1532 a23 16 0 0 1 46 0" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" data-page-node-id="XG9UhZh7t9unut52htkyUp"/>
+          <text x="675" y="1572" font-size="20" fill="#22c55e" font-weight="700" text-anchor="middle" data-page-node-id="VWRTEHWbSKdifXXuf54xcY">My Hub</text>
+
+          <!-- 优化点绿标 -->
+          <g font-size="22" font-weight="800" text-anchor="middle" data-page-node-id="WxNzAk1iS0Wj8LN9abE8I3">
+            <circle cx="540" cy="589" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="XYuSTnCrvCTkyfck0i0ivY"/><text x="540" y="597" fill="#fff" data-page-node-id="9hOaHEBcaWKVXjVm8A1mfj">1</text>
+            <circle cx="660" cy="490" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="D2LRv1bSLILZFAqXKsQv85"/><text x="660" y="498" fill="#fff" data-page-node-id="FRhntxEfwMNJtNIDCtNFsb">2</text>
+            <circle cx="712" cy="672" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="XuK77NXGLdqf4WbAUz1S5Q"/><text x="712" y="680" fill="#fff" data-page-node-id="VyRWobF5fJSxQIzMqs7sxP">3</text>
+            <circle cx="712" cy="860" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="dUd55L8ZqOaBwR0yP567hj"/><text x="712" y="868" fill="#fff" data-page-node-id="xEDWDRaKBkIr6TOPqWfIEm">4</text>
+            <circle cx="660" cy="1245" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="DqdMA6wwyUFBrHx5oFkY2U"/><text x="660" y="1253" fill="#fff" data-page-node-id="kX6xCOycwjgGq08L1B1A5P">5</text>
+            <circle cx="712" cy="1490" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="XZF19BolAENzFWLcpVdcmd"/><text x="712" y="1498" fill="#fff" data-page-node-id="SbFIM3CG8xLWEcf8IB57Gn">6</text>
+          </g>
+        </svg>
+      </div>
+      <ul class="legend green" style="list-style:none;" data-page-node-id="etqZmAPwIEMDOADnmCVTXM">
+        <li data-page-node-id="vq9NeIuUtsLDENH1whBXFQ"><span class="n" data-page-node-id="s2NuHdw4g3DTFM4dfyeQC6">1</span>引导改为头像下方<b data-page-node-id="wqh1Ud8BjdBuJ7rRm4zGHf">独立小卡</b>,零遮挡、可关闭</li>
+        <li data-page-node-id="bWclfsT3NmiWeDZDFDbvxB"><span class="n" data-page-node-id="iORXV2hlIrRZqxj2qgs60X">2</span>followers 复数修正;Bio 换<b data-page-node-id="ipnabBfBdyg52z3JY5tF3d">真实示例文案</b>(与位置呼应)</li>
+        <li data-page-node-id="UVPDBJ1mvP3whTp6BbruVF"><span class="n" data-page-node-id="9nfW7D1AO2BmgHpQGAjulO">3</span>位置展示<b data-page-node-id="3ZjaCyeFVbMgSNAzC7TQfh">国家 + 城市</b> + 可见档位(Everyone)</li>
+        <li data-page-node-id="M2IOGLXsg2ecTXlTVSmpIC"><span class="n" data-page-node-id="bdoPXGGN0TKOQs3xLy7NP0">4</span>Tab 完整展示 <b data-page-node-id="b8XA1lZyQvqSUfxv49Ah08">Posts / Saved / Community / Events</b>,杜绝断字</li>
+        <li data-page-node-id="NFEgaF3puWZA4UBGHBCQao"><span class="n" data-page-node-id="3XI7KSmogiqYJRWvFVOqId">5</span>浮层组名 <b data-page-node-id="XeUY0oB9A7CVWllmXfntds">Learning Language</b> 修复;帖子标题完整两行,不乱码</li>
+        <li data-page-node-id="SWa3GGR47M5OxvOcTk96SY"><span class="n" data-page-node-id="TpaDSj1AUE5zV0JB4Ba8iA">6</span><b data-page-node-id="4kyjgTr9WVcCtHCFx5uqw7">固定底栏(微信式)</b>+ Tab 徽章:Chats 未读数 3、Places/Feeds 红点</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ============ 优化点清单 ============ -->
+  <section class="notes" data-page-node-id="1GLDOmJCtnJdJTZMDUxA2G">
+    <h2 data-page-node-id="Lv0UKYj4RqeW7WrELncje2">优化点清单 · 对照「20 大改进点」</h2>
+    <div class="src" data-page-node-id="to4F7AIf3urAwdZ2s8I7C5">P004 命中:基础质量修复 × 6(遮挡 / 复数 / 占位 / 断裂 / 乱码 / 断字)· #20 位置展示与隐私 · P002 新指令(固定底栏 / Tab 徽章)</div>
+    <table data-page-node-id="oHJ37CPikT3M0dNmFyL4Ww">
+      <tr data-page-node-id="gC8x92x5sTeKEOoG17GfCh"><th style="width:44px;" data-page-node-id="Qgo3xoBpB5rdCGyxdxGyEL">#</th><th data-page-node-id="8d9kb8s0YDOE95I3sv2XPA">当前问题</th><th data-page-node-id="ybgeC40XfFcO9yBNlg8rNc">优化动作</th><th data-page-node-id="VyNIlX2vbXEZQMNpAk2q8R">依据</th></tr>
+      <tr data-page-node-id="lB1R0FjI4htPctNzYLRPMs">
+        <td class="no" data-page-node-id="pv5TwWGnH6krN7woJi0kmp"><span class="n2" data-page-node-id="CWe3faVW3C1jUuTP9rhB8G">1</span></td>
+        <td data-page-node-id="oqtiqrys3UjdL4Nkq1HusH">"Post your first note" 气泡压住头像顶部</td>
+        <td data-page-node-id="BqC2EJrhiD8LX7hmZx3hvD">引导改为头像下方独立小卡(月亮图标 + 文案 + 关闭),不遮挡头像与任何信息</td>
+        <td class="basis" data-page-node-id="BOnXNftQOUQSC8PEbtotIb"><span class="tag" data-page-node-id="QGCokHeblhku66M3DRHk4y">V4 · P0 视觉质量</span><span class="tag new" data-page-node-id="WdaatlmFNIaloyqmSYLc8n">视觉保真要求</span></td>
+      </tr>
+      <tr data-page-node-id="H0LqPMx6pSrwuvNEZupnjI">
+        <td class="no" data-page-node-id="gPsulwcIr51OhsHCjyiqig"><span class="n2" data-page-node-id="yKIzES7HfqOKhrEdwMtrig">2</span></td>
+        <td data-page-node-id="DKvYf5m345iWPlaiwpQALu">"2.4K follower" 未用复数;Bio 为 Lorem Ipsum("Vestibulum eu quam…")</td>
+        <td data-page-node-id="dScYBATyDgUUAP1zoRP5RU">"2.4K followers / 2.1K following";Bio 替换为与穆斯林社区定位一致的真实示例文案</td>
+        <td class="basis" data-page-node-id="5L0vkX5WWOknD1B3v8CCA2"><span class="tag" data-page-node-id="H8aJOKFuxgG3IHq3aLuopG">V4 · P0 质量问题</span></td>
+      </tr>
+      <tr data-page-node-id="9lIdtch6vgveLK3EhaqbE2">
+        <td class="no" data-page-node-id="QmxU9srxF7BAMdJMH6QQIt"><span class="n2" data-page-node-id="zaDDjt4Ja3MyCl44CSWXPL">3</span></td>
+        <td data-page-node-id="vDN1nTNFdZmlQPMGH5uqrl">位置仅 "London",无国家、无可见范围控制</td>
+        <td data-page-node-id="57uwTv8At6aAJzDXxsCNUh">展示 "London, United Kingdom";眼睛图标标示可见档位 Everyone(设置内三档可调)</td>
+        <td class="basis" data-page-node-id="MWBwXJvpUBKvl004YwK9YE"><span class="tag" data-page-node-id="mn9Me8k93bnIZ2WVjGu0Zh">#20 位置与隐私</span><span class="tag" data-page-node-id="Qa53BRi4GFIb2ZU1Mz6xs2">REQ-053 · 124</span></td>
+      </tr>
+      <tr data-page-node-id="X5lwjmrYePuQDfW0SknXit">
+        <td class="no" data-page-node-id="3tA9IBmbk5hdWeQOnfbnmh"><span class="n2" data-page-node-id="WboiWLSB3SHAFlvfaneOQo">4</span></td>
+        <td data-page-node-id="fEQeekYKc5su2syMudnF9v">Tab 栏文字断裂:"Sav ed"、"Event s"(词中被插入空格,渲染/排版缺陷)</td>
+        <td data-page-node-id="sDGH9FcWpmuAaSAPfA4EWf">完整展示 Posts / Saved / Community / Events;建立"无断字、无截断"的排版检查项</td>
+        <td class="basis" data-page-node-id="fM4DB9puYkcEFzh5tHQxYY"><span class="tag" data-page-node-id="UVXw9PqCDRsmzON73ivxZn">V4 · P0 质量问题</span><span class="tag" data-page-node-id="F6ybcghsVN8gDrmqF1abbR">#8 Feed 消费</span></td>
+      </tr>
+      <tr data-page-node-id="M7isvTy5vC99705jWYEqUt">
+        <td class="no" data-page-node-id="cx5OWzB3FEwDfbGXmag3rK"><span class="n2" data-page-node-id="4tPaliWGUg7XGVe3ftBwLN">5</span></td>
+        <td data-page-node-id="LI7pECTpGlPysQGv1qTxJ3">Feed 正文含乱码字符:"thereˇs"、"thatˇs"("ˇ" 替代撇号)</td>
+        <td data-page-node-id="YECAO49P8Hpk9YScYaXDEQ">修正为 "there's / that's";占位文本与特殊字符列入文案校对清单统一清理</td>
+        <td class="basis" data-page-node-id="5UrtdTLDx8CyaqmdSqFtHD"><span class="tag" data-page-node-id="vsZexBAyqI3xPbjCtAuAB6">V4 · P0 质量问题</span></td>
+      </tr>
+      <tr data-page-node-id="53YDcHTFKuoeA7ioIiupnq">
+        <td class="no" data-page-node-id="Teic6ZIe9bq1sMOnZShASU"><span class="n2" data-page-node-id="nDNKh2DFUdGSzwuuN6Tos0">6</span></td>
+        <td data-page-node-id="U2ikErV6YLTumFiLrqBi52">浮层小组名断字 "Learning L anguage";长标题超出卡片被截</td>
+        <td data-page-node-id="ydyuTGttcJm1oWIRtV75rP">组名修正为 "Learning Language";帖子标题按卡片宽度智能折行,末尾省略号,不溢出</td>
+        <td class="basis" data-page-node-id="bEk1xah80Xj7VjHG4AJlkv"><span class="tag" data-page-node-id="nxT48A89iOlTcrtsKHk419">V4 · P0 质量问题</span><span class="tag" data-page-node-id="fwwH94UdzEdGHUp5mOlWD5">#8 Feed 消费</span></td>
+      </tr>
+      <tr data-page-node-id="QJWVCdOT9DCfl5UUSO6Ilt">
+        <td class="no" data-page-node-id="9qL0UoTKRVnKIys3xEC3JG"><span class="n2" data-page-node-id="eCwy6KE4ypayHuI29z5FYI">7</span></td>
+        <td data-page-node-id="PcybmqoTjIIT5BpyXTHDdg">底部导航为悬浮胶囊,与浮层/内容文字层重叠,导航可达性与归属感弱</td>
+        <td data-page-node-id="XtibLKOkDUiINVB4Jd9qxm">固定全宽实底深色底栏(微信式):半屏浮层在其上方结束;Tab 级徽章直达新内容</td>
+        <td class="basis" data-page-node-id="RMIJfjsF0XJz2Rt2NbMGgL"><span class="tag new" data-page-node-id="jzeWhHqdfsBRjUMeqTDK2A">P002 用户新指令</span><span class="tag" data-page-node-id="lq6BLKDAbRC9KNGyyKdEJ3">#5 通知直达 Tab</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer data-page-node-id="QkABWRwKiM82GvNmE8xEVa">WAHDA · PAGE-BY-PAGE REDESIGN · P004 / 602 · 依据 20 大改进点</footer>
+</div>
+</body>
+</html>

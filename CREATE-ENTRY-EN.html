@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fig.1 · Creation Entry / Publishing Hub</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:44px 30px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:29px; font-weight:800; color:#161c28; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:19px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:44px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .tag.keep { background:#e8f1fb; color:#2264a8; border:1px solid #c6dcf2; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:18px; line-height:1.7; }
+  .compare { display:flex; gap:32px; align-items:flex-start; }
+  .col { flex:1; max-width:430px; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+  table { width:100%; border-collapse:collapse; margin-top:16px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12px; letter-spacing:.6px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:11px 12px; border-bottom:1px solid #eef0f4; line-height:1.6; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fig.1 · Creation Entry / Publishing Hub <span class="en">Creation entry &amp; unified hub</span></h1>
+  <div class="badge">20 key improvements plan · #07 Diversified creation entries · Original screenshot as base (Discover home) + local modification layer</div>
+  <p class="sub"><b>REQ-049 / 061 / 083</b>: Today publishing has a single entry, the 5-tab bottom nav leaves no room for a creation anchor, and there is no reserved space for Live / Mini Program. Redesign as a <b>fixed center FAB creation hub in the bottom nav</b>: tapping expands semantic groups (Content / Community / Local / Live / Mini Program) and shows eligibility gates; Chat moves to a top-bar bubble (linked with Fig.2 Notification Center).</p>
+
+  <h2>Before / After <span class="tag mod">Original base + modification layer</span></h2>
+  <p class="desc">Left: current state (Discover home, zero pixels altered) → Right: updated (FAB expanded, all other pixels untouched).</p>
+  <div class="compare">
+    <div class="col">
+      <div class="col-h before">● Current: 5 tabs fill the bar, no creation hub</div>
+      <div class="stage">
+        <img src="pages/create-entry-before.png" alt="">
+        <div class="dot red" style="left:50%; top:94.2%;">1</div>
+        <div class="dot red" style="left:60%; top:6.2%;">2</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● Updated: center FAB expands into five creation entries</div>
+      <div class="stage">
+        <img src="pages/create-entry-after.png" alt="">
+        <div class="dot green" style="left:50%; top:92.2%;">1</div>
+        <div class="dot green" style="left:88%; top:60.5%;">2</div>
+        <div class="dot green" style="left:82%; top:76%;">3</div>
+        <div class="dot green" style="left:88%; top:83.6%;">4</div>
+        <div class="dot green" style="left:78.5%; top:6.2%;">5</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>Update</th><th>Details</th></tr>
+    <tr><td>1</td><td><b>Fixed center FAB</b></td><td>Brand-green FAB in the center of the bottom nav (former Chats slot), slightly raised above the bar, becoming the global fixed creation anchor (REQ-049 ② / REQ-061).</td></tr>
+    <tr><td>2</td><td><b>Semantic entry groups</b></td><td>Tapping the FAB expands 5 entry cards: Post (content) / Community / Event (local) / Go Live / Mini Program (ecosystem), each with an icon and a one-line boundary description (REQ-049 ④).</td></tr>
+    <tr><td>3</td><td><b>Eligibility gates up front</b></td><td>The Go Live card carries a Creator gate tag and Mini Program a Soon label, so permissions are clear before entry (REQ-049 ④).</td></tr>
+    <tr><td>4</td><td><b>Contextual entries kept</b></td><td>Contextual quick entries inside each tab (e.g. posting in Community, creating in Events) are kept — the FAB is the unified hub, not the only entry (REQ-049 ①).</td></tr>
+    <tr><td>5</td><td><b>Chats moved to top bar</b></td><td>The freed bottom slot goes to the FAB; the Chats bubble moves next to the top-bar bell (with unread red dot), linked with Fig.2 Notification Center; the 5-tab bottom bar is decluttered (REQ-061).</td></tr>
+  </table>
+  <div class="note">When a guest taps any FAB entry, the <b>Guest Mode registration wall</b> applies (Deferred Publish, consistent with the GUEST-FLOW spec); the expanded menu supports swipe-up to dismiss.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Places 增强 · 社区清真认证评分</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#161c28; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; letter-spacing:.5px; }
+  h1 .en { color:#8b8f9a; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eaf6d9; color:#2e6b1e; font-size:13.5px; font-weight:700; border:1px solid #cbe8a8; }
+  .sub { color:#5c6470; font-size:14.5px; margin-top:10px; line-height:1.7; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; margin:52px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f0fb; color:#2e6b8f; border:1px solid #cfe0f2; }
+  .tag.mod  { background:#eaf6d9; color:#2e6b1e; border:1px solid #cbe8a8; }
+  .desc { color:#5c6470; font-size:13.5px; margin-bottom:20px; line-height:1.7; }
+
+  .mech { display:flex; gap:14px; margin-top:24px; flex-wrap:wrap; }
+  .m { flex:1; min-width:170px; border-radius:14px; padding:18px 16px; }
+  .m h3 { font-size:16px; font-weight:800; margin-bottom:10px; }
+  .m p { font-size:13px; line-height:1.75; color:#3c434e; }
+  .m1 { background:#e7f4ec; } .m2 { background:#f6ecda; } .m3 { background:#e4ebf8; } .m4 { background:#f0f0f0; }
+
+  .flow { display:flex; gap:0; align-items:flex-start; overflow-x:auto; padding:20px 4px 28px; }
+  .step { flex:0 0 268px; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 26px rgba(20,30,50,.14); border:1px solid #e2e4ea; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .cap { text-align:center; margin-top:10px; font-size:13px; color:#161c28; font-weight:700; line-height:1.5; }
+  .cap span { color:#8b8f9a; font-weight:500; }
+  .arrow { flex:0 0 62px; text-align:center; padding-top:330px; }
+  .arrow .a { font-size:26px; color:#2e7d32; font-weight:800; }
+  .arrow .t { font-size:11.5px; color:#2e7d32; font-weight:700; line-height:1.5; margin-top:4px; background:#eaf6d9; border-radius:10px; padding:6px 4px; }
+
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(20,30,50,.06); }
+  th { text-align:left; color:#8b8f9a; font-size:12.5px; letter-spacing:1px; padding:12px 14px; border-bottom:1px solid #e6e8ee; background:#fafbfc; }
+  td { padding:13px 14px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  td:first-child { color:#2e6b1e; font-weight:800; white-space:nowrap; }
+  td b { color:#161c28; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f0fb; border:1px dashed #cfe0f2; color:#2e6b8f; font-size:13.5px; line-height:1.7; }
+  .gap { margin-top:16px; }
+  .gap li { margin:8px 0 8px 20px; font-size:14px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Places 增强 · 社区清真认证评分<span class="en">Community Halal Verified</span></h1>
+  <div class="badge">用户新指令 · 原图打底 / 局部修改层 · 认证体系为新增设计</div>
+  <p class="sub">核心机制：<b>任何用户都可以发布 Place；其他用户到店后可点击 Verified 认证「这家店是真实清真」；每多一人认证，Place 上的数字 +1</b>——这个数字就是该地点的清真可信评分，直接用于列表 / 地图 / 搜索排序。</p>
+
+  <div class="mech">
+    <div class="m m1"><h3>① 发布</h3><p>任意用户经 Add Your Place 表单发布地点<br>审核通过即上线地图<br>进入「待认证」状态</p></div>
+    <div class="m m2"><h3>② 认证</h3><p>其他用户在详情页点击<br>「Confirm this place is Halal」<br>一人一票，实时 +1</p></div>
+    <div class="m m3"><h3>③ 计分</h3><p>认证人数 = 评分<br>数字直接显示在<br>地点卡 / 地图 pin / 详情页</p></div>
+    <div class="m m4"><h3>④ 权益</h3><p>评分决定档位徽章<br>与搜索 / 排序权重<br>高分地点获得曝光倾斜</p></div>
+  </div>
+
+  <h2>屏幕级流转<span class="tag mod">3 屏</span></h2>
+  <p class="desc">S1 为 P51「Add Your Place」真实表单页打底；S2 / S3 为你提供的 Places 详情真实截图，S3 仅叠加认证 Bottom Sheet（原像素未动）。</p>
+  <div class="flow">
+    <div class="step">
+      <div class="stage"><img src="pages/place-v-s1-publish.png" alt=""></div>
+      <div class="cap">① 发布 Place<br><span>真实表单打底 · 发布后即进入待认证</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">上线后<br>其他用户可访</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/place-v-s2-before.png" alt=""></div>
+      <div class="cap">② 详情页 · 当前<br><span>350 Reviews 但无清真可信度信号</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">点开<br>Halal Verified</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/place-v-s3-after.png" alt=""></div>
+      <div class="cap">② 详情页 · 增强后<br><span>认证面板：数字评分 + 一键确认</span></div>
+    </div>
+  </div>
+
+  <h2>认证与计分规则<span class="tag mod">防刷 + 档位 + 权益</span></h2>
+  <table>
+    <tr><th>模块</th><th>规则</th></tr>
+    <tr>
+      <td>计分</td>
+      <td><b>评分 = Verified 认证人数</b>。点击「Confirm this place is Halal」即时 +1；取消认证 −1；数字同步刷新在详情页大数字、列表卡徽章、地图 pin 角标</td>
+    </tr>
+    <tr>
+      <td>档位徽章</td>
+      <td><b>Bronze 10</b> → <b>Silver 100</b> → <b>Gold 1K</b> → <b>Diamond 10K</b>。徽章随档位升级（金环 / 银环 / 铜环），详情页与卡片同步展示</td>
+    </tr>
+    <tr>
+      <td>一人一票</td>
+      <td>每个账号对同一 Place 仅可认证 1 次；重复点击回到面板显示「已生效 · 你于 X 月 X 日认证过」；更换认证需先取消再重评</td>
+    </tr>
+    <tr>
+      <td>防刷</td>
+      <td>① 到店校验：优先给在 Places 打卡 / 距离 500m 内的用户弹认证入口（弱信号也可认证但权重降为 0.5）；② 商家主体账号不可认证自己的 Place；③ 同设备 / 同支付账号聚类，异常峰值进人工复核；④ 新 Place 前 10 票逐票延迟生效防突击</td>
+    </tr>
+    <tr>
+      <td>信任展示</td>
+      <td>面板显示「Verified by people you trust」——共同好友 / 同群组成员认证排最前；总数 +3,208 可下钻完整认证者列表（头像可点进主页）</td>
+    </tr>
+    <tr>
+      <td>排序权益</td>
+      <td>同类别按评分排序；搜索「halal restaurant」默认 Verified 优先；评分 ≥ Gold 的地点在 Discover 推荐流获得加权曝光</td>
+    </tr>
+    <tr>
+      <td>埋点</td>
+      <td>place_published / verify_sheet_open / verify_confirm_tap / verify_cancel_tap / verifier_list_open / score_tier_up</td>
+    </tr>
+  </table>
+
+  <h2>原稿对照<span class="tag keep">602 页检索确认</span></h2>
+  <ul class="gap">
+    <li><b>发布流程原稿已有</b>——P48 / P51「Add Your Place to the Map!」表单完整（Place Name / Category / Address / Country / City），S1 直接以 P51 打底，仅叠加「发布 → 待认证」提示卡，未改原表单</li>
+    <li><b>认证评分体系缺失</b>——全稿清真信号仅停留在筛选 Tag（Mosque / Halal）与评论问答，无任何社区认证 / 计数机制 → 本方案新增设计（S3 Bottom Sheet）</li>
+    <li>详情页底图为你提供的真实 Figma 截图（Al-Hakim Grand Mosque · 350 Reviews），S3 仅在上半屏加轻遮罩 + 下半屏叠加认证面板，原像素未动</li>
+  </ul>
+  <div class="note">联动既有方案：游客点认证 / 发布 → 走 GUEST-FLOW 注册墙；认证人数与 Feed 互动身份透出同一头像体系（可点进主页）；Place 高评分可与「位置展示与隐私」的 Discover 同城推荐联动。</div>
+</div>
+</body>
+</html>

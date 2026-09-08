@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="XWFjT4NSlkE6OA1Hi899Pd">
+<head data-page-node-id="sRkcOYJNLpS9NHKfWJQpqV">
+<meta charset="utf-8" data-page-node-id="TeUyIgX2DjR2tSrwnAH1XH">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="krKFqgU08J5oFv3fsDBi17">
+<title>Sign Up · Registration Flow Completion — Before / After</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:26px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+  .duo{display:flex; gap:28px; align-items:flex-start; justify-content:center; flex-wrap:wrap;}
+  .col{flex:0 1 460px; min-width:380px;}
+  .col-head{font-size:19px; font-weight:800; padding:12px 16px; border-radius:12px; margin-bottom:14px; text-align:center;}
+  .col-head.before{background:#fdeeee; color:#b03030; border:1px solid #f3caca;}
+  .col-head.after{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .shot{position:relative; border-radius:18px; overflow:hidden; box-shadow:0 8px 28px rgba(20,21,26,.12); background:#fff; width:352px; margin:0 auto;}
+  .shot img{display:block; width:352px; height:auto;}
+  .missing{margin-top:14px; background:#fff8e6; border:1px solid #eedb9f; color:#8a6d1a;
+           font-size:14.5px; line-height:1.8; border-radius:12px; padding:12px 16px;}
+  .missing b{color:#6d5410;}
+  .dot{position:absolute; width:30px; height:30px; border-radius:50%;
+       display:flex; align-items:center; justify-content:center;
+       color:#fff; font-size:15px; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.35);
+       border:2.5px solid #fff; transform:translate(-50%,-50%); cursor:default;}
+  .dot.red{background:var(--red);}
+  .dot.green{background:var(--green);}
+  .legend{margin-top:14px; font-size:14.5px; color:var(--sub); line-height:1.9; padding:0 6px;}
+  .legend b{color:var(--ink);}
+  .legend .n{display:inline-flex; width:21px; height:21px; border-radius:50%; color:#fff; font-size:12px;
+             align-items:center; justify-content:center; margin-right:7px; vertical-align:-4px; font-weight:800;}
+  .legend.red .n{background:var(--red);}
+  .legend.green .n{background:var(--green);}
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:280px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+</style>
+</head>
+<body data-page-node-id="5l1lMLRqMuB83idUBdi3GW">
+<div class="wrap" data-page-node-id="0gcekTl8F1tgizTMxHPoWt">
+  <header data-page-node-id="9wufgllwHiJcJmoZvltOoF">
+    <div class="kicker" data-page-node-id="z2BbBrG4m2luOhweRDaJdj">WAHDA · INTERACTION REFINEMENT · SIGN-UP FLOW</div>
+    <h1 data-page-node-id="jSdiTG326BVpKFr6OjGaze">Sign Up · New User Registration Flow (Completion) — Before / After</h1>
+    <div class="meta" data-page-node-id="6orFkxE0I6vnGby0MiQc2H">Source: UI Design - Summary.pdf (Figma export) · Baseline page P506 Sign In · Basis: "Top 20 Improvements" (summarized from 156 requirements) + V4 report · 2026-09-04</div>
+  </header>
+
+  <div class="duo" data-page-node-id="zP9v1rjbHhzr1JllwEWCWG">
+    <!-- ============ Left: current ============ -->
+    <section class="col" data-page-node-id="MuX7VtzWp8QRHpspEtHBeC">
+      <div class="col-head before" data-page-node-id="EZgmLvMLIQHbVNjcYxbBGH">Current Design · Figma P506 (Sign In)</div>
+      <div class="shot" data-page-node-id="AM7HpDFeHkW9sWBM6eYwAD">
+        <img src="pages/P506.png" alt="P506 Sign In current design" data-page-node-id="AnLeGpFnmjadWVNm392ECE">
+        <span class="dot red" style="left:49.8%; top:91.7%;" data-page-node-id="OXyxHq3apAo2Mpf4B8s6Ad">1</span>
+        <span class="dot red" style="left:50%; top:89%;" data-page-node-id="pZHIuJwFRsSzfbZ5OAjBFG">2</span>
+        <span class="dot red" style="left:11%; top:17%;" data-page-node-id="I1319CpQeOEruA25w6AEgN">3</span>
+        <span class="dot red" style="left:50%; top:42%;" data-page-node-id="VhcfUyu5cRT4GZmCHwhnzz">4</span>
+        <span class="dot red" style="left:50%; top:62%;" data-page-node-id="zSpESKmOhJ1e7avZxAf69l">5</span>
+      </div>
+      <ul class="legend red" style="list-style:none;" data-page-node-id="uJYQfl3IyLg2VYeUdBAHJc">
+        <li data-page-node-id="uZOTdd38EEoDxo1sSooyC6"><span class="n" data-page-node-id="GM2BI77JNXZtepypKlMUMb">1</span><b data-page-node-id="EnOqhN4n9z9negmyoXXnbj">"Sign Up" link goes nowhere</b>: the registration form page is entirely missing from the 602-page deck</li>
+        <li data-page-node-id="K54SUNiqFfmHmygm1L7R6Z"><span class="n" data-page-node-id="vANKM9QDnrKsbdffVSD03o">2</span><b data-page-node-id="DIhWG9xdwCS0pibY5ttFdh">Corrupted copy</b>: "Donˇt have an account˜" (ˇ/˜ instead of ' / ?)</li>
+        <li data-page-node-id="ZWvZcHfhZZhqj8cXRqUrLb"><span class="n" data-page-node-id="JYE8Df9ua09F43NzzByL3q">3</span><b data-page-node-id="qiybcceBh54o6RAYpRpntg">Country code defaults to +61 (Australia)</b>: no auto-detection from SIM card / location (key markets: Indonesia, Malaysia, etc.)</li>
+        <li data-page-node-id="nbm2Z2Us1L6kGCHF8yRGWG"><span class="n" data-page-node-id="WoS0hDbDIHldKnx5J89o46">4</span><b data-page-node-id="ASvwqhp5uoCWEJNlABYQGZ">Phone number is the only entry point</b>: no email, no Apple / Google / WhatsApp third-party options</li>
+        <li data-page-node-id="0EAl7G7xPM5M3vmt3Chkww"><span class="n" data-page-node-id="tkrMs6eZgDlU3bZR7bigfW">5</span><b data-page-node-id="NaD1URlvqIp91V0A0RLg5v">Large empty areas</b>: no brand greeting, no T&amp;C consent, no privacy trust signals, no sense of sign-up progress</li>
+      </ul>
+      <div class="missing" data-page-node-id="uV2T9REFdC0b4xAEcJYzmP">
+        <b data-page-node-id="4DVzkknHLe0yWGF5OB34MC">⚠ Flow break warning:</b> In the 602-page Figma summary deck, the <b data-page-node-id="roSYLGxNhGR5ZooXsfSYSe">complete Sign Up flow for new users (phone/email input → verification code → account creation) was never exported</b>.
+        Tapping "Sign Up" at the bottom of P506 leads to no corresponding page; the later stages of sign-up (P041-043 username setup, P052 interest selection, P054 join communities) are all present —
+        a flow break of <b data-page-node-id="lssVfxaTdht4Xpr3mX9BFQ">"second half present, first half missing"</b>.
+      </div>
+    </section>
+
+    <!-- ============ Right: optimized ============ -->
+    <section class="col" data-page-node-id="CJfFjlhUj1NfzpgAGwTiZz">
+      <div class="col-head after" data-page-node-id="CSrl1RO3qyMvIpVlp25SiJ">Optimized · Sign Up page (redrawn)</div>
+      <div class="shot" data-page-node-id="TFDmjW4G203aDoC0BuITtG">
+        <svg viewBox="0 0 750 1624" width="352" xmlns="http://www.w3.org/2000/svg" style="display:block;" data-page-node-id="aWAfPijILS790gPKHNEm7C">
+          <rect width="750" height="1624" fill="#ffffff" data-page-node-id="o2GAQZYM2vgbSXj3vf4mJw"/>
+
+          <!-- Status bar -->
+          <text x="55" y="52" font-size="28" font-weight="600" fill="#111" data-page-node-id="slToEwoUKCTZoZgDQ6G9t0">9:41</text>
+          <g fill="#111" data-page-node-id="INhw0P129uCmKSANu98Arv">
+            <rect x="596" y="30" width="6" height="14" rx="2" data-page-node-id="yTNaZkzFPnVKOyw2OFZ2RO"/><rect x="606" y="25" width="6" height="19" rx="2" data-page-node-id="uOQTpNJmMfchcjd3zXdHCR"/>
+            <rect x="616" y="20" width="6" height="24" rx="2" data-page-node-id="EAN0uNal40Q9duXf3ENJRH"/><rect x="626" y="15" width="6" height="29" rx="2" data-page-node-id="Rr3QA5avQfcI8DbpR0Tmvu"/>
+            <rect x="692" y="20" width="34" height="18" rx="6" fill="none" stroke="#111" stroke-width="3" data-page-node-id="ZXK8GMHi7rCkY87hOPEwhY"/>
+            <rect x="696" y="24" width="22" height="10" rx="3" data-page-node-id="tKxM636n6oKsp7iZxNCkka"/>
+          </g>
+
+          <!-- Language switcher -->
+          <text x="700" y="120" font-size="22" fill="#6C5CE7" font-weight="600" text-anchor="end" data-page-node-id="cnnu2wuoBpLz6oC8YDjXIc">EN | العربية</text>
+
+          <!-- Back + title -->
+          <path d="M52 116 l-18 20 18 20 M34 136 h44" fill="none" stroke="#14151a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="kWxsUDOMRvMaNar0YrlDvS"/>
+          <text x="96" y="146" font-size="40" font-weight="800" fill="#14151a" data-page-node-id="sCkWwJxfm9oa3iaCJfGap4">Create your account</text>
+
+          <!-- Step indicator 1/3 -->
+          <rect x="50" y="188" width="212" height="10" rx="5" fill="#0a8f4c" data-page-node-id="s4P7BXSTiM0amEJki8eFza"/>
+          <rect x="274" y="188" width="212" height="10" rx="5" fill="#e8e8ee" data-page-node-id="hYlFVGD4eggkIo0BtbDFQr"/>
+          <rect x="498" y="188" width="202" height="10" rx="5" fill="#e8e8ee" data-page-node-id="eigzdy7I9OF1aTguqlVT4L"/>
+          <text x="50" y="232" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="kVdTfolJfX25hN3Up88qUD">Step 1 of 3 · Account</text>
+
+          <!-- Greeting + brand -->
+          <text x="50" y="320" font-size="46" font-weight="800" fill="#14151a" data-page-node-id="y1TrjAIXXso0BNCUxhIX3F">Assalamu alaikum 👋</text>
+          <text x="50" y="368" font-size="25" fill="#5a5f6b" data-page-node-id="KDb9gwR2UdsvhoWisrhoyE">Join 2M+ Muslims praying, learning &amp;</text>
+          <text x="50" y="404" font-size="25" fill="#5a5f6b" data-page-node-id="6TZG9ibh74HvA8OmRVEoAM">growing together on Wahda</text>
+
+          <!-- Phone / Email Tab -->
+          <rect x="50" y="446" width="316" height="72" rx="36" fill="#0a8f4c" data-page-node-id="RxIuy9C7yZBuOBet5Uo5D9"/>
+          <text x="208" y="492" font-size="26" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="4iJ1FAnenKQzhHji4Jp5FQ">Phone</text>
+          <rect x="384" y="446" width="316" height="72" rx="36" fill="none" stroke="#d9d9de" stroke-width="2.5" data-page-node-id="0PwtDp3rftv1cSMYV8EWIS"/>
+          <text x="542" y="492" font-size="26" font-weight="600" fill="#5a5f6b" text-anchor="middle" data-page-node-id="PCZjSd2sHEFYtkEXjtRBVq">Email</text>
+
+          <!-- Input field -->
+          <text x="50" y="576" font-size="22" fill="#9aa0ac" font-weight="600" data-page-node-id="5L8C3mHtMp6lwrurDiMEkj">Phone Number</text>
+          <rect x="50" y="596" width="650" height="96" rx="20" fill="#fff" stroke="#d9d9de" stroke-width="2.5" data-page-node-id="kTUlyIB0FmMUwOrsIDEnf4"/>
+          <circle cx="102" cy="644" r="20" fill="#e04040" data-page-node-id="HqWM7gDCX6t1tTywBaHWlK"/>
+          <rect x="82" y="652" width="40" height="10" fill="#fff" data-page-node-id="yN9DDO1FWd6bpvHtJPR345"/>
+          <circle cx="102" cy="644" r="20" fill="none" stroke="#eee" stroke-width="1" data-page-node-id="D406QDe1oBAAAkoJBhmeRn"/>
+          <text x="136" y="654" font-size="27" font-weight="700" fill="#14151a" data-page-node-id="pnGPABnBLa2XI5wlYPGtSS">+62</text>
+          <path d="M196 638 l10 12 10 -12" fill="none" stroke="#5a5f6b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="uhYYDdeiA7xhQ29ZC133eC"/>
+          <line x1="236" y1="616" x2="236" y2="672" stroke="#ececf1" stroke-width="2.5" data-page-node-id="KGMlLnr9MlSJkSXyTgHa9r"/>
+          <text x="260" y="654" font-size="27" fill="#b6bac2" data-page-node-id="QdgADW9upK5dL0tI75fZFH">812 3456 7890</text>
+          <rect x="492" y="620" width="192" height="44" rx="22" fill="#e8f7ef" data-page-node-id="9OR1lzgT1KjCAQ14hIlbEa"/>
+          <circle cx="518" cy="642" r="11" fill="none" stroke="#0a8f4c" stroke-width="3" data-page-node-id="LpIgXi5B6CVn4BxneRrb76"/>
+          <path d="M513 642 l4 4 7 -8" stroke="#0a8f4c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="vGtSxeRqV6dXT9pOL3RsQr"/>
+          <text x="536" y="650" font-size="19" font-weight="700" fill="#0a8f4c" data-page-node-id="yZh7n4ikJ25SSTjCuWbYG2">Auto-detected</text>
+
+          <!-- Continue button -->
+          <rect x="50" y="728" width="650" height="96" rx="48" fill="#cdf549" data-page-node-id="06K0DhMLCjGHNMvMdKhZrf"/>
+          <text x="375" y="790" font-size="30" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="va9sG5tm1MH93FhWT7grXr">Continue</text>
+
+          <!-- or divider -->
+          <line x1="50" y1="886" x2="330" y2="886" stroke="#ececf1" stroke-width="2.5" data-page-node-id="OiB3i4prNYSKTrzGHClt7b"/>
+          <text x="375" y="895" font-size="22" fill="#9aa0ac" text-anchor="middle" data-page-node-id="zTrlMlvFcvF1OusqfSyMqP">or sign up with</text>
+          <line x1="420" y1="886" x2="700" y2="886" stroke="#ececf1" stroke-width="2.5" data-page-node-id="sUPH2LfpNyBP6kvvUY0795"/>
+
+          <!-- Third-party: Apple -->
+          <rect x="50" y="932" width="650" height="92" rx="20" fill="#fff" stroke="#d9d9de" stroke-width="2.5" data-page-node-id="VkiE4ytR94NA4YRlp6vxIj"/>
+          <circle cx="262" cy="978" r="22" fill="#14151a" data-page-node-id="KP23alCgZSyP9HVJ0a7mXy"/>
+          <g transform="translate(248,964) scale(1.17)" data-page-node-id="eKtx2mBWLdYqC9tqoEilJz">
+            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.79-.05 2.14-.84 3.57-.6 1.09.18 1.91.77 2.44 1.63-2.19 1.32-1.86 4.22.42 4.98-.5 1.31-1.15 2.6-1.51 3.16zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" fill="#fff" data-page-node-id="d2mR57vFUml4fjzrRAyucn"/>
+          </g>
+          <text x="420" y="990" font-size="27" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="7rj7ewBJakzzRGVJFkoc85">Sign up with Apple</text>
+          <!-- Google -->
+          <rect x="50" y="1048" width="650" height="92" rx="20" fill="#fff" stroke="#d9d9de" stroke-width="2.5" data-page-node-id="wB6igucygjP6XTeDP0zzeC"/>
+          <circle cx="256" cy="1094" r="22" fill="#fff" stroke="#e0e0e6" stroke-width="2" data-page-node-id="bcSzDDLOWLMeiaOWHAhLzH"/>
+          <text x="256" y="1104" font-size="26" font-weight="800" text-anchor="middle" fill="#4285F4" data-page-node-id="4OCCgWGokDP9xfI30BhSgH">G</text>
+          <text x="395" y="1106" font-size="27" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="0Em9FbKydfekjC9KCKPL7P">Sign up with Google</text>
+          <!-- WhatsApp -->
+          <rect x="50" y="1164" width="650" height="92" rx="20" fill="#fff" stroke="#d9d9de" stroke-width="2.5" data-page-node-id="p2nsPvQoREmppCP9OvDNV7"/>
+          <circle cx="268" cy="1210" r="24" fill="#25d366" data-page-node-id="kkBN8WRAdEfXDlDSIaiqYW"/>
+          <path d="M258 1200 a12 12 0 1 1 -4 22 l-8 3 3 -8 a12 12 0 0 1 9 -17 z" fill="#fff" data-page-node-id="gEpSpXkELH3LNteyuqNPG2"/>
+          <text x="398" y="1222" font-size="27" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="hjUKFjgmeKrV7wbAWQPeOA">Continue with WhatsApp</text>
+
+          <!-- Sign-in link -->
+          <text x="375" y="1340" font-size="25" fill="#5a5f6b" text-anchor="middle" data-page-node-id="wiW9RA5Uh0lvn5xXVeKHHj">Already have an account?  <tspan fill="#6C5CE7" font-weight="700" text-decoration="underline" data-page-node-id="p9GxAvgHrOGCvuNypKOAik">Sign In</tspan></text>
+
+          <!-- T&C -->
+          <text x="375" y="1408" font-size="20" fill="#9aa0ac" text-anchor="middle" data-page-node-id="LFuOj5qbwHkmFhm1cI2CSn">By continuing you agree to our</text>
+          <text x="375" y="1440" font-size="20" text-anchor="middle" data-page-node-id="gaP1Up72nimChVxIKOd5Oh"><tspan fill="#6C5CE7" text-decoration="underline" data-page-node-id="YLH1gmERt38yHSckA6601A">Terms &amp; Conditions</tspan><tspan fill="#9aa0ac" data-page-node-id="ZesvuBw8LF848p9xSYndfA"> &amp; </tspan><tspan fill="#6C5CE7" text-decoration="underline" data-page-node-id="ex5IMHVZ8RVJTwU3WxOQ8x">Privacy Policy</tspan></text>
+
+          <!-- Trust signal -->
+          <g data-page-node-id="i6jamdJIRQNE8YceCgTa7w">
+            <circle cx="240" cy="1516" r="14" fill="none" stroke="#0a8f4c" stroke-width="3" data-page-node-id="k6QVN9s43GMDCv6qKvF3sc"/>
+            <path d="M233 1516 l5 5 9 -10" stroke="#0a8f4c" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="vRaH75HfX5xPZsAjZYvZlg"/>
+            <text x="266" y="1524" font-size="20" fill="#5a5f6b" data-page-node-id="9tBDjLNQF5flQ8DtuELFpF">Your data is private — never sold</text>
+          </g>
+
+          <rect x="275" y="1568" width="200" height="9" rx="4.5" fill="#14151a" data-page-node-id="rPFc198mqCjgFUkUpod3zf"/>
+
+          <!-- Green improvement markers -->
+          <g font-size="22" font-weight="800" text-anchor="middle" data-page-node-id="oUS3Xl3s5xVBSC8jPp0bKM">
+            <circle cx="712" cy="304" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="9yfF2oXOk4G4Nv0osPDgF2"/><text x="712" y="312" fill="#fff" data-page-node-id="ZrjKJh3XmXmLy5cdhN9h5A">1</text>
+            <circle cx="718" cy="196" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="TIlJPAUxGgBfEWFbVBBoaU"/><text x="718" y="204" fill="#fff" data-page-node-id="985pE4OlNhvTwAYCvafsPQ">2</text>
+            <circle cx="700" cy="482" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="H72Hyu5Dp0nVDy5tWnKuBG"/><text x="700" y="490" fill="#fff" data-page-node-id="jtLvcs5NHj6QMYds9XuroT">3</text>
+            <circle cx="712" cy="644" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="a15La8rtRV81BCEljXTmFD"/><text x="712" y="652" fill="#fff" data-page-node-id="n0RKcpWBMGeAVAJ1F6y6v1">4</text>
+            <circle cx="712" cy="1210" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="ftHVA18vSFf7vdCLCRHnHX"/><text x="712" y="1218" fill="#fff" data-page-node-id="iOpLRvltAB3E1ypfKbKLaQ">5</text>
+            <circle cx="712" cy="1424" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="dAEMQEgHNab4NNlR6eaxRn"/><text x="712" y="1432" fill="#fff" data-page-node-id="Bw8WudJaq9IxClDsMqjLzZ">6</text>
+          </g>
+        </svg>
+      </div>
+      <ul class="legend green" style="list-style:none;" data-page-node-id="AcY6DV2cn0SYcOShVMDpfP">
+        <li data-page-node-id="wiFM2JIFbefmAlYk7Ew3QS"><span class="n" data-page-node-id="j7kwYHMrEEQt8alUhPVLXf">1</span><b data-page-node-id="JA3gkHySExJO5uVu7egYVR">Complete Sign Up page drawn</b>: 3-step flow (account → verification code → username), connected to P041/P052/P054</li>
+        <li data-page-node-id="sF6NdZbobGI5uQE5kouP0C"><span class="n" data-page-node-id="Quc9Ve3EOpxoh5K4bhiuxQ">2</span><b data-page-node-id="1dWACZP2ORINVAXGBlpYeO">Step indicator Step 1/3</b> + EN/عربي language switcher, reducing sign-up drop-off</li>
+        <li data-page-node-id="pQqwhl1ZFYpSmvo3SSlQ2z"><span class="n" data-page-node-id="uqR88B8jGDHJAQ9o4i2m6o">3</span><b data-page-node-id="wKWwEedBgySFztHV6RXsq6">Phone / Email dual tabs</b>, plus Apple / Google / WhatsApp third-party options</li>
+        <li data-page-node-id="6eYIhzkoOn3Lf2NTQ0wEhI"><span class="n" data-page-node-id="KVUAHjaIpfoKG5qbe5fUl8">4</span><b data-page-node-id="k1EnHXzC1ls3jASw5NWpS3">Country code auto-detection</b>: defaults by SIM/location (example: +62 Indonesia), searchable and switchable</li>
+        <li data-page-node-id="Ns8kgzrvmr0XYO1AhXybnE"><span class="n" data-page-node-id="CeVAgEVpFrD8pjAyvksipK">5</span><b data-page-node-id="XGbyQesByCAnWMgTS03OAY">Brand greeting Assalamu alaikum</b> + data privacy promise, building trust</li>
+        <li data-page-node-id="XkXCNSeMj1EJpAJgcNqssC"><span class="n" data-page-node-id="FUI0ZpFYZZ23MQDBfyfmzD">6</span><b data-page-node-id="gRr5sQFNJaEZ14LOjVfCrC">T&amp;C / Privacy Policy links up front</b>, copy corrected to standard punctuation</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ============ Improvement list ============ -->
+  <section class="notes" data-page-node-id="Kh7W9tdlEANDVKJw4GILQG">
+    <h2 data-page-node-id="9ETAqno8y0cXuazp7I52Yj">Improvement Checklist · Mapped to the "Top 20 Improvements"</h2>
+    <div class="src" data-page-node-id="L4MVFvA93ura9e5mffoBJw">Sign Up hits: registration flow completion (flow break) · #1 onboarding · #3 sign-up &amp; sign-in experience · #20 privacy &amp; trust · V4 P0 copy quality (REQ-001 / 002 · Onboarding)</div>
+    <table data-page-node-id="QWOZbxVeWnIahR9mCrNNGL">
+      <tr data-page-node-id="LXo4b2guCeA36zxfwfYQNy"><th style="width:44px;" data-page-node-id="GhiyDlVIJ242RT2HmI5kbF">#</th><th data-page-node-id="3BW5JMtzjJY3OGotcO6vef">Current Issue</th><th data-page-node-id="21kaH0BMGFqaydqmMzORCE">Improvement Action</th><th data-page-node-id="CMgzIg2PRHLIVsgMN9canK">Basis</th></tr>
+      <tr data-page-node-id="xytqZGtKxStAwB7SqtA4Ei">
+        <td class="no" data-page-node-id="ZZfw9Hf8aT8lEW67Wsi74r"><span class="n2" data-page-node-id="tMGwgRsdh1E2p2ginJmoJe">1</span></td>
+        <td data-page-node-id="XOEoIGhnZGPNF6W8R0HLHE">The Sign Up form page is entirely missing from the 602-page deck; the "Sign Up" link on the sign-in page goes nowhere; the later sign-up stages (P041 username setup) are completely disconnected from the front end</td>
+        <td data-page-node-id="GDHPL76n0oRabNFDXfEE7N">Redraw the 3-step sign-up flow: ① create account (this page) ② verification code (6-digit OTP + autofill + resend countdown) ③ username &amp; password (with P041's real-time username availability check)</td>
+        <td class="basis" data-page-node-id="YgBHZrVDkLxJeuTtgpsFGH"><span class="tag" data-page-node-id="IS5mGwtwMDKPsV4dXICwBK">#3 Sign-up &amp; Sign-in Experience</span><span class="tag" data-page-node-id="Eewi02U8rxxtI8HEajmjeA">#1 Onboarding</span></td>
+      </tr>
+      <tr data-page-node-id="21GPQKzQwtE5eKF7P1OdKf">
+        <td class="no" data-page-node-id="E1Ui5YHGOrC6fdHn2QHgzA"><span class="n2" data-page-node-id="dkmO5RNfbajQjlRgvcRWou">2</span></td>
+        <td data-page-node-id="8FPES1jrhkXQg67l5S6QK1">Corrupted copy: "Donˇt have an account˜" (ˇ/˜ instead of ' and ?); the P483 variant "cannot be sign up" contains a grammar error (should be signed in)</td>
+        <td data-page-node-id="OBl7fhVg9lnHdF2AdjKi0V">Correct to "Don't have an account? Sign Up" / "cannot be signed in"; add to the pre-launch copy-proofing checklist (same root cause as the P001 spelling issue)</td>
+        <td class="basis" data-page-node-id="KpfsNqtt86qff5ufP0kg8y"><span class="tag" data-page-node-id="BSRHvrHg3hiSJEmiFp2OTh">V4 · P0 Quality Issues</span></td>
+      </tr>
+      <tr data-page-node-id="tziXeApUvmLQbpZ1CBriNF">
+        <td class="no" data-page-node-id="CwcoHLA8VYp5oHXUnZQQD2"><span class="n2" data-page-node-id="QJwfhYAOQNTHgD0P9Ch4Qn">3</span></td>
+        <td data-page-node-id="hEFXPIjZ7VJp8PiWyQVnjZ">Phone number is the only sign-up/sign-in entry point, and the default country code is fixed at +61 (Australia) — mismatched with key markets such as Indonesia, Malaysia, the Middle East and North Africa</td>
+        <td data-page-node-id="kcAhiKnh9jHKMerz5GMKGA">Phone / Email dual entry + Apple / Google / WhatsApp third-party; country code auto-detected from SIM card and location (default +62), with search support</td>
+        <td class="basis" data-page-node-id="rM0gapXlQKzqyY3KByollz"><span class="tag" data-page-node-id="TJjS4K1ejAy0ztg7Vvbsk6">#3 Sign-up &amp; Sign-in Experience</span><span class="tag" data-page-node-id="Knft3mBNH7jRcaTDOxrdw6">Market Localization</span></td>
+      </tr>
+      <tr data-page-node-id="rmJAXfEUJD8z0oLaEnRqnZ">
+        <td class="no" data-page-node-id="nuzVsG3CUnuGxMNkuW1Q4N"><span class="n2" data-page-node-id="fA1AVJRN91tvhaKy8Hmxqd">4</span></td>
+        <td data-page-node-id="2d92SuoJBdV5dzVJeqnvA6">No brand warmth on the sign-up page: no greeting, no sense of progress, large empty areas — a first-screen drop-off point for new users</td>
+        <td data-page-node-id="ufdB8VF52XaaSfft4e0GnJ">"Assalamu alaikum" greeting + brand positioning sub-copy; Step 1/3 progress indicator in the sign-up flow; EN/عربي language switcher at the top (RTL-ready)</td>
+        <td class="basis" data-page-node-id="O6ABDbal3lZBHmcc4JT44w"><span class="tag" data-page-node-id="lASssSKM89X8ZDWQqdyg96">#1 Onboarding</span><span class="tag" data-page-node-id="SfHWB788kWMcr23iqZXupL">Internationalization / RTL</span></td>
+      </tr>
+      <tr data-page-node-id="F4j9vsW4plNGbRq08Pn2gl">
+        <td class="no" data-page-node-id="GRz7xNjzLj7HszcnQ7mAbG"><span class="n2" data-page-node-id="LMi5SVnrzOjih8mB4HfTS9">5</span></td>
+        <td data-page-node-id="N7Y8y2KqExdfVhbRDoLrrs">No T&amp;C consent step, no privacy trust signals — a trust gap for data-conscious Muslim users</td>
+        <td data-page-node-id="sW8QKeE2bDAdXwouCIgLQd">Tappable T&amp;C / Privacy Policy links up front; "Your data is private — never sold" trust promise; WhatsApp verification later as a trusted channel</td>
+        <td class="basis" data-page-node-id="TSO89ti4IEz1LGJTCS04ix"><span class="tag" data-page-node-id="Ia3YQBf90DYOerZnPwBJWu">#20 Privacy &amp; Trust</span><span class="tag" data-page-node-id="5OeuBrPkucrKMXgpBVM0Jt">Compliance</span></td>
+      </tr>
+      <tr data-page-node-id="aWdEG1DiFUQr6iusNNji2x">
+        <td class="no" data-page-node-id="XgbouOt6bhJiV6RaivQJxs"><span class="n2" data-page-node-id="b9PlTWCEFn5YsjIErCPLEN">6</span></td>
+        <td data-page-node-id="zaBdt8WJUuRjupzJxSEmfE">The account-deletion cooldown error (P483) is mixed into the sign-in page, hitting legitimate sign-in users; the copy "cannot be sign up" is semantically wrong</td>
+        <td data-page-node-id="x1GJwJzYPEDLC013KWBjpA">Move the cooldown notice into its own info bar (remaining days + two clear exits: Contact Support / Cancel), visually separated from the sign-in form</td>
+        <td class="basis" data-page-node-id="dLytvs4DzJ4dW6vm2LzVFo"><span class="tag" data-page-node-id="PoSW5ajGFlHtcRpA4YJB1t">#12 Multi-account &amp; Identity</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer data-page-node-id="Swf2FJyH0UoKokpsrAY21J">WAHDA · PAGE-BY-PAGE REDESIGN · SIGN-UP FLOW · Based on the Top 20 Improvements</footer>
+</div>
+</body>
+</html>

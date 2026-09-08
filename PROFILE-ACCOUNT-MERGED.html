@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="7uPR73mLTVYSMfoYdQfGey">
+<head data-page-node-id="gjWj7OFghglzVtxqfWQHKz">
+<meta charset="utf-8" data-page-node-id="0EtqrUzzPRT3N8HRrwB4Vy">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="TA2w33MSP519tlFXNfqCHd">
+<title>个人主页&账号切换 · P001×P003×P004 合并 · 前后对比</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:26px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+  .duo{display:flex; gap:28px; align-items:flex-start; justify-content:center; flex-wrap:wrap;}
+  .col{flex:0 1 460px; min-width:380px;}
+  .col-head{font-size:19px; font-weight:800; padding:12px 16px; border-radius:12px; margin-bottom:14px; text-align:center;}
+  .col-head.before{background:#fdeeee; color:#b03030; border:1px solid #f3caca;}
+  .col-head.after{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .shot{position:relative; border-radius:18px; overflow:hidden; box-shadow:0 8px 28px rgba(20,21,26,.12); background:#fff; width:352px; margin:0 auto;}
+  .shot img{display:block; width:352px; height:auto;}
+  .dot{position:absolute; width:30px; height:30px; border-radius:50%;
+       display:flex; align-items:center; justify-content:center;
+       color:#fff; font-size:15px; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.35);
+       border:2.5px solid #fff; transform:translate(-50%,-50%); cursor:default;}
+  .dot.red{background:var(--red);}
+  .dot.green{background:var(--green);}
+  .legend{margin-top:14px; font-size:14.5px; color:var(--sub); line-height:1.9; padding:0 6px;}
+  .legend b{color:var(--ink);}
+  .legend .n{display:inline-flex; width:21px; height:21px; border-radius:50%; color:#fff; font-size:12px;
+             align-items:center; justify-content:center; margin-right:7px; vertical-align:-4px; font-weight:800;}
+  .legend.red .n{background:var(--red);}
+  .legend.green .n{background:var(--green);}
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:280px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  .tag.new{background:#e8f7ef; color:#0a7a44;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+
+  .extra{margin-top:40px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 26px 18px;}
+  .extra-t{font-size:19px; font-weight:800; display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .extra-t span{font-size:12.5px; font-weight:700; color:#0a7a44; background:#e8f7ef; border-radius:6px; padding:2px 9px; white-space:nowrap;}
+  .extra-sub{font-size:13.5px; color:var(--sub); margin:8px 0 16px; line-height:1.7; max-width:960px;}
+  .ex-row{display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;}
+  .ex-shot{width:352px; margin:0;}
+  .ex-shot svg{display:block; border-radius:18px;}
+  .ex-cap{font-size:13px; color:#9aa0ac; text-align:center; margin-top:10px; letter-spacing:.02em;}
+  .ex-row .legend{flex:1 1 320px; min-width:300px; margin-top:4px;}
+</style>
+</head>
+<body data-page-node-id="pmSwzVgC20zeV39WQu71Kz">
+<div class="wrap" data-page-node-id="j5B4AEqAlyRqELEBTetE29">
+  <header data-page-node-id="3ARCkn46xr4IHJwEve8YJ1">
+    <div class="kicker" data-page-node-id="JLvJBXO7vcqWz09WPJ8ahD">WAHDA · 交互优化 · P001 × P003 × P004 合并 · 前后对比</div>
+    <h1 data-page-node-id="JFHSLUAcdZXHjFbvKVZ7XB">个人主页&amp;账号切换</h1>
+    <div class="meta" data-page-node-id="FBfL3ht4JD2bPxqiapLz7d">来源:UI Design - Summary.pdf(Figma 导出)· P001(Personal 账号态 · 账号弹窗)/ P003(创作者主页 · 账号弹窗)/ P004(主页内容质量 · 已发布 Posts)为同一「个人主页 × 账号切换」场景的同源截稿,内容重复故合并:以 P003 前后对比为主体,并入 P001/P004 独有优化点 · 依据:《20 大改进点》+ V4 分析报告 + P002 用户新指令(固定底栏 / Tab 徽章)· 2026-09-08</div>
+  </header>
+
+  <div class="duo" data-page-node-id="JPeHZPoesVAsz6EY6xcxTz">
+    <!-- ============ 左:当前 ============ -->
+    <section class="col" data-page-node-id="tFJRf8Q6Iwu01mwOZo0NQh">
+      <div class="col-head before" data-page-node-id="bpZj8Puj4Vgsf5zfuCOUAM">当前设计 · Figma P003(同源 P001/P004)</div>
+      <div class="shot" data-page-node-id="yGq00mey0LEhvsZC4nkIET">
+        <img src="pages/P003.png" alt="P003 当前设计" data-page-node-id="rVDl5I900EdYC9o8uaU2YD">
+        <span class="dot red" style="left:14%; top:15.5%;" data-page-node-id="Qzs8JrhziYL1jryylO2Z3q">1</span>
+        <span class="dot red" style="left:34%; top:22.7%;" data-page-node-id="2U1ybUCElCS206S9Wzr5GI">2</span>
+        <span class="dot red" style="left:30%; top:28.7%;" data-page-node-id="5SBo6tnrXBmvKiJtp7tWV5">3</span>
+        <span class="dot red" style="left:11%; top:34.5%;" data-page-node-id="NFtIzGCn0x6b1ob4EONW6f">4</span>
+        <span class="dot red" style="left:32%; top:59.7%;" data-page-node-id="nqTRXAD41liNNHaTf14CsD">5</span>
+        <span class="dot red" style="left:88%; top:72%;" data-page-node-id="N7uYHYTROi7hh2NtIB47Xs">6</span>
+        <span class="dot red" style="left:30%; top:90.3%;" data-page-node-id="OBwCsLbHXwkyPKNASZ5keH">7</span>
+      </div>
+      <ul class="legend red" style="list-style:none;" data-page-node-id="JnWA6Wt1cfBFKoi8qv2qtt">
+        <li data-page-node-id="Gv7WQAlHqpxhhPbaAD4pd4"><span class="n" data-page-node-id="RnN4l2XTqFtEBJ65p36Kqs">1</span><b data-page-node-id="5YFFvyMHBwBcFEH9HxvHcZ">"Post your first note" 气泡遮挡头像</b>与月亮徽章</li>
+        <li data-page-node-id="Fgk3XgjnZcpebKN90xslyL"><span class="n" data-page-node-id="3YzfmcF77sJcQeVYBNmOGb">2</span><b data-page-node-id="AaWqW9Q11d6Bx9hOFQzvWO">"2.4K follower"</b> 未用复数、大小写不规范</li>
+        <li data-page-node-id="4TWXQTif2Maf2PJkk5vHIC"><span class="n" data-page-node-id="YlJz8sBOQ4ppYruAbWCCNF">3</span><b data-page-node-id="iWkI9UYYPdilVxqg0HTMKN">Bio 仍为 Lorem Ipsum</b> 占位文本</li>
+        <li data-page-node-id="0CU8cBnSzIXjgrVm5qtuq3"><span class="n" data-page-node-id="hSC0Y7zGjIN00ZV2RMHqfI">4</span><b data-page-node-id="mSa1lCOnPfJ6OPbaLa3iGL">位置仅显示 London</b>,无国家、无可见性档位</li>
+        <li data-page-node-id="WyI8rDsYrEPDo2P6BO1aHh"><span class="n" data-page-node-id="jn3GQGwFHCV2SAlIVALlhl">5</span><b data-page-node-id="P5UPn9MimoheNyiENGG1BI">弹窗无当前账号标识</b>;顶栏(Leslie Alexander)与 Creator 账号(Siti Mariam)身份不一致</li>
+        <li data-page-node-id="GFlbX4gECqx9bG7GhuvMUx"><span class="n" data-page-node-id="CEsUFJQahqNVkuEyqEL5UG">6</span><b data-page-node-id="Sy8HKm5j5iIhH54T4ZKru4">未读为纯文字堆叠</b>("8 Chats / 10 Notifications"),层级弱、不醒目</li>
+        <li data-page-node-id="Q10lHUlE0TpRiCXQO6uiao"><span class="n" data-page-node-id="Ljanv2DHk3YpXFZ95xf1Ns">7</span><b data-page-node-id="MKLuMB6IO9QUS2Ym2RqCnt">Add Account 无说明</b>,不知可加什么账号</li>
+      </ul>
+    </section>
+
+    <!-- ============ 右:优化后 ============ -->
+    <section class="col" data-page-node-id="CDrUWxRYDKERHvDomQMlGk">
+      <div class="col-head after" data-page-node-id="okm8SgSZscRtV69TytxpBJ">优化后 · 合并重绘示意</div>
+      <div class="shot" data-page-node-id="EbEU4Fkx6mucldSfIOO5gn">
+        <svg viewBox="0 0 750 1624" width="352" xmlns="http://www.w3.org/2000/svg" style="display:block;" data-page-node-id="TdODuYTeMz8bhregYDueiU">
+          <defs data-page-node-id="UdcXDyGZaL71yW6nuNHMbs">
+            <linearGradient id="av1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="2W9FfabPpmfcDRetB9vCLE">
+              <stop offset="0" stop-color="#8e7cf3" data-page-node-id="sv4SuOSL9WPOs8D2GztHQr"/><stop offset="1" stop-color="#5a4bd1" data-page-node-id="PeA9UCH8eKRWBh9zPHSwWC"/>
+            </linearGradient>
+            <linearGradient id="av2" x1="0" y1="0" x2="1" y2="1" data-page-node-id="8sIiCUJ7T2WYuHocU5sdSD">
+              <stop offset="0" stop-color="#f2a6a0" data-page-node-id="Ys7b3po8BOAR05wp5EyckM"/><stop offset="1" stop-color="#d96a62" data-page-node-id="9XRgA8YRF3LgaIbQwotsJ1"/>
+            </linearGradient>
+            <linearGradient id="av3" x1="0" y1="0" x2="1" y2="1" data-page-node-id="0Mr6ZfkcwCKB9lgIKtLMpg">
+              <stop offset="0" stop-color="#7cb8f2" data-page-node-id="vIpwDAwS5JT9VFpoWBoKwJ"/><stop offset="1" stop-color="#3b82f6" data-page-node-id="UMeJCYTZsCumBtTSCiRwW4"/>
+            </linearGradient>
+            <linearGradient id="av4" x1="0" y1="0" x2="1" y2="1" data-page-node-id="ONHz93PNXbq8q8gOeWiKb4">
+              <stop offset="0" stop-color="#f2c99b" data-page-node-id="DbJxY0cu4gvwbweuzOdct4"/><stop offset="1" stop-color="#d99a4e" data-page-node-id="jtjf559NUnRe7Hq2sAxU9N"/>
+            </linearGradient>
+          </defs>
+
+          <rect width="750" height="1624" fill="#ffffff" data-page-node-id="D7V5IRKQKucGEQOGizPD8D"/>
+
+          <!-- 状态栏 -->
+          <text x="55" y="52" font-size="28" font-weight="600" fill="#111" data-page-node-id="CxKA8YwTCQEbfCyWhLyzZd">9:41</text>
+          <g fill="#111" data-page-node-id="ONVWqcFYkBamriq7FBDm4V">
+            <rect x="596" y="30" width="6" height="14" rx="2" data-page-node-id="xS8z0BMf7czBjYIB0CkyUC"/><rect x="606" y="25" width="6" height="19" rx="2" data-page-node-id="BynRwAbK2gKNDxEPFWUmog"/>
+            <rect x="616" y="20" width="6" height="24" rx="2" data-page-node-id="H1ko2ps9XiFjcVnrIR9pXE"/><rect x="626" y="15" width="6" height="29" rx="2" data-page-node-id="bHRuHYwGEXioWyNaGUUBTr"/>
+            <path d="M652 34 a20 20 0 0 1 28 0 l-5 6 a13 13 0 0 0 -18 0 z" transform="translate(0,-8)" data-page-node-id="QHggWPAHHloQLZDoEyiJ9a"/>
+            <rect x="692" y="20" width="34" height="18" rx="6" fill="none" stroke="#111" stroke-width="3" data-page-node-id="mLmJjgYtraZINLyAxsoSWz"/>
+            <rect x="696" y="24" width="22" height="10" rx="3" data-page-node-id="WEvBDXT9KYt4hkbfZB8jaf"/>
+          </g>
+
+          <!-- Header -->
+          <text x="50" y="128" font-size="46" font-weight="800" fill="#14151a" data-page-node-id="CHcTCbjgOB1mw3FmWqqxCW">Leslie Alexander</text>
+          <path d="M478 108 l14 16 14 -16" fill="none" stroke="#14151a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="TZUGJhtYkQktNDjaGBsUVB"/>
+          <g stroke="#14151a" stroke-width="4.5" fill="none" data-page-node-id="p89yQ6fOW51foBs6tCEVGJ">
+            <circle cx="680" cy="114" r="22" data-page-node-id="Th6K4YMve3Y71FYTgejZ6q"/>
+            <circle cx="680" cy="114" r="7" data-page-node-id="VwBuemsqXOKUYnaFo5txD5"/>
+            <line x1="680" y1="84" x2="680" y2="94" data-page-node-id="4OgOyMthjcDQ1dvRZbGZkg"/><line x1="680" y1="134" x2="680" y2="144" data-page-node-id="GSbo4kvm8kpLfFHIOBpD44"/>
+            <line x1="650" y1="114" x2="660" y2="114" data-page-node-id="kmE3ENrk9DVwOB6h39RVvb"/><line x1="700" y1="114" x2="710" y2="114" data-page-node-id="0bZAwRSU4K0xP3vrhLAyTi"/>
+            <line x1="659" y1="93" x2="666" y2="100" data-page-node-id="EHmwcEFACptdvDaNPx5pmB"/><line x1="694" y1="128" x2="701" y2="135" data-page-node-id="ocOYBR79N1VTUvnwMiIIh6"/>
+            <line x1="701" y1="93" x2="694" y2="100" data-page-node-id="FK2bYbvaBJNaDFAFgT0VH7"/><line x1="666" y1="128" x2="659" y2="135" data-page-node-id="h7ttlM8FLESfxj8Vp0QG7e"/>
+          </g>
+
+          <!-- 头像(月亮徽章在外沿,不遮挡)-->
+          <circle cx="100" cy="255" r="58" fill="url(#av1)" data-page-node-id="deOhMADz1AKGt6zmslGAHa"/>
+          <text x="100" y="272" font-size="46" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="BZhyt4GLWgQlXgOuT17Hm6">S</text>
+          <g data-page-node-id="Q2uygnEbS3XZtqTgncAa64">
+            <circle cx="46" cy="205" r="22" fill="#1a1a28" stroke="#fff" stroke-width="3" data-page-node-id="97SIqfhcbtNa9xNfkQ3dDx"/>
+            <path d="M52 193 a13 13 0 1 0 8 22 a11 11 0 0 1 -8 -22 z" fill="#f2c94c" data-page-node-id="oEzxNyJPhDGPHC2D3lC6mZ"/>
+          </g>
+          <circle cx="148" cy="302" r="21" fill="#6C5CE7" stroke="#fff" stroke-width="4" data-page-node-id="Te4LchXdZ8xoJiYjNPcymh"/>
+          <path d="M141 302 h14 M148 295 v14" stroke="#fff" stroke-width="4" stroke-linecap="round" data-page-node-id="afBXfn2r4LMymGVUOF0S0f"/>
+
+          <!-- Creator 徽章 + 身份 -->
+          <g data-page-node-id="0NgY2vfL33BEmVU9vorJiv">
+            <rect x="190" y="172" width="238" height="46" rx="10" fill="#e8f7ef" stroke="#0a8f4c" stroke-width="2" data-page-node-id="q8FJWdInmk1Xigs8iNS8hm"/>
+            <path d="M216 184 l4.5 9 10 1.5 -7 7 1.6 10 -9.1 -4.8 -9.1 4.8 1.6 -10 -7 -7 10 -1.5 z" fill="#0a8f4c" data-page-node-id="eFt8KSXCkmz5HFB5SYy0Xy"/>
+            <text x="238" y="203" font-size="22" font-weight="700" fill="#0a8f4c" data-page-node-id="IZMyQsimKXIqmx2mGCoPzg">Creator Account</text>
+          </g>
+          <text x="190" y="266" font-size="33" font-weight="800" fill="#14151a" data-page-node-id="vmynhEYK4nRfHPVcukgJVC">Leslie Alexander</text>
+          <text x="190" y="308" font-size="26" font-weight="700" fill="#14151a" data-page-node-id="BtuOhc3FsmnRryHKNBlrPW">2.4K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="JgNRY8s4r2TdVpQF3WHbBY">followers</tspan></text>
+          <text x="370" y="308" font-size="26" font-weight="700" fill="#14151a" data-page-node-id="xaihE7M20GUqBTTul9aLVB">2.1K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="3nEvsDZfEuIn8Mw33MV6Ku">following</tspan></text>
+
+          <!-- Bio + 位置 + 可见性 -->
+          <text x="50" y="356" font-size="24" fill="#3c4048" data-page-node-id="pOH5dNiy7PsAFOs70Nlwz3">Sharing faith, food &amp; daily life from London <tspan fill="#6C5CE7" font-weight="600" data-page-node-id="r2BTNBiF3EFHlmiG8xuu4B">more</tspan></text>
+          <g data-page-node-id="CyUbcdCZcATcjvfMMH7ggF">
+            <path d="M60 390 c0 -12 9 -20 19 -20 s19 8 19 20 c0 14 -19 30 -19 30 s-19 -16 -19 -30 z" fill="none" stroke="#6C5CE7" stroke-width="3.5" data-page-node-id="wdBbHFX91DfbPLn6g851ZC"/>
+            <circle cx="79" cy="389" r="6" fill="#6C5CE7" data-page-node-id="GrUpejvQ5gEoHyXG19tgk0"/>
+            <text x="96" y="398" font-size="24" fill="#555" data-page-node-id="16b41F5BKdhHgsSPCGTfd0">London, United Kingdom</text>
+          </g>
+          <g data-page-node-id="E2iJLBFgh6XPUroSBv3Yh4">
+            <circle cx="556" cy="390" r="11" fill="none" stroke="#0a8f4c" stroke-width="3" data-page-node-id="6PiJiw3E3GCbgtXudAYJXD"/>
+            <circle cx="556" cy="390" r="4" fill="#0a8f4c" data-page-node-id="YB2ud4Ksk0YCkuDweq91iS"/>
+            <path d="M539 390 q17 -14 34 0 q-17 14 -34 0 z" fill="none" stroke="#0a8f4c" stroke-width="3" stroke-linejoin="round" data-page-node-id="c5U1CAjPzxmTYygtsgQVGo"/>
+            <text x="576" y="398" font-size="21" fill="#0a8f4c" font-weight="600" data-page-node-id="siJ606Z1Fsb8VDeroxZmll">Everyone</text>
+          </g>
+
+          <!-- 新手引导条(不遮挡任何内容)-->
+          <g data-page-node-id="FCQqDh2TWGEvYLreybGZgn">
+            <rect x="50" y="436" width="650" height="64" rx="16" fill="#f1f0f5" data-page-node-id="9RzivuSRqAOdpPgQTQV9xa"/>
+            <circle cx="88" cy="468" r="16" fill="#1a1a28" data-page-node-id="Yjc2esCxBNeFYadh3qQyWm"/>
+            <path d="M93 458 a10 10 0 1 0 6 17 a8.5 8.5 0 0 1 -6 -17 z" fill="#f2c94c" data-page-node-id="97UdvnMtrKN0QEUd8JiHNL"/>
+            <text x="118" y="477" font-size="24" font-weight="600" fill="#14151a" data-page-node-id="lihQbmrFKkCy7ox8cb0AIE">Post your first note</text>
+            <text x="356" y="477" font-size="21" fill="#8a8f9a" data-page-node-id="z7JvdxYEcCFQQ4uhCRUmDF">· Tap to start</text>
+            <g stroke="#9aa0ac" stroke-width="3.5" stroke-linecap="round" data-page-node-id="qtaAaWCBC84qrCNfSjZSa0">
+              <line x1="656" y1="458" x2="672" y2="474" data-page-node-id="jLwtiOPgTwClSNd15krqlW"/><line x1="672" y1="458" x2="656" y2="474" data-page-node-id="mohDP32Jy0wlhrTtdT4GND"/>
+            </g>
+          </g>
+
+          <!-- Performance Analytics -->
+          <rect x="50" y="520" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2" data-page-node-id="0wmrnSakroGvOyZ2LbLL0n"/>
+          <text x="80" y="562" font-size="27" font-weight="800" fill="#14151a" data-page-node-id="2Ux2EkiQAgeh2ydCHpx6tf">Performance Analytics</text>
+          <text x="670" y="562" font-size="20" fill="#9aa0ac" text-anchor="end" data-page-node-id="iT7sFJCD5qsA5Gvo2IQfbN">in the last 30 days</text>
+          <line x1="80" y1="582" x2="670" y2="582" stroke="#ececf1" stroke-width="2" data-page-node-id="V5fXTL0xq09jHICQFQxYVv"/>
+          <text x="115" y="632" font-size="34" font-weight="800" fill="#14151a" data-page-node-id="uVGlXU0Ke8zZq5L7R8Izpc">15.4K</text>
+          <text x="115" y="658" font-size="20" fill="#9aa0ac" data-page-node-id="EII7RegRkJz5C37J1UAiuN">Impressions</text>
+          <text x="330" y="632" font-size="34" font-weight="800" fill="#0a8f4c" data-page-node-id="V2zPTufwfJXmwdtJNgzhzT">+98</text>
+          <text x="330" y="658" font-size="20" fill="#9aa0ac" data-page-node-id="pLEVmWxXJA933GkJP4CXA3">Followers</text>
+          <text x="530" y="632" font-size="34" font-weight="800" fill="#14151a" data-page-node-id="TJicuJHbRD4fEhCFq40BAP">3.2%</text>
+          <text x="530" y="658" font-size="20" fill="#9aa0ac" data-page-node-id="9pjEephy6foaxJQbn6MsjZ">Engagement</text>
+
+          <!-- ============ Accounts 半屏弹窗(底部固定导航可见)============ -->
+          <rect x="0" y="696" width="750" height="734" rx="36" fill="#ffffff" stroke="#e8e8ee" stroke-width="2" data-page-node-id="qVZv5HKBuPs4MkpR9K5UTn"/>
+          <rect x="0" y="1400" width="750" height="30" fill="#ffffff" data-page-node-id="n0NucsySb2McohpLh9oVws"/>
+          <rect x="307" y="722" width="136" height="10" rx="5" fill="#d9d9de" data-page-node-id="GOp6jOF5oyiErBuOyCTS6t"/>
+          <text x="375" y="800" font-size="40" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="PQW37X9RmXAXYJlD52TR1x">Accounts</text>
+
+          <text x="50" y="856" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="bH72SQtr027eZFy8ghZCo5">Creator Account</text>
+          <circle cx="100" cy="930" r="44" fill="url(#av2)" data-page-node-id="EJ8BpMwiDLE4uzJ9XJKKjs"/>
+          <text x="100" y="943" font-size="34" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="69sFjZaUOVVHl0qATQVxTv">S</text>
+          <text x="170" y="918" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="1lS2MnX0jbMLfPZipzPueF">Siti Mariam</text>
+          <text x="170" y="954" font-size="22" fill="#9aa0ac" data-page-node-id="Y9dVM1NhArgYmk0RC04wdl">Creator</text>
+          <rect x="536" y="898" width="164" height="50" rx="25" fill="#e8f7ef" stroke="#0a8f4c" stroke-width="2.5" data-page-node-id="ezq7BACQ8OEuKW0BnDSAGn"/>
+          <path d="M562 923 l7 7 13 -14" stroke="#0a8f4c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="aqdyk8UQbb2RCdGnIQaN0k"/>
+          <text x="586" y="931" font-size="22" font-weight="700" fill="#0a8f4c" data-page-node-id="hykS3XxQH6GVJSF8gSLTs2">Current</text>
+
+          <text x="50" y="1014" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="TBkgjnUQ94LgJWoDQ5d2XO">Entity Accounts</text>
+          <circle cx="100" cy="1082" r="44" fill="url(#av3)" data-page-node-id="WiBH9LZS0RDLsOnDJH3zbt"/>
+          <text x="100" y="1095" font-size="34" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="HHOGNmGGpiApeU9AFhngOk">R</text>
+          <text x="170" y="1070" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="H3MU5FpG8VXGTbxQ4Ji50V">Ricardo Senna</text>
+          <text x="170" y="1106" font-size="22" fill="#9aa0ac" data-page-node-id="9fIJ6aSEskQ7hu2k899ZOB">Organization</text>
+          <g data-page-node-id="pp6t8DlC1r1AfJDWRkBzsH">
+            <rect x="540" y="1044" width="72" height="40" rx="20" fill="#eef2f7" data-page-node-id="hq3Ip8LcqGJcjtdIRGJWN1"/>
+            <path d="M562 1056 a9 9 0 0 1 9 9 a9 9 0 0 1 -9 9 h-6 l-6 6 v-15 a9 9 0 0 1 3 -9 z" fill="#3b82f6" data-page-node-id="4MVpsvnTqF7zIwdptwj7RI"/>
+            <text x="596" y="1071" font-size="21" font-weight="700" fill="#3b82f6" data-page-node-id="XBMX9eoBFojVrhMLy2dEkj">8</text>
+            <rect x="622" y="1044" width="78" height="40" rx="20" fill="#eef2f7" data-page-node-id="nHgg4DYoSUIktNKNNEVjKd"/>
+            <path d="M646 1054 c0 -4 3 -7 7 -7 s7 3 7 7 v5 l4 6 h-22 l4 -6 z" fill="#d64545" data-page-node-id="t3FIbsAirAUFr1t3drY3z1"/>
+            <path d="M650 1068 c0 3 2 5 3 5 s3 -2 3 -5" fill="none" stroke="#d64545" stroke-width="2.5" stroke-linecap="round" data-page-node-id="dpY5kP23xUCdkSjbZqQZG3"/>
+            <text x="668" y="1071" font-size="21" font-weight="700" fill="#d64545" data-page-node-id="Q35DSOUF7vxiofLt2G0qZa">10</text>
+          </g>
+
+          <circle cx="100" cy="1192" r="44" fill="url(#av4)" data-page-node-id="Syt2xBUiYN92CqBrTsZ8mt"/>
+          <text x="100" y="1205" font-size="34" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="mvw5TO6lC0cchCRNJQFUdG">B</text>
+          <text x="170" y="1180" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="G6Q1zPXhYa5QYHFXuNZo9E">The Baklava Hut</text>
+          <text x="170" y="1216" font-size="22" fill="#9aa0ac" data-page-node-id="PR3zRhR4F0klYPv8VdNrKv">Business</text>
+
+          <circle cx="100" cy="1298" r="44" fill="#fafafa" stroke="#c2c2cc" stroke-width="3" stroke-dasharray="7 7" data-page-node-id="ij3H2TQgLlM9hyBacK3XYW"/>
+          <path d="M100 1278 v40 M80 1298 h40" stroke="#8a8f9a" stroke-width="4.5" stroke-linecap="round" data-page-node-id="79UAGmMsRloy5ZqGARA2Gp"/>
+          <text x="170" y="1288" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="sG4UeXPFOP8UhAD6b437cH">Add Account</text>
+          <text x="170" y="1324" font-size="21" fill="#9aa0ac" data-page-node-id="fiy9ci7IXjx5GpRXYBaOqB">Business or Organization · KYB required</text>
+
+          <!-- ============ 固定底部导航(微信式)+ Tab 徽章 ============ -->
+          <rect x="0" y="1430" width="750" height="194" fill="#16161f" data-page-node-id="8rn4sapSR8DyKXD1hieEfs"/>
+          <line x1="0" y1="1430" x2="750" y2="1430" stroke="#2a2a38" stroke-width="2" data-page-node-id="1tNR8NT9HziHTWA2CrHia8"/>
+
+          <!-- Discover -->
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="9rDbt5NleKxPVdPo6Vjte7">
+            <circle cx="75" cy="1500" r="26" data-page-node-id="lcyKht1rU8KymZRnXIT9cJ"/>
+            <path d="M64 1511 l8 -16 14 -6 -8 16 z" fill="#8a8f9a" stroke="none" data-page-node-id="7Wuza3OKyTFYG8KbwhokFM"/>
+          </g>
+          <text x="75" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="DuZ8rfIwGGhesPyBNCxcKb">Discover</text>
+
+          <!-- Places(红点)-->
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="Bd49B8LxNXRMj3vFJL0l0j">
+            <path d="M225 1478 c-13 0 -22 9 -22 21 c0 15 22 33 22 33 s22 -18 22 -33 c0 -12 -9 -21 -22 -21 z" data-page-node-id="o2y15ItprjErTFeJBPHivk"/>
+            <circle cx="225" cy="1499" r="7" fill="#8a8f9a" stroke="none" data-page-node-id="tyAQleQqn7sTDofwK0Ntwg"/>
+          </g>
+          <circle cx="243" cy="1482" r="8" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="pfig0JzblS4IukJFSxGtXk"/>
+          <text x="225" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="GxtZfZ7MUDYTwPkXH7GC9g">Places</text>
+
+          <!-- Chats(数字徽章)-->
+          <path d="M351 1484 a24 24 0 0 1 48 0 a24 24 0 0 1 -24 24 h-12 l-12 10 v-16 a24 24 0 0 1 0 -18 z" fill="none" stroke="#8a8f9a" stroke-width="4" stroke-linejoin="round" data-page-node-id="jp7REg3YnG0dDQYUzlvQBg"/>
+          <circle cx="398" cy="1478" r="17" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="j5ZRyF2dvK8SXnb7FeYGDG"/>
+          <text x="398" y="1486" font-size="20" font-weight="800" fill="#fff" text-anchor="middle" data-page-node-id="OBnhB1bePAfoOwgbROuIFU">3</text>
+          <text x="375" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="oXYGzNACts3nKKxkrQZxRo">Chats</text>
+
+          <!-- Feeds(红点)-->
+          <g fill="#8a8f9a" data-page-node-id="Gu6FCEUkl4E0Fv9LGVfyCb">
+            <rect x="508" y="1480" width="34" height="8" rx="4" data-page-node-id="qHHL6wNpmI1vLXpjISizJc"/><rect x="508" y="1496" width="34" height="8" rx="4" data-page-node-id="g8aAgbpmAGC0umiXBoekET"/><rect x="508" y="1512" width="22" height="8" rx="4" data-page-node-id="u1o26YD5bNtAY52MW30iHm"/>
+          </g>
+          <circle cx="545" cy="1482" r="8" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="5TFSfpFcUtyVmE2zCg5pDi"/>
+          <text x="525" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="aXUZqOBQbdjYs9bBqN8YLP">Feeds</text>
+
+          <!-- My Hub(active)-->
+          <circle cx="675" cy="1500" r="15" fill="none" stroke="#22c55e" stroke-width="4" data-page-node-id="jcZWUGUlMJ8HBCdB9MSc8B"/>
+          <path d="M652 1532 a23 16 0 0 1 46 0" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" data-page-node-id="FVbrRNEppKy20bVRuvZfWo"/>
+          <text x="675" y="1572" font-size="20" fill="#22c55e" font-weight="700" text-anchor="middle" data-page-node-id="4OwbGO07ZrjCIjJWC71ScF">My Hub</text>
+
+          <!-- 优化点绿标 -->
+          <g font-size="22" font-weight="800" text-anchor="middle" data-page-node-id="JneVvQ0Lx1qTF49x1DDFje">
+            <circle cx="330" cy="300" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="hUIrPBssrgG7QdKNrIpNgW"/><text x="330" y="308" fill="#fff" data-page-node-id="4CS62JEn6JA3eAhOTEohkw">1</text>
+            <circle cx="712" cy="382" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="UJZLtp6Z4YAzA9Pf8CxBUw"/><text x="712" y="390" fill="#fff" data-page-node-id="2hqVKeMb24zWVXKRUU4jyc">2</text>
+            <circle cx="716" cy="468" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="Ri4iFL8Fel0lOG0g6GW43J"/><text x="716" y="476" fill="#fff" data-page-node-id="fXxHuoSC1kl1w5gxP8J4IJ">3</text>
+            <circle cx="722" cy="923" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="xjZBpl02kYwJhqdXZ44TKR"/><text x="722" y="931" fill="#fff" data-page-node-id="ssvcE4Spa4DPEPMmVIfJsx">4</text>
+            <circle cx="716" cy="1064" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="SmRuFbaz04yA9MllEgSE6R"/><text x="716" y="1072" fill="#fff" data-page-node-id="LvWugBzpIB8S7EwncXkP2U">5</text>
+            <circle cx="612" cy="1316" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="z19LNyCboj86LMEzFz5Sab"/><text x="612" y="1324" fill="#fff" data-page-node-id="C0uOwbL8T86IZ5AdUDkriF">6</text>
+            <circle cx="712" cy="1490" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="QNmFqxKT5fvKk4DWPLWS5o"/><text x="712" y="1498" fill="#fff" data-page-node-id="BB1Rgis4tRh62UNFHXpXEg">7</text>
+          </g>
+        </svg>
+      </div>
+      <ul class="legend green" style="list-style:none;" data-page-node-id="l4vWvTUaM9KS2DXRAv91GK">
+        <li data-page-node-id="hwiMgAbSHRwmyyorpJNiZk"><span class="n" data-page-node-id="n7nRmQqs07HIG9PClIZbaq">1</span>followers 复数修正;Bio 换<b data-page-node-id="WXBCUQWF4AdS5Ik2miA3Gk">真实示例文案</b></li>
+        <li data-page-node-id="hyJxi2NqoGM36PD6ho8ReE"><span class="n" data-page-node-id="EU0Jy07L8O4HOU6PzHBX29">2</span>位置展示<b data-page-node-id="vdY79X58DSmiadc2xSjCgm">国家 + 城市</b>,标注可见档位(Everyone)</li>
+        <li data-page-node-id="CUEmMGdpuBgTwZt7GfanbX"><span class="n" data-page-node-id="XcLRAE0LBbuIvVkkFGkj6R">3</span>引导改为头像下方<b data-page-node-id="oPDXMCVAHBcCp5d594c3NS">独立可关闭提示条</b>,零遮挡</li>
+        <li data-page-node-id="ObJHdlFXYn8GHRwM8X0WiO"><span class="n" data-page-node-id="homb8pZsC5ezoTLr3yU8dF">4</span>当前账号加 <b data-page-node-id="djGjHuKEk2P9w9NELDHDJ9">✓ Current 徽章</b>;建立单一身份源,顶栏/弹窗/主页一致</li>
+        <li data-page-node-id="gAoKAQ7VCTcz1QoIV7GPFG"><span class="n" data-page-node-id="Cc6eroEqs8jRDT8EokA8V3">5</span>Entity 未读改<b data-page-node-id="7T1k9HWwQQ3lUnHsPPUrDo">数字徽章</b>,并与底栏 Tab 徽章联动</li>
+        <li data-page-node-id="535NBPXApG8WevnIE9GUSO"><span class="n" data-page-node-id="yq2fy9PjVOz1Aa7lMn5sHm">6</span>Add Account 补<b data-page-node-id="Y2DbKRadvyQ6w0NaEqCRzC">KYB 门槛</b>副文案</li>
+        <li data-page-node-id="8w5yjgrU06nUHtHyIBmv2V"><span class="n" data-page-node-id="xpJL4Zbm5EO86vfMb2SEFJ">7</span><b data-page-node-id="tg86EeoeMolOjRNGoNjPQ2">固定底栏(微信式)</b>+ Tab 徽章:Chats 未读数 3、Places/Feeds 红点</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ============ 补充场景:弹窗关闭后完整主页内容区(P001/P004 同源)============ -->
+  <section class="extra">
+    <div class="extra-t">补充场景 · 弹窗关闭后的完整主页内容区<span>P001 / P004 同源 · 已并入</span></div>
+    <p class="extra-sub">主图为 Accounts 弹窗展开态;弹窗收起后向下滚动,即看到下方 Tabs + Drafts + 已发布 Posts 流(与右侧主图属同一页面,编号 ①–③ 见右侧说明)。</p>
+    <div class="ex-row">
+      <div>
+        <div class="shot ex-shot">
+          <svg viewBox="0 0 750 924" width="352" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(0,-700)">
+          <!-- 补充场景内嵌片段(来自 P004 优化稿) -->
+          <rect x="50" y="720" width="650" height="88" rx="20" fill="#f6f6f8" stroke="#ececf1" data-page-node-id="SIZVDi4sIWh0k6WqdGWil5"/>
+          <rect x="72" y="740" width="46" height="46" rx="12" fill="none" stroke="#14151a" stroke-width="3.5" data-page-node-id="iZIlY40yulIj7eCuX3JKoy"/>
+          <path d="M84 776 l24 -24 8 8 -24 24 -10 2 z" fill="#14151a" data-page-node-id="3iBsUvKN9ZNTD5X9Xf7mcu"/>
+          <text x="140" y="774" font-size="26" font-weight="600" fill="#14151a" data-page-node-id="8W4jAWCQgHTcRaSWCGco2o">Drafts &amp; Scheduled Post</text>
+          <circle cx="500" cy="764" r="18" fill="#6C5CE7" data-page-node-id="Z8IHsJnXQIBdiy6SedOziy"/>
+          <text x="500" y="772" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="tup1ijn0mvLRhAeVgnxHPU">10</text>
+          <path d="M655 764 h40 m-12 -12 l12 12 -12 12" stroke="#14151a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="DZH0Gt2983QrnXNFDKsTfj"/>
+
+          <!-- Tabs(完整无断裂)-->
+          <text x="50" y="868" font-size="27" font-weight="800" fill="#14151a" data-page-node-id="yvAB4qEXtKoNMPh0E1lOH6">Posts</text>
+          <rect x="50" y="884" width="88" height="5" rx="2.5" fill="#6C5CE7" data-page-node-id="uOiMq7O0V8I0Q0AxMSoAm5"/>
+          <text x="190" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="a4sQ1OYBUWRB114p1MpES6">Saved</text>
+          <text x="320" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="PzV5xGZ9gqTNHUtEuQ259m">Community</text>
+          <text x="530" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="G6im4IF5MZeP6jOXgeDB4J">Events</text>
+
+          <!-- Feed 卡(乱码修复)-->
+          <rect x="50" y="920" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2" data-page-node-id="ULBAwbatWuGQIMSeTgL95x"/>
+          <circle cx="90" cy="972" r="30" fill="url(#av1)" data-page-node-id="4LhsXFBjXPAiRP5FVlazwi"/>
+          <text x="136" y="966" font-size="24" font-weight="700" fill="#14151a" data-page-node-id="XI32Bh5axA34upPvBE4taK">Leslie Alexander</text>
+          <circle cx="360" cy="958" r="12" fill="#3b82f6" data-page-node-id="OgM4qRdqCriUY4kHQUKKtE"/>
+          <path d="M354 958 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="AU6DvD0MlzlGzNwP3u7dPm"/>
+          <text x="382" y="966" font-size="20" fill="#9aa0ac" data-page-node-id="l8mVGR67V2NITmvXiSF5s3">1h</text>
+          <path d="M672 948 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none" data-page-node-id="SQwgxdG3rTkdkz8tdcvyH7"/>
+          <text x="136" y="1012" font-size="22" fill="#3c4048" data-page-node-id="9O0w64sci9Vw8y8iCvDs0g">I just realized that there's an affordable</text>
+          <text x="136" y="1044" font-size="22" fill="#3c4048" data-page-node-id="6kVwhfbglV7QB6ar8YQqsR">decorative chandelier that's available…</text>
+
+          <!-- ============ 已发布 Posts 卡 ②（Leslie 已发布内容） ============ -->
+          <rect x="50" y="1100" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2"/>
+          <circle cx="90" cy="1152" r="30" fill="url(#av1)"/>
+          <text x="136" y="1146" font-size="24" font-weight="700" fill="#14151a">Leslie Alexander</text>
+          <circle cx="360" cy="1138" r="12" fill="#3b82f6"/>
+          <path d="M354 1138 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="382" y="1146" font-size="20" fill="#9aa0ac">2h</text>
+          <path d="M672 1128 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none"/>
+          <text x="136" y="1192" font-size="22" fill="#3c4048">Hosted iftar for the street last night —</text>
+          <text x="136" y="1224" font-size="22" fill="#3c4048">40 plates of lamb biryani, gone in an hour</text>
+
+          <!-- ============ 已发布 Posts 卡 ③（Leslie 已发布内容） ============ -->
+          <rect x="50" y="1270" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2"/>
+          <circle cx="90" cy="1322" r="30" fill="url(#av1)"/>
+          <text x="136" y="1316" font-size="24" font-weight="700" fill="#14151a">Leslie Alexander</text>
+          <circle cx="360" cy="1308" r="12" fill="#3b82f6"/>
+          <path d="M354 1308 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="382" y="1316" font-size="20" fill="#9aa0ac">5h</text>
+          <path d="M672 1298 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none"/>
+          <text x="136" y="1362" font-size="22" fill="#3c4048">Morning walk to the mosque for Fajr —</text>
+          <text x="136" y="1394" font-size="22" fill="#3c4048">sunrise over the Thames never gets old.</text>
+
+          <!-- ============ 固定底部导航(微信式)+ Tab 徽章 ============ -->
+          <rect x="0" y="1430" width="750" height="194" fill="#16161f" data-page-node-id="nWCAQTy5lrAx2tfLNqcAZx"/>
+          <line x1="0" y1="1430" x2="750" y2="1430" stroke="#2a2a38" stroke-width="2" data-page-node-id="uCceG66IMkmNcLqs9SBfE0"/>
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="9m8gT2NsiaW9jcI5H5RwTC">
+            <circle cx="75" cy="1500" r="26" data-page-node-id="iP1BnbEcOY59kLG13ecpwJ"/>
+            <path d="M64 1511 l8 -16 14 -6 -8 16 z" fill="#8a8f9a" stroke="none" data-page-node-id="MjUNvfuSMeQakzXOlGVeYH"/>
+          </g>
+          <text x="75" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="zEeY2LDuhLCajnGYkMzbSL">Discover</text>
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="1GIfSWymkX1xvmN1JwNn4m">
+            <path d="M225 1478 c-13 0 -22 9 -22 21 c0 15 22 33 22 33 s22 -18 22 -33 c0 -12 -9 -21 -22 -21 z" data-page-node-id="HqK8Ji5STQyGkRVWQAxRKU"/>
+            <circle cx="225" cy="1499" r="7" fill="#8a8f9a" stroke="none" data-page-node-id="6dRsoeDy2iBSc3r8IzFk9G"/>
+          </g>
+          <text x="225" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="odZWVHlFUTx4vY5BReGb8L">Places</text>
+          <path d="M351 1484 a24 24 0 0 1 48 0 a24 24 0 0 1 -24 24 h-12 l-12 10 v-16 a24 24 0 0 1 0 -18 z" fill="none" stroke="#8a8f9a" stroke-width="4" stroke-linejoin="round" data-page-node-id="BaywVhuBgS2DLAaQwAfjfC"/>
+          <circle cx="398" cy="1478" r="17" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="POc8pZW6Fy2BEvZAfff6Ct"/>
+          <text x="398" y="1486" font-size="20" font-weight="800" fill="#fff" text-anchor="middle" data-page-node-id="e7IslDghPUbJ9htoGDmc8V">3</text>
+          <text x="375" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="XWjsVVo3vmR4d5tNmEaySs">Chats</text>
+          <g fill="#8a8f9a" data-page-node-id="VcjNIXWZiuCCrgSgo3gVdy">
+            <rect x="508" y="1480" width="34" height="8" rx="4" data-page-node-id="WOGMFhr5Hg86xJFGn4hLu6"/><rect x="508" y="1496" width="34" height="8" rx="4" data-page-node-id="Xsg8DqHcj58rr6d3lXtGGj"/><rect x="508" y="1512" width="22" height="8" rx="4" data-page-node-id="0YZjG0lmaT6bTkFQK2oNe8"/>
+          </g>
+          <circle cx="545" cy="1482" r="8" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="75WBVnZvAOCQ9J9Sq5Yzvi"/>
+          <text x="525" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="a2U2CERDYymdV1js7Wq5q1">Feeds</text>
+          <circle cx="675" cy="1500" r="15" fill="none" stroke="#22c55e" stroke-width="4" data-page-node-id="Yg0wdLuyBFFwBEZEo1vzgx"/>
+          <path d="M652 1532 a23 16 0 0 1 46 0" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" data-page-node-id="XG9UhZh7t9unut52htkyUp"/>
+          <text x="675" y="1572" font-size="20" fill="#22c55e" font-weight="700" text-anchor="middle" data-page-node-id="VWRTEHWbSKdifXXuf54xcY">My Hub</text>
+            </g>
+
+            <g font-size="22" font-weight="800" text-anchor="middle">
+              <circle cx="712" cy="166" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3"/><text x="712" y="174" fill="#fff">1</text>
+              <circle cx="712" cy="88" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3"/><text x="712" y="96" fill="#fff">2</text>
+              <circle cx="712" cy="620" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3"/><text x="712" y="628" fill="#fff">3</text>
+            </g>
+          </svg>
+        </div>
+        <div class="ex-cap">弹窗关闭态 · 完整主页内容区(P001/P004 优化稿)</div>
+      </div>
+      <ul class="legend green" style="list-style:none;">
+        <li><span class="n">1</span>Tabs <b>完整无断字</b>:Posts / Saved / Community / Events 四高频 Tab,低频 Reviews 收入「More ⌄」,修正原稿 "Sav ed / Event s" 断字与第 5 Tab 截断(P001 · P004 同源)</li>
+        <li><span class="n">2</span><b>Drafts &amp; Scheduled Post</b> 入口卡常驻(当前 10),草稿 / 定时内容直达,发布计划不丢失(P004 内容模块)</li>
+        <li><span class="n">3</span>Posts 展示<b>已发布帖子流</b>:chandelier / iftar / mosque 三条真实已发布内容,文案校对零乱码;原稿 "thereˇs" 等乱码进入修复清单(用户指令)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 优化点清单 ============ -->
+  <section class="notes" data-page-node-id="JhXszYsy18Tn4NKdnn4KJN">
+        <h2 data-page-node-id="TC3OuWzb4pY3GUli22D9wo">优化点清单 · 模块化对照「20 大改进点」(P001 × P003 × P004 合并去重)</h2>
+    <div class="src" data-page-node-id="nfmaClOoL8e2BcrwAiC1wk">合并口径:P001/P003/P004 为同一「个人主页 × 账号切换」场景的同源截稿,本页以 P003(创作者主页)前后对比为主体,并入 P001(账号弹窗 Personal 态:Upgrade as Creator 降级)与 P004(主页内容质量:Tabs 断字 / Drafts / 已发布 Posts)独有优化点,同源问题去重合一。</div>
+    <table data-page-node-id="RkX9G41rCMffcqWQlWppBP">
+      <tr data-page-node-id="hFooD7Xla6I8pciTvPFS7i"><th style="width:44px;" data-page-node-id="EhrBnNYzgAVFl6AbFieyeY">#</th><th data-page-node-id="OQNmeM4WDM87Oq7evLPEs2">当前问题</th><th data-page-node-id="c7geRU72QCg5Kj7GPVLUUc">优化动作</th><th data-page-node-id="9xXacBYMdZRsSpVIDHbbM6">依据</th></tr>
+
+      <tr class="mod" data-page-node-id="modA1"><td colspan="4">模块 ① 头部身份与资料 · 主图绿点 1–2(P001 / P003 / P004 同源去重)</td></tr>
+      <tr data-page-node-id="nA1">
+        <td class="no" data-page-node-id="noA1"><span class="n2" data-page-node-id="n2A1">1</span></td>
+        <td data-page-node-id="pA1">"2.4K follower" 未用复数、大小写不规范;Bio 仍为 Lorem Ipsum("Vestibulum eu quam…")</td>
+        <td data-page-node-id="qA1">统一 "2.4K followers / 2.1K following";Bio 替换为与穆斯林社区定位一致的真实示例文案,上线前统一清理占位数据</td>
+        <td class="basis" data-page-node-id="rA1"><span class="tag" data-page-node-id="tA1">V4 · P0 质量问题</span><span class="tag new" data-page-node-id="tA1b">同源合并</span></td>
+      </tr>
+      <tr data-page-node-id="nA2">
+        <td class="no" data-page-node-id="noA2"><span class="n2" data-page-node-id="n2A2">2</span></td>
+        <td data-page-node-id="pA2">位置仅显示 "London",无国家、无可见范围控制</td>
+        <td data-page-node-id="qA2">展示 "London, United Kingdom";主页以眼睛图标标示当前可见档位 Everyone,三档档位在设置中调整</td>
+        <td class="basis" data-page-node-id="rA2"><span class="tag" data-page-node-id="tA2">#20 位置与隐私</span><span class="tag" data-page-node-id="tA2b">REQ-053 · 124</span></td>
+      </tr>
+
+      <tr class="mod" data-page-node-id="modA2"><td colspan="4">模块 ② 引导与排版 · 主图绿点 3(P003 主导)</td></tr>
+      <tr data-page-node-id="nA3">
+        <td class="no" data-page-node-id="noA3"><span class="n2" data-page-node-id="n2A3">3</span></td>
+        <td data-page-node-id="pA3">"Post your first note" 气泡直接压在头像与月亮徽章上,形成文字遮挡</td>
+        <td data-page-node-id="qA3">引导改为头像下方独立提示条("Post your first note · Tap to start"),可关闭、不遮挡任何元素</td>
+        <td class="basis" data-page-node-id="rA3"><span class="tag" data-page-node-id="tA3">V4 · P0 视觉质量</span><span class="tag new" data-page-node-id="tA3b">视觉保真要求</span></td>
+      </tr>
+
+      <tr class="mod" data-page-node-id="modA3"><td colspan="4">模块 ③ 内容质量与已发布 Posts · 补充场景 ①–③(P004 独有)</td></tr>
+      <tr data-page-node-id="nA4">
+        <td class="no" data-page-node-id="noA4"><span class="n2" data-page-node-id="n2A4">4</span></td>
+        <td data-page-node-id="pA4">Tab 文字断裂 "Sav ed / Event s",第 5 Tab 截断 "Revi…"(P001/P004 同源)</td>
+        <td data-page-node-id="qA4">4 个高频 Tab 完整展示(Posts / Saved / Community / Events),低频 Reviews 收「More ⌄」;建立无断字排版检查项</td>
+        <td class="basis" data-page-node-id="rA4"><span class="tag" data-page-node-id="tA4">#8 Feed 消费</span><span class="tag" data-page-node-id="tA4b">V4 · P0 质量</span></td>
+      </tr>
+      <tr data-page-node-id="nA5">
+        <td class="no" data-page-node-id="noA5"><span class="n2" data-page-node-id="n2A5">5</span></td>
+        <td data-page-node-id="pA5">Posts 区域在弹窗展开态下不可见,内容占位 / 乱码无法校验(P004)</td>
+        <td data-page-node-id="qA5">弹窗收起后 Posts 展示已发布帖子流(3 条:chandelier / iftar / mosque);Feed 文本乱码("thereˇs" 等)进文案校对清单修复,零乱码上线</td>
+        <td class="basis" data-page-node-id="rA5"><span class="tag new" data-page-node-id="tA5">用户指令 · 已发布 Posts</span><span class="tag" data-page-node-id="tA5b">补充场景③</span></td>
+      </tr>
+
+      <tr class="mod" data-page-node-id="modA4"><td colspan="4">模块 ④ 全局导航 · 主图绿点 7(P002 全局指令)</td></tr>
+      <tr data-page-node-id="nA6">
+        <td class="no" data-page-node-id="noA6"><span class="n2" data-page-node-id="n2A6">6</span></td>
+        <td data-page-node-id="pA6">底部导航为悬浮胶囊,弹窗打开时被完全盖住,全局导航不可达(P003/P004)</td>
+        <td data-page-node-id="qA6">固定全宽实底深色底栏(微信式):常驻屏幕底部,半屏弹窗在其上方结束;Tab 级徽章直达新内容——Chats 未读数、Places/Feeds 红点、My Hub 更新</td>
+        <td class="basis" data-page-node-id="rA6"><span class="tag new" data-page-node-id="tA6">P002 用户新指令</span><span class="tag" data-page-node-id="tA6b">#5 通知直达 Tab</span></td>
+      </tr>
+
+      <tr class="mod" data-page-node-id="modA5"><td colspan="4">模块 ⑤ 账号切换弹窗 Accounts · 主图绿点 4–6(P001 / P003 合并)</td></tr>
+      <tr data-page-node-id="nA7">
+        <td class="no" data-page-node-id="noA7"><span class="n2" data-page-node-id="n2A7">7</span></td>
+        <td data-page-node-id="pA7">Entity 账号未读用纯文字 "8 Chats / 10 Notifications" 右对齐堆叠,层级弱、不易扫读(P003)</td>
+        <td data-page-node-id="qA7">改为徽章样式(💬8 / 🔔10);同一未读数映射到固定底栏对应 Tab 徽章,形成一致的未读语言</td>
+        <td class="basis" data-page-node-id="rA7"><span class="tag" data-page-node-id="tA7">#5 通知中心全局化</span><span class="tag new" data-page-node-id="tA7b">REQ-046 · 066 · 091</span></td>
+      </tr>
+      <tr data-page-node-id="nA8">
+        <td class="no" data-page-node-id="noA8"><span class="n2" data-page-node-id="n2A8">8</span></td>
+        <td data-page-node-id="pA8">Accounts 弹窗无"当前账号"标识;顶栏(Leslie Alexander)与 Creator 账号(Siti Mariam)身份不一致(P003)</td>
+        <td data-page-node-id="qA8">当前账号加 "✓ Current" 徽章;建立单一 current account 数据源,顶栏 / 主页 / 弹窗 / 发帖身份全部读取同一来源</td>
+        <td class="basis" data-page-node-id="rA8"><span class="tag" data-page-node-id="tA8">#12 多账号与身份体系</span></td>
+      </tr>
+      <tr data-page-node-id="nA9">
+        <td class="no" data-page-node-id="noA9"><span class="n2" data-page-node-id="n2A9">9</span></td>
+        <td data-page-node-id="pA9">Personal 当前账号下 "Upgrade as Creator" 主按钮权重过高,易误触(P001 独有)</td>
+        <td data-page-node-id="qA9">降为次级描边按钮,主操作回归身份切换本身;与 Creator 账号态(主图 Siti Mariam)同属一套多账号体系的不同账号态</td>
+        <td class="basis" data-page-node-id="rA9"><span class="tag" data-page-node-id="tA9">#12 多账号与身份</span><span class="tag new" data-page-node-id="tA9b">P001</span></td>
+      </tr>
+      <tr data-page-node-id="nA10">
+        <td class="no" data-page-node-id="noA10"><span class="n2" data-page-node-id="n2A10">10</span></td>
+        <td data-page-node-id="pA10">"Add Account" 无任何说明,不知可加什么账号(P001/P003 同源)</td>
+        <td data-page-node-id="qA10">补副文案 "Business or Organization · KYB required",前置实体账号门槛</td>
+        <td class="basis" data-page-node-id="rA10"><span class="tag" data-page-node-id="tA10">#12 多账号体系</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer data-page-node-id="IfFAIay31YfYvv2YsJkECM">WAHDA · PAGE-BY-PAGE REDESIGN · P001 × P003 × P004 MERGED · 依据 20 大改进点</footer>
+</div>
+</body>
+</html>

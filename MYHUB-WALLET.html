@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="aGuJEPtH9VKBe8KoMNg5xF">
+<head data-page-node-id="qwPQUHDtRBg9cc8EmHgPua">
+<meta charset="UTF-8" data-page-node-id="IlMKgxrLsaPVUn8T6NKTAQ">
+<title>My Hub · Wallet 入口（原图打底 + 局部修改层）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; letter-spacing:.5px; color:#161c28; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#e9f7d9; color:#4a7a12; font-size:13.5px; font-weight:700; border:1px solid #cbe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:10px; line-height:1.7; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; margin:52px 0 6px; color:#161c28; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f1fb; color:#2470a8; border:1px solid #c3ddf2; }
+  .tag.mod  { background:#e9f7d9; color:#4a7a12; border:1px solid #cbe8a8; }
+  .desc { color:#5c6472; font-size:13.5px; margin-bottom:20px; }
+
+  .orig { display:flex; gap:18px; flex-wrap:wrap; }
+  .orig .frame { flex:1; min-width:200px; max-width:300px; }
+  .phone { border-radius:26px; overflow:hidden; box-shadow:0 6px 22px rgba(20,28,48,.14); border:1px solid #d8dbe2; }
+  .phone img { width:100%; display:block; }
+  .frame .cap { text-align:center; margin-top:10px; font-size:13px; color:#3a4150; font-weight:700; }
+  .frame .cap span { color:#8a8f9c; font-weight:500; }
+
+  .compare { display:flex; gap:28px; align-items:flex-start; }
+  .col { flex:1; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .col-h.before { color:#c23a3a; } .col-h.after { color:#2e7d1e; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 6px 22px rgba(20,28,48,.14); border:1px solid #d8dbe2; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.3); transform:translate(-50%,-50%); }
+  .dot.red { background:#d84040; } .dot.green { background:#0a8f4c; }
+
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12.5px; letter-spacing:1px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:12px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  td:first-child { color:#2e7d1e; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .muted { color:#8a8f9c; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #a9c9e4; color:#2c5d84; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body data-page-node-id="YRVF34H7kqiTELGqxBgcaC">
+<div class="wrap" data-page-node-id="EWSLhNxAb1fEI043KUnuki">
+  <h1 data-page-node-id="XuirtjubvRzuMEbXvcdRMH">My Hub · Wallet 入口<span class="en" data-page-node-id="dGLj6Qf1SGYlnIgkuEtTJC">Balance + Top Up</span></h1>
+  <p class="sub" data-page-node-id="g5XyOrFPXSGaP4j1fmg6t0">本稿在 Drafts & Scheduled Post 与内容 Tabs 之间插入一张 Wallet 卡片：<b data-page-node-id="IJL8jUKAELG6ApQQbmReyZ">余额直读 + Top Up 快捷按钮</b>，其余全部为原图（仅滚动列表因插入卡片下移被裁去约 150px，属滚动区不可见损失）。</p>
+
+  <h2 data-page-node-id="WMGBMN1X8FhYD06WTWh985">参考：现有 Wallet 页（第 57 页）<span class="tag keep" data-page-node-id="XD3Gef9YqZ7NvGXeBEwsie">视觉语言来源</span></h2>
+  <p class="desc" data-page-node-id="GU2d1lNb6Qjd9U9tqoHGpB">新卡片沿用钱包页的视觉体系：靛蓝主色（#5262ED）图标语言 + 品牌绿 Top Up 动作，余额口径与文案完全一致（Estimated Balance / Coin）：</p>
+  <div class="orig" data-page-node-id="4BGZE2FtbYAU4ZwscKKm91">
+    <div class="frame" data-page-node-id="Dc4tgnGDkQbuyoZBOpWmjX"><div class="phone" data-page-node-id="KAQyAVCImxeCg6xTV2QBGt"><img src="pages/hub-57.png" alt="Wahda Coins 钱包页" data-page-node-id="G8H7BRLcR79QtG79gHaMFD"></div><div class="cap" data-page-node-id="7A5fJc2HduaFcAz1z1KIbp">① Wahda Coins 钱包页 <span data-page-node-id="N1iLKwCGvMb0CXGRNZzLr1">· 余额 + Top Up</span></div></div>
+  </div>
+
+  <h2 data-page-node-id="bizShpugulxVzyi25tWPpg">前后对比<span class="tag mod" data-page-node-id="GFpYKXNv1Dk0axmHRUnk3a">原图打底 + 修改层</span></h2>
+  <div class="compare" data-page-node-id="BQt2A2cJyeGsAihUjGas5L">
+    <div class="col" data-page-node-id="4TrKJl6rcPZ1Ai09jZ7YDC">
+      <div class="col-h before" data-page-node-id="DepFljU5mKRuBnCSVj0JMx">● 当前：My Hub 无钱包入口</div>
+      <div class="stage" data-page-node-id="M1Y69gZDDbCFqSnCWZkOYz">
+        <img src="pages/hub-80.png" alt="当前 My Hub 页" data-page-node-id="yT9mTcC9mkKjep7MLYp1oi">
+        <div class="dot red" style="left:50%; top:44.7%;" data-page-node-id="e1HLAgTT6cBQvroa31hsdD">1</div>
+      </div>
+    </div>
+    <div class="col" data-page-node-id="NyO1BEggDQrhAV5jI2gSMV">
+      <div class="col-h after" data-page-node-id="3XylTvKDxdZaUhtDBok93M">● 修改后：Wallet 卡片（余额 + Top Up）</div>
+      <div class="stage" data-page-node-id="ShpSDq9rH1EXuBgrtVPU4d">
+        <img src="pages/hub-wallet-after.png" alt="修改后 My Hub 页" data-page-node-id="uLUG5BpjW4MCUinXbtFE5J">
+        <div class="dot green" style="left:6.5%; top:43.5%;" data-page-node-id="2QLvFWrNVKUScQmh8sMi3D">1</div>
+        <div class="dot green" style="left:77.5%; top:44%;" data-page-node-id="R8MvEiqQMkwOYHcNGeVJPc">2</div>
+      </div>
+    </div>
+  </div>
+
+  <table data-page-node-id="EDWG2uplhYp1hNoGCjluFF">
+    <tr data-page-node-id="gwRnnqQE51IBtZSaMijxyM"><th data-page-node-id="CIs8D0SLo6bqWjpC889scv">#</th><th data-page-node-id="LukAH2bxDrHPTDjoZLE4WS">改动</th><th data-page-node-id="mdU8bsgcQgjpFyH3o6fBgv">说明</th></tr>
+    <tr data-page-node-id="WIahFFpv3L0wNRHq7gMwgA"><td data-page-node-id="PlBs1BbIt9AomOmrgX4d3T">1</td><td data-page-node-id="Ewe43NiOEho4rLrx797ee0"><b data-page-node-id="ay24iOIpbp3oFo4cxbXfES">新增 Wahda Wallet 入口卡片</b></td><td data-page-node-id="BVNJWf8VGZBX8D9MhyFOGW">位于 Drafts & Scheduled Post 下方、内容 Tabs 上方。点击整卡进入 My Wallet（第 58 页），卡片右缘带入口箭头 ›。</td></tr>
+    <tr data-page-node-id="WSFebDDgYxINjr1LvHX5EU"><td data-page-node-id="fOrraN3ROUydY7p0lTHX7D">2</td><td data-page-node-id="C0GuNUmyk0yJSeWTkyw0mg"><b data-page-node-id="JhBD2SZKRGomgVHb0jLj33">余额直读</b></td><td data-page-node-id="Fw4STMXI6MkSo0CUe0S0Bh">卡内直接显示 Estimated Balance <b data-page-node-id="YCJGlDNf4k4TZcKlWSmREq">12,458.50 Coin</b>（与钱包页同口径、同数值），不进钱包页也能看到余额。</td></tr>
+    <tr data-page-node-id="CNuu56ZOMGntgVxmQPlbkv"><td data-page-node-id="4TueGbpqhdITArDyB3E4qA">3</td><td data-page-node-id="oshBoRIgvAPMHKiG5hEsUq"><b data-page-node-id="LYdlhWkaDGM6pHdblrJZFt">Top Up 快捷按钮</b></td><td data-page-node-id="Es7GAMsVFxRwFenlsi4dUP">品牌绿胶囊按钮，一键直达充值流程（第 57 页 Top Up / Actions），绿色 = Wahda 品牌动作色。</td></tr>
+    <tr data-page-node-id="SnKA0TpFq9fpDkCXGgsGEF"><td data-page-node-id="pNkku7SGlo5xDu5hW9BACN">4</td><td data-page-node-id="qChLzNgzDxOs6CfazoovDB"><b data-page-node-id="CU1kDDPbXzOrhEQxIYC1vD">视觉语言沿用钱包页</b></td><td data-page-node-id="S2DIkn4LEyKhiEVbRMXq2D">浅靛蓝卡片底 + 靛蓝钱包图标（取色自 Figma 钱包页 #5262ED 体系），绿色 Coin 圆点与 Balance 文案层级与钱包页一致。</td></tr>
+  </table>
+
+  <div class="note" data-page-node-id="JM4mJqBDpkBJq1L37BwKmU">交互链路：My Hub → 点钱包卡任意区域 → My Wallet（P58，含 Recharge / Billing / Refund / Withdraw）；点 Top Up → 直达充值流程（P57）。Top Up 胶囊与入口箭头均沿用全局固定底栏规范，本次未改动底栏。</div>
+</div>
+</body>
+</html>

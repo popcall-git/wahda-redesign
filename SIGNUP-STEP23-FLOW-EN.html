@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="fpOeJexXww9mrSKIw195RS">
+<head data-page-node-id="w0vlwH60UmJENkmKlxIzFl">
+<meta charset="utf-8" data-page-node-id="K2nX1AXqwJbk7ArVA3VXLK">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="QA3cLl2DrSmBIWuks5Ex6k">
+<title>Sign Up · Step 2-3 Onboarding Flow · Design Spec</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7; --lime:#cdf549;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:14px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+
+  /* Flow bar */
+  .flowbar{margin:22px 0 26px; background:#fff; border:1px solid var(--line); border-radius:14px;
+           padding:16px 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:15px;}
+  .flowbar .step{display:flex; align-items:center; gap:10px;}
+  .flowbar .sn{width:26px; height:26px; border-radius:50%; background:#e9e9f5; color:#5a4bd1;
+               font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center;}
+  .flowbar .sn.done{background:var(--green); color:#fff;}
+  .flowbar .sn.cur{background:var(--lime); color:#14151a; box-shadow:0 0 0 3px rgba(205,245,73,.4);}
+  .flowbar .arrow{color:#c2c6cf; font-weight:700;}
+  .flowbar .tag{font-size:12.5px; background:#f0edff; color:#5a4bd1; border-radius:6px; padding:3px 9px; font-weight:700;}
+
+  .stages{display:flex; flex-direction:column; gap:26px;}
+  .row1{display:flex; align-items:center; justify-content:center; gap:26px; flex-wrap:wrap;}
+  .row1 .arrow-big{font-size:40px; color:#c2c6cf; font-weight:700; flex:0 0 auto;}
+  .row2{display:flex; gap:34px; justify-content:center; flex-wrap:wrap;}
+  .col-s{flex:0 1 auto; display:flex; flex-direction:column; gap:10px;}
+  .branch-label{font-size:14.5px; font-weight:800; text-align:center; padding:7px 12px; border-radius:10px;}
+  .branch-label.b1{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .branch-label.b2{background:#eef1fb; color:#4a5fc1; border:1px solid #d5ddf3;}
+  .shot{position:relative; border-radius:26px; overflow:hidden; box-shadow:0 10px 30px rgba(20,21,26,.14); background:#fff; width:286px; margin:0 auto;}
+  .shot svg{display:block; width:286px; height:auto;}
+  .cap{font-size:15px; color:var(--sub); text-align:center; line-height:1.75;}
+  .cap b{color:var(--ink);}
+  .dot{position:absolute; width:26px; height:26px; border-radius:50%; display:flex; align-items:center;
+       justify-content:center; color:#fff; font-size:13px; font-weight:800;
+       box-shadow:0 2px 8px rgba(0,0,0,.35); border:2.5px solid #fff; transform:translate(-50%,-50%);}
+  .dot.green{background:var(--green);}
+
+  .merge-note{margin:26px auto 0; max-width:940px; background:#f4f1ff; border:1px dashed #b9aef0; color:#4a3f8f;
+              font-size:15px; line-height:1.8; border-radius:14px; padding:15px 22px; text-align:center;}
+
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:250px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+</style>
+</head>
+<body data-page-node-id="NFbGt9TF0wYSnLRKGwqC7x">
+<div class="wrap" data-page-node-id="O7ynXMy1s5IDAz2CY3MfPg">
+  <header data-page-node-id="HPKyQ6A1INtNBPUipsrJfd">
+    <div class="kicker" data-page-node-id="GsxrSbSSCviGCwlJPUTGUw">WAHDA · INTERACTION REFINEMENT · SIGN-UP FLOW STEP 2-3</div>
+    <h1 data-page-node-id="hnxbTIV6dMbJajSHKfBceQ">Verification Code → Registration Complete → Dual Branch "Complete Profile / Do It Later" · Design Spec</h1>
+    <div class="meta" data-page-node-id="pdLeJACccJilTlhQC2W35A">Follows the Sign Up first screen (Step 1) · Basis: Top 20 Improvements #1 onboarding · #3 sign-up &amp; sign-in · #7/8 recommendations · 2026-09-04</div>
+  </header>
+
+  <div class="flowbar" data-page-node-id="8BhnOpkNG8Uny0GxaQI3DG">
+    <div class="step" data-page-node-id="18jPDVugDaBCCzpHlV0S6t"><span class="sn done" data-page-node-id="lTW0WxJQ17C1sozKXoaQlV">1</span><span data-page-node-id="EeHrOu2ywOAS7t97rftwfq">Account<br data-page-node-id="SQyXuanyGhUHnsfjIEF8g1"><small style="color:#9aa0ac;" data-page-node-id="GAUCoJh9eL9XbQb9CSJBiZ">Phone/Email</small></span></div>
+    <span class="arrow" data-page-node-id="Tf8MhPHm3cRU8XDzfMJfSN">→</span>
+    <div class="step" data-page-node-id="HPDbzVdwIIhstKPiOmCNB2"><span class="sn done" data-page-node-id="UiDmFdSwxHhpfDLPERzxei">2</span><span data-page-node-id="XyzEO1x4ZDVv4BnGUFUrvo">Verify<br data-page-node-id="sXTGZc6SdY5AKCYAEOJ9h0"><small style="color:#9aa0ac;" data-page-node-id="Hu2KCOXlswSLeX57wdvbZn">6-digit code</small></span></div>
+    <span class="arrow" data-page-node-id="kodSHTZj2p3JKr9EW2j3d1">→</span>
+    <div class="step" data-page-node-id="f9ZsfPSeE9hzIwtTaqC1Je"><span class="sn cur" data-page-node-id="igRqbh5CotK7jYw6r8GBlZ">3</span><span data-page-node-id="tlKUSSkEV1jrTFuEYMXVMv"><b data-page-node-id="0bVY02K3D5cGIN7vEwZcCs">Complete Profile (optional)</b><br data-page-node-id="ZIq89gfctTqoA6cSIjjFLr"><small style="color:#9aa0ac;" data-page-node-id="SjeSJsSIU9GG9q6Fub7qmA">Pick one · both skippable</small></span></div>
+    <span class="arrow" data-page-node-id="d6UTlWXDvaxndpHPFHM20l">→</span>
+    <div class="step" data-page-node-id="SiYewU8pCGpxQlAgFGYsZd"><span class="sn" style="background:#e9e9f5;color:#5a4bd1;" data-page-node-id="JXKMe8zzipNolAGwDNN211">↧</span><span data-page-node-id="bTjoXFhPhU7Fo9egaA69cT">Discover<br data-page-node-id="Ujb8wr0KwRMrj9UTjA5iEv"><small style="color:#9aa0ac;" data-page-node-id="WyAcI9rRbPfoMJSIZFjQGQ">Fixed bottom-bar home</small></span></div>
+    <span class="tag" data-page-node-id="LtiGIpT6deAHHQ3UKPfsbC">Anti-drop-off design: profile completion is never mandatory</span>
+  </div>
+
+  <div class="stages" data-page-node-id="VZKZ5jzFBojHJE5plGIOcF">
+    <!-- ================= Row1: A → B ================= -->
+    <div class="row1" data-page-node-id="XZfGXBTxrKVSG5chftkEU7">
+      <!-- A verification code -->
+      <div class="col-s" data-page-node-id="o6FgYhqWfS5LaUkONjYjWX">
+        <div class="shot" data-page-node-id="CSbp3XPw2CseSwkE858h6B">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="BFRsb7JHtckG5yBu26P8jJ">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="AMuKmnqWdqBUR8NvH69vRU"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="6sUfjAgMoQhcNG246HM4jZ">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="lf7t1PsLZRBzW4uL31uOlK"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" data-page-node-id="WtNDef1Yla9Z0wrJHRTjCi"/>
+
+            <!-- Back -->
+            <path d="M24 88 l-12 13 12 13 M12 101 h26" fill="none" stroke="#14151a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="oRQymjKRoAK1H0ipfi71S1"/>
+            <text x="52" y="108" font-size="21" font-weight="800" fill="#14151a" data-page-node-id="i1upSBUnwm5CIckMs5DnuO">Verify your number</text>
+
+            <!-- Step bar 2/3 -->
+            <rect x="22" y="132" width="100" height="8" rx="4" fill="#0a8f4c" data-page-node-id="MdBYEr2P5XVz1no4aq4m7N"/>
+            <rect x="130" y="132" width="100" height="8" rx="4" fill="#0a8f4c" data-page-node-id="zMLJouLcDlGE8mMDaGdo8R"/>
+            <rect x="238" y="132" width="100" height="8" rx="4" fill="#e8e8ee" data-page-node-id="BH6KTgeiOeByFH5upX793J"/>
+            <text x="22" y="162" font-size="14" fill="#9aa0ac" font-weight="600" data-page-node-id="A0i3iCKwISMOPd2zNVe8Qf">Step 2 of 3 · Verify</text>
+
+            <!-- Subtitle -->
+            <text x="22" y="212" font-size="16" fill="#5a5f6b" data-page-node-id="lecBhgyr3sqjcbQBTAro2s">Enter the 6-digit code sent to</text>
+            <text x="22" y="242" font-size="19" font-weight="800" fill="#14151a" data-page-node-id="Iwh6WhnCsvY9JxMpUxrmHd">+62 812 3456 7890</text>
+            <text x="338" y="242" font-size="16" font-weight="700" fill="#6C5CE7" text-anchor="end" text-decoration="underline" data-page-node-id="RlhYnKq2ydTX2mkGoRJmZo">Edit</text>
+
+            <!-- 6 OTP boxes -->
+            <rect x="22" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="bPilkIuASjtBB3fpAqJb2Y"/><text x="46" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="DhLpZrZMKg2WzRqhfypYZD">8</text>
+            <rect x="78" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="jDDG6gmJ7gZiDtyepAcSC2"/><text x="102" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="M82GFaWqIFSb3ulG7SpNa9">1</text>
+            <rect x="134" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="60R30Nq8ryYp10YqX04lru"/><text x="158" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="Ps699QEwYqVR5l8XbT3VwD">2</text>
+            <rect x="190" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="2KQAPprOMRFDt5c3w74p5B"/><text x="214" y="310" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="mXthjj6wNxGFCVV4s6eb6e">3</text>
+            <rect x="246" y="272" width="48" height="60" rx="12" fill="#fff" stroke="#6C5CE7" stroke-width="3" data-page-node-id="M0XHyHdDUrwEUC2RAWE2dG"/>
+            <rect x="270" y="290" width="3" height="24" fill="#6C5CE7" data-page-node-id="pbdt2WRrlFrI4PbPdFffOp"/>
+            <rect x="302" y="272" width="48" height="60" rx="12" fill="#f6f6f8" data-page-node-id="GFIzed1wCPX6GuQd9SjXKF"/>
+
+            <!-- Error state -->
+            <g data-page-node-id="xbvxsLQo6a3mLaf8s4lnx9">
+              <circle cx="27" cy="370" r="9" fill="none" stroke="#d64545" stroke-width="2.5" data-page-node-id="KeyHHTpRP7VumgNwm7eAVK"/>
+              <path d="M27 366 v7 M27 377 v.1" stroke="#d64545" stroke-width="2.5" stroke-linecap="round" data-page-node-id="3H0AuZDHHS7gf6DVSYk7ge"/>
+              <text x="44" y="375" font-size="14" font-weight="600" fill="#d64545" data-page-node-id="S84Yw1LHj0yDhHruaFMmWu">Incorrect code — 1 attempt left</text>
+            </g>
+
+            <!-- Resend -->
+            <text x="22" y="420" font-size="15" fill="#9aa0ac" data-page-node-id="UNS3t3tyg0jRhkC5bZjjGI">Resend code in <tspan font-weight="700" fill="#5a5f6b" data-page-node-id="GYP4U9CpTPLN6w47PXV6D0">0:23</tspan></text>
+            <text x="338" y="420" font-size="15" font-weight="700" fill="#6C5CE7" text-anchor="end" data-page-node-id="pqgobR2N9Vbo4EYAjDEM2y">Resend</text>
+
+            <!-- Primary button -->
+            <rect x="22" y="472" width="316" height="64" rx="32" fill="#cdf549" data-page-node-id="cxscoSBLPDIjIrlzkckiZV"/>
+            <text x="180" y="511" font-size="19" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="cAZF179cPV0TY3x4115aAD">Verify &amp; Create Account</text>
+            <text x="180" y="556" font-size="12.5" fill="#9aa0ac" text-anchor="middle" data-page-node-id="oiNUqGGtgCrO4ZBK1fViFF">By verifying you accept the Terms &amp; Privacy Policy</text>
+
+            <!-- Trust row -->
+            <g data-page-node-id="qchSR3HyxZdb34SHoxngOL">
+              <circle cx="126" cy="600" r="12" fill="none" stroke="#0a8f4c" stroke-width="2.5" data-page-node-id="GSj7ecP8snI0I78S5ZhdQs"/>
+              <path d="M121 600 l4 4 8 -9" stroke="#0a8f4c" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="ad4TDLoXJceRkqErD8GIn2"/>
+              <text x="146" y="605" font-size="14" fill="#5a5f6b" data-page-node-id="msioeniUkfvEfkGhucizvl">Securely sent — never shared</text>
+            </g>
+            <rect x="120" y="740" width="120" height="6" rx="3" fill="#14151a" data-page-node-id="wrWhN0Fh9HxsdeD0LUP4tf"/>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="ikxmdIPmGtYAMhbKIj0FC5"><b data-page-node-id="Y7osFA3x47RqM7IxaFh4ak">① Verification code — Verify</b><br data-page-node-id="9RwXlOApXc9aqbU3JDp3JD">6-digit OTP autofill / paste<br data-page-node-id="6XFIaYscVC19Tmc2Jpcy2T">Error state follows the original PDF copy<br data-page-node-id="3qBcfUBBoCRvGmjdUVcF3p">30s resend countdown · Edit to go back to number</div>
+      </div>
+
+      <div class="arrow-big" data-page-node-id="Zy5PjRQYnESklUZvjf9njk">→</div>
+
+      <!-- B registration complete, either-or -->
+      <div class="col-s" data-page-node-id="A6bawXkKbDBEyyULBuLsWr">
+        <div class="shot" data-page-node-id="Sw3DTcyXXVE4ePRiCzSbX7">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="9Yo0FvVIFkfZyZsJr4kNsV">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="BAUZiBCearvESd7o23VG1C"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="IYAr7a12AvgRMxZ6Ngw3yi">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="QHgBLNa0QUysddYIL6s78E"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" data-page-node-id="Dd8fR0Nk9hNZZTVYZ8LUHX"/>
+
+            <!-- Completion icon -->
+            <circle cx="180" cy="128" r="42" fill="#0a8f4c" data-page-node-id="0OgPsAFaHHHuhLwkmisTMa"/>
+            <path d="M159 128 l15 15 27 -30" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="6vKCVw9HWCEMjP1zN0xdM2"/>
+
+            <text x="180" y="216" font-size="25" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="GRwWe9z6rZdlensGKdNlUO">Account created! 🎉</text>
+            <text x="180" y="248" font-size="15.5" fill="#5a5f6b" text-anchor="middle" data-page-node-id="kL3EbTBdI3CRWqs2Lb2DCx">Make it yours — 2 minutes now,</text>
+            <text x="180" y="272" font-size="15.5" fill="#5a5f6b" text-anchor="middle" data-page-node-id="31sDH4LGqp2sEk9gOTaHsQ">or anytime later. Your choice.</text>
+
+            <!-- Card 1: complete profile (recommended) -->
+            <rect x="22" y="310" width="316" height="158" rx="20" fill="#f2fbff" stroke="#0a8f4c" stroke-width="2.5" data-page-node-id="OXcVzS2diFFB5IBdfF49bH"/>
+            <circle cx="52" cy="348" r="20" fill="#0a8f4c" data-page-node-id="sGyQJEZHLZsbK3B59nhCbt"/>
+            <path d="M44 344 l6 6 10 -12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="pKAOXjHRPsUUJxHGRWa2RJ"/>
+            <text x="84" y="344" font-size="19" font-weight="800" fill="#14151a" data-page-node-id="Q0IW6f10pRpyhfz8pUjwbV">Complete my profile</text>
+            <rect x="246" y="326" width="78" height="24" rx="12" fill="#cdf549" data-page-node-id="YAKDWm5ozvWadvXiB64gP2"/>
+            <text x="285" y="342" font-size="12" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="wb0qwctcUcdbJI1yYz6tSH">~2 min</text>
+            <text x="52" y="392" font-size="13.5" fill="#5a5f6b" data-page-node-id="ryJVkkz3F5J9AtnGFEdvlF">Set username, password &amp; personal</text>
+            <text x="52" y="412" font-size="13.5" fill="#5a5f6b" data-page-node-id="76AryJW8ioFjA7TZn9enEm">details to unlock the full experience.</text>
+            <text x="52" y="444" font-size="13.5" font-weight="700" fill="#0a8f4c" data-page-node-id="VYRSZ97YBYcMUjNuWlzSlH">Recommended</text>
+
+            <!-- Card 2: do it later -->
+            <rect x="22" y="490" width="316" height="158" rx="20" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="TzCRPtZcSBrNcLBoBGglod"/>
+            <circle cx="52" cy="528" r="20" fill="#f1f0f5" data-page-node-id="a7y0jCITDH6YNCwFzcz0eV"/>
+            <path d="M52 522 v12 M46 528 h12" stroke="#14151a" stroke-width="3.5" stroke-linecap="round" data-page-node-id="OR6V8EAXdIadLHWatqpNxi"/>
+            <text x="84" y="524" font-size="19" font-weight="800" fill="#14151a" data-page-node-id="CqccxqRpFr3KSQsIhZDyFm">Do it later</text>
+            <text x="52" y="572" font-size="13.5" fill="#5a5f6b" data-page-node-id="haz12iq52QumLCKkCc2OhP">Jump to recommendations for events,</text>
+            <text x="52" y="592" font-size="13.5" fill="#5a5f6b" data-page-node-id="yZHnhsUcUAFrnfAbyTDilH">communities &amp; creators right away.</text>
+            <text x="52" y="624" font-size="13.5" font-weight="700" fill="#6C5CE7" data-page-node-id="8QWlv5c6cQmQXd08f1yUF8">Finish anytime in Settings</text>
+
+            <!-- Helper -->
+            <text x="180" y="692" font-size="13" fill="#9aa0ac" text-anchor="middle" data-page-node-id="GNo78L1fAUM277FFm864pp">No wrong choice — your profile can be</text>
+            <text x="180" y="711" font-size="13" fill="#9aa0ac" text-anchor="middle" data-page-node-id="uH7FUaQdCZ22fjFGh2GSHG">completed any time.  ⚙ Settings → Basic Info</text>
+            <rect x="120" y="740" width="120" height="6" rx="3" fill="#14151a" data-page-node-id="b1tWY5nq1XE3ERPyoJuCkB"/>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="9JuAoYPreCLVv6S1mWq1Y0"><b data-page-node-id="SuBG5TFyyQ6a0UGLwt8VIk">② Registration Complete · Pick One</b><br data-page-node-id="p0OGmhSlw3Ts6MR077zXlB">"Complete Profile" primary + "Do It Later" secondary<br data-page-node-id="WaJg83MEENsaWdpsuWNGam">No forced gate — both paths are free and reversible</div>
+      </div>
+    </div>
+
+    <!-- ================= Row2: dual branches ================= -->
+    <div class="row2" data-page-node-id="vjuTe3sTUXmTD0Zc3luDTm">
+      <div class="col-s" data-page-node-id="PLRLGT1HH2aa5dcsZ5aX4K">
+        <div class="branch-label b1" data-page-node-id="7cRr0ZJIZ8h95BRyB9yYG4">↳ Choose "Complete Profile" → fill in details</div>
+        <div class="shot" data-page-node-id="Es3dA9gXbwnqKdbhpIuobX">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="SFEKe664wSGoAn5kyqEgQ6">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="9J3cXfEPslr0GNgPMkPmTx"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="JKugcxOuSD4XACGR2DA4tc">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="VwapG6FeOIJJBsNzn1CIyh"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" data-page-node-id="BajzncBUZKmPCphrmqaXbJ"/>
+            <path d="M24 74 l-12 13 12 13 M12 87 h26" fill="none" stroke="#14151a" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="6GqasN1kyJvtqvBwONCvzl"/>
+            <text x="52" y="94" font-size="20" font-weight="800" fill="#14151a" data-page-node-id="TTibOB8EswgkHrs1VDUHlG">Complete your profile</text>
+
+            <!-- Section 1: username & password -->
+            <text x="22" y="132" font-size="13" font-weight="700" fill="#9aa0ac" letter-spacing="1" data-page-node-id="xaLdxdehaakdits22nfPbg">USERNAME &amp; PASSWORD</text>
+
+            <text x="22" y="162" font-size="14" fill="#5a5f6b" font-weight="600" data-page-node-id="Xapvel3cPXvjUut2jKyTcV">Username</text>
+            <rect x="22" y="172" width="316" height="52" rx="14" fill="#fff" stroke="#0a8f4c" stroke-width="2" data-page-node-id="hUEojMFFpT7PhSxfoimybv"/>
+            <text x="40" y="205" font-size="17" font-weight="700" fill="#14151a" data-page-node-id="aPsaIt3NbKAAAxkRRP5g1a">leslie_alex</text>
+            <g data-page-node-id="rgTvjlz9YJ5ipnCfrAgWcP">
+              <circle cx="288" cy="198" r="13" fill="#0a8f4c" data-page-node-id="759qHIaorcI3UK2dKSID2k"/>
+              <path d="M282 198 l5 5 8 -9" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="EzQq1hNl0SAXylx1hmbHk2"/>
+              <text x="309" y="204" font-size="14" font-weight="700" fill="#0a8f4c" data-page-node-id="RBu6lheDzsDYVvEwt5ubM2">OK</text>
+            </g>
+
+            <text x="22" y="252" font-size="14" fill="#5a5f6b" font-weight="600" data-page-node-id="XzFJQX8TEXVELzGGBfZxJJ">Password</text>
+            <rect x="22" y="262" width="316" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="HsrHyitWXMvJXbS3QEb2Db"/>
+            <text x="40" y="295" font-size="20" fill="#14151a" data-page-node-id="UsutCG7kHqV3JlMN1VI4C5">••••••••••</text>
+            <path d="M272 295 a12 12 0 0 1 -24 0 a12 12 0 0 1 24 0 z" fill="none" stroke="#14151a" stroke-width="2.5" transform="translate(52,0)" data-page-node-id="KfbIyxtaEeU90Bt5pgAGC4"/>
+
+            <!-- Strength bar -->
+            <rect x="22" y="330" width="64" height="6" rx="3" fill="#0a8f4c" data-page-node-id="PATuFNutcHMnuY4RDs4Uue"/>
+            <rect x="92" y="330" width="64" height="6" rx="3" fill="#0a8f4c" data-page-node-id="MhYjQwMCplsoD05x7Sj3L0"/>
+            <rect x="162" y="330" width="64" height="6" rx="3" fill="#e8e8ee" data-page-node-id="9AK5qyOf6rDC9ZrCk5uKGU"/>
+            <rect x="232" y="330" width="106" height="6" rx="3" fill="#e8e8ee" data-page-node-id="QW3SA8u44toLUCqKjJALfP"/>
+            <text x="22" y="356" font-size="13" fill="#0a8f4c" font-weight="700" data-page-node-id="E4U6tooi4YA8EGklHovpAA">Strong · 10 chars, mixed</text>
+
+            <!-- Section 2: about me -->
+            <text x="22" y="398" font-size="13" font-weight="700" fill="#9aa0ac" letter-spacing="1" data-page-node-id="9Uhsp8wVEKSfCTGw587gnJ">ABOUT YOU</text>
+
+            <text x="22" y="428" font-size="14" fill="#5a5f6b" font-weight="600" data-page-node-id="Z4ufk9RdcwkdtbOAZE16ZH">Full name</text>
+            <rect x="22" y="438" width="150" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="H2e0pQ4Pv9WfLOELYbHLJN"/>
+            <text x="40" y="471" font-size="16" fill="#14151a" font-weight="600" data-page-node-id="j6aLQhMZrX6VYtyFoPbe4z">Leslie</text>
+            <rect x="188" y="438" width="150" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="tRqPBKHUCVmPzfYDiVgmEF"/>
+            <text x="206" y="471" font-size="16" fill="#14151a" font-weight="600" data-page-node-id="rjW2iYBUFVyiAnBYC1bcbE">Alexander</text>
+
+            <!-- DOB -->
+            <text x="22" y="528" font-size="14" fill="#5a5f6b" font-weight="600" data-page-node-id="TtWP0n6bbIys8rSSl5m88c">Date of birth</text>
+            <rect x="22" y="538" width="316" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="yJrFrYKnyI62GzlLh2XI8B"/>
+            <text x="40" y="571" font-size="16" fill="#14151a" font-weight="600" data-page-node-id="cmpPuEVE9Czpk0wXE2ev8E">14 March 1995</text>
+            <rect x="310" y="552" width="16" height="14" rx="2" fill="none" stroke="#9aa0ac" stroke-width="2" data-page-node-id="SAHP6htsOTKw3y4seL5NOO"/>
+            <text x="318" y="566" font-size="9" fill="#9aa0ac" text-anchor="middle" data-page-node-id="ExCDW6hf9Q4HfKkf1kEMy2">31</text>
+
+            <!-- Gender / Country two columns -->
+            <text x="22" y="628" font-size="14" fill="#5a5f6b" font-weight="600" data-page-node-id="2oaHTGSGlNxYLQDsehFazd">Gender</text>
+            <rect x="22" y="638" width="150" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="l4QsCRK4tvf7KP1JJ6QxZX"/>
+            <text x="40" y="671" font-size="16" fill="#14151a" font-weight="600" data-page-node-id="SbS5Iz23D2FdX7REkoYmdX">Male</text>
+            <path d="M150 665 l7 8 7 -8" fill="none" stroke="#9aa0ac" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="svHs2yqe3KWOviIwqDuEAG"/>
+
+            <text x="188" y="628" font-size="14" fill="#5a5f6b" font-weight="600" data-page-node-id="wQxM4S6RDYxZGARBPB7wdd">Country</text>
+            <rect x="188" y="638" width="150" height="52" rx="14" fill="#fff" stroke="#d9d9de" stroke-width="2" data-page-node-id="HYSdZdOMSO4qmmx6tNThe5"/>
+            <circle cx="206" cy="663" r="11" fill="#e04040" data-page-node-id="VQq6Yv9c96W0iKSYvFnqtV"/>
+            <rect x="195" y="660.5" width="22" height="5" fill="#fff" data-page-node-id="z6gE5FOAVuLUxZGQyjPXe2"/>
+            <text x="224" y="671" font-size="15" fill="#14151a" font-weight="600" data-page-node-id="dlFxwWcvNOGbA9skDtZQfF">Indonesia</text>
+
+            <rect x="22" y="712" width="316" height="52" rx="26" fill="#cdf549" data-page-node-id="GFtwgfrmGxXNjJhIsLlQD9"/>
+            <text x="180" y="744" font-size="17" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="xc3VXN8V9XFTtO8YbzBZ45">Finish Setup</text>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="FkHyaHFXs2bCuwYTtXg0pe"><b data-page-node-id="ve9qvWHmGhCMYByiVXm7Fv">③a Complete Profile Form</b><br data-page-node-id="TEmV4qQYAR9aZNKxSgMVNg">Username (real-time availability) + password (strength bar)<br data-page-node-id="KoRAy7vJTdcfXaP8YitakJ">Name / DOB / gender / country<br data-page-node-id="LcE1w9xoKS2bq4zjBcbWMX">Fields identical to Settings → Basic Information (P008)</div>
+      </div>
+
+      <div class="col-s" data-page-node-id="guYeGrQth0jEdDBpJeEYKC">
+        <div class="branch-label b2" data-page-node-id="NX3DbiZppDirFs7lXnLc06">↳ Choose "Do It Later" → straight to recommendations</div>
+        <div class="shot" data-page-node-id="HeEneo2hwyEzwOe6obAgQG">
+          <svg viewBox="0 0 360 780" xmlns="http://www.w3.org/2000/svg" data-page-node-id="BxVl5jvPnB1TWYAIOForAP">
+            <rect width="360" height="780" fill="#ffffff" data-page-node-id="bYQ5cW4ChEg6cmdpuAsfLF"/>
+            <text x="22" y="34" font-size="15" font-weight="600" fill="#111" data-page-node-id="0nzC2ZQhLQIpXsHjSUA488">9:41</text>
+            <rect x="304" y="22" width="34" height="15" rx="5" fill="none" stroke="#111" stroke-width="2.5" data-page-node-id="X1ceGtFd9EP1DjTawNF9bp"/>
+            <rect x="307" y="25" width="22" height="9" rx="2.5" data-page-node-id="xNGr6qOwKN7QNFTfJRqUbO"/>
+
+            <!-- Completion banner (branch 2 only) -->
+            <rect x="22" y="48" width="316" height="40" rx="20" fill="#fff8e6" stroke="#eedb9f" stroke-width="1.5" data-page-node-id="TvCch8N0FO8pRdsDkGy4Be"/>
+            <text x="42" y="73" font-size="13.5" fill="#8a6d1a" data-page-node-id="fwZJKJaZSMSHsw13J2pUeJ">✨ Profile 40% — complete it in <tspan font-weight="800" text-decoration="underline" data-page-node-id="3xQz8QUM5pRDmbkqIm838Z">Settings</tspan></text>
+
+            <text x="22" y="122" font-size="22" font-weight="800" fill="#14151a" data-page-node-id="FenkuxEH9gIKY3P8kEv4IB">Recommended for you</text>
+            <text x="22" y="150" font-size="14" fill="#9aa0ac" data-page-node-id="fTKidlBTesN5R99VToAWdi">Based on your region + phone profile</text>
+
+            <!-- Communities -->
+            <text x="22" y="186" font-size="15" font-weight="800" fill="#14151a" data-page-node-id="030ROwmIgPbTdq79JvBjxW">Communities</text>
+            <text x="338" y="186" font-size="13.5" font-weight="700" fill="#6C5CE7" text-anchor="end" data-page-node-id="hgmIsFQp2kllVF2qLo0YhV">See all</text>
+            <rect x="22" y="198" width="316" height="62" rx="16" fill="#f6f6f8" data-page-node-id="6Fv1pIKLMfVeKXQgJDUfHV"/>
+            <circle cx="56" cy="229" r="21" fill="#6C5CE7" data-page-node-id="wcvWwsqHeJnFuxDqyuUFqV"/><text x="56" y="236" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="cYOOcepqR9QannhMsdqexc">S</text>
+            <text x="90" y="224" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="Yw5kJuq7HoqrnWK6gg1Omz">Sisters in Reflection</text>
+            <text x="90" y="246" font-size="12.5" fill="#9aa0ac" data-page-node-id="cwC8EBl6JrY6TIOiNgbDUS">1.2K members · Discussions</text>
+            <rect x="300" y="214" width="26" height="26" rx="13" fill="#0a8f4c" data-page-node-id="J2PH8BvctGlciAuoXlxi6a"/>
+            <path d="M308 222 h10 M313 217 v10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" data-page-node-id="w4NFdfFqmWMGMHSGuPy56E"/>
+            <rect x="22" y="270" width="316" height="62" rx="16" fill="#f6f6f8" data-page-node-id="EuKS4LPGWEAO00wjlDdOnh"/>
+            <circle cx="56" cy="301" r="21" fill="#2f9e78" data-page-node-id="aaFhbvJGbNzsTVC9046eDH"/><text x="56" y="308" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="24LJSk8ZBkJ0kB7fJFIlRg">Y</text>
+            <text x="90" y="296" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="rk7eAF4wiop0vxQefkyA08">Young Professionals Network</text>
+            <text x="90" y="318" font-size="12.5" fill="#9aa0ac" data-page-node-id="TXeZSU07qpRPOENw4Vkh6v">890 members · Networking</text>
+            <rect x="300" y="286" width="26" height="26" rx="13" fill="#0a8f4c" data-page-node-id="6FteC4V6Nc36tOiCeiwdA4"/>
+            <path d="M308 294 h10 M313 289 v10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" data-page-node-id="UvH7BFwl2A2nVKO4ZyFmfv"/>
+
+            <!-- Events -->
+            <text x="22" y="362" font-size="15" font-weight="800" fill="#14151a" data-page-node-id="l2lOPIo2wfxjIC3lGgEHj3">Events</text>
+            <text x="338" y="362" font-size="13.5" font-weight="700" fill="#6C5CE7" text-anchor="end" data-page-node-id="lJ2j79cB4L8d9bBcrlNBlY">See all</text>
+            <rect x="22" y="374" width="316" height="62" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="vaojohhKIYLrK9mguMn6Ti"/>
+            <rect x="38" y="388" width="44" height="34" rx="8" fill="#fdeeee" data-page-node-id="2xqibHszu0jXuEGKQB9yVf"/>
+            <text x="60" y="400" font-size="11" font-weight="800" fill="#b03030" text-anchor="middle" data-page-node-id="SfoaIauL9edK6yofWxTf3r">NOV</text>
+            <text x="60" y="416" font-size="14" font-weight="800" fill="#b03030" text-anchor="middle" data-page-node-id="wqhSfvCsoAnXWJbWN9mi2s">13</text>
+            <text x="94" y="404" font-size="14" font-weight="700" fill="#14151a" data-page-node-id="GBKg88XyGAxlphyZr8MM8e">Community Iftar Night</text>
+            <text x="94" y="425" font-size="12" fill="#9aa0ac" data-page-node-id="dkIDEZQqQmyur47BSOJRHA">Online · Free</text>
+            <text x="322" y="410" font-size="18" fill="#9aa0ac" text-anchor="end" data-page-node-id="Jm1TozUbdNjUZlakDqKwMH">›</text>
+            <rect x="22" y="446" width="316" height="62" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="Rz7XIIFU5P9hkw6YA2A3Oc"/>
+            <rect x="38" y="460" width="44" height="34" rx="8" fill="#eef4fb" data-page-node-id="iQQphvriV7jGwqq7HVhDvD"/>
+            <text x="60" y="472" font-size="11" font-weight="800" fill="#3b5f9e" text-anchor="middle" data-page-node-id="tlCvh5f882BsKcsUnKv5Sn">NOV</text>
+            <text x="60" y="488" font-size="14" font-weight="800" fill="#3b5f9e" text-anchor="middle" data-page-node-id="hWOFyuV9XS9fDn8f1JIElx">15</text>
+            <text x="94" y="476" font-size="14" font-weight="700" fill="#14151a" data-page-node-id="fifaHcdZNLmsR1eCojmVlc">After-office Quran Circle</text>
+            <text x="94" y="497" font-size="12" fill="#9aa0ac" data-page-node-id="0CY0O8nnhIsurYI6RRqqwg">Online · Weekly</text>
+            <text x="322" y="482" font-size="18" fill="#9aa0ac" text-anchor="end" data-page-node-id="xy9WjWjSLDC8Q2NhyR9aDp">›</text>
+
+            <!-- Creators -->
+            <text x="22" y="534" font-size="15" font-weight="800" fill="#14151a" data-page-node-id="91TlJdOGIzClez9djZA0gN">Creators to follow</text>
+            <g data-page-node-id="FLShmv54tl0C5xbyqj948H">
+              <circle cx="52" cy="588" r="27" fill="#d96a62" data-page-node-id="N36q6RtzTbFIjQRTLuqu6G"/><text x="52" y="595" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="dOeSjB1SRLx7Qir7LemGVr">F</text>
+              <text x="52" y="632" font-size="11.5" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="sBZjJi6JmejNVDTAxz17Qm">Fatima</text>
+              <circle cx="130" cy="588" r="27" fill="#2f6fb8" data-page-node-id="n54Fd5T29DarzDxkTbrFG2"/><text x="130" y="595" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="fVjEZxaIz9pdXYq4C5YErE">Y</text>
+              <text x="130" y="632" font-size="11.5" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="nfaZ6pB4bWRUTnZBkNgUT6">Yusuf</text>
+              <circle cx="208" cy="588" r="27" fill="#9b59b6" data-page-node-id="ppyzBArdRNAsTrHO2Baz9S"/><text x="208" y="595" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="IB0dyoZC0PHhjtgk2KhluG">A</text>
+              <text x="208" y="632" font-size="11.5" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="iZEyJ9dey7fnD0A6p10eeg">Aisyah</text>
+              <circle cx="286" cy="588" r="27" fill="#e67e22" data-page-node-id="GFAcc3Gnc8DAHwnH1FT5e5"/><text x="286" y="595" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="3DEZ2zjDCqEGaBqTJhdorG">O</text>
+              <text x="286" y="632" font-size="11.5" font-weight="600" fill="#14151a" text-anchor="middle" data-page-node-id="vkodqRta07cMdBjgG2PmYC">Omar</text>
+            </g>
+
+            <!-- Primary button -->
+            <rect x="22" y="676" width="316" height="60" rx="30" fill="#cdf549" data-page-node-id="Eg15MEdEGZwGnupNvs77jU"/>
+            <text x="180" y="713" font-size="18" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="ENJJvadUcO5oJK7T1yEHxJ">Explore Wahda →</text>
+            <text x="180" y="744" font-size="12.5" fill="#9aa0ac" text-anchor="middle" data-page-node-id="rsWxddypvELg0lBMIRwjVZ">Enter Discover · fixed bottom-bar home</text>
+          </svg>
+        </div>
+        <div class="cap" data-page-node-id="4Y6FWgeUzV1gbYD6hKW6Zc"><b data-page-node-id="KGDMeMNA9UFN7Vv6lxLDb6">③b Personalized Recommendations</b><br data-page-node-id="8ZXN7pGZCoWBv7QJ5BNjZh">Recommends Communities / Events / Creators<br data-page-node-id="RBAaOQ9C57sRWd6qQDdC2c">Signals: region + phone profile (interests optional, ties into P052)<br data-page-node-id="mEqHkRTKopGA0dZgHS6lBd">Top completion banner → guides to Settings to finish</div>
+      </div>
+    </div>
+
+    <div class="merge-note" data-page-node-id="YKpabpo0rRnVzJ2A2bubsS">
+      <b data-page-node-id="azAaeOx818xUB36xP16bHn">Branches converge:</b> whether "Complete Profile" or "Do It Later", both paths end in the <b data-page-node-id="mRX0eHG8lX373Qc8GS0ogk">Discover home screen (fixed bottom bar, WeChat-style)</b>;
+      the completion path always stays open: <b data-page-node-id="DZFVJe7Md3cANFn9PGbTVU">⚙ Settings → Your Account → Basic Information</b> (the page already exists, P008: Username / Full Name / Bio / DOB / Gender / Phone / Email / Region) — fully aligned with the sign-up form fields, no duplicate data model.
+    </div>
+  </div>
+
+  <!-- ============ Spec list ============ -->
+  <section class="notes" data-page-node-id="tbOJHltnvscxVflJBIS33S">
+    <h2 data-page-node-id="idBQX41QGXWOkmcPW4O2rn">Interaction Spec · Mapped to the "Top 20 Improvements"</h2>
+    <div class="src" data-page-node-id="wpzuhb2dYbCSsR3cmqXFn3">Step 2-3 hits: #1 onboarding · #3 sign-up &amp; sign-in experience (REQ-050) · #7 content recommendations · #8 feed consumption; branch 2 auto-fills identity defaults on completion, compatible with #12 identity system</div>
+    <table data-page-node-id="Z1gzdCvg3Lc5inkUBsgJHU">
+      <tr data-page-node-id="7ynesWQz8r39ER1Ay2LxwJ"><th style="width:44px;" data-page-node-id="ccWf1oI7cQMgYF7NFCWI7V">#</th><th style="width:120px;" data-page-node-id="HvCRpmbstL9noTjZgV0iuv">Stage</th><th data-page-node-id="tAQGVQ1GCVMQCCFhSEWali">Design Points</th><th data-page-node-id="b45uX4uCYEpQxVyhgTzaMv">Basis</th></tr>
+      <tr data-page-node-id="Cl9pIcAHCGUCBmW6SwdL3L">
+        <td class="no" data-page-node-id="5HbyC8DsJkEZijVaEC0CKq"><span class="n2" data-page-node-id="OO2z7MIwAMxMtqi9BAVUUl">1</span></td>
+        <td data-page-node-id="C5CRFzHT5kSFdgCW3raUpV"><b data-page-node-id="hGkPr4Tllx1QmUSWBC24xY">Verification page</b><br data-page-node-id="295nyaOLpvjuJZUKtIJXAr"><small style="color:#9aa0ac;" data-page-node-id="FxKUEqOb56KFi9SPJ40q1n">A</small></td>
+        <td data-page-node-id="xIF1B03BXXdrzonyv5MUi5">6-digit OTP boxes auto-advance and support full paste; error copy follows the original PDF "Incorrect verification code entered" plus remaining attempts; 30s resend countdown, with WhatsApp as an alternative channel (SMS unreachable in some markets); tapping Edit on the number line steps back to change it</td>
+        <td class="basis" data-page-node-id="QNPQ9LqSDX9OLVkzulDSGt"><span class="tag" data-page-node-id="7RjBTOdwp3tdrQaXoaKRnn">#3 Sign-up &amp; Sign-in</span><span class="tag" data-page-node-id="Mc3sZxhTu5gEQ2le0Nf0Bh">Market Reachability</span></td>
+      </tr>
+      <tr data-page-node-id="Pi63XClp5wCQL9sHCKyaVy">
+        <td class="no" data-page-node-id="gFDIO7I1Mm7Rompdv2bWJB"><span class="n2" data-page-node-id="Zos61ZOr6TCA3ydLnoZwIT">2</span></td>
+        <td data-page-node-id="g00UYGAUe3Wk9xAnau1gp1"><b data-page-node-id="KZOKcvn9R4VB8GrgDjKyMs">Registration complete state</b><br data-page-node-id="Mo7Y2Wp6z1nfGAXC0hCOGV"><small style="color:#9aa0ac;" data-page-node-id="Y3z3FYyoEjelYhQApj4caj">B</small></td>
+        <td data-page-node-id="i2FrnoDiYD499FXMzmYdTg">After verification, show "Account created! 🎉" feedback first, then present the either-or choice, so users don't think the flow is unfinished; the two cards have clear weights (Complete Profile = primary green border, Do It Later = secondary gray border), but neither has a countdown or forcing — respecting the "fill it in later" choice</td>
+        <td class="basis" data-page-node-id="vBSfcHX8ds3eBkNo6NvTZc"><span class="tag" data-page-node-id="A9GnJ8IEZIVITFInBpmiu0">#1 Onboarding</span><span class="tag" data-page-node-id="t7uG4qGIgkp0EJAa0uY8Eo">Anti-drop-off</span></td>
+      </tr>
+      <tr data-page-node-id="5CyJM8HLrfF5X2trMl4f74">
+        <td class="no" data-page-node-id="FKCoiwpfjAVCchoIq60bMD"><span class="n2" data-page-node-id="UWbPpBiP2UmzS3LVkD9p1t">3</span></td>
+        <td data-page-node-id="5AdWKYdBjCWIZzAD2n5khg"><b data-page-node-id="Tw0FGxu3OreDUTpPA8HQEv">Complete Profile</b><br data-page-node-id="LdYjVbXA7QUeHnOTphyl2N"><small style="color:#9aa0ac;" data-page-node-id="f0la3J9aCapsJbAEPMimvQ">C1</small></td>
+        <td data-page-node-id="76fEtfGv2Nd9tPe4KgKAEI">Real-time username availability check (red flag on collision, ties into P041 "This username is taken"); password strength bar; Full name split into First/Last fields; date picker for DOB (see P032 calendar component); gender/country dropdowns; fields map one-to-one to P008 Basic Information and write to the same data on submit</td>
+        <td class="basis" data-page-node-id="ENsFlqxW6PGIWrju6gudrx"><span class="tag" data-page-node-id="MVKDpdfXsMIutBcnaWq7UE">#3 Sign-up &amp; Sign-in</span><span class="tag" data-page-node-id="2O4WqwEj2osaDO1IDiCDjk">#12 Identity System</span></td>
+      </tr>
+      <tr data-page-node-id="IlnKcMpR5Ipn76FFsoxR6Y">
+        <td class="no" data-page-node-id="3MIT75pBxGCZhdtfQbEwmE"><span class="n2" data-page-node-id="i2qMFDmpecpxTi0GqGhBXa">4</span></td>
+        <td data-page-node-id="vLMi4lTHUkCDR8lGETptlw"><b data-page-node-id="9QAFCjvp5p6ulRqNb4Amtz">Do It Later</b><br data-page-node-id="gPE2BiqlS91vKOkYhfGzR9"><small style="color:#9aa0ac;" data-page-node-id="wqYzlzqMh2kBfcrTXlYNX1">C2</small></td>
+        <td data-page-node-id="vCWOcyvK8op2MfZpad47sH">Skips the mandatory form and converts the "registration complete" feeling directly into content consumption; the system generates temporary default profile values from region + phone profile (e.g. Region=Indonesia), blocking nothing downstream</td>
+        <td class="basis" data-page-node-id="C9Cs835MWv4CiHGNzwBHr9"><span class="tag" data-page-node-id="xfgF73uST4pH0FEDb7vpg1">#1 Onboarding</span><span class="tag" data-page-node-id="uwm7q3EHwb1itO9VNKf8pO">Sign-up Funnel Optimization</span></td>
+      </tr>
+      <tr data-page-node-id="8EdV2zwLZQaBNNCmIJu1hG">
+        <td class="no" data-page-node-id="eflPcmDh7r4nELfcLATbWT"><span class="n2" data-page-node-id="mZURedqqGpVbYfVskLmCOe">5</span></td>
+        <td data-page-node-id="vtMx8iA6zf0wWDGnWgAwp0"><b data-page-node-id="1qDacrOi3JPcRG05nEpefZ">Recommendations page</b><br data-page-node-id="ssi6NkNEfoJAmn7BsMk5R6"><small style="color:#9aa0ac;" data-page-node-id="9cGPwRGU9v98T3wUNHRzHf">C2</small></td>
+        <td data-page-node-id="1xkplooRB4amZFvKwNJaWD">Three recommendation blocks — Communities / Events / Creators — each with See all; signals = region + phone profile, extendable with interest selection (P052 interest library) for cold-start weighting; a persistent completion banner at the top, with Settings leading straight to the completion page</td>
+        <td class="basis" data-page-node-id="p8FxtPFeZVUGz7eulJGc4F"><span class="tag" data-page-node-id="aVWhi41DzeJOBxbzCmwoPG">#7 Content Recommendations</span><span class="tag" data-page-node-id="2IWs7ferJjD8W4gy13NUze">#8 Feed Consumption</span></td>
+      </tr>
+      <tr data-page-node-id="quDBGEYl2bwHGBEUDCvTD0">
+        <td class="no" data-page-node-id="mQiSBLQZXbeSlozNF2bICC"><span class="n2" data-page-node-id="HdaEgzAwftfGmfaWoatvfG">6</span></td>
+        <td data-page-node-id="qimYNq7US1q7hlTaWxi7Cr"><b data-page-node-id="nFG7NTiwOeLm9sikHMXJXF">Convergence</b></td>
+        <td data-page-node-id="r33I6J0ECJdkVIHA6Tqmz9">Both branches converge on the Discover fixed bottom-bar home screen (the global spec finalized in P002); Settings → Basic Information is the only completion path and never closes; the recommendations page top hides bottom-bar badges, so the guided page isn't mistaken for the main interface</td>
+        <td class="basis" data-page-node-id="138LBWabSLs7bb7LHUs0Fr"><span class="tag" data-page-node-id="G2uLjLDzVHNI6kk2Fcedyj">#2 Global Navigation</span><span class="tag" data-page-node-id="JVplYdoafvOpLlLlDS83eQ">P002 Bottom-bar Spec</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer data-page-node-id="NSyH1eXE9bIFwy46NOij4w">WAHDA · PAGE-BY-PAGE REDESIGN · SIGN-UP STEP 2-3 FLOW · Based on the Top 20 Improvements</footer>
+</div>
+</body>
+</html>

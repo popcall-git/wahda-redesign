@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="RjobNiaiy0rYlGpcxFuDn0">
+<head data-page-node-id="pFtr1sDhRk7MQRNuL3Izno">
+<meta charset="utf-8" data-page-node-id="LD9FTpbpB1vvuWKtAi6G6m">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="echuVBKRBCkAfhSjPd9dw3">
+<title>P002 · Discover Home · Fixed Bottom Bar × Tab Unread Badges · Before/After</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:26px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+  .duo{display:flex; gap:28px; align-items:flex-start; justify-content:center; flex-wrap:wrap;}
+  .col{flex:0 1 460px; min-width:380px;}
+  .col-head{font-size:19px; font-weight:800; padding:12px 16px; border-radius:12px; margin-bottom:14px; text-align:center;}
+  .col-head.before{background:#fdeeee; color:#b03030; border:1px solid #f3caca;}
+  .col-head.after{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .shot{position:relative; border-radius:18px; overflow:hidden; box-shadow:0 8px 28px rgba(20,21,26,.12); background:#fff; width:352px; margin:0 auto;}
+  .shot img{display:block; width:352px; height:auto;}
+  .dot{position:absolute; width:30px; height:30px; border-radius:50%;
+       display:flex; align-items:center; justify-content:center;
+       color:#fff; font-size:15px; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.35);
+       border:2.5px solid #fff; transform:translate(-50%,-50%); cursor:default;}
+  .dot.red{background:var(--red);}
+  .dot.green{background:var(--green);}
+  .legend{margin-top:14px; font-size:14.5px; color:var(--sub); line-height:1.9; padding:0 6px;}
+  .legend b{color:var(--ink);}
+  .legend .n{display:inline-flex; width:21px; height:21px; border-radius:50%; color:#fff; font-size:12px;
+             align-items:center; justify-content:center; margin-right:7px; vertical-align:-4px; font-weight:800;}
+  .legend.red .n{background:var(--red);}
+  .legend.green .n{background:var(--green);}
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:280px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+</style>
+</head>
+<body data-page-node-id="0SnX544VFkDPaM5dlz2dYD">
+<div class="wrap" data-page-node-id="uHc4ImUuLb2ewSYQINPwHg">
+  <header data-page-node-id="XuVhdvLPrnamZ6Kd62gjGU">
+    <div class="kicker" data-page-node-id="jZpJaCj6rgFibHk4QH2R9I">WAHDA · Interaction Optimization · Page-by-Page 2 / 602</div>
+    <h1 data-page-node-id="Jm3mR6VnkxjHkyN8eKTt4Y">P002 · Discover Home — Fixed Bottom Navigation × Tab Unread Badges</h1>
+    <div class="meta" data-page-node-id="sXJsEQORAgXaL2BX15Fr96">Source: user-provided design screenshot (Discover home) · Two new requirements this round: ① fixed bottom bar (WeChat as reference) ② new Feeds / new Places / new messages / My Hub updates surface directly on bottom-bar tabs · Basis: "20 Key Improvements" #5 Globalized Notification Center · 2026-09-04</div>
+  </header>
+
+  <div class="duo" data-page-node-id="IiKcqIX5t64hK6H4paNGQO">
+    <!-- ============ Left: current ============ -->
+    <section class="col" data-page-node-id="5tOkGrqdDQ95hGjIPPde0k">
+      <div class="col-head before" data-page-node-id="Y4WokmKU5kXsGQELlGQre0">Current Design · Discover Home</div>
+      <div class="shot" data-page-node-id="zhy5g0ZxrOxqr7QP0t7Sg1">
+        <img src="pages/P002-user.png" alt="P002 current design" data-page-node-id="EWGB4ip4VrxSNOBOX9Hkra">
+        <span class="dot red" style="left:22%; top:93.2%;" data-page-node-id="r9HPAuFlxvuW2Na4GUL764">1</span>
+        <span class="dot red" style="left:49.5%; top:92.9%;" data-page-node-id="OPeS8yHuN3jTr7WKDQyBeL">2</span>
+        <span class="dot red" style="left:89.5%; top:6.4%;" data-page-node-id="nJfH0LdHHbdWTlfdAVA1Uh">3</span>
+      </div>
+      <ul class="legend red" style="list-style:none;" data-page-node-id="Lw8DbhAw8zX9hcMBoQW4ow">
+        <li data-page-node-id="1yOn1YhyiYJOgM0PHcu2aN"><span class="n" data-page-node-id="6dIlq1F7Odz4ADJZifnm0Y">1</span><b data-page-node-id="Qk3rLoYFU3ZaSchx6HmQbD">Bottom nav is a floating capsule</b>, not fixed — the navigation anchor is easily lost while scrolling</li>
+        <li data-page-node-id="hkFkCpkf5dJgEnU3Rt0buH"><span class="n" data-page-node-id="tqUJDnc7fF1oske6AcHIQS">2</span><b data-page-node-id="yC9nFt3HFR5Op3wX80IgjK">No unread/update indicators on tabs</b> — new Feeds and new messages are only discovered by tapping each one</li>
+        <li data-page-node-id="1iHQ1iszIdyyiVs95exJJb"><span class="n" data-page-node-id="dGBf5s3iJP8LB5GCN8KCAA">3</span><b data-page-node-id="AWwmGic8UGuiXEWK2m4AYV">Notifications concentrated in the Discover top-right bell</b> — no entry point on any other page</li>
+      </ul>
+    </section>
+
+    <!-- ============ Right: optimized ============ -->
+    <section class="col" data-page-node-id="VZMniP6mpJDCbdWE9gJONJ">
+      <div class="col-head after" data-page-node-id="TK6jlqlAdDgmUkGABKkqQh">Optimized · Redrawn mockup (page content untouched, only the bottom bar changed)</div>
+      <div class="shot" data-page-node-id="JP0bjPKqt9rouD6hCYhU71">
+        <svg viewBox="0 0 750 1624" width="352" xmlns="http://www.w3.org/2000/svg" style="display:block;" data-page-node-id="wC9B4fW5SSf3jWiX3b6wct">
+          <defs data-page-node-id="ZRTDZwyplnZZl0eC00GZO4">
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="h4rebGI2UyiMuEqRCPtDfZ"><stop offset="0" stop-color="#f0a58f" data-page-node-id="AVp0ojEEeoGTc74k2UZIqf"/><stop offset="1" stop-color="#c65b4e" data-page-node-id="WqtFDnSRCPLTLGqLy9lSrw"/></linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1" data-page-node-id="Ay5lnD3cjbLChX0YDlbNrr"><stop offset="0" stop-color="#3f8f7a" data-page-node-id="FFB1XLCsDdvDqEeK0YaDgy"/><stop offset="1" stop-color="#1f5f52" data-page-node-id="meQynSLwrEaZ2rZIjVCapw"/></linearGradient>
+            <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1" data-page-node-id="x5UGzQFm6KzRCxo8qkxzek"><stop offset="0" stop-color="#8e7cf3" data-page-node-id="6jFeYakOmOggHOFmqn4N3x"/><stop offset="1" stop-color="#5a4bd1" data-page-node-id="Gab9Z0AiHk2BFaluSuTMXV"/></linearGradient>
+            <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1" data-page-node-id="WWjvmNDhzI7Pphy72xy3Kj"><stop offset="0" stop-color="#5fa8d3" data-page-node-id="8uwzuuojHBeE15eaGn0gpL"/><stop offset="1" stop-color="#2f6f9f" data-page-node-id="DFMEaSfxwqrzCt7jS8vLDR"/></linearGradient>
+            <linearGradient id="ev1" x1="0" y1="0" x2="0" y2="1" data-page-node-id="ZFPKXrkXHALQ1lbDxGQdx4"><stop offset="0" stop-color="#e2634f" data-page-node-id="YAPFl7DvG2fRsrkLv4Oh3z"/><stop offset="1" stop-color="#8a2f22" data-page-node-id="HGKjlmXYNKoHBLDw5RAIOZ"/></linearGradient>
+            <linearGradient id="ev2" x1="0" y1="0" x2="0" y2="1" data-page-node-id="JWMbrInSnEegsY62qvBDZz"><stop offset="0" stop-color="#3f8f9f" data-page-node-id="HQnrykrtJjYYxT6UBGlwEB"/><stop offset="1" stop-color="#1f4f5f" data-page-node-id="6Yn93JxZv7gO0PqJ86gS74"/></linearGradient>
+          </defs>
+
+          <rect width="750" height="1624" fill="#ffffff" data-page-node-id="K6xh8x79gsed3aDVFnYiB7"/>
+
+          <!-- Status bar -->
+          <text x="55" y="52" font-size="28" font-weight="600" fill="#111" data-page-node-id="in5NfDlQyGI4nXV5Zo44WR">9:41</text>
+          <g fill="#111" data-page-node-id="QxILKOfnvtb9WH6FgiAciJ">
+            <rect x="596" y="30" width="6" height="14" rx="2" data-page-node-id="tmycyJr5HDiDwZfUNZAKax"/><rect x="606" y="25" width="6" height="19" rx="2" data-page-node-id="wbCEWUIYlpaqIu2PMGWF8D"/>
+            <rect x="616" y="20" width="6" height="24" rx="2" data-page-node-id="ymkNGwVlN0jqyZpmTxGycd"/><rect x="626" y="15" width="6" height="29" rx="2" data-page-node-id="SAJWOr1xLvwijh9S4OoaFE"/>
+            <rect x="692" y="20" width="34" height="18" rx="6" fill="none" stroke="#111" stroke-width="3" data-page-node-id="DmsEhSxO7twTSttI4sXv1U"/>
+            <rect x="696" y="24" width="22" height="10" rx="3" data-page-node-id="B0dcHFrUp0aqdpl7TWe3Ve"/>
+          </g>
+
+          <!-- Header -->
+          <text x="50" y="128" font-size="48" font-weight="800" fill="#14151a" data-page-node-id="JZ8L04KzQdu6eqqB9ULsW5">Discover</text>
+          <!-- Bell (kept as the global aggregated notification entry) -->
+          <path d="M680 78 c-16 0 -26 12 -26 28 v18 l-10 14 h72 l-10 -14 v-18 c0 -16 -10 -28 -26 -28 z" fill="none" stroke="#14151a" stroke-width="5" stroke-linejoin="round" data-page-node-id="clAN5HvbPMIXrSg1xqaB10"/>
+          <path d="M668 144 a12 12 0 0 0 24 0" fill="none" stroke="#14151a" stroke-width="5" stroke-linecap="round" data-page-node-id="Nk4Z0bdC8pRzOP6L8Be7CK"/>
+          <circle cx="704" cy="82" r="17" fill="#3b82f6" stroke="#fff" stroke-width="3" data-page-node-id="PB9zGEH3vV5THrhnk85at6"/>
+          <text x="704" y="89" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="xGX8aAFlzvOV60T77TtBqI">4</text>
+
+          <!-- Search -->
+          <rect x="50" y="162" width="650" height="62" rx="18" fill="#f1f1f4" data-page-node-id="QQW31rQ1yFqUGm55T4DONg"/>
+          <circle cx="86" cy="193" r="10" fill="none" stroke="#9aa0ac" stroke-width="3.5" data-page-node-id="HAqUftGJFXwHIbfVJGwe1U"/>
+          <line x1="94" y1="201" x2="104" y2="211" stroke="#9aa0ac" stroke-width="3.5" stroke-linecap="round" data-page-node-id="Y4EQqtlUBS57OXzVg181p4"/>
+          <text x="120" y="202" font-size="24" fill="#9aa0ac" data-page-node-id="tND5CKXUUklmKXiLJefa6C">Search</text>
+
+          <!-- Discover feature area -->
+          <text x="50" y="292" font-size="28" font-weight="800" fill="#14151a" data-page-node-id="F6BROjcYZD31szQH1UvrcQ">Discover</text>
+          <text x="580" y="292" font-size="22" fill="#6b7078" data-page-node-id="TpiMv74VRvR4A30GV2X6QN">Explore All</text>
+          <path d="M672 276 l12 12 -12 12" stroke="#6b7078" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="fpEy7dDAkzz0LrFUidfBBd"/>
+
+          <g data-page-node-id="Y1UT9PALBUImzrXsQWlgQl">
+            <rect x="50" y="318" width="148" height="96" rx="22" fill="#16161d" data-page-node-id="UIyIgZqJOHa3SrQ5ZeZqDB"/>
+            <path d="M124 356 c0 -14 -14 -22 -24 -22 s-24 8 -24 22 l-6 14 h60 z" fill="#a8d94f" data-page-node-id="xgnJBpzicHTsXYxeNSSKMv"/>
+            <rect x="86" y="374" width="76" height="10" rx="5" fill="#a8d94f" data-page-node-id="OQjb56y09XAqTsxnJECFCi"/>
+            <text x="124" y="446" font-size="20" fill="#14151a" text-anchor="middle" font-weight="600" data-page-node-id="bYJu6RcicKOX9d9tWPSLcg">Prayer Time</text>
+          </g>
+          <g data-page-node-id="qLS8yw8Fo5mBvw8okQXB8c">
+            <rect x="217" y="318" width="148" height="96" rx="22" fill="#16161d" data-page-node-id="IMXnvSa4NZXV1gDUKtvyGG"/>
+            <path d="M291 348 c-10 -8 -22 -8 -30 -2 c-8 -6 -20 -6 -30 2 v40 c10 -8 22 -8 30 -2 c8 -6 20 -6 30 2 z" fill="#a8d94f" data-page-node-id="zUJ34QniItKRpEHeAQ5nMe"/>
+            <line x1="261" y1="350" x2="261" y2="386" stroke="#16161d" stroke-width="4" data-page-node-id="zo4ECJPFznTI7FClzPoQ0a"/>
+            <text x="291" y="446" font-size="20" fill="#14151a" text-anchor="middle" font-weight="600" data-page-node-id="j2hj1NmMcXcL6M4CAf1jxG">Quran</text>
+          </g>
+          <g data-page-node-id="A2NBANUI1b5aBKjWc0sRGu">
+            <rect x="384" y="318" width="148" height="96" rx="22" fill="#16161d" data-page-node-id="TvjWyg0Rb8gfG3goXDHGDH"/>
+            <rect x="432" y="344" width="52" height="46" rx="8" fill="#a8d94f" data-page-node-id="R8ltFJJCyPWFczcfzKR3n9"/>
+            <circle cx="476" cy="356" r="8" fill="#16161d" data-page-node-id="R8atFkOJ2YLh6WtjUDgAR9"/>
+            <path d="M462 378 a8 8 0 0 1 14 0 l-4 6 -8 -1 z" fill="#16161d" data-page-node-id="wrKV6mAyurkGJR8IcVV8ht"/>
+            <text x="458" y="446" font-size="20" fill="#14151a" text-anchor="middle" font-weight="600" data-page-node-id="f6CZZGlDANDpIAgfSMzhNJ">Islamic Calendar</text>
+          </g>
+          <g data-page-node-id="FUMjfBTmrKR16J2ESeAFQD">
+            <rect x="551" y="318" width="148" height="96" rx="22" fill="#16161d" data-page-node-id="452fu6DgJJAHFj2N0M6CcX"/>
+            <circle cx="625" cy="366" r="24" fill="none" stroke="#a8d94f" stroke-width="5" data-page-node-id="fBhGAMSoMfu6oG2oFbjNfS"/>
+            <rect x="617" y="358" width="16" height="16" rx="3" fill="#a8d94f" data-page-node-id="NEWsCNdeVoy9Esa4oWV0fE"/>
+            <text x="625" y="446" font-size="20" fill="#14151a" text-anchor="middle" font-weight="600" data-page-node-id="7OnifEMNZwkOpaGHJEsLJG">Qiblah</text>
+          </g>
+
+          <!-- Recommended Groups -->
+          <text x="50" y="512" font-size="28" font-weight="800" fill="#14151a" data-page-node-id="E3vPPMtGv7qFEtgIecVyOw">Recommended Groups</text>
+          <text x="614" y="512" font-size="22" fill="#6b7078" data-page-node-id="gusq7o2B9g78zgFqVAde37">See All</text>
+          <path d="M690 496 l12 12 -12 12" stroke="#6b7078" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="9cdcQevxEupC79PSv9J8EP"/>
+
+          <g data-page-node-id="4ybawMvP4hemQsKoFjsuup">
+            <circle cx="88" cy="566" r="34" fill="url(#g3)" data-page-node-id="sTa3ot7QAf23tXj9crcgwq"/><text x="88" y="576" font-size="26" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="xK5PQTi7CaW7yuyV2zsHXG">S</text>
+            <text x="140" y="558" font-size="25" font-weight="700" fill="#14151a" data-page-node-id="zEDhcRniuEiDABXylfkJDP">Sisters in Reflection</text>
+            <text x="140" y="586" font-size="20" fill="#8a8f9a" data-page-node-id="Sh161IpabqZBiJOM24rXYF">190k members</text>
+            <text x="140" y="614" font-size="20" fill="#5a5f6b" data-page-node-id="MPkpUHV8mBZPzuuR1f8997">Daily reminders, Qur'an journaling, and gentle</text>
+            <text x="140" y="640" font-size="20" fill="#5a5f6b" data-page-node-id="cWxDn7KaE5pumAx40c8IWE">reflection together 🌸</text>
+          </g>
+          <g data-page-node-id="8G9XLcqacWTCouuY7eX3qF">
+            <circle cx="88" cy="698" r="34" fill="url(#g4)" data-page-node-id="B8LYvKATrI5RpdaxDVtoYy"/><text x="88" y="708" font-size="26" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="6k6bDNLDiroEUNIEHjf7ar">Y</text>
+            <text x="140" y="690" font-size="25" font-weight="700" fill="#14151a" data-page-node-id="KRyvPcFTGoOmXv3T10Id2K">Young Professionals Network</text>
+            <g stroke="#7c6fe0" stroke-width="3.5" fill="none" stroke-linecap="round" data-page-node-id="ouYllDfIcPTrkNVGaKYbEJ">
+              <line x1="490" y1="678" x2="490" y2="690" data-page-node-id="m7ihzbQnAAaljzXJdzRBXD"/><line x1="500" y1="672" x2="500" y2="696" data-page-node-id="y5QKk9hIMgBLvHy7rdY2QA"/><line x1="510" y1="678" x2="510" y2="690" data-page-node-id="hIkOjTZIYygBE877J3FCmD"/>
+            </g>
+            <text x="140" y="718" font-size="20" fill="#8a8f9a" data-page-node-id="2Hab01ggfPAntatclxtzNO">190k participants</text>
+            <text x="140" y="746" font-size="20" fill="#5a5f6b" data-page-node-id="55Khkn6NVnQrnese0GceID">Join us for a joyful iftar evening and Qur'an</text>
+            <text x="140" y="772" font-size="20" fill="#5a5f6b" data-page-node-id="rXYgzcikDrAKbJfNtWvToN">reflection. Families welcome, insha'Allah.</text>
+          </g>
+          <g data-page-node-id="ErBGUYIKGqV1SEAmlDFaKl">
+            <circle cx="88" cy="830" r="34" fill="url(#g1)" data-page-node-id="FGU7ztJfnlx9siJZzEToIB"/><text x="88" y="840" font-size="26" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="yRSpsFNoI1BFsCvphWZBQp">E</text>
+            <text x="140" y="822" font-size="25" font-weight="700" fill="#14151a" data-page-node-id="clXLSCa0ZsqNhcPGuhKLS9">Education Growth Hub</text>
+            <g stroke="#7c6fe0" stroke-width="3.5" fill="none" stroke-linecap="round" data-page-node-id="jIrU7hqZcWxoiTSIN7emtz">
+              <line x1="424" y1="810" x2="424" y2="822" data-page-node-id="hyIQumfo5RB0mIA1Elfva5"/><line x1="434" y1="804" x2="434" y2="828" data-page-node-id="GFccLoCJdSNx8BWVJbNdpw"/><line x1="444" y1="810" x2="444" y2="822" data-page-node-id="EaYiODOFKEMp6iHtNfQGTX"/>
+            </g>
+            <text x="140" y="850" font-size="20" fill="#8a8f9a" data-page-node-id="wp6yqwCAzcc8XGPuAzOdSE">190k participants</text>
+            <text x="140" y="878" font-size="20" fill="#5a5f6b" data-page-node-id="qzqHieJoQrvgw78d6BspZu">Join us for a joyful iftar evening and Qur'an</text>
+            <text x="140" y="904" font-size="20" fill="#5a5f6b" data-page-node-id="B2AYv6fB7FVBpvfTVLF5QC">reflection. Families welcome, insha'Allah.</text>
+          </g>
+          <g data-page-node-id="WyNWGM8ix4yPLFGwC2seT5">
+            <circle cx="88" cy="962" r="34" fill="url(#g2)" data-page-node-id="OBPVSkKXa29g0pGzAAg06T"/><text x="88" y="972" font-size="26" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="64Mx1SDtM0aybl9fk2nrR9">M</text>
+            <text x="140" y="954" font-size="25" font-weight="700" fill="#14151a" data-page-node-id="U4sh8BmqbsAeuUU5qAHBxw">Masjid Al-Falah Community…</text>
+            <text x="140" y="982" font-size="20" fill="#8a8f9a" data-page-node-id="mSXMsyBsx0HNRDRKvDelY8">190k members</text>
+            <text x="140" y="1010" font-size="20" fill="#5a5f6b" data-page-node-id="kcuDDKzGRYHgYUjs4pnlq3">Join us for a joyful iftar evening and Qur'an</text>
+            <text x="140" y="1036" font-size="20" fill="#5a5f6b" data-page-node-id="HUN4wmJPbzsYuLPbbkanEg">reflection. Families welcome, insha'Allah.</text>
+          </g>
+
+          <!-- Events Near You -->
+          <text x="50" y="1102" font-size="28" font-weight="800" fill="#14151a" data-page-node-id="a5uo4pBXbmfebQAvgHCJua">Events Near You</text>
+          <text x="614" y="1102" font-size="22" fill="#6b7078" data-page-node-id="6p1Hw6QLRiYD5XeTytlUlB">See All</text>
+          <path d="M690 1086 l12 12 -12 12" stroke="#6b7078" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="CUic1R8PqjwpL7lajePPPD"/>
+
+          <g data-page-node-id="zKhYdJGuH49X1OWIEa1bl6">
+            <rect x="50" y="1126" width="315" height="310" rx="20" fill="#fff" stroke="#ececf1" data-page-node-id="eo3bdJdgQ2vKqBObfC5sd7"/>
+            <path d="M50 1146 a20 20 0 0 1 20 -20 h275 a20 20 0 0 1 20 20 v140 h-315 z" fill="url(#ev1)" data-page-node-id="yvWHWCBGBYPpaB0JoAuHSj"/>
+            <text x="70" y="1330" font-size="24" font-weight="800" fill="#14151a" data-page-node-id="BgSpbBUXtAYNUJU9hATvqC">Community Iftar Night</text>
+            <text x="70" y="1360" font-size="20" fill="#5a5f6b" data-page-node-id="QVrvl97Oh0C9qHQoj0cJKz">Join us for a joyful iftar evening</text>
+            <text x="70" y="1386" font-size="20" fill="#5a5f6b" data-page-node-id="koia6VKWVR3XXBhMz7DyUs">and Qur'an reflection…</text>
+            <text x="70" y="1414" font-size="20" fill="#8a8f9a" data-page-node-id="mREWTUcbnll9HBlDb9azTR">13 November 2025</text>
+            <circle cx="76" cy="1428" r="5" fill="none" stroke="#8a8f9a" stroke-width="2.5" data-page-node-id="GBSYAnKQlTnehdO45ipmFy"/>
+            <text x="88" y="1436" font-size="20" fill="#8a8f9a" data-page-node-id="DJEd5iNdkBtuZBSV4UrHjw">Online</text>
+          </g>
+          <g data-page-node-id="JQJyMZvgvLTiEQ9TOJchiU">
+            <rect x="385" y="1126" width="315" height="310" rx="20" fill="#fff" stroke="#ececf1" data-page-node-id="M9L1vcfxBrblkJmt5u4OK6"/>
+            <path d="M385 1146 a20 20 0 0 1 20 -20 h275 a20 20 0 0 1 20 20 v140 h-315 z" fill="url(#ev2)" data-page-node-id="4w56X0OjZIF8I8BScmNtjd"/>
+            <text x="405" y="1330" font-size="24" font-weight="800" fill="#14151a" data-page-node-id="FvRk1z3TREr3UafUJNEeqN">After office quran</text>
+            <text x="405" y="1360" font-size="20" fill="#5a5f6b" data-page-node-id="i1aE4jPlXrKFUS1nbjq2H7">Join us for a joyful iftar</text>
+            <text x="405" y="1386" font-size="20" fill="#5a5f6b" data-page-node-id="S7CpU1PlenPGntatsNk3al">and Qur'an reflection…</text>
+            <text x="405" y="1414" font-size="20" fill="#8a8f9a" data-page-node-id="j9VThB3Qb7OcayJ2MJ7Z2q">13 November 2025</text>
+            <circle cx="411" cy="1428" r="5" fill="none" stroke="#8a8f9a" stroke-width="2.5" data-page-node-id="FIdrmoFnzbNzepfi0AY1Ui"/>
+            <text x="423" y="1436" font-size="20" fill="#8a8f9a" data-page-node-id="CuMoyezZbrJOoAwKTVFaOO">Masjid Al-Falah</text>
+          </g>
+
+          <!-- ============ Fixed full-width bottom bar (WeChat-style) ============ -->
+          <rect x="0" y="1450" width="750" height="174" fill="#16161d" data-page-node-id="jRb3rc4IvFWDjETiJjaSEs"/>
+          <line x1="0" y1="1450" x2="750" y2="1450" stroke="#2a2a33" stroke-width="2" data-page-node-id="N4LoEQ9zYqmd8fCLZyQy8B"/>
+
+          <!-- Discover (active) -->
+          <path d="M75 1478 l9 20 22 3 -16 15 4 22 -19 -11 -19 11 4 -22 -16 -15 22 -3 z" fill="#a3e635" data-page-node-id="A4Fit0agGgi1BKdK7BKlVr"/>
+          <text x="75" y="1578" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" data-page-node-id="Q3xWyZpmt2Ibny2Og9hYER">Discover</text>
+          <!-- Places + red dot -->
+          <path d="M225 1478 c-13 0 -22 9 -22 21 c0 15 22 33 22 33 s22 -18 22 -33 c0 -12 -9 -21 -22 -21 z" fill="none" stroke="#c7cad1" stroke-width="4.5" data-page-node-id="oHx4ML8JTZGxZrIPZ2kzwG"/>
+          <circle cx="225" cy="1500" r="6" fill="none" stroke="#c7cad1" stroke-width="4" data-page-node-id="diucMBEGlfqfnlRsABHA6h"/>
+          <circle cx="248" cy="1480" r="9" fill="#ff3b30" stroke="#16161d" stroke-width="3" data-page-node-id="B3C0AhFTVKaMzLTs13uDNe"/>
+          <text x="225" y="1578" font-size="20" fill="#c7cad1" text-anchor="middle" data-page-node-id="JrA5n0wA6Tq8BHyYTWrH7a">Places</text>
+          <!-- Chats + numeric badge -->
+          <path d="M375 1478 c-17 0 -30 11 -30 26 c0 9 5 16 12 21 l-3 12 13 -7 c3 1 5 1 8 1 c17 0 30 -12 30 -27 s-13 -26 -30 -26 z" fill="none" stroke="#c7cad1" stroke-width="4.5" stroke-linejoin="round" data-page-node-id="Z61sqQd9aZrHEo461v1cFe"/>
+          <circle cx="400" cy="1478" r="17" fill="#ff3b30" stroke="#16161d" stroke-width="3" data-page-node-id="4bsiNKVZ8FKX9vzvpHExsa"/>
+          <text x="400" y="1485" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="tUWb0UiL3QRCiNRjKunuGz">3</text>
+          <text x="375" y="1578" font-size="20" fill="#c7cad1" text-anchor="middle" data-page-node-id="DrUbX8rVyED73lpqFoGrLM">Chats</text>
+          <!-- Feeds + red dot -->
+          <rect x="353" y="1480" width="44" height="44" rx="10" fill="none" stroke="#c7cad1" stroke-width="4.5" transform="translate(148,0)" data-page-node-id="0WH8vH34HB4AFGYmKQZ5uL"/>
+          <line x1="513" y1="1494" x2="533" y2="1494" stroke="#c7cad1" stroke-width="4" stroke-linecap="round" data-page-node-id="nsUjir9jUJEyN0nT4AgAJ7"/>
+          <line x1="513" y1="1508" x2="527" y2="1508" stroke="#c7cad1" stroke-width="4" stroke-linecap="round" data-page-node-id="VbOyZ6o3hhrH8nQ1UqOY2t"/>
+          <circle cx="549" cy="1480" r="9" fill="#ff3b30" stroke="#16161d" stroke-width="3" data-page-node-id="BGYiB6KmtOXK0KqjL3vtdU"/>
+          <text x="525" y="1578" font-size="20" fill="#c7cad1" text-anchor="middle" data-page-node-id="Ji03qt6NGGelNighQCUwXf">Feeds</text>
+          <!-- My Hub + red dot -->
+          <g transform="translate(675,1502)" data-page-node-id="3IDevj9EfoDFKJmIMhaDA1">
+            <rect x="-24" y="-24" width="20" height="20" rx="5" fill="none" stroke="#c7cad1" stroke-width="4" data-page-node-id="jGh9kpROiEEAll7QCsyMmj"/>
+            <rect x="4" y="-24" width="20" height="20" rx="5" fill="none" stroke="#c7cad1" stroke-width="4" data-page-node-id="HqeYLdlpJFp5wacva8oyaU"/>
+            <rect x="-24" y="4" width="20" height="20" rx="5" fill="none" stroke="#c7cad1" stroke-width="4" data-page-node-id="kSEOnnD8ppKM4f2TDB1aAN"/>
+            <rect x="4" y="4" width="20" height="20" rx="5" fill="none" stroke="#c7cad1" stroke-width="4" data-page-node-id="PP7XoswCm3D9jH9Pidc9Jq"/>
+          </g>
+          <circle cx="700" cy="1478" r="9" fill="#ff3b30" stroke="#16161d" stroke-width="3" data-page-node-id="H66S2Wif0BFVG5GBvmniEO"/>
+          <text x="675" y="1578" font-size="20" fill="#c7cad1" text-anchor="middle" data-page-node-id="mOCWAf17XqrRkKa362BHpd">My Hub</text>
+          <!-- home indicator -->
+          <rect x="275" y="1596" width="200" height="8" rx="4" fill="#ffffff" opacity="0.9" data-page-node-id="e1ML9fxuIVishfV5jouhes"/>
+
+          <!-- Optimization green markers -->
+          <g font-size="22" font-weight="800" text-anchor="middle" data-page-node-id="7RI9Xlc8gOxczmZBgWmp4E">
+            <circle cx="42" cy="1472" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="NR4drgaPPaQeqLnXR9Fb92"/><text x="42" y="1480" fill="#fff" data-page-node-id="8d5Q7gJAyzZNOTRfjcAeEL">1</text>
+            <circle cx="272" cy="1452" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="O1g9XQEPpG0w1LqRwC8OL4"/><text x="272" y="1460" fill="#fff" data-page-node-id="ivcSH95M7DVtXreIpQbady">2</text>
+            <circle cx="424" cy="1452" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="eLa0ts8LEylEqoMLt1lGzy"/><text x="424" y="1460" fill="#fff" data-page-node-id="RGYtDx8K16OlPo91PWwSnH">3</text>
+            <circle cx="573" cy="1452" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="W58HSaRnH6iJNiyDYKCBb7"/><text x="573" y="1460" fill="#fff" data-page-node-id="JUMUQkcI5OzA4IAskZCiFt">4</text>
+            <circle cx="724" cy="1452" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="TJ4MGw0Q8z0F59eLuSI42U"/><text x="724" y="1460" fill="#fff" data-page-node-id="14SdwnwWqrWXrnQ3LD8HI7">5</text>
+            <circle cx="640" cy="82" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="z5D47eQaCEocySmWN3cNKk"/><text x="640" y="90" fill="#fff" data-page-node-id="1BUYQYBiaJaMxNII1kttEh">6</text>
+          </g>
+        </svg>
+      </div>
+      <ul class="legend green" style="list-style:none;" data-page-node-id="8GoVkbQAz8rT9a0qzKGWWE">
+        <li data-page-node-id="U9aVdFDDDzHi1PpIEnMkPm"><span class="n" data-page-node-id="SpKiT0Es7ze5EpbQlY5L2l">1</span><b data-page-node-id="vMIB7E6UWvUtoLrUUBCjus">Fixed bottom bar</b> as a full-width solid bar (WeChat-style): always pinned, content scrolls beneath it</li>
+        <li data-page-node-id="q7fi3HeeHyzapA2ZGXTfQa"><span class="n" data-page-node-id="u1lz4qo1OjYio45negBQjz">2</span><b data-page-node-id="X3BMsVvUKb0YlNHeKOuVWk">Places red dot</b>: new nearby places/events</li>
+        <li data-page-node-id="1Yh9FRvcC54ekWw7KQPVdQ"><span class="n" data-page-node-id="Izsld9qTXOpr5GsDU52AG2">3</span><b data-page-node-id="8cxCtCDAGNfOUGD58Za7ai">Chats numeric badge</b>: 3 new messages (WeChat-style unread count)</li>
+        <li data-page-node-id="QlvuGzZlWf5bCDQoVc0lIl"><span class="n" data-page-node-id="WgawyqtMsrbFBdAffmAdvt">4</span><b data-page-node-id="vbIbIEMy0ulYOhqpsQOODf">Feeds red dot</b>: new content to view</li>
+        <li data-page-node-id="pbn2FoMRXonteVOtMgYGUn"><span class="n" data-page-node-id="q8HmVmKofbZclZfcB1Qjh1">5</span><b data-page-node-id="uRMJt1xnt5zipp50V3T5H0">My Hub red dot</b>: new account updates</li>
+        <li data-page-node-id="AuLFlVzvIW3ki1FZD5Gvwh"><span class="n" data-page-node-id="6DIDelNB9HflzMkkOXxHf1">6</span><b data-page-node-id="sEh6kfLg8PDkikZY0AUxOb">Bell kept</b> as the global aggregated inbox (unread count 4), synced with tab badges</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ============ Optimization checklist ============ -->
+  <section class="notes" data-page-node-id="K0sVLwjkaSzMY0yJPnIg8T">
+    <h2 data-page-node-id="XDvyUTF3E7N10OB2OCbxMX">Optimization Checklist · Two New Requirements This Round + Mapping to the "20 Key Improvements"</h2>
+    <div class="src" data-page-node-id="2BuNIC30EmiQfdIzhGEd3s">P002 hits: Improvement #5 Globalized Notification Center (REQ-046 / 066 / 091) + V4 supplementary improvement "Bottom Bar &amp; FAB" Group C (fixed bottom bar) · WeChat's bottom bar used as the reference pattern</div>
+    <table data-page-node-id="7zfxJswHuHTHkrorsLHvC6">
+      <tr data-page-node-id="fB9mpRYsil7Ddxa3Vcb9s8"><th style="width:44px;" data-page-node-id="NHm4cF9oYmKVi8uP6Nen9I">#</th><th data-page-node-id="4c7NPzJEHEY3GeTBGTUa53">Current Issue</th><th data-page-node-id="Ym24WkHwaT8ECilbdfxWdI">Optimization Action</th><th data-page-node-id="iKFx7dTC10PewMzxl7MmFr">Basis</th></tr>
+      <tr data-page-node-id="JNbBPGGABtdhQCTAo7Rjsi">
+        <td class="no" data-page-node-id="RCsA3Ncl9AV37hFpOAJXQ6"><span class="n2" data-page-node-id="KZ6oOqwgcaHU6sW5FnjQtd">1</span></td>
+        <td data-page-node-id="CedTwft6YfnH8DhA3tDORQ">Bottom nav is a floating rounded capsule, not fixed — weak navigation anchor while scrolling, easily pushed out of view by content</td>
+        <td data-page-node-id="mzYlBkrEV3YSJ0V51VD9Fm">Switch to a <b data-page-node-id="6BZUAflfsftFQH2JS8XRxX">fixed full-width solid bottom bar</b> (WeChat as reference): always pinned to the bottom, clearly separated from content by a divider, content scrolls beneath it; keeps Wahda's dark brand surface and green active state</td>
+        <td class="basis" data-page-node-id="GV4lV3m9uCtLQWSwGDEZfh"><span class="tag" data-page-node-id="Ipy12DlDzsUim4jhndvams">User Directive ①</span><span class="tag" data-page-node-id="1SPD4FGwLyvtnvSAqGvi9c">V4 · Fixed Bottom Bar (Group C)</span></td>
+      </tr>
+      <tr data-page-node-id="6gVqC6l8j3Ks26Bk9KdhIb">
+        <td class="no" data-page-node-id="jY1B93zmrLkXgYWAF0Ud9a"><span class="n2" data-page-node-id="YtO7hdAnDAb0OKAsJIJFLM">2</span></td>
+        <td data-page-node-id="SbXqywKVoOGMUdMz1RQaM3">New content (new Feeds / new Places / new messages / My Hub updates) gives no hint on the bottom bar — users must tap into each tab to find out</td>
+        <td data-page-node-id="LNIB3BPAhxqVO8AH9FsCAp"><b data-page-node-id="O9zAna29CB2kxUsTvDYO1c">Tab-level unread badges</b>: Chats shows an unread number (e.g. 3); Places / Feeds / My Hub show red dots; dots clear on entering the tab, same logic as WeChat</td>
+        <td class="basis" data-page-node-id="KAbXNKlwvf3bVzSE11OKA3"><span class="tag" data-page-node-id="mmday1n0FnBvA4mv4bWqBL">User Directive ②</span><span class="tag" data-page-node-id="0TGppJLqGWxv4V1uHkHux9">#5 Globalized Notification Center</span></td>
+      </tr>
+      <tr data-page-node-id="eGRPmy2eY3HYKdE5U3hToP">
+        <td class="no" data-page-node-id="eHQYiyxBH99AtAIWT7Zz0Z"><span class="n2" data-page-node-id="B7xLg0LLfQNXq6isj6itZj">3</span></td>
+        <td data-page-node-id="1OrRMswPNjllwCW8xcTvu2">All notifications concentrate in the Discover top-right bell; other pages have no notification entry point</td>
+        <td data-page-node-id="7QAiu4aBnusgzVAZhOF7zp">Bell kept as the <b data-page-node-id="CQn0R0DsVyA3VfVekgGUaC">global aggregated inbox</b> (its unread count equals the sum of tab badges); persistent top bell + bottom-bar tab badges form a two-level system: tap the bell for everything, tap a tab for its category</td>
+        <td class="basis" data-page-node-id="IQ8F6OUQw8eKgGzT9YKKfn"><span class="tag" data-page-node-id="Ew1EQdfIFhLIZ7YwaZCBCX">#5 Globalized Notification Center</span><span class="tag" data-page-node-id="zJEl0IB3hFY3EsByJTlDvH">REQ-046 · 066 · 091</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer data-page-node-id="rLpVhdJ3Hfc8aVQRN0iJNn">WAHDA · PAGE-BY-PAGE REDESIGN · P002 · Based on the 20 Key Improvements + this round's user directives</footer>
+</div>
+</body>
+</html>

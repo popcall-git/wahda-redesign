@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feeds Detail · Comments Section Update Mockup</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; color:#161c28; letter-spacing:.3px; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13.5px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:52px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f1fb; color:#2264a8; border:1px solid #c6dcf2; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:20px; line-height:1.7; }
+
+  .orig { display:flex; gap:18px; flex-wrap:wrap; }
+  .orig .frame { flex:1; min-width:200px; max-width:300px; }
+  .phone { border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .phone img { width:100%; display:block; }
+  .frame .cap { text-align:center; margin-top:10px; font-size:13px; color:#3a4150; font-weight:700; }
+  .frame .cap span { color:#8a8f9c; font-weight:500; }
+
+  .compare { display:flex; gap:28px; align-items:flex-start; }
+  .col { flex:1; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12.5px; letter-spacing:1px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:12px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .muted { color:#8a8f9c; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Feeds Detail · Comments Section Update Mockup <span class="en">Based on real comment design</span></h1>
+  <div class="badge">New workflow: Figma original as base + local modification layers · comment entries directly reuse the original real design and copy</div>
+  <p class="sub">In the 602-page export, the <b>post detail page is entirely missing</b> and the comments section has no native reference. The only comment UI in the entire document is the <b>"Your Comments" page (page 155)</b> — real comment entry design with real copy (halal restaurant Q&A, kids playground reply). Building on the Post card + engagement identity row from the previous round, this update mockup completes the comments section within the same design system: comments / replies / drill-down / input bar.</p>
+
+  <h2>Design sources: My Hub Post card (page 344) × Your Comments entries (page 155)<span class="tag keep">Direct crop of the original</span></h2>
+  <p class="desc">The Post card, comment entry layout, and avatars are all real pixels from the original; comment copy is taken verbatim from page 155, nothing invented.</p>
+  <div class="orig">
+    <div class="frame"><div class="phone"><img src="pages/hub-344.png" alt=""></div><div class="cap">① Post card · original, page 344 <span>(content body of the comments section)</span></div></div>
+    <div class="frame"><div class="phone"><img src="pages/hub-155.png" alt=""></div><div class="cap">② Your Comments · original, page 155 <span>(comment entry design and real copy source)</span></div></div>
+  </div>
+  <div class="note"><b>Reuse logic</b>: tap any post in the Feeds feed → enter Feeds Detail, whose body is this Post card (same design system); the comment entries reuse the "avatar + name + time + body + action row" layout and real copy from page 155, completing the commenting capability a detail page should have.</div>
+
+  <h2>Before / after comparison <span class="tag mod">Original base + modification layers</span></h2>
+  <p class="desc">Left: previous round's output (engagement identity row, comments missing) → Right: this round completes the comments section (overlaid +600px, original pixels untouched).</p>
+  <div class="compare">
+    <div class="col">
+      <div class="col-h before">● Current: engagement identity visible, but comments nowhere to see</div>
+      <div class="stage">
+        <img src="pages/feed-detail-post-updated.png" alt="">
+        <div class="dot red" style="left:50%; top:92%;">1</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● Updated: full comments section (comments / replies / drill-down / input)</div>
+      <div class="stage">
+        <img src="pages/feed-detail-comments.png" alt="">
+        <div class="dot green" style="left:32%; top:59%;">1</div>
+        <div class="dot green" style="left:88%; top:67%;">2</div>
+        <div class="dot green" style="left:88%; top:79%;">3</div>
+        <div class="dot green" style="left:70%; top:88.6%;">4</div>
+        <div class="dot green" style="left:42%; top:94.2%;">5</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>Update</th><th>Details</th></tr>
+    <tr><td>1</td><td><b>Comments section header</b></td><td>"Comments 1,204" + "Most relevant" sort toggle on the right, consistent with the Comment count in the action bar.</td></tr>
+    <tr><td>2</td><td><b>Real comment entry</b></td><td>Brooklyn Simmons · 4m ago · "How can I reach the destination…halal restaurants…" (original copy from page 155), avatar cropped from real original avatars; Like 12 / Reply 2 action row.</td></tr>
+    <tr><td>3</td><td><b>Nested reply</b></td><td>Leslie Alexander's reply ("Yes, you are allowed to bring your kids…" original copy from page 155), indentation + divider showing hierarchy; Like 28 / Reply.</td></tr>
+    <tr><td>4</td><td><b>View all 1,204 comments</b></td><td>Tap › to drill into the full comment list page, matching the list form of page 155.</td></tr>
+    <tr><td>5</td><td><b>Input bar + Send</b></td><td>"Add a comment..." pill input (with image/camera entry) + brand-green Send, pinned to the bottom of the detail page.</td></tr>
+    <tr><td class="muted">–</td><td class="muted">Unchanged</td><td class="muted">The Post card, action bar, and Liked by / Reposted by rows are all original images or previous round's output — not a single pixel changed.</td></tr>
+  </table>
+
+  <p class="note">Guests tapping an avatar / Reply in the comments section also hit the <b>Guest Mode registration wall</b> (Deferred Follow), consistent with the existing spec.</p>
+</div>
+</body>
+</html>

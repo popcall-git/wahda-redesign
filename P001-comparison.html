@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="91DRyROZBbFV4fwkuNdyCV">
+<head data-page-node-id="TxAx8QJFe1vhRldKbyvobg">
+<meta charset="utf-8" data-page-node-id="Ge6hFc6EOAlJsCFzQxud7G">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="8pkJltTEQMDN3p4IsR3An2">
+<title>P001 · 个人主页 × 账号切换 · 前后对比</title>
+<style>
+  :root{
+    --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec;
+    --red:#d64545; --green:#0a8f4c; --accent:#6C5CE7;
+    --card:#ffffff; --bg:#f5f6f8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1180px; margin:0 auto;}
+  header{margin-bottom:26px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:34px; font-weight:800;}
+  .meta{font-size:15px; color:var(--sub); margin-top:10px;}
+  .duo{display:flex; gap:28px; align-items:flex-start; justify-content:center; flex-wrap:wrap;}
+  .col{flex:0 1 460px; min-width:380px;}
+  .col-head{font-size:19px; font-weight:800; padding:12px 16px; border-radius:12px; margin-bottom:14px; text-align:center;}
+  .col-head.before{background:#fdeeee; color:#b03030; border:1px solid #f3caca;}
+  .col-head.after{background:#e9f7ef; color:#0a7a44; border:1px solid #bfe6d0;}
+  .shot{position:relative; border-radius:18px; overflow:hidden; box-shadow:0 8px 28px rgba(20,21,26,.12); background:#fff; width:352px; margin:0 auto;}
+  .shot img{display:block; width:352px; height:auto;}
+  .dot{position:absolute; width:30px; height:30px; border-radius:50%;
+       display:flex; align-items:center; justify-content:center;
+       color:#fff; font-size:15px; font-weight:800; box-shadow:0 2px 8px rgba(0,0,0,.35);
+       border:2.5px solid #fff; transform:translate(-50%,-50%); cursor:default;}
+  .dot.red{background:var(--red);}
+  .dot.green{background:var(--green);}
+  .legend{margin-top:14px; font-size:14.5px; color:var(--sub); line-height:1.9; padding:0 6px;}
+  .legend b{color:var(--ink);}
+  .legend .n{display:inline-flex; width:21px; height:21px; border-radius:50%; color:#fff; font-size:12px;
+             align-items:center; justify-content:center; margin-right:7px; vertical-align:-4px; font-weight:800;}
+  .legend.red .n{background:var(--red);}
+  .legend.green .n{background:var(--green);}
+  .notes{margin-top:44px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 28px;}
+  .notes h2{font-size:22px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15.5px; padding:13px 12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:280px; color:var(--sub); font-size:14px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 4px 2px 0; white-space:nowrap;}
+  footer{margin-top:30px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}
+</style>
+</head>
+<body data-page-node-id="9CAi1MomcVgyvLQAtDIKxK">
+<div class="wrap" data-page-node-id="hDz2o3ioX6PpkQsoq4OAMG">
+  <header data-page-node-id="XvB2YXrc87Ejl3a7KmKHDx">
+    <div class="kicker" data-page-node-id="O5O9jFNZxyuOv0gDQGi80R">WAHDA · 交互优化 · 逐页推进 1 / 602</div>
+    <h1 data-page-node-id="VGvoFtfoL8bnMINPTmM7bw">P001 · 个人主页 × 账号切换弹窗 — 前后对比</h1>
+    <div class="meta" data-page-node-id="tVKHOxxymh8gpbzdoHJEJN">来源:UI Design - Summary.pdf(Figma 导出)· P001 · 依据:《20 大改进点》(156 条需求归纳)· 2026-09-04</div>
+  </header>
+
+  <div class="duo" data-page-node-id="WUAAqw9a91QJ9wGHHDkyzu">
+    <!-- ============ 左:当前 ============ -->
+    <section class="col" data-page-node-id="2OpAe0YanyoX0oGqjlEhHK">
+      <div class="col-head before" data-page-node-id="2I9UlttGejyKJQybIO8BLq">当前设计 · Figma P001</div>
+      <div class="shot" data-page-node-id="qzae9icuHJfGFEt22429h2">
+        <img src="pages/P001.png" alt="P001 当前设计" data-page-node-id="sC1aaYxFvs2zUTPz7Xz5iT">
+        <span class="dot red" style="left:48%; top:19.2%;" data-page-node-id="ytQ4HBfWu2DRBxgJR0gtZu">1</span>
+        <span class="dot red" style="left:45%; top:25.4%;" data-page-node-id="MBKLfETmIFCvApzC1WgtnL">2</span>
+        <span class="dot red" style="left:10%; top:32.6%;" data-page-node-id="CaO835R02JHhdMO5KrxU5I">3</span>
+        <span class="dot red" style="left:88.5%; top:53.8%;" data-page-node-id="hCvK0w6AbaEhiDkN9u9Ugi">4</span>
+        <span class="dot red" style="left:73%; top:83.5%;" data-page-node-id="bdvvCy79hygHZTgYWXRM1t">5</span>
+      </div>
+      <ul class="legend red" style="list-style:none;" data-page-node-id="Xrm7uWoJYai0Ds804oWd5h">
+        <li data-page-node-id="6bH2VPZ4XiMz5v5F3cBkw3"><span class="n" data-page-node-id="NRm5LwpnZa1RLKjVwMzCiR">1</span><b data-page-node-id="mvL7UXJriAlZbcL5sFaI31">账号名拼写错误</b>:Leslie Alexanderndernder</li>
+        <li data-page-node-id="1SHqEz7TNquJ1md4X1BxWr"><span class="n" data-page-node-id="e9ZfQivyiGk2lkTiYfN4EM">2</span><b data-page-node-id="eiAHgYWFFey5dtcF4i4HxC">Bio 为 Lorem Ipsum 占位</b>文本</li>
+        <li data-page-node-id="is18DCJljVgZiGcCFR6nE4"><span class="n" data-page-node-id="Z1h9zyDjXdSQ08nd0pAAks">3</span><b data-page-node-id="XP8G6jLjZUE8BUahYbr455">位置仅显示 London</b>,无国家、无可见性档位</li>
+        <li data-page-node-id="zOVmsFKJLDmDfEVC64vAtT"><span class="n" data-page-node-id="5BpcM1eGyrl1hrNMAAphp6">4</span><b data-page-node-id="mdqvDAAs58cG11IOXFeKj3">第 5 个 Tab 被截断为 "Revi"</b>,无横滑提示</li>
+        <li data-page-node-id="TejHjMGdgRkX5qe40MLyIF"><span class="n" data-page-node-id="DB6vgpAIqxwI3AbwD18Eu7">5</span><b data-page-node-id="FhnZCMeM6OF879T5EHwL21">Accounts 弹窗无当前账户标识</b>,升级按钮抢焦点</li>
+      </ul>
+    </section>
+
+    <!-- ============ 右:优化后 ============ -->
+    <section class="col" data-page-node-id="jR7Ddaafkp5Md8jqsN7BFb">
+      <div class="col-head after" data-page-node-id="FgstAfVjvk1VOsdon5zcyV">优化后 · 重绘示意</div>
+      <div class="shot" data-page-node-id="v3IajsU3W4MofD6KYrTrqO">
+        <svg viewBox="0 0 750 1624" width="352" xmlns="http://www.w3.org/2000/svg" style="display:block;" data-page-node-id="kNhjuU8QBTELU1JQVrhZiK">
+          <defs data-page-node-id="OdaxJvz198R7IAutvzZdmp">
+            <linearGradient id="av1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="3UDYWQy0YZw8c7B2b4XVVa">
+              <stop offset="0" stop-color="#8e7cf3" data-page-node-id="a6YOy2FS8fMv1TJYBm3vY8"/><stop offset="1" stop-color="#5a4bd1" data-page-node-id="ANLHmrySWkIybNhNZ4t9mP"/>
+            </linearGradient>
+            <linearGradient id="av2" x1="0" y1="0" x2="1" y2="1" data-page-node-id="jBdFbH3lkQRdgdNIhccW7E">
+              <stop offset="0" stop-color="#f2a6a0" data-page-node-id="xH0LiguxY9D6E7VeinxjhK"/><stop offset="1" stop-color="#d96a62" data-page-node-id="E3F2vE0i8IZjmqAr7s9D0g"/>
+            </linearGradient>
+          </defs>
+
+          <rect width="750" height="1624" fill="#ffffff" data-page-node-id="e88yPos760b7CEwS0y5Co1"/>
+
+          <!-- 状态栏 -->
+          <text x="55" y="52" font-size="28" font-weight="600" fill="#111" data-page-node-id="pskhSJ5gXZNkRSrX0AOyXd">9:41</text>
+          <g fill="#111" data-page-node-id="vBsCPlcAIfFE7ApUClUAbp">
+            <rect x="596" y="30" width="6" height="14" rx="2" data-page-node-id="2KzDPsuCjQS09eYI6QJ1Ar"/><rect x="606" y="25" width="6" height="19" rx="2" data-page-node-id="8fcxPHDOJmJtLFN4JkWTDg"/>
+            <rect x="616" y="20" width="6" height="24" rx="2" data-page-node-id="glRsAuVe8ACoa7jBky8RG9"/><rect x="626" y="15" width="6" height="29" rx="2" data-page-node-id="rNmSGI3aMCX7MpN3C7pSi9"/>
+            <path d="M652 34 a20 20 0 0 1 28 0 l-5 6 a13 13 0 0 0 -18 0 z" transform="translate(0,-8)" data-page-node-id="CAumFXOOceLeaCw4pHEH4S"/>
+            <rect x="692" y="20" width="34" height="18" rx="6" fill="none" stroke="#111" stroke-width="3" data-page-node-id="4gmXRHAnqCXO4juR59zDvv"/>
+            <rect x="696" y="24" width="22" height="10" rx="3" data-page-node-id="hPTg8vhJQl0G9nQICJlXBf"/>
+          </g>
+
+          <!-- Header -->
+          <text x="50" y="128" font-size="46" font-weight="800" fill="#14151a" data-page-node-id="9VBz35NmDDqjMA7r6a9DtU">Leslie Alexander</text>
+          <path d="M470 108 l14 16 14 -16" fill="none" stroke="#14151a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="m8uTBiHq56owfkTQnExwBq"/>
+          <circle cx="680" cy="114" r="22" fill="none" stroke="#14151a" stroke-width="4.5" data-page-node-id="pBnmSPkCkrXgg93gDXPRIT"/>
+          <circle cx="680" cy="114" r="6" fill="#14151a" data-page-node-id="WAjonOaLgzxFAv3VVIZkGg"/>
+          <g stroke="#14151a" stroke-width="4.5" stroke-linecap="round" data-page-node-id="sFjsHoubD58fKU6OkUp91M">
+            <line x1="680" y1="84" x2="680" y2="92" data-page-node-id="oLSVko9YdPCZnuSbYvwfap"/><line x1="680" y1="136" x2="680" y2="144" data-page-node-id="vrnGnwcDzGC49uwQdjzB8C"/>
+            <line x1="650" y1="114" x2="658" y2="114" data-page-node-id="5EFTFfp8tXU94YSu6pZyqA"/><line x1="702" y1="114" x2="710" y2="114" data-page-node-id="XMylOv7hrgEmSdLCiuUdOE"/>
+            <line x1="659" y1="93" x2="665" y2="99" data-page-node-id="k1Iy9YYvwsPY3QLpXWuwNb"/><line x1="695" y1="129" x2="701" y2="135" data-page-node-id="5A6Hn2bIe9LY0fgXGfmRjF"/>
+            <line x1="701" y1="93" x2="695" y2="99" data-page-node-id="bufJhT9ODy57fI9fA0ivqM"/><line x1="665" y1="129" x2="659" y2="135" data-page-node-id="YwRDmrBmG3xw95p2volwhQ"/>
+          </g>
+
+          <!-- 头像 + 身份 -->
+          <circle cx="100" cy="255" r="58" fill="url(#av1)" data-page-node-id="4q87DeAT4Ro5av3ZgfOpnj"/>
+          <text x="100" y="272" font-size="46" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="B0TCDATfSbYA8CfvSIdnLV">S</text>
+          <circle cx="142" cy="302" r="21" fill="#6C5CE7" stroke="#fff" stroke-width="4" data-page-node-id="LiwgYMNxSs4vsIf24rpNVS"/>
+          <path d="M135 302 h14 M142 295 v14" stroke="#fff" stroke-width="4" stroke-linecap="round" data-page-node-id="cJ0wBg35hYi7u31bLaDvGa"/>
+          <g data-page-node-id="8pwLNmiidisGODZUyNyFvE">
+            <rect x="185" y="168" width="252" height="46" rx="23" fill="#f1f0f5" data-page-node-id="ZJGcRJ2hFbJQA4Fwnx8Yfh"/>
+            <circle cx="216" cy="188" r="7" fill="none" stroke="#555" stroke-width="3" data-page-node-id="leNuu7wDc8tTmtzAGARj6e"/>
+            <path d="M205 206 a11 8 0 0 1 22 0" fill="none" stroke="#555" stroke-width="3" stroke-linecap="round" data-page-node-id="dCC2SBGAzm77Nng2fGNn9k"/>
+            <text x="234" y="199" font-size="22" fill="#555" font-weight="600" data-page-node-id="NJKBW7Oni4fg6ZlENyEiOf">Personal Account</text>
+          </g>
+          <text x="185" y="262" font-size="33" font-weight="800" fill="#14151a" data-page-node-id="cujtZCogTGIIuKr6rN4fYT">Leslie Alexander</text>
+          <text x="185" y="300" font-size="26" font-weight="700" fill="#14151a" data-page-node-id="mNB7ufwF9liqsPg6TIj98j">2.4K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="6WVGHFynVTlIRiP6KCjNtv">followers</tspan></text>
+          <text x="360" y="300" font-size="26" font-weight="700" fill="#14151a" data-page-node-id="hzh5RczEa2jSKWHC2Gx90z">2.1K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="A61tekteAxIMTfn9nbzoIR">following</tspan></text>
+
+          <!-- Bio + 位置 + 可见性 -->
+          <text x="50" y="345" font-size="24" fill="#3c4048" data-page-node-id="ZbiHMghfBw7A0LS8TBIuwH">Sharing faith, food &amp; daily life from London 🌙</text>
+          <g data-page-node-id="fAgqSFfwZSJ0Q7i0xu10Ob">
+            <path d="M60 380 c0 -12 9 -20 19 -20 s19 8 19 20 c0 14 -19 30 -19 30 s-19 -16 -19 -30 z" fill="none" stroke="#6C5CE7" stroke-width="3.5" data-page-node-id="c2uLC2s0rqNRa8BSyJ06ie"/>
+            <circle cx="79" cy="379" r="6" fill="#6C5CE7" data-page-node-id="14Xz81d9CkwwdaHkMaYgeB"/>
+            <text x="96" y="388" font-size="24" fill="#555" data-page-node-id="ccF1u7QaqxaU2zrusgKHgz">London, United Kingdom</text>
+          </g>
+          <g data-page-node-id="DlvjWHmCJQJe1yt1KH53lw">
+            <circle cx="560" cy="380" r="11" fill="none" stroke="#0a8f4c" stroke-width="3" data-page-node-id="QkOI2TlZIdEB6zbsGQoTGC"/>
+            <circle cx="560" cy="380" r="4" fill="#0a8f4c" data-page-node-id="jwh0GEORf5AMki22qakyC3"/>
+            <path d="M543 380 q17 -14 34 0 q-17 14 -34 0 z" fill="none" stroke="#0a8f4c" stroke-width="3" stroke-linejoin="round" data-page-node-id="oclqIqzBRbXxkgDQlYyILG"/>
+            <text x="580" y="388" font-size="21" fill="#0a8f4c" font-weight="600" data-page-node-id="Y64zFHsfh49GBI90Aj1uGY">Everyone</text>
+          </g>
+
+          <!-- Drafts 卡片 -->
+          <rect x="50" y="420" width="650" height="88" rx="20" fill="#f6f6f8" stroke="#ececf1" data-page-node-id="k8XNpCgFVJAnuJCut6s6Fc"/>
+          <rect x="72" y="440" width="46" height="46" rx="12" fill="none" stroke="#14151a" stroke-width="3.5" data-page-node-id="QH9owAYE2dQ7zR390tzuxY"/>
+          <path d="M84 476 l24 -24 8 8 -24 24 -10 2 z" fill="#14151a" data-page-node-id="bGHEih7deURDi0kvnhCB12"/>
+          <text x="140" y="474" font-size="26" font-weight="600" fill="#14151a" data-page-node-id="oBRfHSjyGuGmBou1jFRIf4">Drafts &amp; Scheduled Post</text>
+          <circle cx="500" cy="464" r="18" fill="#6C5CE7" data-page-node-id="rqEX6mdQsvDmbsGeXze81j"/>
+          <text x="500" y="472" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="FwbAbItbytwIGxzZoKDPxb">10</text>
+          <path d="M655 464 h40 m-12 -12 l12 12 -12 12" stroke="#14151a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="NkOK07lFHlTmzb4CWFnlMf"/>
+
+          <!-- Tabs -->
+          <text x="50" y="568" font-size="27" font-weight="800" fill="#14151a" data-page-node-id="kKnGuTpCxBjXYLWHp9u4Vv">Posts</text>
+          <rect x="50" y="584" width="88" height="5" rx="2.5" fill="#6C5CE7" data-page-node-id="2yv6HW70yiESKf3SHkhUsW"/>
+          <text x="185" y="568" font-size="26" fill="#9aa0ac" data-page-node-id="HbWQaYFZANkW76nuABR9qp">Saved</text>
+          <text x="305" y="568" font-size="26" fill="#9aa0ac" data-page-node-id="HmBJgMda6MUWPKJtYU3Xvg">Community</text>
+          <text x="510" y="568" font-size="26" fill="#9aa0ac" data-page-node-id="NxxGmBkAHC1AQ59EEXGTAf">Events</text>
+          <text x="640" y="568" font-size="26" fill="#9aa0ac" data-page-node-id="Z2DkEC2PTPhl4lvruH6HAU">More ⌄</text>
+
+          <!-- 帖子预览 -->
+          <circle cx="80" cy="680" r="30" fill="url(#av1)" data-page-node-id="u9fcqoGyIAfGTI1vLF27fq"/>
+          <text x="125" y="672" font-size="24" font-weight="700" fill="#14151a" data-page-node-id="aMfszWHanTNFk179HDYRze">Leslie Alexander</text>
+          <circle cx="352" cy="664" r="12" fill="#3b82f6" data-page-node-id="m6Seb8mkzuEQfBb2mwK34w"/>
+          <path d="M346 664 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="6ODSd80NBEF0eLE9olPvrx"/>
+          <text x="374" y="672" font-size="20" fill="#9aa0ac" data-page-node-id="nbwaGy6UxuMyReCyd1EHqn">1h</text>
+          <path d="M660 655 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none" data-page-node-id="RvffdkANvCReHjtBBsA97D"/>
+          <text x="125" y="712" font-size="22" fill="#3c4048" data-page-node-id="ixwOQfPKzNebYbzLGhdB7B">I just realized that there's an affordable</text>
+          <text x="125" y="746" font-size="22" fill="#3c4048" data-page-node-id="sq5JAwH73EHEepanwwqONR">decorative chandelier that's available…</text>
+
+          <!-- ============ 底部 Accounts 弹窗 ============ -->
+          <rect x="0" y="762" width="750" height="862" rx="40" fill="#ffffff" stroke="#e8e8ee" stroke-width="2" data-page-node-id="jfnTBF8QpsAnvxanQsWjhC"/>
+          <rect x="0" y="1000" width="750" height="624" fill="#ffffff" data-page-node-id="jtkgnMoT6hUocdATDSSZUF"/>
+          <rect x="307" y="790" width="136" height="10" rx="5" fill="#d9d9de" data-page-node-id="LUB6AySQ8ra84nKPOF1QFM"/>
+          <text x="375" y="880" font-size="40" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="s8ZP6ymfG1ugq0B4ZvFQvx">Accounts</text>
+
+          <text x="50" y="942" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="gRdIrxyR4JHUO0hREG98Kt">Personal Account</text>
+          <circle cx="100" cy="1042" r="46" fill="url(#av2)" data-page-node-id="KaSJwSS6EgCprBJBgT4ERb"/>
+          <text x="100" y="1056" font-size="36" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="6AT5EVy32SUEFaA7x62d1J">S</text>
+          <text x="170" y="1018" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="zV2aGmFH0ZLcBin5grFIco">Siti Mariam</text>
+          <text x="170" y="1054" font-size="22" fill="#9aa0ac" data-page-node-id="poILVWwXXtVsw4JH0XVsV1">Personal</text>
+          <rect x="536" y="984" width="164" height="50" rx="25" fill="#e8f7ef" stroke="#0a8f4c" stroke-width="2.5" data-page-node-id="UsDNEwsLJJfIn9sP8vgJ0E"/>
+          <path d="M562 1009 l7 7 13 -14" stroke="#0a8f4c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="0f4K6ZLtiHKu9GrPHDinLw"/>
+          <text x="586" y="1017" font-size="22" font-weight="700" fill="#0a8f4c" data-page-node-id="Fobut7qKyw4syBAi8lxnCA">Current</text>
+          <rect x="502" y="1052" width="198" height="54" rx="27" fill="none" stroke="#6C5CE7" stroke-width="2.5" data-page-node-id="3orEDqvMJzvMK6lZFWABst"/>
+          <text x="601" y="1087" font-size="21" font-weight="600" fill="#6C5CE7" text-anchor="middle" data-page-node-id="tGuXWqnU4Ig6DuNkjxTVFe">Upgrade as Creator</text>
+
+          <text x="50" y="1142" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="TT4ENh0cQUhqC3OgMhTc8U">Entity Accounts</text>
+          <circle cx="100" cy="1250" r="46" fill="#fafafa" stroke="#c2c2cc" stroke-width="3" stroke-dasharray="7 7" data-page-node-id="WzdfCVu2BoQE6rkSSnbTo6"/>
+          <path d="M100 1230 v40 M80 1250 h40" stroke="#8a8f9a" stroke-width="4.5" stroke-linecap="round" data-page-node-id="84LNDGIBFcKbTaZ5DVJ5Is"/>
+          <text x="170" y="1240" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="yTynzRiUz9u03Y4AbhSxvn">Add Account</text>
+          <text x="170" y="1278" font-size="21" fill="#9aa0ac" data-page-node-id="BDNJcr5akBP8WQeZa9BVQA">Business or Organization · KYB required</text>
+
+          <rect x="275" y="1548" width="200" height="9" rx="4.5" fill="#14151a" data-page-node-id="H54bKLkZSaAI6EuCIJMQrl"/>
+
+          <!-- 优化点绿标 -->
+          <g font-size="22" font-weight="800" text-anchor="middle" data-page-node-id="lBXAKWXjz7QpzEIbzrgb5s">
+            <circle cx="505" cy="252" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="yKA8uEbzaNdi5lKH8nhLdE"/><text x="505" y="260" fill="#fff" data-page-node-id="bKRgeNewJUpI7PEMFpc6QC">1</text>
+            <circle cx="640" cy="338" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="5aElTTiIb2vRxbqLw9uN6i"/><text x="640" y="346" fill="#fff" data-page-node-id="EXAFIlX1pB6rpSqINVSOKH">2</text>
+            <circle cx="712" cy="380" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="HdjomG7kaVPCJSkEGwAzgG"/><text x="712" y="388" fill="#fff" data-page-node-id="4KTyAvCfJfHGJv0BgR2PiB">3</text>
+            <circle cx="700" cy="532" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="aK0xDKkl8lG70BpJRmzQXe"/><text x="700" y="540" fill="#fff" data-page-node-id="FtsVaCCGuhwqTXwnAZYXLq">4</text>
+            <circle cx="722" cy="1009" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="0HLCYLYLbHWAIVsBiFYiqG"/><text x="722" y="1017" fill="#fff" data-page-node-id="gzqdZJWEYtoM8omgqfmOYv">5</text>
+            <circle cx="612" cy="1290" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="A8I62TZSaMPnBAL10PWMQ4"/><text x="612" y="1298" fill="#fff" data-page-node-id="DFDX5FJCDhVppL56s5e7Dy">6</text>
+          </g>
+        </svg>
+      </div>
+      <ul class="legend green" style="list-style:none;" data-page-node-id="8cDLvLGhLKT8wwguHnaVHr">
+        <li data-page-node-id="3BU51CBiJXomP4yEwZA6oi"><span class="n" data-page-node-id="K5JGOQdLrxYmaRsqEOGPcD">1</span>账号名修正为 <b data-page-node-id="5oNdjUx1aYhHQVJdYBCPUe">Leslie Alexander</b>,followers 复数修正</li>
+        <li data-page-node-id="8OXsljDlprDvuF0lHZ7EBB"><span class="n" data-page-node-id="F7HGi5WyvcqrDF0xm4pKk4">2</span>Bio 换为<b data-page-node-id="xeQdPFimZaD8KwR7CqTsd4">真实示例文案</b>,杜绝占位文本上线</li>
+        <li data-page-node-id="kFFfKseTdP1B7HHOxeRFXI"><span class="n" data-page-node-id="3ZMEaCQLgkKkD6jIkkzDPH">3</span>位置展示 <b data-page-node-id="xXcg1TxiEJOwwwblT7NLWb">国家 + 城市</b>,并标注可见档位(Everyone)</li>
+        <li data-page-node-id="Q2ilavTEC2NftBskNTanab"><span class="n" data-page-node-id="LVakNrqvNvrhuerf2WKM8w">4</span>Tabs 完整展示,<b data-page-node-id="BYZSpLAKvLXJmasfIrTRiw">Reviews 收入 "More"</b>,杜绝截断</li>
+        <li data-page-node-id="rLBK3RpEGwGEItEWiXtRcM"><span class="n" data-page-node-id="3geX4NKxMdDSzFFMEWzkcJ">5</span>当前账户加 <b data-page-node-id="SSa5MLr2svusDLoxfcHtLL">✓ Current 徽章</b>,升级入口弱化为次级按钮</li>
+        <li data-page-node-id="7KKFpDD00doop0fXnttPyD"><span class="n" data-page-node-id="jZJv4xAj9A3BkN1qkeUFir">6</span>Add Account 补<b data-page-node-id="IyvXy9kYJPZ3NuwlNbgeht">实体说明与 KYB 门槛</b>副文案</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ============ 优化点清单 ============ -->
+  <section class="notes" data-page-node-id="vQLj2LNImaXAOYZF8WbMaa">
+    <h2 data-page-node-id="N0A2aZEeYmJ6IHSF9yGyXE">优化点清单 · 对照「20 大改进点」</h2>
+    <div class="src" data-page-node-id="5kQMJeQ1VVvhHacFdriHzz">P001 命中:基础质量修复 × 3 · 改进点 #1 新手引导 · #8 Feed 消费 · #12 多账号与身份体系 · #20 位置展示与隐私(REQ-053 / 124)</div>
+    <table data-page-node-id="3GhJF8YnhHNaeCvqqyVyFG">
+      <tr data-page-node-id="fafmfcScrDsSQPTJ1HzIX3"><th style="width:44px;" data-page-node-id="LGZo0JBV321C2Wz8MhGbyF">#</th><th data-page-node-id="HEhnu8rRwG4HTHbG3gqjhH">当前问题</th><th data-page-node-id="q2a6J6riEFPOxgeEkP1BgY">优化动作</th><th data-page-node-id="tCdKShBKwfwfbxEG3VyPmo">依据</th></tr>
+      <tr data-page-node-id="49Cb2bMdlgyMFpjCmCHxHk">
+        <td class="no" data-page-node-id="qPYLHM8sOa4vUvZIRMDjGy"><span class="n2" data-page-node-id="lU4KIGNNktcJavbygsGp9Z">1</span></td>
+        <td data-page-node-id="FSDO5Bnu70y6OcYiCxI4Dv">顶部账号名 "Leslie Alexanderndernder" 拼写错误;"follower" 未用复数</td>
+        <td data-page-node-id="myPBKs02r1lgQNsgYcFB6A">统一修正为 "Leslie Alexander" / "2.4K followers";建立上线前文案校对清单,杜绝同类 P0 质量问题</td>
+        <td class="basis" data-page-node-id="FnPizIWqDRgNs1YSVRYDmi"><span class="tag" data-page-node-id="5wW95kNSl30GkU3EtUU5BP">V4 · P0 质量问题</span></td>
+      </tr>
+      <tr data-page-node-id="4lFlHxeIyz9xv0zJmtfyZB">
+        <td class="no" data-page-node-id="jj21AHcXgHfxftCx4nWVsF"><span class="n2" data-page-node-id="EMroW2WvL10shA1SsBGtb5">2</span></td>
+        <td data-page-node-id="SMSq5CfJTwph1Ieu1S7orh">Bio 为 Lorem Ipsum 占位文本("Vestibulum eu quam…")</td>
+        <td data-page-node-id="yk80T9Qjjyj0LIQomPeGPj">替换为真实示例文案;设计交付前统一清理占位数据</td>
+        <td class="basis" data-page-node-id="xmP4ezHgUNQRX9mXwSJubC"><span class="tag" data-page-node-id="JsvF50iSUZkgr7fgpoxtrk">V4 · P0 质量问题</span></td>
+      </tr>
+      <tr data-page-node-id="jUyjrDURaxlfuDuRc1bZsN">
+        <td class="no" data-page-node-id="0A3C4JThVYEGhNbBtRQC2T"><span class="n2" data-page-node-id="kwBWZVS67r5tgYwX7boWg9">3</span></td>
+        <td data-page-node-id="2BElFIrwIjXxQIKiSc4wyZ">位置仅显示 "London",无国家,且无可见范围控制</td>
+        <td data-page-node-id="Ez34ImECcMtuXu4KpBaPEJ">展示"国家 + 城市"(London, United Kingdom);设置页提供三档可见控制,主页以眼睛图标标示当前档位(Everyone)</td>
+        <td class="basis" data-page-node-id="xdK0xQjSOiP4oiO09iKUnc"><span class="tag" data-page-node-id="NDuJxT2N633A4VHRJLzl2b">#20 位置与隐私</span><span class="tag" data-page-node-id="CkSMsGBP2zilTO9iaJmral">REQ-053 · 124</span></td>
+      </tr>
+      <tr data-page-node-id="6sxrRPbmmd9pYvHmTJ9mG5">
+        <td class="no" data-page-node-id="XSC3GVnv820CcaR9GDntyX"><span class="n2" data-page-node-id="JmSX4dRK2Kq7r7WH6klCnG">4</span></td>
+        <td data-page-node-id="uhKMSGSHE8SFRRBO2bJYXm">Tab 栏 5 项,第 5 项 "Revi…" 被截断,无横滑提示</td>
+        <td data-page-node-id="OyozRuboZL6duruWKmGLcX">保持 4 个高频 Tab 完整展示,低频项(Reviews)收入 "More";如保留 5 项则补横滑渐隐 + 圆点指示</td>
+        <td class="basis" data-page-node-id="A8bAhUl9xU0l5jPFbYyltJ"><span class="tag" data-page-node-id="ISXJEsmXr87VXXFz2cjGGA">#8 Feed 消费体验</span><span class="tag" data-page-node-id="tAId9SxwgFtn2yjMeTDSHf">V4 · P0-4</span></td>
+      </tr>
+      <tr data-page-node-id="5nd1c5HLK5m09i9QVk9tUs">
+        <td class="no" data-page-node-id="z0oj10x5ua0TF6gATayMFh"><span class="n2" data-page-node-id="Yzj9QhGrIAZHxisyQP5XeB">5</span></td>
+        <td data-page-node-id="BDnod4duOUtbMPO8dHyM15">Accounts 弹窗无"当前账户"标识,Upgrade as Creator 按钮视觉权重过高</td>
+        <td data-page-node-id="YadEtZrl2Xv7pp9mjv7MHs">当前账户加 "✓ Current" 徽章;升级入口改为次级描边按钮,避免误触与认知混淆</td>
+        <td class="basis" data-page-node-id="QErERuZWEGncEqFUWypYzI"><span class="tag" data-page-node-id="CDISvUQZjlCDO2PIXolY3Q">#12 多账号与身份体系</span></td>
+      </tr>
+      <tr data-page-node-id="PknSwL9kmUF287xBMJBsXJ">
+        <td class="no" data-page-node-id="uYVNRijRmsNznCSn0FduiS"><span class="n2" data-page-node-id="HqGAW5zrgXLEudnPTZS9Oc">6</span></td>
+        <td data-page-node-id="JbzlAQg3AlThdbrrxPGgEw">"Add Account" 无任何说明,新用户不知可加什么</td>
+        <td data-page-node-id="p7rUCU04AYObwuvHlfg9LH">补副文案 "Business or Organization · KYB required",前置实体账号门槛</td>
+        <td class="basis" data-page-node-id="QoYAyU7TzkgSCb6HVLBSlL"><span class="tag" data-page-node-id="2J9RczRg9OACJ7tudHdxWq">#12 多账号与身份体系</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer data-page-node-id="OUISNH3HB8YQtYLUfHLiDd">WAHDA · PAGE-BY-PAGE REDESIGN · P001 / 602 · 依据 20 大改进点</footer>
+</div>
+</body>
+</html>

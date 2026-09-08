@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图2 · 通知中心全局化</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:44px 30px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:29px; font-weight:800; color:#161c28; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:19px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:44px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:18px; line-height:1.7; }
+  .compare { display:flex; gap:32px; align-items:flex-start; }
+  .col { flex:1; max-width:430px; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+  table { width:100%; border-collapse:collapse; margin-top:16px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12px; letter-spacing:.6px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:11px 12px; border-bottom:1px solid #eef0f4; line-height:1.6; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>图2 · 通知中心全局化 <span class="en">Global notification center</span></h1>
+  <div class="badge">20 大改进点规划示意 · #05 通知中心全局化 · 原图打底（Discover 首页截图）+ 局部修改层</div>
+  <p class="sub"><b>REQ-046 / 066 / 091</b>：现状所有通知集中在 Discover 右上角站内信，无聚合收件箱；点赞/取消点赞还会产生重复通知（091）。改造为<b>顶栏铃铛常驻（跨页未读红点）+ 点击展开聚合通知中心</b>：All / Messages / Interactions / Orders / System 分 Tab，Today / Yesterday 时间分组，未读绿点，支持一键已读。</p>
+
+  <h2>前后对比 <span class="tag mod">原图打底 + 修改层</span></h2>
+  <p class="desc">左：现状（铃铛为唯一入口，点开无聚合页）→ 右：更新后（铃铛聚光常驻 + 聚合通知中心浮层）。</p>
+  <div class="compare">
+    <div class="col">
+      <div class="col-h before">● 当前：铃铛是唯一通知入口</div>
+      <div class="stage">
+        <img src="pages/notification-before.png" alt="">
+        <div class="dot red" style="left:91%; top:6%;">1</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● 更新后：聚合通知中心 · 分 Tab 收件箱</div>
+      <div class="stage">
+        <img src="pages/notification-after.png" alt="">
+        <div class="dot green" style="left:91%; top:6%;">1</div>
+        <div class="dot green" style="left:8%; top:11.6%;">2</div>
+        <div class="dot green" style="left:62%; top:18%;">3</div>
+        <div class="dot green" style="left:92.5%; top:33%;">4</div>
+        <div class="dot green" style="left:92%; top:40.5%;">5</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>更新点</th><th>说明</th></tr>
+    <tr><td>1</td><td><b>铃铛全局常驻</b></td><td>顶部铃铛在所有一级页常驻（本图为点开源），未读红点跨页跟随；底部各 Tab 徽章按类型分流（P002 已定规范）。</td></tr>
+    <tr><td>2</td><td><b>聚合通知中心</b></td><td>铃铛点开为全量收件箱浮层，Today / Yesterday 时间分组，替代「只有角标数字、无列表」的现状（REQ-066）。</td></tr>
+    <tr><td>3</td><td><b>分 Tab 分类</b></td><td>All / Messages / Interactions / Orders / System 五类分 Tab，Interactions、Messages 带未读数徽章（REQ-046）。</td></tr>
+    <tr><td>4</td><td><b>未读绿点</b></td><td>未读条目右侧绿点标记，点单条即消；配合「Mark all as read」一键已读。</td></tr>
+    <tr><td>5</td><td><b>通知合并</b></td><td>同一用户对同一帖的反复点赞/取消只保留一条通知并聚合计数，撤回即删（REQ-091）。</td></tr>
+  </table>
+  <div class="note">多账号用户（Personal / Creator / Professional）在此收件箱顶部可切换身份视图；聚合通知为 REQ-100 的落点。通知列表条目版式沿用原稿「Your Comments」页同款设计语言。</div>
+</div>
+</body>
+</html>

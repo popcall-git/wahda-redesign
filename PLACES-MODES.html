@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="c1fzjKRWZ5JNMz8ydNn4Io">
+<head data-page-node-id="ZaCGNAbxDZ15u3xLtDZKLh">
+<meta charset="UTF-8" data-page-node-id="oxoujvYTTG1yIb2HedOBKh">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="xbtq4ryIXPCHNK2hx2Bgjf">
+<title>Wahda Places 页 · 混合模式默认 + 三态切换 — 前后对比</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif; background: #f2f3f7; color: #1a1c22; padding: 40px 24px 64px; }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+  .page-title { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+  .page-sub { font-size: 15px; color: #6b7080; margin-top: 8px; line-height: 1.6; }
+  .canvas { margin-top: 28px; background: #fff; border-radius: 20px; box-shadow: 0 8px 40px rgba(20,22,35,.08); padding: 34px 30px 30px; }
+  .svg-holder { width: 100%; max-width: 1150px; margin: 0 auto; display: block; }
+  .legend { display: flex; gap: 28px; margin-top: 18px; font-size: 14px; color: #4a4f5c; align-items: center; flex-wrap: wrap; }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .dot { width: 22px; height: 22px; border-radius: 50%; color: #fff; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+  .dot.red { background: #e04040; } .dot.green { background: #0a8f4c; }
+  .spec { margin-top: 34px; }
+  .spec h2 { font-size: 19px; font-weight: 800; margin-bottom: 14px; }
+  .spec table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .spec th { background: #17181f; color: #fff; text-align: left; padding: 11px 14px; font-weight: 700; }
+  .spec th:first-child { border-radius: 10px 0 0 0; } .spec th:last-child { border-radius: 0 10px 0 0; }
+  .spec td { border-bottom: 1px solid #e7e8ee; padding: 12px 14px; vertical-align: top; line-height: 1.55; color: #33363f; }
+  .spec tr:nth-child(even) td { background: #f8f9fb; }
+  .spec td b { color: #0a8f4c; }
+  .tag { display: inline-block; background: #eef2ff; color: #4353c9; font-size: 12px; font-weight: 700; padding: 2px 9px; border-radius: 20px; white-space: nowrap; }
+  .tag.warm { background: #fff3e6; color: #b96a12; }
+</style>
+</head>
+<body data-page-node-id="0JjJF0azsQipSuaFzrMEls">
+<div class="wrap" data-page-node-id="qnYSspJGWi6Rb1pVdvYLLq">
+  <div class="page-title" data-page-node-id="WQmdqhpDYOTZO5LQC76uwZ">Places · 混合模式默认(上地图 + 下列表)+ 三态切换</div>
+  <div class="page-sub" data-page-node-id="nDbCYp0ieie1pZvhK2VnAn">
+    当前:默认<b data-page-node-id="BoCRns3cSH3sA8cFaLWHTO">纯列表</b>,地图要点击切换按钮才出现,且列表/地图互斥。重设计:打开即<b data-page-node-id="Ss5jYteUhRnHMFycmKfBMB">混合模式</b>——上半部分是根据定位显示的<b data-page-node-id="F81DjdaWWZoAcbyDUkbTaG">地图标记</b>,下半部分是<b data-page-node-id="lJQWLRisoj6TTVgrWmg6vA">列表</b>;顶部<b data-page-node-id="9gvs4VACfHnvYs2h8PS5NM">Blend / Map / List</b> 分段控件可一键切换为纯地图或纯列表。
+    左 = 当前设计,右 = 优化后(含两种附加模式小样)。
+  </div>
+
+  <div class="canvas" data-page-node-id="RXDYixn4haYBH80TU4U268">
+    <svg class="svg-holder" viewBox="0 0 1150 2010" xmlns="http://www.w3.org/2000/svg" data-page-node-id="o2WaN2m8DD624jKOFd45JI">
+      <defs data-page-node-id="G6hPI1F3TEQFKQ2t82Gt85">
+        <linearGradient id="thumb1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="9FnMYwy8ShnyGUDcCkVWPJ"><stop offset="0" stop-color="#e8d5b9" data-page-node-id="ab7NwCP7dEAE8ASchrO6nh"/><stop offset="1" stop-color="#c9a97a" data-page-node-id="rnJx5Ssjr66TTE3Zu7RE8n"/></linearGradient>
+        <linearGradient id="thumb2" x1="0" y1="0" x2="1" y2="1" data-page-node-id="z7iTyEwgQUxX5wF7K5MF2U"><stop offset="0" stop-color="#b9d4c2" data-page-node-id="2uMkuoxvqBBV4Ud05rex97"/><stop offset="1" stop-color="#7aa98d" data-page-node-id="gHGDNnYdjgUXMDVUqB3N9H"/></linearGradient>
+        <linearGradient id="thumb3" x1="0" y1="0" x2="1" y2="1" data-page-node-id="9EquTODoEPqC22IgffBDsb"><stop offset="0" stop-color="#d5c2e8" data-page-node-id="pqxZumBtUFRENSodOhPByQ"/><stop offset="1" stop-color="#a97ac9" data-page-node-id="JRklbF0VqUJoXBwVTBNA81"/></linearGradient>
+        <linearGradient id="mapbg" x1="0" y1="0" x2="0" y2="1" data-page-node-id="qDzaraJiyFW9nHXgsIdE6A"><stop offset="0" stop-color="#e9efe6" data-page-node-id="00Pq1lB4l0tDylNeCTOabf"/><stop offset="1" stop-color="#dfe8dc" data-page-node-id="nASp80ppUxscL4uvmD8XDY"/></linearGradient>
+      </defs>
+
+      <!-- ================= 左:当前设计(默认列表) ================= -->
+      <text x="180" y="30" font-size="19" font-weight="800" fill="#1a1c22" text-anchor="middle" data-page-node-id="cDxxw6wpxP2oajFRcXirkh">当前设计 · 默认纯列表</text>
+      <rect x="5" y="48" width="350" height="1512" rx="26" fill="#f4f4f8" stroke="#dcdce4" stroke-width="1.5" data-page-node-id="srJUAnCaPnOihOVF0fmuYq"/>
+
+      <text x="180" y="112" font-size="20" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="ZIFySB5BLqHj7CEAFYgpL7">Places</text>
+      <!-- 弱化的地图入口:右上小图标 -->
+      <circle cx="316" cy="106" r="17" fill="#fff" stroke="#d9d9de" stroke-width="1.5" data-page-node-id="skJJmk4LYENW7KouBPF1mB"/>
+      <path d="M310 100 h9 v9 M319 100 l-11 11" stroke="#8b8f9a" stroke-width="2" fill="none" stroke-linecap="round" data-page-node-id="kM4y5gFrzZ4jN2QBJjJvmu"/>
+
+      <rect x="24" y="134" width="312" height="40" rx="20" fill="#fff" stroke="#e4e4ec" stroke-width="1.5" data-page-node-id="7AKB0gcJT9BtZ8Wv7qnQM4"/>
+      <text x="46" y="160" font-size="14" fill="#b0b4bd" data-page-node-id="wJlG9BDkCSpeegGONzf0sk">Search places…</text>
+
+      <rect x="24" y="188" width="56" height="28" rx="14" fill="#17181f" data-page-node-id="RddJkwmQJOq6NOe84cn4Dm"/>
+      <text x="52" y="207" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="MHIW4Tw25gorDLH0SPwzzK">All</text>
+      <rect x="88" y="188" width="70" height="28" rx="14" fill="#fff" stroke="#e0e0e8" stroke-width="1.5" data-page-node-id="dQUfEVAC3dP4QhQnCWTRVt"/>
+      <text x="123" y="207" font-size="13" fill="#5a5f6b" text-anchor="middle" data-page-node-id="yHdkRWqwnHqyJHemvIO6yy">Mosque</text>
+      <rect x="166" y="188" width="78" height="28" rx="14" fill="#fff" stroke="#e0e0e8" stroke-width="1.5" data-page-node-id="seIhdEQxA9GUS2haN3as4D"/>
+      <text x="205" y="207" font-size="13" fill="#5a5f6b" text-anchor="middle" data-page-node-id="tQmvAKOOEmv1D3sXcELf4X">Halal Food</text>
+
+      <!-- 列表卡片 -->
+      <rect x="24" y="232" width="312" height="118" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="lU3TTALFFiawicEdObm64Q"/>
+      <rect x="38" y="246" width="90" height="90" rx="12" fill="url(#thumb1)" data-page-node-id="i5nqe1TJOAJtaxWhzWdZ1c"/>
+      <text x="142" y="268" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="UQPSPRwgIER86JaOMzn89c">Halal Dinner 1.0</text>
+      <text x="142" y="290" font-size="13.5" fill="#8b8f9a" data-page-node-id="rbibl71gbbhFTdLTamcU1J">Japanese restaurant</text>
+      <text x="142" y="314" font-size="13.5" fill="#3c4048" data-page-node-id="AZ0lDsHLJmobQuGiIv3HSZ">★ 4.0 · Open now</text>
+
+      <rect x="24" y="364" width="312" height="118" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="r4CplTNyBIP9pP4LnukzOG"/>
+      <rect x="38" y="378" width="90" height="90" rx="12" fill="url(#thumb2)" data-page-node-id="TfzwdRAfzQqituRiTXjX6P"/>
+      <text x="142" y="400" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="V58aCjt39brPudYCHI11te">Al-Hakim Mosque</text>
+      <text x="142" y="422" font-size="13.5" fill="#8b8f9a" data-page-node-id="p9YUUPiAAvLLKnHaXf931U">Mosque</text>
+      <text x="142" y="446" font-size="13.5" fill="#3c4048" data-page-node-id="H7IlhFgyNtfj4muTA5j7cw">★ 4.0 · Open now</text>
+
+      <rect x="24" y="496" width="312" height="118" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="F83U8h0UN5S479LjGoMxDs"/>
+      <rect x="38" y="510" width="90" height="90" rx="12" fill="url(#thumb3)" data-page-node-id="5LaCqGnN2Ia7yaYFQe8EBD"/>
+      <text x="142" y="532" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="xmE1jPBDiWI5Yj7sbhHGJ6">Crescent Cafe</text>
+      <text x="142" y="554" font-size="13.5" fill="#8b8f9a" data-page-node-id="IhabcHMEL0ERUmrusFDA6n">Halal cafe</text>
+      <text x="142" y="578" font-size="13.5" fill="#3c4048" data-page-node-id="6pjMBUJEeo5gbCAolqc2At">★ 4.5 · Open now</text>
+
+      <rect x="24" y="628" width="312" height="118" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="W35zGrFBFTgGawnNnd8i2A"/>
+      <rect x="38" y="642" width="90" height="90" rx="12" fill="url(#thumb1)" data-page-node-id="KfCj1o8XiJ4qpCEdZouOFO"/>
+      <text x="142" y="664" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="RU4hEJVx0LqkvHw1oOyuxj">Nur Kitchen Biryani</text>
+      <text x="142" y="686" font-size="13.5" fill="#8b8f9a" data-page-node-id="zFCuJObAQMoeKMaI9wEq7p">Restaurant</text>
+      <text x="142" y="710" font-size="13.5" fill="#3c4048" data-page-node-id="iAyUlENwR6BLtWJcGtWtt0">★ 4.2 · Opens 11:00</text>
+
+      <!-- 问题说明 -->
+      <rect x="24" y="766" width="312" height="118" rx="14" fill="#fdeeee" stroke="#f3c6c6" stroke-width="1.5" stroke-dasharray="5 4" data-page-node-id="zY1cTZ1bvW1TCQaMUxYVy0"/>
+      <text x="180" y="796" font-size="14" font-weight="700" fill="#c0392b" text-anchor="middle" data-page-node-id="AQ3EDjOMJU48bzP5wiUHPP">默认只有列表 · 看不到空间分布</text>
+      <text x="180" y="822" font-size="13" fill="#c0392b" text-anchor="middle" data-page-node-id="OiHHMKbpi3ZzusOhRc8zLg">地图藏在右上角小按钮,点击后列表消失</text>
+      <text x="180" y="848" font-size="13" fill="#c0392b" text-anchor="middle" data-page-node-id="Tbv2jR8ZX9uQFwvHhEauZp">两种模式互斥,上下文全丢</text>
+      <text x="180" y="874" font-size="13" fill="#c0392b" text-anchor="middle" data-page-node-id="2BmTijizOZqideGqzLskb3">没有距离信息,不知道哪家最近</text>
+
+      <rect x="24" y="904" width="312" height="118" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="NdkyUEo1Lfxd4KPzWCo5xc"/>
+      <rect x="38" y="918" width="90" height="90" rx="12" fill="url(#thumb2)" data-page-node-id="9hdLEZZ4No7AK3rr4HHnXv"/>
+      <text x="142" y="940" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="awBfwSoe1zRfnSR6izM736">Masjid Al-Noor</text>
+      <text x="142" y="962" font-size="13.5" fill="#8b8f9a" data-page-node-id="raRrlAFSoRbAKoCdjhjZUa">Mosque</text>
+      <text x="142" y="986" font-size="13.5" fill="#3c4048" data-page-node-id="eV3WmOpYE1M6Ezuk9ZExZc">★ 4.9 · Open now</text>
+
+      <rect x="24" y="1036" width="312" height="118" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="85XLFvWOU8Rr3oHRovQWVC"/>
+      <rect x="38" y="1050" width="90" height="90" rx="12" fill="url(#thumb1)" data-page-node-id="ttDgrjntSeH5mrXrhdmRwm"/>
+      <text x="142" y="1072" font-size="16" font-weight="700" fill="#14151a" data-page-node-id="HKPitVGtXZZLZzH2uDeqr2">Iftar Catering Co.</text>
+      <text x="142" y="1094" font-size="13.5" fill="#8b8f9a" data-page-node-id="VXec9OSCszzNfO8FxFXlNx">Catering service</text>
+      <text x="142" y="1118" font-size="13.5" fill="#3c4048" data-page-node-id="hrxQOjgxaXHfi3NZjrdqLK">★ 4.6 · Opens 16:00</text>
+
+      <!-- 固定底栏 -->
+      <path d="M5 1540 v-88 q0 -20 20 -20 h310 q20 0 20 20 v88 z" fill="#17181f" data-page-node-id="xNluo7YqpOhqRAgQlOWSEa"/>
+      <g font-size="11" text-anchor="middle" data-page-node-id="f9Jz2Ok2BQbI7sXZnwt5rw">
+        <circle cx="55" cy="1480" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="FOZTHGOCDEghGbChgifF3C"/><path d="M49 1486 q6 -10 12 0" stroke="#8b8f9a" stroke-width="2.5" fill="none" data-page-node-id="akNIoe4mxDtHA8KVJg74P3"/>
+        <text x="55" y="1508" fill="#8b8f9a" data-page-node-id="orH0ciGxFgoyp8f3jL3fQh">Discover</text>
+        <rect x="105" y="1470" width="18" height="18" rx="4" fill="#0a8f4c" data-page-node-id="jPaoLxFGZGDoE6kD5zVBJv"/>
+        <text x="114" y="1508" fill="#0a8f4c" font-weight="700" data-page-node-id="FdRYOkBJjuGO2pvL5J1OxG">Places</text>
+        <circle cx="168" cy="1479" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="TwQxbGhG2WloAQNAZl7lXP"/><text x="168" y="1484" font-size="12" fill="#8b8f9a" text-anchor="middle" data-page-node-id="6b3NuybYvvoD3GdTLOUCc8">·</text>
+        <text x="168" y="1508" fill="#8b8f9a" data-page-node-id="vhuzhsWWlL9ZuDBEWFddkt">Chats</text>
+        <circle cx="220" cy="1479" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="FON87LVXelThMxnRoznDlZ"/><text x="220" y="1484" font-size="12" fill="#8b8f9a" text-anchor="middle" data-page-node-id="qFNDyvDqX1EjegJ0OuhIRa">≡</text>
+        <text x="220" y="1508" fill="#8b8f9a" data-page-node-id="hMQxIVbZYYMyf5I79ttAZp">Feeds</text>
+        <circle cx="272" cy="1479" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="Q9fP8iy2m7AfhgbAXpBqmo"/><text x="272" y="1484" font-size="12" fill="#8b8f9a" text-anchor="middle" data-page-node-id="DMROxFosNAnri1kFXIStmK">◎</text>
+        <text x="272" y="1508" fill="#8b8f9a" data-page-node-id="19cYz9hTcFgrayeVjzuQmf">My Hub</text>
+      </g>
+
+      <!-- 红点 -->
+      <g font-size="20" font-weight="800" text-anchor="middle" data-page-node-id="ekyGXE5ZHkedHJRYng64Yb">
+        <circle cx="344" cy="106" r="18" fill="#e04040" stroke="#fff" stroke-width="3" data-page-node-id="BJdNMzXBdHsiZVoLRBDJwJ"/><text x="344" y="113" fill="#fff" data-page-node-id="KrzOTZVWMU7WoV538yC1gS">1</text>
+        <circle cx="344" cy="270" r="18" fill="#e04040" stroke="#fff" stroke-width="3" data-page-node-id="Ed1x4KbqY07H9oGPaQITEx"/><text x="344" y="277" fill="#fff" data-page-node-id="0CleoXawN9tHvtiuUBL6j9">2</text>
+        <circle cx="344" cy="825" r="18" fill="#e04040" stroke="#fff" stroke-width="3" data-page-node-id="1GaCHCBImljnKCppeJvbx7"/><text x="344" y="832" fill="#fff" data-page-node-id="2df6lm2ULuLG9VGVUnp7Rq">3</text>
+        <circle cx="344" cy="866" r="18" fill="#e04040" stroke="#fff" stroke-width="3" data-page-node-id="31s9Vog2hjQAwG4Hpt9CvT"/><text x="344" y="873" fill="#fff" data-page-node-id="Av2rzQt3iUC5PBS9C6BU1t">4</text>
+      </g>
+
+      <!-- ================= 右:优化后(混合模式) ================= -->
+      <text x="965" y="30" font-size="19" font-weight="800" fill="#0a8f4c" text-anchor="middle" data-page-node-id="WGChdSXjwW0SMEAWOXCtiP">优化后 · 混合模式默认 + 三态切换</text>
+      <rect x="575" y="48" width="350" height="1512" rx="26" fill="#f4f4f8" stroke="#dcdce4" stroke-width="1.5" data-page-node-id="CCLQP0KwmEROXkacfbogp0"/>
+
+      <text x="750" y="112" font-size="20" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="NVjnjRWsWvZS2UXCrDmQb3">Places</text>
+
+      <!-- 三态分段控件 -->
+      <rect x="594" y="126" width="312" height="40" rx="20" fill="#e8e9ef" data-page-node-id="QfbPUxx8l0RrDqeAjVVh6v"/>
+      <rect x="598" y="130" width="100" height="32" rx="16" fill="#0a8f4c" data-page-node-id="31EwlBRu8DJLG0GSlvj7B1"/>
+      <text x="648" y="151" font-size="13.5" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="XGVXumbxJrK0LdTTd051qI">◫ Blend</text>
+      <text x="770" y="151" font-size="13.5" font-weight="600" fill="#5a5f6b" text-anchor="middle" data-page-node-id="MiCRzvihfEtlDksdCqAEsj">🗺 Map</text>
+      <text x="872" y="151" font-size="13.5" font-weight="600" fill="#5a5f6b" text-anchor="middle" data-page-node-id="WHtg6eLBVlap6kngc2Ti1g">☰ List</text>
+
+      <!-- 上半:地图 -->
+      <rect x="594" y="180" width="312" height="380" rx="16" fill="url(#mapbg)" data-page-node-id="zRn0rJcRITRIZ73n5wYecE"/>
+      <path d="M594 320 q60 -24 120 0 t120 0 t72 10" stroke="#a9c4e8" stroke-width="22" fill="none" opacity="0.8" data-page-node-id="eX3Cq2OtRcB52XU5LO92Sc"/>
+      <path d="M594 250 h312" stroke="#fff" stroke-width="9" data-page-node-id="T5AcmFSeUZ46fbeQjdTw5O"/>
+      <path d="M660 180 v380" stroke="#fff" stroke-width="9" data-page-node-id="eX65ae1h4AxXcxw53G4ajy"/>
+      <path d="M594 420 h312" stroke="#fff" stroke-width="12" data-page-node-id="4aEICMHBIxVn9QCXJmncpc"/>
+      <path d="M820 180 v380" stroke="#fff" stroke-width="7" data-page-node-id="yYtLXBYINJwAyBx44w1tfJ"/>
+      <rect x="700" y="200" width="70" height="52" rx="8" fill="#c2ddb2" data-page-node-id="NHtweSl667G5BrxOJGcCg0"/>
+      <rect x="594" y="470" width="312" height="90" fill="#fff" opacity="0.01" data-page-node-id="4VJdr9VJYLnhAAxMgy3MUt"/>
+
+      <!-- 地钉 -->
+      <g data-page-node-id="Mi6SlNUbZH0Md7kh9XiIGJ">
+        <path d="M770 300 q14 -20 0 -34 q-14 14 0 34 z" fill="#5a4bd1" data-page-node-id="FewerNZXZylK9eXfYNAGkW"/><circle cx="770" cy="280" r="9" fill="#5a4bd1" stroke="#fff" stroke-width="2.5" data-page-node-id="Hrk7rKlLNXWFykH8Yh25Mm"/>
+        <path d="M846 372 q14 -20 0 -34 q-14 14 0 34 z" fill="#0a8f4c" data-page-node-id="6nQV15gv8bKWcyI1aqGKsq"/><circle cx="846" cy="352" r="9" fill="#0a8f4c" stroke="#fff" stroke-width="2.5" data-page-node-id="2bGFzXAAhXq8aMRt2KBvwQ"/>
+        <path d="M662 430 q14 -20 0 -34 q-14 14 0 34 z" fill="#0a8f4c" data-page-node-id="rs7kWUYhHqx8Y3HkC924K6"/><circle cx="662" cy="410" r="9" fill="#0a8f4c" stroke="#fff" stroke-width="2.5" data-page-node-id="2x2SYqGFcBNlchhxfeoLdG"/>
+        <path d="M902 250 q14 -20 0 -34 q-14 14 0 34 z" fill="#0a8f4c" data-page-node-id="DxHTcbEiq2XoIKN6JAca7o"/><circle cx="902" cy="230" r="9" fill="#0a8f4c" stroke="#fff" stroke-width="2.5" data-page-node-id="dWcQOtRWYJ804Uo81OrHp2"/>
+        <!-- 选中钉 + 标签 -->
+        <path d="M812 476 q18 -26 0 -44 q-18 18 0 44 z" fill="#e0406e" data-page-node-id="w9wHu7OQk42GLdAze46EoD"/><circle cx="812" cy="448" r="12" fill="#e0406e" stroke="#fff" stroke-width="3" data-page-node-id="uDXYcLTT7CnuiFrmayEOKS"/>
+        <rect x="700" y="500" width="150" height="30" rx="15" fill="#17181f" data-page-node-id="xTUnlssRPH8JDFAyRIwSuL"/>
+        <text x="775" y="520" font-size="12.5" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="jxcskonbLvaxlohg4PpGDK">Al-Hakim Mosque ★4.8</text>
+      </g>
+      <!-- 用户位置 -->
+      <circle cx="760" cy="400" r="16" fill="#3d7ff0" opacity="0.2" data-page-node-id="OVfISSPemOY7s7BuP3LceX"/>
+      <circle cx="760" cy="400" r="7" fill="#3d7ff0" stroke="#fff" stroke-width="2.5" data-page-node-id="jx6wvv8lDsnDo5Ye9iDvFp"/>
+      <!-- Locate me FAB -->
+      <circle cx="880" cy="530" r="19" fill="#fff" stroke="#dcdce4" stroke-width="1.5" data-page-node-id="fCFEDKVko3cbbuFggTi7hg"/>
+      <circle cx="880" cy="530" r="7" fill="none" stroke="#3d7ff0" stroke-width="2.5" data-page-node-id="DMEFvHoSy8xCy96IBXNvIs"/><circle cx="880" cy="530" r="2" fill="#3d7ff0" data-page-node-id="NZOD7JGClFyEhzWF4UXHvN"/>
+
+      <!-- 下半:列表(与地图联动) -->
+      <rect x="750" y="572" width="36" height="5" rx="2.5" fill="#c9ccd4" data-page-node-id="XfNTQJ5gtul08rDHyTpGPu"/>
+      <text x="606" y="606" font-size="14.5" font-weight="800" fill="#14151a" data-page-node-id="8iongMp9Yfcx9NPbJJR3Dr">Nearby · sorted by distance</text>
+
+      <rect x="594" y="622" width="312" height="104" rx="16" fill="#eef7f0" stroke="#0a8f4c" stroke-width="2" data-page-node-id="y45Y1JgoG9l3pw7TVU0rYv"/>
+      <rect x="606" y="634" width="80" height="80" rx="12" fill="url(#thumb2)" data-page-node-id="gbYBPhITlyob5q74yEFhLM"/>
+      <text x="700" y="652" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="pP7BqmwrsdKbg4mCdFHK1l">Al-Hakim Mosque</text>
+      <text x="700" y="672" font-size="12.5" fill="#8b8f9a" data-page-node-id="F73Yb48S67weXO9xc7jQeu">Mosque · ★ 4.8</text>
+      <text x="700" y="694" font-size="12.5" font-weight="700" fill="#0a8f4c" data-page-node-id="YvfBuSKfKq78UscAIaqoPS">0.4 km · Open now</text>
+      <text x="888" y="652" font-size="11" font-weight="800" fill="#0a8f4c" text-anchor="middle" data-page-node-id="x0KCxKW3oOG2npoJybu3cJ">Map ↗</text>
+
+      <rect x="594" y="738" width="312" height="104" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="bsmzM5Su5I6WbPXeUweMo5"/>
+      <rect x="606" y="750" width="80" height="80" rx="12" fill="url(#thumb1)" data-page-node-id="gGqr6W4kLQm3RbhvjkheRb"/>
+      <text x="700" y="768" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="3U6tI9bq4Z13oHdW9i7pGM">Halal Dinner 1.0</text>
+      <text x="700" y="788" font-size="12.5" fill="#8b8f9a" data-page-node-id="9DpBisZn0zHkTngWtopFbV">Japanese restaurant · ★ 4.0</text>
+      <text x="700" y="810" font-size="12.5" font-weight="700" fill="#0a8f4c" data-page-node-id="LqFuZBRnABxPOxGuTOULtb">0.8 km · Open now</text>
+
+      <rect x="594" y="854" width="312" height="104" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="KzXRpaFE3f92iDTzQDLxIy"/>
+      <rect x="606" y="866" width="80" height="80" rx="12" fill="url(#thumb3)" data-page-node-id="A7kpaDmZxO1YGFou2wbf1n"/>
+      <text x="700" y="884" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="XyMl8KOlpUQYhosh7AfP6U">Crescent Cafe</text>
+      <text x="700" y="904" font-size="12.5" fill="#8b8f9a" data-page-node-id="3vmyLOraJqtTNyqBOlxMWR">Halal cafe · ★ 4.5</text>
+      <text x="700" y="926" font-size="12.5" font-weight="700" fill="#0a8f4c" data-page-node-id="GEvMG5kklV0KZscP6tCupx">1.2 km · Open now</text>
+
+      <rect x="594" y="970" width="312" height="104" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="Gg6NLQgFJmHCzhK3yJKc99"/>
+      <rect x="606" y="982" width="80" height="80" rx="12" fill="url(#thumb1)" data-page-node-id="kHxeOPEMqcpM1oqCFRjxf3"/>
+      <text x="700" y="1000" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="cbEH1NHNpOKSzHXWYUxA6B">Nur Kitchen Biryani</text>
+      <text x="700" y="1020" font-size="12.5" fill="#8b8f9a" data-page-node-id="kPZADRuezjbjan6IZdD1Ty">Restaurant · ★ 4.2</text>
+      <text x="700" y="1042" font-size="12.5" font-weight="700" fill="#b96a12" data-page-node-id="w0h9aRQGGMxojf5XLSIDA2">1.6 km · Opens 11:00</text>
+
+      <rect x="594" y="1086" width="312" height="104" rx="16" fill="#fff" stroke="#e8e8ee" stroke-width="1.5" data-page-node-id="mQhLQHoSx5BChwvH4SL3rW"/>
+      <rect x="606" y="1098" width="80" height="80" rx="12" fill="url(#thumb2)" data-page-node-id="oFmvDyqc0ir0cHYEq49Jvd"/>
+      <text x="700" y="1116" font-size="15" font-weight="700" fill="#14151a" data-page-node-id="YUDeD56PFID9EAKAx2l4vi">Masjid Al-Noor</text>
+      <text x="700" y="1136" font-size="12.5" fill="#8b8f9a" data-page-node-id="QdtJ9DAbhKwVz1UKO81yCH">Mosque · ★ 4.9</text>
+      <text x="700" y="1158" font-size="12.5" font-weight="700" fill="#0a8f4c" data-page-node-id="bZywPCUTNK7SZUWdJuyvSu">2.1 km · Open now</text>
+
+      <!-- 联动说明 -->
+      <rect x="594" y="1202" width="312" height="118" rx="14" fill="#eef7f0" stroke="#cfe8d6" stroke-width="1.5" data-page-node-id="ah60tUSSqPP8OeWeqDudSA"/>
+      <text x="612" y="1230" font-size="13.5" font-weight="700" fill="#0a6e3c" data-page-node-id="pMdebephcRISXrB3oJUmUZ">👆 点地图钉 → 列表滚动至该店并高亮</text>
+      <text x="612" y="1256" font-size="13.5" font-weight="700" fill="#0a6e3c" data-page-node-id="fYNqubDLATOeGv04UyWEzE">👆 点列表卡 → 地图聚焦对应钉</text>
+      <text x="612" y="1282" font-size="13.5" font-weight="700" fill="#0a6e3c" data-page-node-id="fIaoVcMAA6vHXYS3RDLYw7">👆 Blend/Map/List 一键切换</text>
+      <text x="612" y="1308" font-size="12.5" fill="#3c7a58" data-page-node-id="8FBJKZGbLRzEPT5AuelSoY">记住上次选择,下次打开沿用</text>
+
+      <!-- 固定底栏 -->
+      <path d="M575 1560 v-88 q0 -20 20 -20 h310 q20 0 20 20 v88 z" fill="#17181f" data-page-node-id="He1nJ7SkYYHZMrd6L2VAmg"/>
+      <g font-size="11" text-anchor="middle" data-page-node-id="EXxzhYzMlLlTNkpDfK8XAe">
+        <circle cx="625" cy="1500" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="zlrfLSf3hjxHYbtWkGT3SA"/><path d="M619 1506 q6 -10 12 0" stroke="#8b8f9a" stroke-width="2.5" fill="none" data-page-node-id="xBSaVqHwOJJDgD87EHI0BQ"/>
+        <text x="625" y="1528" fill="#8b8f9a" data-page-node-id="JSOo27YF0TRW7BHReHNbTR">Discover</text>
+        <rect x="675" y="1490" width="18" height="18" rx="4" fill="#0a8f4c" data-page-node-id="SHBSUTbg8DVLeXShv2DnTb"/>
+        <text x="684" y="1528" fill="#0a8f4c" font-weight="700" data-page-node-id="0FC95P6wUWScknyYC2GgcZ">Places</text>
+        <circle cx="738" cy="1499" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="US1zgEvhOMEPZvpn73oAJ1"/><text x="738" y="1504" font-size="12" fill="#8b8f9a" text-anchor="middle" data-page-node-id="oX5HAWkwDZeBn1Nckdb7pP">3</text>
+        <text x="738" y="1528" fill="#8b8f9a" data-page-node-id="0WZLHsyyhqHidMwn86u7ii">Chats</text>
+        <circle cx="790" cy="1499" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="Fgy1BJbeCLt4ClYGPlHH0J"/><text x="790" y="1504" font-size="12" fill="#8b8f9a" text-anchor="middle" data-page-node-id="DtcpCRB5hkGLVgdLA8ek2E">≡</text>
+        <text x="790" y="1528" fill="#8b8f9a" data-page-node-id="Hk2qMqxJJl4EpLMceajsNd">Feeds</text>
+        <circle cx="842" cy="1499" r="11" fill="none" stroke="#8b8f9a" stroke-width="2.5" data-page-node-id="tBoLkya6DJ7SaqR4sSAYyW"/><text x="842" y="1504" font-size="12" fill="#8b8f9a" text-anchor="middle" data-page-node-id="L6fJIFX1jBmK7wc6tMqnRM">◎</text>
+        <text x="842" y="1528" fill="#8b8f9a" data-page-node-id="AT9mYJ3CG1M2BnsXpOpUgr">My Hub</text>
+      </g>
+
+      <!-- 绿点 -->
+      <g font-size="20" font-weight="800" text-anchor="middle" data-page-node-id="gPxrQv0Ph0B2MvaBNpCElC">
+        <circle cx="918" cy="146" r="18" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="J2pMd435EMzA5uMhEuPDjy"/><text x="918" y="153" fill="#fff" data-page-node-id="CARkpxOkx1rh264EE3jfEI">1</text>
+        <circle cx="918" cy="300" r="18" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="CIv6x9DrHuftuvh4IZgGiU"/><text x="918" y="307" fill="#fff" data-page-node-id="Ji6WNN9j6zOIzS7qCch0BL">2</text>
+        <circle cx="918" cy="674" r="18" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="5Cgcs4ejH8wmsKUA1hPBt6"/><text x="918" y="681" fill="#fff" data-page-node-id="h58R60TxGLhv9tRILfZCEn">3</text>
+        <circle cx="918" cy="1149" r="18" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="Exb2x7aUvQglDgAAFjT5wm"/><text x="918" y="1156" fill="#fff" data-page-node-id="ReZGTlcIbjvSHwQ0DAmFfK">4</text>
+      </g>
+
+      <!-- 中缝箭头 -->
+      <path d="M505 800 h40 m-10 -10 l10 10 l-10 10" stroke="#0a8f4c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="Rw4FrRZriMinQwmguj7CV4"/>
+
+      <!-- ===== 附加模式小样 ===== -->
+      <text x="660" y="1620" font-size="16" font-weight="800" fill="#1a1c22" text-anchor="middle" data-page-node-id="mR6lJJPvRAQPCGrFgWTraH">纯地图模式 Map only</text>
+      <rect x="585" y="1636" width="150" height="330" rx="18" fill="#f4f4f8" stroke="#dcdce4" stroke-width="1.5" data-page-node-id="88axPEp7YuxxVKvjkeMf6H"/>
+      <rect x="594" y="1646" width="132" height="240" rx="10" fill="url(#mapbg)" data-page-node-id="iGpzz5iDA06OOsbuQDRD3k"/>
+      <path d="M594 1700 h132" stroke="#fff" stroke-width="6" data-page-node-id="zANChverDG9CSGWJiv8zrI"/><path d="M640 1646 v240" stroke="#fff" stroke-width="6" data-page-node-id="UjZwZ40kPCEhQ92jkNCcbL"/>
+      <circle cx="620" cy="1690" r="8" fill="#0a8f4c" stroke="#fff" stroke-width="2" data-page-node-id="Y5A4NVtmdvprpCihCSFqz6"/>
+      <circle cx="700" cy="1740" r="8" fill="#0a8f4c" stroke="#fff" stroke-width="2" data-page-node-id="CFpkL7cgKuvRDmXrwxF6Wb"/>
+      <circle cx="650" cy="1800" r="10" fill="#e0406e" stroke="#fff" stroke-width="2.5" data-page-node-id="pkTRANZWgU7HNgGIbDv72c"/>
+      <circle cx="660" cy="1760" r="6" fill="#3d7ff0" stroke="#fff" stroke-width="2" data-page-node-id="aXveR6du1BSzOAe3VmGczI"/>
+      <rect x="594" y="1896" width="132" height="42" rx="10" fill="#fff" stroke="#e0e0e8" stroke-width="1.5" data-page-node-id="FCI8JG41mZPtoXDZmcJwAq"/>
+      <text x="604" y="1913" font-size="11" font-weight="700" fill="#14151a" data-page-node-id="vnoGIuOupvTN0eA6CZhTFq">Al-Hakim Mosque ★4.8</text>
+      <text x="604" y="1930" font-size="10.5" fill="#0a8f4c" data-page-node-id="7yHkutgyjNXrNG0J9csExd">0.4 km · Directions →</text>
+      <rect x="600" y="1652" width="120" height="22" rx="11" fill="#17181f" opacity="0.85" data-page-node-id="DDZl2dz0ACB87T8pdQTyf3"/>
+      <text x="660" y="1667" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="HzACQGNYtmGK27AXLQa4xM">◫ Blend · 🗺 Map · ☰ List</text>
+
+      <text x="865" y="1620" font-size="16" font-weight="800" fill="#1a1c22" text-anchor="middle" data-page-node-id="GvEH3WOjULAPLYF8nj3q48">纯列表模式 List only</text>
+      <rect x="790" y="1636" width="150" height="330" rx="18" fill="#f4f4f8" stroke="#dcdce4" stroke-width="1.5" data-page-node-id="rTPnoGjClhiSNHe2Uqouiy"/>
+      <rect x="799" y="1646" width="132" height="30" rx="15" fill="#fff" stroke="#e0e0e8" stroke-width="1.2" data-page-node-id="UNNozOtkKk6sDBEuxVF5LP"/>
+      <text x="809" y="1666" font-size="10.5" fill="#b0b4bd" data-page-node-id="idUuns9bQBgpLYJOBqBSHM">Search places…</text>
+      <rect x="799" y="1686" width="132" height="52" rx="9" fill="#eef7f0" stroke="#0a8f4c" stroke-width="1.5" data-page-node-id="iuEk8MOE5xFhxZKeNH0muk"/>
+      <text x="809" y="1706" font-size="10.5" font-weight="700" fill="#14151a" data-page-node-id="l0EdSO6dbtnLsZXYySx9xS">Al-Hakim Mosque ★4.8</text>
+      <text x="809" y="1723" font-size="10" fill="#0a8f4c" data-page-node-id="H0p53jkNrtqILptAdFMgPo">0.4 km · Open now</text>
+      <rect x="799" y="1746" width="132" height="52" rx="9" fill="#fff" stroke="#e0e0e8" stroke-width="1.2" data-page-node-id="Cr6NzqiK8ShYdYCBCfsAH9"/>
+      <text x="809" y="1766" font-size="10.5" font-weight="700" fill="#14151a" data-page-node-id="JTJmznrBO1ZvD33eP1Y5cF">Halal Dinner 1.0 ★4.0</text>
+      <text x="809" y="1783" font-size="10" fill="#0a8f4c" data-page-node-id="zQmRabKor4Buc6qAgv1OH1">0.8 km · Open now</text>
+      <rect x="799" y="1806" width="132" height="52" rx="9" fill="#fff" stroke="#e0e0e8" stroke-width="1.2" data-page-node-id="4NcOZ7XPDYGhNPYRXqOEak"/>
+      <text x="809" y="1826" font-size="10.5" font-weight="700" fill="#14151a" data-page-node-id="F5Hepd3T8yv8aFzEIBA8OD">Crescent Cafe ★4.5</text>
+      <text x="809" y="1843" font-size="10" fill="#0a8f4c" data-page-node-id="ulsDf1PrP4M9chNgQt39aP">1.2 km · Open now</text>
+      <circle cx="905" cy="1900" r="17" fill="#0a8f4c" data-page-node-id="zZDocJb2wc8TXDYXq39qoZ"/>
+      <text x="905" y="1906" font-size="13" fill="#fff" text-anchor="middle" font-weight="800" data-page-node-id="EHJEKk8jdFbsfZnNjsWNyr">🗺</text>
+      <rect x="800" y="1652" width="120" height="22" rx="11" fill="#17181f" opacity="0.85" data-page-node-id="8JAkSee1tTZecbGVhINOfc"/>
+      <text x="860" y="1667" font-size="10.5" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="fkbYsloMtuRDdzXs2yp9zi">◫ Blend · 🗺 Map · ☰ List</text>
+    </svg>
+
+    <div class="legend" data-page-node-id="Z4KreIo6VxKwDcwOyZ9BWz">
+      <span data-page-node-id="i8MVdINgq9jBlwLc0srZoY"><i class="dot red" data-page-node-id="2T7FqGkhMwmIMAAy4FEliM">1</i>–<i class="dot red" data-page-node-id="tbZloHDk4WsSaDFluNhRbR">4</i> 当前问题(红)</span>
+      <span data-page-node-id="9c1PMktwiHBEqca3M6BWK6"><i class="dot green" data-page-node-id="Hsi8jtnyH1Fuzq7DTnwD8d">1</i>–<i class="dot green" data-page-node-id="lTiEtJ5cHIum21byGIKxwR">4</i> 优化点(绿)</span>
+      <span data-page-node-id="QHpv1VJKpxxPU77FiJ3cfC">右下两小样 = 纯地图 / 纯列表模式状态</span>
+    </div>
+  </div>
+
+  <div class="spec" data-page-node-id="ltpwM76hWrXxoZ8wx29bkd">
+    <h2 data-page-node-id="o5t1oSlgFIotp9hoTrDqdU">优化点清单(4 + 4 项)</h2>
+    <table data-page-node-id="UYj9r7FnUeT8rzfYlkmIzb">
+      <tr data-page-node-id="HQD0mCNasyPkMkWNqsrI9K"><th style="width:56px" data-page-node-id="T07wkg32JqN8ovRG7biDxl">No.</th><th style="width:140px" data-page-node-id="FoZeCuguTkWy1zRJ9S4a4h">类型</th><th data-page-node-id="jSLLZU5pdDi2DFeThMPTeo">当前问题 → 优化设计</th><th style="width:200px" data-page-node-id="lMc1s9OaXTVlmN1YFn9QSf">交互定义</th></tr>
+      <tr data-page-node-id="Jd54CuqzL0rWf6agIFiprA"><td data-page-node-id="AGDgE3lkHRdQVAFAgXRH67">红1</td><td data-page-node-id="hWNyBYagR7e3H33tlEWd2E">入口过深</td><td data-page-node-id="6nSlRFBguFv7Oc3Zt5fCyd">地图模式藏在右上角小图标,首次使用基本发现不了</td><td data-page-node-id="jPU0JoULyhRQVMmxUNj1eG"><span class="tag warm" data-page-node-id="3fgOXP55IGsyWeIJpNjcO2">P0 · 可发现性</span></td></tr>
+      <tr data-page-node-id="RTwkCCPsUcpB3dFmmrpEbC"><td data-page-node-id="2giDwBfJev1qYxtgdAU6B3">红2</td><td data-page-node-id="zjTKT6a38XDeqKmPo8CE2s">默认形态错配</td><td data-page-node-id="6pMQ8xNtVo4jEZY02IKXf7">本地生活类页面默认纯列表,丢失"附近有什么"的空间直觉</td><td data-page-node-id="YOntkTsOJrJcvFIo2gwpG4"><span class="tag warm" data-page-node-id="LFTjQY6d2Yle88yCdjV4EI">P0 · 本地生活 #9</span></td></tr>
+      <tr data-page-node-id="gk2fJt38XexL7I172CG6tr"><td data-page-node-id="ij8yPmbg5zMY1wr2Im8A4N">红3</td><td data-page-node-id="WFDUxMDHMqcYRPAfB9Ptuf">模式互斥</td><td data-page-node-id="cu4tYYsn0K07n9fQZcr8Qt">切到地图后列表完全消失,来回切换上下文全丢、成本高</td><td data-page-node-id="Idbb0oGgG5shP6gMDgBPZn"><span class="tag" data-page-node-id="ZwIearEn2wssC53FISHRmY">上下文保持</span></td></tr>
+      <tr data-page-node-id="XLz94Zqzc1LwFULXfyQIP6"><td data-page-node-id="Oalw9rv9b1um5DC2MjBTfm">红4</td><td data-page-node-id="xpO03rdbjkDO0mtqLrmLYL">无定位信息</td><td data-page-node-id="kbAQqEDgwXwPPo0F0j5ynt">卡片无距离、无按距离排序,用户无法判断"近不近"</td><td data-page-node-id="iLkT2L9POv8tXlePLSDL9O"><span class="tag" data-page-node-id="vb5w6keBVifbeNMiiLdQsE">#20 位置与隐私</span></td></tr>
+      <tr data-page-node-id="qEhbCrNmO8FC8knYbXbmlp"><td data-page-node-id="YGbAugHT18zH9EBXfxhlU2">绿1</td><td data-page-node-id="Rr7R5hcLThzek545YfxJLO">三态切换</td><td data-page-node-id="3NosPicCBQLeEUBcgeEkK9">顶部 <b data-page-node-id="H2M8FNl9uFeiw23VVYiusG">Blend / Map / List</b> 分段控件:混合(默认)/ 纯地图 / 纯列表,一键切换并<b data-page-node-id="5BxtL4oWMZBCXQOS4CAXYF">记住上次选择</b></td><td data-page-node-id="YJNiWGmDYqm0FBs9lp5NXz">分段控件 · 偏好持久化</td></tr>
+      <tr data-page-node-id="bj9hnNvZ01acfTrQ0VM2wn"><td data-page-node-id="FP6D3NYLY6fCuOZW4epDac">绿2</td><td data-page-node-id="ezGfaPKgfkKN4q9fHBKPNa">混合默认</td><td data-page-node-id="ZAWMjQv9aOmff3pp55F4gf">打开即 Blend:上半地图(按定位显示地钉+用户蓝点),下半列表;地图高约 45%,可拖分割线调整比例</td><td data-page-node-id="Bs8krp0FvoAYTtl7DHGRJ8">默认混合 · 可调比例</td></tr>
+      <tr data-page-node-id="R72igneuQXm3YTzxm4TYWb"><td data-page-node-id="bmyHQecE3PO3MozzVKGTaW">绿3</td><td data-page-node-id="qNmjBwWcjCAxGDhQg64zgv">双向联动</td><td data-page-node-id="2EdoTesPOLYZXEouqwrwpX">点地图钉 → 列表自动滚动至对应卡片并高亮(绿边);点列表卡 → 地图聚焦对应钉并弹出店名标签;选中关系永不丢失</td><td data-page-node-id="gcci3bxCKpm1Dlgjtdo7OM">图钉 ↔ 卡片 同步</td></tr>
+      <tr data-page-node-id="5UpViPQ0qgGJGzL8QlS1He"><td data-page-node-id="bdtHCvjcrpau2fucJDcCZa">绿4</td><td data-page-node-id="K60kkdEArVcS60s2egBo4R">定位驱动</td><td data-page-node-id="IGyIHrjNdGoBvA6WVEoNXT">卡片显示<b data-page-node-id="g3GNCN6Blr0NclrwT4rQ2O">距离 + 按距离排序</b>(Nearby · sorted by distance);Locate me 浮钮一键回位;隐私档位可设"仅城市级",地图仍可用但精度降级</td><td data-page-node-id="zC17gKORBZRdIl3QezSu3o">距离排序 · 隐私档位 #20</td></tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>

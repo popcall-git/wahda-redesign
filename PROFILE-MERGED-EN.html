@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile Page Complete Optimization · Account Switcher × Published Posts · P001+P004 Merged</title>
+<style>  :root{ --ink:#14151a; --sub:#5a5f6b; --line:#e4e6ec; --red:#d64545; --green:#0a8f4c;
+    --accent:#6C5CE7; --card:#ffffff; --bg:#f5f6f8; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--ink);
+       font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+       padding:34px 24px 60px;}
+  .wrap{max-width:1280px; margin:0 auto;}
+  header{margin-bottom:24px;}
+  .kicker{font-size:13px; letter-spacing:.18em; color:var(--accent); font-weight:700; margin-bottom:10px;}
+  h1{font-size:33px; font-weight:800; line-height:1.25;}
+  .meta{font-size:14.5px; color:var(--sub); margin-top:10px; line-height:1.7;}
+  .tags{margin-top:12px;}
+  .tag{display:inline-block; background:#f0edff; color:#5a4bd1; font-size:12.5px; font-weight:700;
+       border-radius:6px; padding:2px 8px; margin:2px 6px 2px 0;}
+  .tag.green{background:#e8f7ef; color:#0a7a44;}
+  .art{background:#fff; border:1px solid var(--line); border-radius:20px; padding:18px; margin-top:26px;
+       box-shadow:0 8px 28px rgba(20,21,26,.10);}
+  .legend{margin-top:16px; font-size:14.5px; color:var(--sub); line-height:1.9; padding:0 6px; list-style:none;}
+  .legend b{color:var(--ink);}
+  .legend .n{display:inline-flex; width:21px; height:21px; border-radius:50%; color:#fff; font-size:12px;
+             align-items:center; justify-content:center; margin-right:7px; vertical-align:-4px; font-weight:800; background:var(--green);}
+  .notes{margin-top:38px; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px 26px;}
+  .notes h2{font-size:21px; font-weight:800; margin-bottom:6px;}
+  .notes .src{font-size:13.5px; color:var(--sub); margin-bottom:16px; line-height:1.7;}
+  table{width:100%; border-collapse:collapse;}
+  th{font-size:14px; color:var(--sub); text-align:left; padding:10px 12px; border-bottom:2px solid var(--line); letter-spacing:.04em;}
+  td{font-size:15px; padding:12px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.62;}
+  tr:last-child td{border-bottom:none;}
+  td.no{width:44px;}
+  .n2{display:inline-flex; min-width:26px; height:26px; border-radius:50%; background:var(--accent); color:#fff;
+      font-size:14px; font-weight:800; align-items:center; justify-content:center;}
+  td.basis{width:250px; color:var(--sub); font-size:13.5px;}
+  .mod td{background:#f5f3ff; color:#5a4bd1; font-weight:800; font-size:14.5px; letter-spacing:.05em;
+          border-bottom:1px solid #e4defa; padding:9px 12px;}
+  footer{margin-top:26px; text-align:center; font-size:13px; color:#9aa0ac; letter-spacing:.08em;}</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">WAHDA · Interaction Optimization · P001 × P004 Merged (Single-Canvas Overlay)</div>
+    <h1>Profile Page Complete Optimization — Account Switcher × Published Posts</h1>
+    <div class="meta">Source: UI Design - Summary.pdf (Figma export) · P001 (Profile × Account Switcher dialog) and P004 (Personal Profile content-quality fixes) merged as same-source profile optimizations · Basis: "20 Key Improvements" + V4 report + P002 global directive · 2026-09-07</div>
+    <div class="tags"><span class="tag green">P001 · P004 Merged</span><span class="tag">#12 Multi-Account &amp; Identity</span><span class="tag">#20 Location &amp; Privacy</span><span class="tag">#8 Feed Consumption</span><span class="tag green">P002 Fixed Bottom Bar</span></div>
+  </header>
+
+  <section class="art">
+    <svg viewBox="0 0 1220 960" width="100%" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:18px;">
+  <defs>
+    <defs data-page-node-id="meu6aYWLULBnNSGEHRPW8D">
+            <linearGradient id="av1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="fbdVQUlEwfdSl3RpjYWBX9">
+              <stop offset="0" stop-color="#8e7cf3" data-page-node-id="VE1Mrh1FVgWVCxjrz2DIty"/><stop offset="1" stop-color="#5a4bd1" data-page-node-id="Tfgl6qHtGieflXJFcVmpwb"/>
+            </linearGradient>
+            <linearGradient id="gv1" x1="0" y1="0" x2="1" y2="1" data-page-node-id="NQ1NIYbLJXIz5YZ8bE68Ob">
+              <stop offset="0" stop-color="#f2a6a0" data-page-node-id="3SFaQjE2wBoS537u5guoXs"/><stop offset="1" stop-color="#d96a62" data-page-node-id="HsP4QiuGfF6PlMLbbtDlpf"/>
+            </linearGradient>
+          </defs>
+    <linearGradient id="av2" x1="0" y1="0" x2="1" y2="1" data-page-node-id="jBdFbH3lkQRdgdNIhccW7E">
+              <stop offset="0" stop-color="#f2a6a0" data-page-node-id="xH0LiguxY9D6E7VeinxjhK"/><stop offset="1" stop-color="#d96a62" data-page-node-id="E3F2vE0i8IZjmqAr7s9D0g"/>
+            </linearGradient>
+    <clipPath id="accClip"><rect x="0" y="0" width="750" height="558"/></clipPath>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="11" flood-color="#1a2332" flood-opacity="0.14"/></filter>
+  </defs>
+  <rect width="1220" height="960" fill="#f1f3f7"/>
+
+  <!-- ===== Scene ① Full profile (P004 optimized, published Posts feed + fixed bottom bar) ===== -->
+  <rect x="21" y="33" width="359" height="761" rx="42" fill="#fff" filter="url(#sh)"/>
+  <g transform="translate(28,40) scale(0.46)">
+    
+
+          <rect width="750" height="1624" fill="#ffffff" data-page-node-id="pPXW6hOAFjza1EphrqsREx"/>
+
+          <!-- Status bar -->
+          <text x="55" y="52" font-size="28" font-weight="600" fill="#111" data-page-node-id="708Dbfyf4Y0CrCBfMwQ3EX">9:41</text>
+          <g fill="#111" data-page-node-id="fnKXPEASKW83X2RkNseVna">
+            <rect x="596" y="30" width="6" height="14" rx="2" data-page-node-id="5MvjhEU2TP6kyTbsceosYF"/><rect x="606" y="25" width="6" height="19" rx="2" data-page-node-id="tqP3VqJ0tD7QVj6va5c6Bh"/>
+            <rect x="616" y="20" width="6" height="24" rx="2" data-page-node-id="csujLzavnhjQl2MumIBgI9"/><rect x="626" y="15" width="6" height="29" rx="2" data-page-node-id="TQlQPYgf5twqXFqoFcpsAw"/>
+            <path d="M652 34 a20 20 0 0 1 28 0 l-5 6 a13 13 0 0 0 -18 0 z" transform="translate(0,-8)" data-page-node-id="19uQnxC4z0afnlqAc9DpE6"/>
+            <rect x="692" y="20" width="34" height="18" rx="6" fill="none" stroke="#111" stroke-width="3" data-page-node-id="LuCasXODvnt3zEGGivK4xE"/>
+            <rect x="696" y="24" width="22" height="10" rx="3" data-page-node-id="62nuCCN4PQvZ62wIAPWUtF"/>
+          </g>
+
+          <!-- Header -->
+          <text x="50" y="128" font-size="46" font-weight="800" fill="#14151a" data-page-node-id="gQM5JslasgLXZo3SLWSvpu">Leslie Alexander</text>
+          <path d="M486 108 l14 16 14 -16" fill="none" stroke="#14151a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="Y1ypWMTDC9y6xycD9JJqRG"/>
+          <g stroke="#14151a" stroke-width="4.5" fill="none" data-page-node-id="0DmetI9r7t3W7vArF3f8Yf">
+            <circle cx="680" cy="114" r="22" data-page-node-id="RPlq7RZ2EGSwG6ErcL8Mk5"/>
+            <circle cx="680" cy="114" r="7" data-page-node-id="D9ND0vJszZXigN3X0qBDJZ"/>
+            <line x1="680" y1="84" x2="680" y2="94" data-page-node-id="Fk7buuPDLBV068e53n03Mk"/><line x1="680" y1="134" x2="680" y2="144" data-page-node-id="IlGJiNSaSJIpmUqb6x33bo"/>
+            <line x1="650" y1="114" x2="660" y2="114" data-page-node-id="gOb5uAJn6H4YdKASmZqtMf"/><line x1="700" y1="114" x2="710" y2="114" data-page-node-id="UzjHxEdiBMp7SWC5zjICtz"/>
+            <line x1="659" y1="93" x2="666" y2="100" data-page-node-id="5gL6U9FsDF8VaKT1Hb1JeX"/><line x1="694" y1="128" x2="701" y2="135" data-page-node-id="zLZicKQkyNW6YCQr2jdgyG"/>
+            <line x1="701" y1="93" x2="694" y2="100" data-page-node-id="3z71ZBpFLm3hiHLqPKwZ2L"/><line x1="666" y1="128" x2="659" y2="135" data-page-node-id="0vjCeUFrPW69VArazaeKi4"/>
+          </g>
+
+          <!-- Large avatar (moon badge on outer edge, zero overlap) -->
+          <circle cx="126" cy="300" r="94" fill="url(#av1)" data-page-node-id="1D2bUb5senptJwwDTUs3uJ"/>
+          <text x="126" y="322" font-size="72" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="B83c9McnDspuOGddBELYuU">S</text>
+          <g data-page-node-id="HGHGBFKRirlUNsl0uXKRx9">
+            <circle cx="46" cy="222" r="24" fill="#1a1a28" stroke="#fff" stroke-width="3.5" data-page-node-id="XHUYpeXYJRozQEUjGnFMPL"/>
+            <path d="M53 208 a15 15 0 1 0 9 25 a12.5 12.5 0 0 1 -9 -25 z" fill="#f2c94c" data-page-node-id="blps0xebjJyDpDZ40E1vLY"/>
+          </g>
+
+          <!-- Badge + name + stats -->
+          <g data-page-node-id="JXclG56nK7TJdrMjYkkSbx">
+            <rect x="250" y="206" width="236" height="46" rx="10" fill="#f1f0f5" data-page-node-id="K33FOQx0gCrSSUqX3f9mXG"/>
+            <circle cx="278" cy="229" r="8" fill="none" stroke="#555" stroke-width="3" data-page-node-id="xZjdhPsIONpt23idduzo4C"/>
+            <path d="M267 247 a11 8 0 0 1 22 0" fill="none" stroke="#555" stroke-width="3" stroke-linecap="round" data-page-node-id="XcHqHRCeYm7GvwYl8Vj8kF"/>
+            <text x="298" y="239" font-size="22" fill="#555" font-weight="600" data-page-node-id="ZqpMalDUoX0A6XQZhI26Lh">Personal Account</text>
+          </g>
+          <text x="250" y="308" font-size="36" font-weight="800" fill="#14151a" data-page-node-id="mvCOaTKiXUgrTaD97MNXPU">Leslie Alexander</text>
+          <text x="250" y="360" font-size="27" font-weight="700" fill="#14151a" data-page-node-id="uyukSnHd6AnPFBmNu1JsOX">2.4K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="HfEvAxIaokPWEOFTqyouhS">followers</tspan></text>
+          <text x="470" y="360" font-size="27" font-weight="700" fill="#14151a" data-page-node-id="KEFuzh7lDNsSU9mlMErt5b">2.1K <tspan font-weight="400" font-size="22" fill="#8a8f9a" data-page-node-id="Sl6IvzHMxN932LovryQXuP">following</tspan></text>
+
+          <!-- Bio (real copy) -->
+          <text x="50" y="486" font-size="24" fill="#3c4048" data-page-node-id="0qI3E6sGCDxmmPr4dcFWHP">Sharing faith, food &amp; daily life from London 🌙</text>
+          <text x="50" y="526" font-size="24" fill="#3c4048" data-page-node-id="zPxyCMyVMfzN69UftRwg0R">Building a halal lifestyle community <tspan fill="#6C5CE7" font-weight="600" data-page-node-id="5uVqCquaJAHQ7uvEKGJwHB">more</tspan></text>
+
+          <!-- Onboarding mini card (below avatar, no overlap) -->
+          <rect x="50" y="560" width="470" height="58" rx="29" fill="#f1f0f5" data-page-node-id="rCmZeHmGvf7PbPjWpFe9Xw"/>
+          <circle cx="90" cy="589" r="15" fill="#1a1a28" data-page-node-id="pEnJoXBNqGXB7zXpJZ9ENn"/>
+          <path d="M95 580 a9 9 0 1 0 6 15 a7.5 7.5 0 0 1 -6 -15 z" fill="#f2c94c" data-page-node-id="RMcQELfHSQT36ZiXJ9upuA"/>
+          <text x="120" y="597" font-size="23" font-weight="600" fill="#14151a" data-page-node-id="GJYYbgAb5O9kI3vrbRR3Hn">Post your first note</text>
+          <g stroke="#9aa0ac" stroke-width="3.5" stroke-linecap="round" data-page-node-id="WvoI3vRffIvLLNPHCH2QTk">
+            <line x1="480" y1="580" x2="496" y2="596" data-page-node-id="WZ3KtYkRr14NLa3MnOmtLJ"/><line x1="496" y1="580" x2="480" y2="596" data-page-node-id="j37Uj206PQ82ZURO9oaX2k"/>
+          </g>
+
+          <!-- Location + visibility -->
+          <g data-page-node-id="lIPPKkzv3bRDnxhafYIVJk">
+            <path d="M60 680 c0 -12 9 -20 19 -20 s19 8 19 20 c0 14 -19 30 -19 30 s-19 -16 -19 -30 z" fill="none" stroke="#6C5CE7" stroke-width="3.5" data-page-node-id="B5YkLiv36CiPjen3E3gZjx"/>
+            <circle cx="79" cy="679" r="6" fill="#6C5CE7" data-page-node-id="AyPqPZeZfaYKnK65wP9vsO"/>
+            <text x="96" y="688" font-size="24" fill="#555" data-page-node-id="fGdryXaEzDLdipHXzFF9dA">London, United Kingdom</text>
+          </g>
+          <g data-page-node-id="XQjm1Gj6Wp7msfiIZrjl2X">
+            <circle cx="556" cy="680" r="11" fill="none" stroke="#0a8f4c" stroke-width="3" data-page-node-id="YK96ixQE6qIFCkKVqcftt7"/>
+            <circle cx="556" cy="680" r="4" fill="#0a8f4c" data-page-node-id="30PcraNH0Ymi8CdzqKRjxz"/>
+            <path d="M539 680 q17 -14 34 0 q-17 14 -34 0 z" fill="none" stroke="#0a8f4c" stroke-width="3" stroke-linejoin="round" data-page-node-id="cQQgJ9IbxMWICiHjnQJrvW"/>
+            <text x="576" y="688" font-size="21" fill="#0a8f4c" font-weight="600" data-page-node-id="BjG9EM9vo7QD8QEjql9k0q">Everyone</text>
+          </g>
+
+          <!-- Drafts card -->
+          <rect x="50" y="720" width="650" height="88" rx="20" fill="#f6f6f8" stroke="#ececf1" data-page-node-id="SIZVDi4sIWh0k6WqdGWil5"/>
+          <rect x="72" y="740" width="46" height="46" rx="12" fill="none" stroke="#14151a" stroke-width="3.5" data-page-node-id="iZIlY40yulIj7eCuX3JKoy"/>
+          <path d="M84 776 l24 -24 8 8 -24 24 -10 2 z" fill="#14151a" data-page-node-id="3iBsUvKN9ZNTD5X9Xf7mcu"/>
+          <text x="140" y="774" font-size="26" font-weight="600" fill="#14151a" data-page-node-id="8W4jAWCQgHTcRaSWCGco2o">Drafts &amp; Scheduled Post</text>
+          <circle cx="500" cy="764" r="18" fill="#6C5CE7" data-page-node-id="Z8IHsJnXQIBdiy6SedOziy"/>
+          <text x="500" y="772" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="tup1ijn0mvLRhAeVgnxHPU">10</text>
+          <path d="M655 764 h40 m-12 -12 l12 12 -12 12" stroke="#14151a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="DZH0Gt2983QrnXNFDKsTfj"/>
+
+          <!-- Tabs (complete, no breaks) -->
+          <text x="50" y="868" font-size="27" font-weight="800" fill="#14151a" data-page-node-id="yvAB4qEXtKoNMPh0E1lOH6">Posts</text>
+          <rect x="50" y="884" width="88" height="5" rx="2.5" fill="#6C5CE7" data-page-node-id="uOiMq7O0V8I0Q0AxMSoAm5"/>
+          <text x="190" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="a4sQ1OYBUWRB114p1MpES6">Saved</text>
+          <text x="320" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="PzV5xGZ9gqTNHUtEuQ259m">Community</text>
+          <text x="530" y="868" font-size="26" fill="#9aa0ac" data-page-node-id="G6im4IF5MZeP6jOXgeDB4J">Events</text>
+
+          <!-- Feed card (garbled-text fix) -->
+          <rect x="50" y="920" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2" data-page-node-id="ULBAwbatWuGQIMSeTgL95x"/>
+          <circle cx="90" cy="972" r="30" fill="url(#av1)" data-page-node-id="4LhsXFBjXPAiRP5FVlazwi"/>
+          <text x="136" y="966" font-size="24" font-weight="700" fill="#14151a" data-page-node-id="XI32Bh5axA34upPvBE4taK">Leslie Alexander</text>
+          <circle cx="360" cy="958" r="12" fill="#3b82f6" data-page-node-id="OgM4qRdqCriUY4kHQUKKtE"/>
+          <path d="M354 958 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="AU6DvD0MlzlGzNwP3u7dPm"/>
+          <text x="382" y="966" font-size="20" fill="#9aa0ac" data-page-node-id="l8mVGR67V2NITmvXiSF5s3">1h</text>
+          <path d="M672 948 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none" data-page-node-id="SQwgxdG3rTkdkz8tdcvyH7"/>
+          <text x="136" y="1012" font-size="22" fill="#3c4048" data-page-node-id="9O0w64sci9Vw8y8iCvDs0g">I just realized that there's an affordable</text>
+          <text x="136" y="1044" font-size="22" fill="#3c4048" data-page-node-id="6kVwhfbglV7QB6ar8YQqsR">decorative chandelier that's available…</text>
+
+          <!-- ============ Published Posts card ② (Leslie's published content) ============ -->
+          <rect x="50" y="1100" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2"/>
+          <circle cx="90" cy="1152" r="30" fill="url(#av1)"/>
+          <text x="136" y="1146" font-size="24" font-weight="700" fill="#14151a">Leslie Alexander</text>
+          <circle cx="360" cy="1138" r="12" fill="#3b82f6"/>
+          <path d="M354 1138 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="382" y="1146" font-size="20" fill="#9aa0ac">2h</text>
+          <path d="M672 1128 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none"/>
+          <text x="136" y="1192" font-size="22" fill="#3c4048">Hosted iftar for the street last night —</text>
+          <text x="136" y="1224" font-size="22" fill="#3c4048">40 plates of lamb biryani, gone in an hour</text>
+
+          <!-- ============ Published Posts card ③ (Leslie's published content) ============ -->
+          <rect x="50" y="1270" width="650" height="150" rx="20" fill="#ffffff" stroke="#ececf1" stroke-width="2"/>
+          <circle cx="90" cy="1322" r="30" fill="url(#av1)"/>
+          <text x="136" y="1316" font-size="24" font-weight="700" fill="#14151a">Leslie Alexander</text>
+          <circle cx="360" cy="1308" r="12" fill="#3b82f6"/>
+          <path d="M354 1308 l4 4 8 -8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="382" y="1316" font-size="20" fill="#9aa0ac">5h</text>
+          <path d="M672 1298 m0 6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0 m14 -6 a3 3 0 1 0 .1 0" stroke="#9aa0ac" stroke-width="3" fill="none"/>
+          <text x="136" y="1362" font-size="22" fill="#3c4048">Morning walk to the mosque for Fajr —</text>
+          <text x="136" y="1394" font-size="22" fill="#3c4048">sunrise over the Thames never gets old.</text>
+
+
+          <!-- ============ Fixed bottom navigation (WeChat-style) + tab badges ============ -->
+          <rect x="0" y="1430" width="750" height="194" fill="#16161f" data-page-node-id="nWCAQTy5lrAx2tfLNqcAZx"/>
+          <line x1="0" y1="1430" x2="750" y2="1430" stroke="#2a2a38" stroke-width="2" data-page-node-id="uCceG66IMkmNcLqs9SBfE0"/>
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="9m8gT2NsiaW9jcI5H5RwTC">
+            <circle cx="75" cy="1500" r="26" data-page-node-id="iP1BnbEcOY59kLG13ecpwJ"/>
+            <path d="M64 1511 l8 -16 14 -6 -8 16 z" fill="#8a8f9a" stroke="none" data-page-node-id="MjUNvfuSMeQakzXOlGVeYH"/>
+          </g>
+          <text x="75" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="zEeY2LDuhLCajnGYkMzbSL">Discover</text>
+          <g stroke="#8a8f9a" stroke-width="4" fill="none" data-page-node-id="1GIfSWymkX1xvmN1JwNn4m">
+            <path d="M225 1478 c-13 0 -22 9 -22 21 c0 15 22 33 22 33 s22 -18 22 -33 c0 -12 -9 -21 -22 -21 z" data-page-node-id="HqK8Ji5STQyGkRVWQAxRKU"/>
+            <circle cx="225" cy="1499" r="7" fill="#8a8f9a" stroke="none" data-page-node-id="6dRsoeDy2iBSc3r8IzFk9G"/>
+          </g>
+          <text x="225" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="odZWVHlFUTx4vY5BReGb8L">Places</text>
+          <path d="M351 1484 a24 24 0 0 1 48 0 a24 24 0 0 1 -24 24 h-12 l-12 10 v-16 a24 24 0 0 1 0 -18 z" fill="none" stroke="#8a8f9a" stroke-width="4" stroke-linejoin="round" data-page-node-id="BaywVhuBgS2DLAaQwAfjfC"/>
+          <circle cx="398" cy="1478" r="17" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="POc8pZW6Fy2BEvZAfff6Ct"/>
+          <text x="398" y="1486" font-size="20" font-weight="800" fill="#fff" text-anchor="middle" data-page-node-id="e7IslDghPUbJ9htoGDmc8V">3</text>
+          <text x="375" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="XWjsVVo3vmR4d5tNmEaySs">Chats</text>
+          <g fill="#8a8f9a" data-page-node-id="VcjNIXWZiuCCrgSgo3gVdy">
+            <rect x="508" y="1480" width="34" height="8" rx="4" data-page-node-id="WOGMFhr5Hg86xJFGn4hLu6"/><rect x="508" y="1496" width="34" height="8" rx="4" data-page-node-id="Xsg8DqHcj58rr6d3lXtGGj"/><rect x="508" y="1512" width="22" height="8" rx="4" data-page-node-id="0YZjG0lmaT6bTkFQK2oNe8"/>
+          </g>
+          <circle cx="545" cy="1482" r="8" fill="#e5484d" stroke="#16161f" stroke-width="3" data-page-node-id="75WBVnZvAOCQ9J9Sq5Yzvi"/>
+          <text x="525" y="1572" font-size="20" fill="#8a8f9a" text-anchor="middle" data-page-node-id="a2U2CERDYymdV1js7Wq5q1">Feeds</text>
+          <circle cx="675" cy="1500" r="15" fill="none" stroke="#22c55e" stroke-width="4" data-page-node-id="Yg0wdLuyBFFwBEZEo1vzgx"/>
+          <path d="M652 1532 a23 16 0 0 1 46 0" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" data-page-node-id="XG9UhZh7t9unut52htkyUp"/>
+          <text x="675" y="1572" font-size="20" fill="#22c55e" font-weight="700" text-anchor="middle" data-page-node-id="VWRTEHWbSKdifXXuf54xcY">My Hub</text>
+
+          <!-- Optimization green markers -->
+          <g font-size="22" font-weight="800" text-anchor="middle" data-page-node-id="WxNzAk1iS0Wj8LN9abE8I3">
+            <circle cx="540" cy="589" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="XYuSTnCrvCTkyfck0i0ivY"/><text x="540" y="597" fill="#fff" data-page-node-id="9hOaHEBcaWKVXjVm8A1mfj">1</text>
+            <circle cx="660" cy="490" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="D2LRv1bSLILZFAqXKsQv85"/><text x="660" y="498" fill="#fff" data-page-node-id="FRhntxEfwMNJtNIDCtNFsb">2</text>
+            <circle cx="712" cy="672" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="XuK77NXGLdqf4WbAUz1S5Q"/><text x="712" y="680" fill="#fff" data-page-node-id="VyRWobF5fJSxQIzMqs7sxP">3</text>
+            <circle cx="712" cy="860" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="dUd55L8ZqOaBwR0yP567hj"/><text x="712" y="868" fill="#fff" data-page-node-id="xEDWDRaKBkIr6TOPqWfIEm">4</text>
+            <circle cx="712" cy="1490" r="19" fill="#0a8f4c" stroke="#fff" stroke-width="3" data-page-node-id="XZF19BolAENzFWLcpVdcmd"/><text x="712" y="1498" fill="#fff" data-page-node-id="SbFIM3CG8xLWEcf8IB57Gn">5</text>
+          </g>
+        
+  </g>
+  <text x="200.5" y="821" font-size="15" font-weight="800" fill="#4a7a12" text-anchor="middle">Scene ① · Full Profile (published Posts · fixed bottom bar)</text>
+
+  <!-- ===== Scene ② Accounts switcher dialog card (P001 optimized) ===== -->
+  <rect x="599" y="109" width="483" height="363" rx="26" fill="#fff" filter="url(#sh)"/>
+  <g transform="translate(608,118) scale(0.62)">
+    <g clip-path="url(#accClip)">
+      <g transform="translate(0,-762)">
+        
+          <rect x="0" y="762" width="750" height="862" rx="40" fill="#ffffff" stroke="#e8e8ee" stroke-width="2" data-page-node-id="jfnTBF8QpsAnvxanQsWjhC"/>
+          <rect x="0" y="1000" width="750" height="624" fill="#ffffff" data-page-node-id="jtkgnMoT6hUocdATDSSZUF"/>
+          <rect x="307" y="790" width="136" height="10" rx="5" fill="#d9d9de" data-page-node-id="LUB6AySQ8ra84nKPOF1QFM"/>
+          <text x="375" y="880" font-size="40" font-weight="800" fill="#14151a" text-anchor="middle" data-page-node-id="s8ZP6ymfG1ugq0B4ZvFQvx">Accounts</text>
+
+          <text x="50" y="942" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="gRdIrxyR4JHUO0hREG98Kt">Personal Account</text>
+          <circle cx="100" cy="1042" r="46" fill="url(#av2)" data-page-node-id="KaSJwSS6EgCprBJBgT4ERb"/>
+          <text x="100" y="1056" font-size="36" font-weight="700" fill="#fff" text-anchor="middle" data-page-node-id="6AT5EVy32SUEFaA7x62d1J">S</text>
+          <text x="170" y="1018" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="zV2aGmFH0ZLcBin5grFIco">Siti Mariam</text>
+          <text x="170" y="1054" font-size="22" fill="#9aa0ac" data-page-node-id="poILVWwXXtVsw4JH0XVsV1">Personal</text>
+          <rect x="536" y="984" width="164" height="50" rx="25" fill="#e8f7ef" stroke="#0a8f4c" stroke-width="2.5" data-page-node-id="UsDNEwsLJJfIn9sP8vgJ0E"/>
+          <path d="M562 1009 l7 7 13 -14" stroke="#0a8f4c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="0f4K6ZLtiHKu9GrPHDinLw"/>
+          <text x="586" y="1017" font-size="22" font-weight="700" fill="#0a8f4c" data-page-node-id="Fobut7qKyw4syBAi8lxnCA">Current</text>
+          <rect x="502" y="1052" width="198" height="54" rx="27" fill="none" stroke="#6C5CE7" stroke-width="2.5" data-page-node-id="3orEDqvMJzvMK6lZFWABst"/>
+          <text x="601" y="1087" font-size="21" font-weight="600" fill="#6C5CE7" text-anchor="middle" data-page-node-id="tGuXWqnU4Ig6DuNkjxTVFe">Upgrade as Creator</text>
+
+          <text x="50" y="1142" font-size="21" fill="#9aa0ac" font-weight="600" data-page-node-id="TT4ENh0cQUhqC3OgMhTc8U">Entity Accounts</text>
+          <circle cx="100" cy="1250" r="46" fill="#fafafa" stroke="#c2c2cc" stroke-width="3" stroke-dasharray="7 7" data-page-node-id="WzdfCVu2BoQE6rkSSnbTo6"/>
+          <path d="M100 1230 v40 M80 1250 h40" stroke="#8a8f9a" stroke-width="4.5" stroke-linecap="round" data-page-node-id="84LNDGIBFcKbTaZ5DVJ5Is"/>
+          <text x="170" y="1240" font-size="28" font-weight="700" fill="#14151a" data-page-node-id="yTynzRiUz9u03Y4AbhSxvn">Add Account</text>
+          <text x="170" y="1278" font-size="21" fill="#9aa0ac" data-page-node-id="BDNJcr5akBP8WQeZa9BVQA">Business or Organization · KYB required</text>
+
+          <rect x="275" y="1548" width="200" height="9" rx="4.5" fill="#14151a" data-page-node-id="H54bKLkZSaAI6EuCIJMQrl"/>
+
+          
+        <circle cx="722" cy="247" r="20" fill="#0a8f4c" stroke="#fff" stroke-width="3"/><text x="722" y="252" fill="#fff" font-size="23" font-weight="800" text-anchor="middle">6</text><circle cx="612" cy="528" r="20" fill="#0a8f4c" stroke="#fff" stroke-width="3"/><text x="612" y="533" fill="#fff" font-size="23" font-weight="800" text-anchor="middle">7</text>
+      </g>
+    </g>
+  </g>
+  <text x="840.5" y="96" font-size="15" font-weight="800" fill="#4a7a12" text-anchor="middle">Scene ② · Accounts switcher dialog (opened from header account entry)</text>
+
+  <!-- Connector: header account entry on phone -> Accounts card -->
+  <path d="M212 80 C 453 92, 578 178, 614 188" fill="none" stroke="#8b93a5" stroke-width="2" stroke-dasharray="7 6" stroke-linecap="round"/>
+  <text x="410" y="68" font-size="13.5" font-weight="700" fill="#8b93a5">Tap header account button →</text>
+
+  <!-- ===== Unified green-dot numbering legend bar (main screen 1-6 shown in-canvas; 7/8 = green dots inside Accounts card) ===== -->
+  <g font-size="13.5" font-weight="700">
+    <text x="30" y="900" fill="#5a5f6b">Unified optimization numbering: ①–⑤ marked on main screen · ⑥⑦ inside the Accounts switcher card</text>
+  </g>
+</svg>
+    <ul class="legend">
+              <li><span class="n">1</span>"Post your first note" moved to a <b>standalone mini card</b> below the avatar — zero overlap, dismissible (P004)</li>
+        <li><span class="n">2</span>"followers" plural fixed + Bio replaced with <b>real sample copy</b>, no placeholder text (P001·P004 same source, merged)</li>
+        <li><span class="n">3</span>Location shows <b>country + city</b> with visibility level Everyone noted (P001·P004 merged, REQ-053/124)</li>
+        <li><span class="n">4</span>Tabs shown <b>in full</b>: Posts/Saved/Community/Events + Reviews tucked into "More" — no broken "Sav ed" or truncation (P001·P004 merged)</li>
+        <li><span class="n">5</span><b>Fixed bottom bar (WeChat-style)</b> + tab-level unread badges (P002 global directive)</li>
+        <li><span class="n">6</span>Accounts: current account gets a <b>✓ Current badge</b>; Upgrade as Creator demoted to secondary button (P001)</li>
+        <li><span class="n">7</span>"Add Account" adds <b>entity description + KYB requirement</b> subcopy (P001)</li>
+    </ul>
+  </section>
+
+  <section class="notes">
+    <h2>Optimization Checklist · Modular Mapping to the "20 Key Improvements"</h2>
+    <div class="src">Merge policy: same-source issues across both pages (name/Bio/location/tabs/bottom bar) deduplicated; P004 content-quality issues + P001 multi-account dialog issues organized by module; the Posts area now shows published content.</div>
+    <table>
+      <tr><th style="width:44px;">#</th><th>Current Issue</th><th>Optimization Action</th><th>Basis</th></tr>
+            <tr class="mod"><td colspan="4">Module ① Identity &amp; Location · Main-screen green dots 2 / 3</td></tr>
+      <tr>
+        <td class="no"><span class="n2">1</span></td>
+        <td>"2.4K follower" not pluralized; Bio is Lorem Ipsum placeholder (P001·P004 same source)</td>
+        <td>"2.4K followers"; Bio replaced with real copy aligned to the Muslim-community positioning — no placeholder data in production</td>
+        <td class="basis"><span class="tag">V4 · P0 Quality Issue</span></td>
+      </tr>
+      <tr>
+        <td class="no"><span class="n2">2</span></td>
+        <td>Location shows only "London" — no country, no visibility control (P001·P004 same source)</td>
+        <td>Show country + city (London, United Kingdom); three visibility levels in Settings, eye icon on profile indicates Everyone</td>
+        <td class="basis"><span class="tag">#20 Location &amp; Privacy</span><span class="tag">REQ-053 · 124</span></td>
+      </tr>
+      <tr class="mod"><td colspan="4">Module ② Onboarding &amp; Layout · Main-screen green dots 1 / 4</td></tr>
+      <tr>
+        <td class="no"><span class="n2">3</span></td>
+        <td>"Post your first note" bubble overlaps the top of the avatar (P004)</td>
+        <td>Onboarding moved to a standalone mini card below the avatar (moon icon + copy + close)</td>
+        <td class="basis"><span class="tag">V4 · P0 Visual Quality</span></td>
+      </tr>
+      <tr>
+        <td class="no"><span class="n2">4</span></td>
+        <td>Broken tab text "Sav ed/Event s"; 5th tab truncated "Revi…" (P001·P004)</td>
+        <td>Show 4 high-frequency tabs in full, tuck low-frequency Reviews into "More ⌄"; add a no-broken-word typography check item</td>
+        <td class="basis"><span class="tag">#8 Feed Consumption</span><span class="tag">V4 · P0</span></td>
+      </tr>
+      <tr>
+      <tr class="mod"><td colspan="4">Module ③ Global Navigation · Main-screen green dot 5 (P002 global directive)</td></tr>
+      <tr>
+        <td class="no"><span class="n2">5</span></td>
+        <td>Bottom nav is a floating capsule, overlapping sheets/content, weak reachability (P004)</td>
+        <td>Fixed full-width solid dark bottom bar (WeChat-style); scrolling content never covers the bar; tab-level badges lead straight to new content</td>
+        <td class="basis"><span class="tag green">P002 User Directive</span><span class="tag">#5 Notifications to Tab</span></td>
+      </tr>
+      <tr class="mod"><td colspan="4">Module ④ Accounts Switcher Dialog · Dialog-card green dots 6 / 7 (P001 only)</td></tr>
+      <tr>
+        <td class="no"><span class="n2">6</span></td>
+        <td>Accounts lacks a "current account" indicator; Upgrade as Creator button over-weighted (P001)</td>
+        <td>Add ✓ Current badge to current account; upgrade entry becomes a secondary outlined button to avoid mis-taps and confusion</td>
+        <td class="basis"><span class="tag">#12 Multi-Account &amp; Identity</span></td>
+      </tr>
+      <tr>
+        <td class="no"><span class="n2">7</span></td>
+        <td>"Add Account" has no description — users don't know what can be added (P001)</td>
+        <td>Add subcopy "Business or Organization · KYB required", surfacing the entity-account requirement up front</td>
+        <td class="basis"><span class="tag">#12 Multi-Account &amp; Identity</span></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>WAHDA · PAGE-BY-PAGE REDESIGN · P001 × P004 MERGED · Based on the 20 Key Improvements</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fig.2 · Global Notification Center</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:44px 30px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:29px; font-weight:800; color:#161c28; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:19px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:44px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:18px; line-height:1.7; }
+  .compare { display:flex; gap:32px; align-items:flex-start; }
+  .col { flex:1; max-width:430px; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+  table { width:100%; border-collapse:collapse; margin-top:16px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12px; letter-spacing:.6px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:11px 12px; border-bottom:1px solid #eef0f4; line-height:1.6; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Fig.2 · Global Notification Center <span class="en">Global notification center</span></h1>
+  <div class="badge">20 key improvements plan · #05 Global notification center · Original screenshot as base (Discover home) + local modification layer</div>
+  <p class="sub"><b>REQ-046 / 066 / 091</b>: Today all notifications sit in the inbox at the top-right of Discover, with no aggregated inbox; like/unlike even generates duplicate notifications (091). Redesign as a <b>persistent top-bar bell (cross-page unread red dot) + tap to open an aggregated notification center</b>: All / Messages / Interactions / Orders / System tabs, Today / Yesterday time groups, unread green dots, and one-tap mark-all-read.</p>
+
+  <h2>Before / After <span class="tag mod">Original base + modification layer</span></h2>
+  <p class="desc">Left: current state (bell is the only entry; tapping opens no aggregated page) → Right: updated (persistent spotlighted bell + aggregated notification center overlay).</p>
+  <div class="compare">
+    <div class="col">
+      <div class="col-h before">● Current: the bell is the only notification entry</div>
+      <div class="stage">
+        <img src="pages/notification-before.png" alt="">
+        <div class="dot red" style="left:91%; top:6%;">1</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● Updated: aggregated notification center · tabbed inbox</div>
+      <div class="stage">
+        <img src="pages/notification-after.png" alt="">
+        <div class="dot green" style="left:91%; top:6%;">1</div>
+        <div class="dot green" style="left:8%; top:11.6%;">2</div>
+        <div class="dot green" style="left:62%; top:18%;">3</div>
+        <div class="dot green" style="left:92.5%; top:33%;">4</div>
+        <div class="dot green" style="left:92%; top:40.5%;">5</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>Update</th><th>Details</th></tr>
+    <tr><td>1</td><td><b>Persistent global bell</b></td><td>The top bell stays on all top-level pages (shown here expanded), with the unread red dot following across pages; bottom-tab badges route by type per the finalized P002 spec.</td></tr>
+    <tr><td>2</td><td><b>Aggregated notification center</b></td><td>Tapping the bell opens a full inbox overlay with Today / Yesterday time groups, replacing the current "badge number only, no list" state (REQ-066).</td></tr>
+    <tr><td>3</td><td><b>Tabbed categories</b></td><td>Five tabs: All / Messages / Interactions / Orders / System, with unread-count badges on Interactions and Messages (REQ-046).</td></tr>
+    <tr><td>4</td><td><b>Unread green dots</b></td><td>Unread items carry a green dot on the right that clears on tap; paired with "Mark all as read" for one-tap clearing.</td></tr>
+    <tr><td>5</td><td><b>Notification merging</b></td><td>Repeated like/unlike on the same post by the same user keeps one notification with an aggregated count; withdrawing removes it (REQ-091).</td></tr>
+  </table>
+  <div class="note">Multi-account users (Personal / Creator / Professional) can switch identity views at the top of this inbox; the aggregated notification is the landing point for REQ-100. List item layout reuses the design language of the original "Your Comments" page.</div>
+</div>
+</body>
+</html>

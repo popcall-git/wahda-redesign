@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prayer Conversion Funnel · 5-Step Trust Path Interaction Design</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#161c28; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; letter-spacing:.5px; }
+  h1 .en { color:#8b8f9a; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eaf6d9; color:#2e6b1e; font-size:13.5px; font-weight:700; border:1px solid #cbe8a8; }
+  .sub { color:#5c6470; font-size:14.5px; margin-top:10px; line-height:1.7; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; margin:52px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f0fb; color:#2e6b8f; border:1px solid #cfe0f2; }
+  .tag.mod  { background:#eaf6d9; color:#2e6b1e; border:1px solid #cbe8a8; }
+  .desc { color:#5c6470; font-size:13.5px; margin-bottom:20px; line-height:1.7; }
+
+  /* Operations path, 5 blocks */
+  .ops { display:flex; gap:14px; margin-top:24px; flex-wrap:wrap; }
+  .op { flex:1; min-width:150px; border-radius:14px; padding:18px 16px; }
+  .op h3 { font-size:16px; font-weight:800; margin-bottom:10px; }
+  .op p { font-size:13px; line-height:1.75; color:#3c434e; }
+  .op .src { font-size:11px; color:#8b8f9a; margin-top:10px; }
+  .op1 { background:#e7f4ec; } .op2 { background:#f6ecda; } .op3 { background:#f2f2ef; }
+  .op4 { background:#e4ebf8; } .op5 { background:#f0f0f0; }
+
+  /* Six-screen flow */
+  .flow { display:flex; gap:0; align-items:flex-start; overflow-x:auto; padding:20px 4px 28px; }
+  .step { flex:0 0 268px; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 26px rgba(20,30,50,.14); border:1px solid #e2e4ea; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .cap { text-align:center; margin-top:10px; font-size:13px; color:#161c28; font-weight:700; }
+  .cap span { color:#8b8f9a; font-weight:500; }
+  .arrow { flex:0 0 62px; text-align:center; padding-top:330px; }
+  .arrow .a { font-size:26px; color:#2e7d32; font-weight:800; }
+  .arrow .t { font-size:11.5px; color:#2e7d32; font-weight:700; line-height:1.5; margin-top:4px; background:#eaf6d9; border-radius:10px; padding:6px 4px; }
+
+  /* Mechanics table */
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(20,30,50,.06); }
+  th { text-align:left; color:#8b8f9a; font-size:12.5px; letter-spacing:1px; padding:12px 14px; border-bottom:1px solid #e6e8ee; background:#fafbfc; }
+  td { padding:13px 14px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  td:first-child { color:#2e6b1e; font-weight:800; width:86px; white-space:nowrap; }
+  td b { color:#161c28; }
+  .muted { color:#8b8f9a; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f0fb; border:1px dashed #cfe0f2; color:#2e6b8f; font-size:13.5px; line-height:1.7; }
+  .gap { margin-top:16px; }
+  .gap li { margin:8px 0 8px 20px; font-size:14px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Prayer Conversion Funnel · 5-Step Trust Path<span class="en">Prayer-to-Purchase Funnel</span></h1>
+  <div class="badge">Operations path × interaction design · original artwork base / new designs for missing pages</div>
+  <p class="sub">Target operations path: <b>open the prayer tool and build a habit → listen to recitation during prayer → follow the reciter → join her group → buy trusted halal goods out of trust</b>. Core mechanism: every step's UI embeds a <b>conversion hook</b> for the next step, and the hook appears at the <b>emotional peak</b> (when prayer completes / when moved by content / when trust is built in the group).</p>
+
+  <!-- Operations path -->
+  <div class="ops">
+    <div class="op op1"><h3>01 Pray →</h3><p>Open the prayer tool<br>Complete daily prayers<br>Build a fixed habit</p><p class="src">Carrier: Prayer Time tool page</p></div>
+    <div class="op op2"><h3>02 Listen →</h3><p>Listen to recitation during prayer<br>Fall for the reciter's voice<br>Browse more content</p><p class="src">Carrier: Audio Player page</p></div>
+    <div class="op op3"><h3>03 Follow →</h3><p>Follow the reciter<br>Feed pushes her posts daily<br>Values align ever closer</p><p class="src">Carrier: Author profile + Feed</p></div>
+    <div class="op op4"><h3>04 Join →</h3><p>Join her group<br>Join discussions and events<br>Form steady engagement</p><p class="src">Carrier: Community / Group page</p></div>
+    <div class="op op5"><h3>05 Buy</h3><p>Trust her recommendations<br>Buy halal products<br>Relationship drives transactions</p><p class="src">Carrier: Product detail page (Coin payment)</p></div>
+  </div>
+
+  <!-- Six-screen flow -->
+  <h2>Screen-Level Flow Design<span class="tag mod">6 screens · 5 conversions</span></h2>
+  <p class="desc">S1/S4/S5 use original Figma artwork as base (Discover user screenshot, P80 profile, P54 group-join page); S2/S3/S6 are new designs (missing from the original draft). Green arrows = trigger conditions for conversion hooks.</p>
+  <div class="flow">
+    <div class="step">
+      <div class="stage"><img src="pages/funnel-s1-discover.png" alt=""></div>
+      <div class="cap">S1 Discover entry<br><span>① Prayer Time shortcut icon (real page)</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">Tap<br>Prayer Time</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/funnel-s2-prayer.png" alt=""></div>
+      <div class="cap">02 Prayer tool page<br><span>Check-in + streak + listen hook card</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">After prayer completes<br>hook card Listen now</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/funnel-s3-listen.png" alt=""></div>
+      <div class="cap">02 Listen / player page<br><span>Moved by the voice → Follow / join-group entry</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">Tap the author<br>go to profile</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/funnel-s4-profile.png" alt=""></div>
+      <div class="cap">03 Author profile<br><span>+Follow · her group · picks showcase</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">After following<br>join her group</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/funnel-s5-group.png" alt=""></div>
+      <div class="cap">04 Group join page<br><span>Author group pinned + members-only offers</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">Trust built in group<br>tap recommended product</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/funnel-s6-buy.png" alt=""></div>
+      <div class="cap">05 Product detail page<br><span>Author endorsement + Coin escrow payment</span></div>
+    </div>
+  </div>
+
+  <!-- Conversion mechanics -->
+  <h2>Per-Step Conversion Mechanics &amp; Analytics<span class="tag mod">Hooks / trigger timing / drop-off recovery</span></h2>
+  <p class="desc">Hooks appear only at emotional peaks; every drop-off has a recovery path that pulls the user back into the funnel.</p>
+  <table>
+    <tr><th>Step</th><th>Key interaction</th><th>Conversion hook (timing)</th><th>Drop-off recovery</th><th>Analytics events</th></tr>
+    <tr>
+      <td>01 Pray</td>
+      <td>Check-ins for the five daily prayers + <b>streak</b> (12-day flame) + countdown to next prayer, forming a fixed daily return visit</td>
+      <td>At the <b>moment prayer completes</b>, the "After Maghrib · Listen to Surah Al-Mulk" listen hook card appears — the reflection moment, when the voice most easily moves you</td>
+      <td>Not listened that night → the same recitation re-pushed at the top of Feed the next day; listening 3 days in a row grants a streak bonus</td>
+      <td>prayer_checkin_done / hook_card_view / hook_card_tap</td>
+    </tr>
+    <tr>
+      <td>02 Listen</td>
+      <td>Immersive player: recitation + author info on one screen; variable speed / loop; "More from Leslie" for continued browsing</td>
+      <td>After playing <b>≥60s or finishing a recitation</b>, the author card's Follow button animates from gray to brand green + a persistent group banner</td>
+      <td>Exited without following → Feed recommends that author's content the next day (tagged "Recently listening")</td>
+      <td>audio_play_60s / follow_prompt_show / follow_tap</td>
+    </tr>
+    <tr>
+      <td>03 Follow</td>
+      <td>Profile <b>+ Follow</b> (original draft lacks the other-user profile view; added here); following success enables "Her new content" notifications by default</td>
+      <td>The follow-success page flows into two overlay cards: <b>her group + picks showcase</b> (no modal interruption)</td>
+      <td>Follows but doesn't join → Feed pushes her posts daily (the original intent of the operations path); group posts tagged "Members discussing"</td>
+      <td>profile_follow_done / circle_card_view / picks_card_view</td>
+    </tr>
+    <tr>
+      <td>04 Join</td>
+      <td>Join page <b>pins the author's group</b> (FROM LESLIE tag + endorsement by 3 mutual friends); Preview before Join</td>
+      <td>Welcome message embeds a <b>members-only offer</b> teaser; a fixed discussion activity after daily Maghrib builds return visits</td>
+      <td>Joined but silent → one in-group @ mention with a mutual-friend topic; after 7 days inactive, frequency reduced but not removed from group</td>
+      <td>group_join_from_creator / welcome_offer_view / first_msg_sent</td>
+    </tr>
+    <tr>
+      <td>05 Buy</td>
+      <td>Product detail page: <b>author recommendation banner</b> + "Why you can trust this" with 3 trust reasons + Coin escrow (released after delivery confirmation)</td>
+      <td>First order gets a <b>circle-exclusive price</b> + social-proof endorsement "Bought 1.2k times by circle members"; Ask Amira to ask the author in one tap</td>
+      <td>Added to cart but unpaid → Coin balance reminder + one limited-time in-group reminder; payment failure goes through the Wallet Top Up shortcut flow</td>
+      <td>product_view_from_group / order_paid / escrow_release</td>
+    </tr>
+  </table>
+
+  <!-- Gaps -->
+  <h2>Original-Draft Gaps &amp; New Capabilities<span class="tag mod">Confirmed via 602-page audit</span></h2>
+  <ul class="gap">
+    <li><b>Prayer tool detail page missing</b> — the current draft's Discover only has the Prayer Time icon entry, no tool page → newly designed in this proposal (S2)</li>
+    <li><b>Quran audio player page missing</b> — no audio player anywhere in the draft → newly designed in this proposal (S3), with Follow/join-group hooks embedded</li>
+    <li><b>Other-user profile view missing</b> — P80 only shows the self view (no Follow button) → S4 uses P80 as base, overlaid with Follow + group/showcase cards, completing the other-user profile spec alongside</li>
+    <li><b>Product detail page missing</b> — the current draft only has refund/transaction history pages → newly designed in this proposal (S6), Coin payment + escrow aligned with the Wallet spec (same basis as 12,458.50 Coin)</li>
+    <li>Data fix: the base image in S4 had the misspelled name "Leslie Alexanderndernder", corrected to "Leslie Alexander" per the established spec</li>
+  </ul>
+  <div class="note">Design principles: ① hooks never interrupt with modals — all embedded as in-page cards (aligned with improvement point #6 visual fidelity of the 20 major improvements); ② every drop-off has a Feed/notification recovery path (aligned with the notification-center globalization plan); ③ payments unified on Coin (aligned with the My Hub Wallet entry plan); ④ if a guest reaches any hook → route through Guest Mode registration wall (GUEST-FLOW), continuing the original path after registration.</div>
+</div>
+</body>
+</html>

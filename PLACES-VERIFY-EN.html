@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Places Enhancement · Community Halal Verified Scoring</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#161c28; font-family:-apple-system,'Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; letter-spacing:.5px; }
+  h1 .en { color:#8b8f9a; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eaf6d9; color:#2e6b1e; font-size:13.5px; font-weight:700; border:1px solid #cbe8a8; }
+  .sub { color:#5c6470; font-size:14.5px; margin-top:10px; line-height:1.7; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; margin:52px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f0fb; color:#2e6b8f; border:1px solid #cfe0f2; }
+  .tag.mod  { background:#eaf6d9; color:#2e6b1e; border:1px solid #cbe8a8; }
+  .desc { color:#5c6470; font-size:13.5px; margin-bottom:20px; line-height:1.7; }
+
+  .mech { display:flex; gap:14px; margin-top:24px; flex-wrap:wrap; }
+  .m { flex:1; min-width:170px; border-radius:14px; padding:18px 16px; }
+  .m h3 { font-size:16px; font-weight:800; margin-bottom:10px; }
+  .m p { font-size:13px; line-height:1.75; color:#3c434e; }
+  .m1 { background:#e7f4ec; } .m2 { background:#f6ecda; } .m3 { background:#e4ebf8; } .m4 { background:#f0f0f0; }
+
+  .flow { display:flex; gap:0; align-items:flex-start; overflow-x:auto; padding:20px 4px 28px; }
+  .step { flex:0 0 268px; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 26px rgba(20,30,50,.14); border:1px solid #e2e4ea; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .cap { text-align:center; margin-top:10px; font-size:13px; color:#161c28; font-weight:700; line-height:1.5; }
+  .cap span { color:#8b8f9a; font-weight:500; }
+  .arrow { flex:0 0 62px; text-align:center; padding-top:330px; }
+  .arrow .a { font-size:26px; color:#2e7d32; font-weight:800; }
+  .arrow .t { font-size:11.5px; color:#2e7d32; font-weight:700; line-height:1.5; margin-top:4px; background:#eaf6d9; border-radius:10px; padding:6px 4px; }
+
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 2px 10px rgba(20,30,50,.06); }
+  th { text-align:left; color:#8b8f9a; font-size:12.5px; letter-spacing:1px; padding:12px 14px; border-bottom:1px solid #e6e8ee; background:#fafbfc; }
+  td { padding:13px 14px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  td:first-child { color:#2e6b1e; font-weight:800; white-space:nowrap; }
+  td b { color:#161c28; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f0fb; border:1px dashed #cfe0f2; color:#2e6b8f; font-size:13.5px; line-height:1.7; }
+  .gap { margin-top:16px; }
+  .gap li { margin:8px 0 8px 20px; font-size:14px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Places Enhancement · Community Halal Verified Scoring</h1>
+  <div class="badge">New requirement · Original screens as base + local overlay layers · Verification system is net-new design</div>
+  <p class="sub">Core mechanism: <b>any user can publish a Place; other users can tap Verified on-site to confirm “this place is genuinely Halal”; every new verification adds +1 to the number shown on the Place</b> — that number is the place's Halal trust score, used directly for list / map / search ranking.</p>
+
+  <div class="mech">
+    <div class="m m1"><h3>① Publish</h3><p>Any user submits a place via the Add Your Place form<br>Goes live on the map once approved<br>Enters “awaiting verification” state</p></div>
+    <div class="m m2"><h3>② Verify</h3><p>Other users tap<br>“Confirm this place is Halal” on the detail page<br>One vote per person, +1 in real time</p></div>
+    <div class="m m3"><h3>③ Score</h3><p>Verification count = score<br>The number is shown on<br>place cards / map pins / detail page</p></div>
+    <div class="m m4"><h3>④ Benefits</h3><p>Score unlocks tier badges<br>and search / ranking weight<br>High-score places gain extra exposure</p></div>
+  </div>
+
+  <h2>Screen-Level Flow<span class="tag mod">3 screens</span></h2>
+  <p class="desc">S1 is built on the real P51 “Add Your Place” form page; S2 / S3 use the real Places detail screenshot you provided — S3 only adds the verification Bottom Sheet (original pixels untouched).</p>
+  <div class="flow">
+    <div class="step">
+      <div class="stage"><img src="pages/place-v-s1-publish.png" alt=""></div>
+      <div class="cap">① Publish a Place<br><span>Real form as base · enters awaiting-verification once published</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">Once live<br>visible to other users</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/place-v-s2-before.png" alt=""></div>
+      <div class="cap">② Detail Page · Current<br><span>350 Reviews but no Halal trust signal</span></div>
+    </div>
+    <div class="arrow"><div class="a">→</div><div class="t">Tap<br>Halal Verified</div></div>
+    <div class="step">
+      <div class="stage"><img src="pages/place-v-s3-after-en.png" alt=""></div>
+      <div class="cap">② Detail Page · Enhanced<br><span>Verification panel: numeric score + one-tap confirm</span></div>
+    </div>
+  </div>
+
+  <h2>Verification &amp; Scoring Rules<span class="tag mod">Anti-abuse + tiers + benefits</span></h2>
+  <table>
+    <tr><th>Module</th><th>Rule</th></tr>
+    <tr>
+      <td>Scoring</td>
+      <td><b>Score = number of Verified confirmations</b>. Tapping “Confirm this place is Halal” adds +1 instantly; withdrawing a verification −1; the number refreshes in sync on the detail-page big counter, list-card badge, and map-pin corner badge</td>
+    </tr>
+    <tr>
+      <td>Tier Badges</td>
+      <td><b>Bronze 10</b> → <b>Silver 100</b> → <b>Gold 1K</b> → <b>Diamond 10K</b>. Badge ring upgrades with tier (gold / silver / bronze ring), shown in sync on the detail page and cards</td>
+    </tr>
+    <tr>
+      <td>One Vote Per Person</td>
+      <td>Each account may verify a given Place only once; tapping again returns the panel showing “Active · you verified on X date”; changing a verification requires cancel first, then re-verify</td>
+    </tr>
+    <tr>
+      <td>Anti-Abuse</td>
+      <td>① On-site check: the verification entry is surfaced first to users who checked in on Places / are within 500m (weak-signal verification allowed but weighted 0.5); ② merchant-owned accounts cannot verify their own Place; ③ same-device / same-payment-account clustering, abnormal spikes go to manual review; ④ the first 10 votes on a new Place take effect with per-vote delay to prevent brigading</td>
+    </tr>
+    <tr>
+      <td>Trust Display</td>
+      <td>The panel shows “Verified by people you trust” — confirmations from mutual friends / same group members rank first; the total (+3,208) drills down into the full verifier list (avatars tap through to profiles)</td>
+    </tr>
+    <tr>
+      <td>Ranking Benefits</td>
+      <td>Places of the same category sort by score; searching “halal restaurant” defaults to Verified-first; places scoring ≥ Gold gain weighted exposure in the Discover recommendation feed</td>
+    </tr>
+    <tr>
+      <td>Analytics</td>
+      <td>place_published / verify_sheet_open / verify_confirm_tap / verify_cancel_tap / verifier_list_open / score_tier_up</td>
+    </tr>
+  </table>
+
+  <h2>Source Design Cross-Check<span class="tag keep">Confirmed via 602-page search</span></h2>
+  <ul class="gap">
+    <li><b>Publish flow already exists in the source design</b> — the P48 / P51 “Add Your Place to the Map!” form is complete (Place Name / Category / Address / Country / City); S1 uses P51 as the base with only a “publish → awaiting verification” hint card overlaid, original form untouched</li>
+    <li><b>Verification scoring system is missing</b> — across the full deck, Halal signals stop at filter tags (Mosque / Halal) and review Q&amp;A, with no community verification / counting mechanism → this is net-new design (S3 Bottom Sheet)</li>
+    <li>The detail-page base is the real Figma screenshot you provided (Al-Hakim Grand Mosque · 350 Reviews); S3 only adds a light scrim on the upper half plus the verification panel on the lower half — original pixels untouched</li>
+  </ul>
+  <div class="note">Links with existing solutions: guests tapping verify / publish → routed through the GUEST-FLOW registration wall; verifier avatars share the same identity system as Feed interaction identities (tap through to profiles); high-score Places can link with the Discover same-city recommendations from “Location Display &amp; Privacy”.</div>
+</div>
+</body>
+</html>

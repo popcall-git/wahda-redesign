@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="Wv7ZeXRXP6sPlbRQL5yEl5">
+<head data-page-node-id="ACNBlleorPkw4WEXiIOq8v">
+<meta charset="UTF-8" data-page-node-id="fHBovoWft7M10wjPELBmVk">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="AUcBkR44FlioV87KXIjXVi">
+<title>Wahda 交互改造 · 章节导航</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; }
+  body { display:flex; background:#eef0f4; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; }
+  a { color:inherit; text-decoration:none; }
+
+  /* ===== 左侧导航 ===== */
+  nav { width:256px; flex-shrink:0; display:flex; flex-direction:column; background:#fff; border-right:1px solid #e2e5ec; height:100vh; position:sticky; top:0; }
+  .brand { padding:16px 16px 12px; border-bottom:1px solid #eef0f4; }
+  .brand h1 { font-size:16px; font-weight:800; color:#161c28; line-height:1.4; }
+  .brand small { display:block; color:#8a8f9c; font-size:11.5px; margin-top:3px; letter-spacing:.4px; }
+  .scroll { flex:1; overflow-y:auto; padding:12px 10px 18px; }
+  .g { margin-bottom:16px; }
+  .g-t { font-size:11px; font-weight:800; letter-spacing:1.2px; color:#9aa0ac; padding:0 8px; margin-bottom:6px; }
+  nav button { display:flex; width:100%; align-items:center; gap:9px; border:0; background:none; cursor:pointer; text-align:left; padding:7px 8px; border-radius:9px; font-size:12.5px; color:#3a4150; line-height:1.35; }
+  nav button:hover { background:#f2f5f9; }
+  nav button.on { background:#e9f7d9; color:#2c5a10; font-weight:700; }
+  nav button .no { width:18px; height:18px; border-radius:50%; background:#e8eaf0; color:#6b7080; font-size:10.5px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+  nav button.on .no { background:#4a7a12; color:#fff; }
+  .navfoot { padding:10px 12px 14px; border-top:1px solid #eef0f4; }
+  .navfoot a { display:flex; align-items:center; justify-content:center; gap:6px; border:1px solid #d8dbe2; background:#f7f9fb; color:#3a4150; font-weight:700; font-size:12.5px; padding:8px 10px; border-radius:10px; }
+  .navfoot a:hover { background:#fff; border-color:#9aa0ac; color:#2c5a10; }
+
+  /* ===== 右侧查看器 ===== */
+  main { flex:1; min-width:0; height:100vh; }
+  iframe { width:100%; height:100%; border:0; display:block; background:#f5f6f8; }
+</style>
+</head>
+<body data-page-node-id="AjtOATFcRC4wdCkqRe0ozd">
+<nav data-page-node-id="WZH7hX2J5VsZujKEPYdzln">
+  <div class="brand" data-page-node-id="PgsNGHHzq15CxAIdHklVZm">
+    <h1 data-page-node-id="EBjk7Qo6dqagjA9aDrhHjG">Wahda 交互设计改造</h1>
+    <small data-page-node-id="oMEAmB2mktBnUXiLZVU4IR">13 章节 · 原图打底 / 局部修改层</small>
+  </div>
+  <div class="scroll" id="side" data-page-node-id="n86c4VHehYH0kS4CgbN44P"></div>
+  <div class="navfoot" data-page-node-id="FGOXtHQcHaniRq1sMwXdw1"><a id="open" href="#" target="_blank" data-page-node-id="YDDZps8EgHYbIBPsFIsjMr">在新标签打开当前章节 ↗</a></div>
+</nav>
+<main data-page-node-id="aJ3oXoaxxjmnnOUZV5sAvk"><iframe id="frame" title="章节查看器" data-page-node-id="Ed2QmKVSlOBVncvL0UZwsJ"></iframe></main>
+
+<script>
+const CATS = [
+  { id:'a', name:'账号与主页' },
+  { id:'b', name:'注册与游客模式' },
+  { id:'c', name:'Feeds 与互动' },
+  { id:'d', name:'Places 与 My Hub' },
+  { id:'e', name:'运营增长路径' },
+];
+const CH = [
+  { f:'PROFILE-ACCOUNT-MERGED.html',   cat:'a', t:'个人主页&账号切换' },
+  { f:'P002-comparison.html',           cat:'a', t:'Discover 首页 · 固定底栏 + Tab 徽章' },
+  { f:'CREATE-ENTRY.html',              cat:'a', t:'创作入口 · 发布中枢' },
+  { f:'NOTIFICATION-CENTER.html',       cat:'a', t:'通知中心 · 全局收件箱' },
+  { f:'LOCATION-PRIVACY.html',          cat:'a', t:'位置展示与隐私' },
+  { f:'SIGNUP-comparison.html',         cat:'b', t:'Sign Up 注册流程补全' },
+  { f:'SIGNUP-STEP23-FLOW.html',        cat:'b', t:'注册 Step 2–3 引导流' },
+  { f:'GUEST-FLOW.html',                cat:'b', t:'Guest Mode 游客模式' },
+  { f:'FEEDS-DETAIL-MERGED.html',      cat:'c', t:'Feeds Detail 更新示意：身份透出 × 评论区' },
+  { f:'PLACES-BLEND.html',              cat:'d', t:'Places 混合模式改造' },
+  { f:'PLACES-VERIFY.html',             cat:'d', t:'Places 增强 · 社区清真认证评分' },
+  { f:'MYHUB-WALLET.html',              cat:'d', t:'My Hub Wallet 入口' },
+  { f:'PATH-PRAYER-FUNNEL.html',        cat:'e', t:'祈祷转化漏斗 · 5 步信任路径' },
+];
+
+const side = document.getElementById('side');
+const frame = document.getElementById('frame');
+const open = document.getElementById('open');
+let cur = -1;
+
+function buildNav(){
+  side.innerHTML = CATS.map(g=>`
+    <div class="g"><div class="g-t">${g.name}</div>
+      ${CH.map((c,i)=> c.cat===g.id ? `<button data-i="${i}"><span class="no">${String(i+1).padStart(2,'0')}</span><span>${c.t}</span></button>` : '').join('')}
+    </div>`).join('');
+}
+function select(i){
+  cur = (i+CH.length)%CH.length;
+  frame.src = CH[cur].f;
+  open.href = CH[cur].f;
+  document.querySelectorAll('#side button').forEach(el=>{
+    el.classList.toggle('on', Number(el.dataset.i)===cur);
+  });
+}
+document.getElementById('side').addEventListener('click', e=>{
+  const el = e.target.closest('button[data-i]');
+  if(el) select(+el.dataset.i);
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowLeft') select(cur-1);
+  if(e.key==='ArrowRight') select(cur+1);
+});
+// 深链：?c=8 或 #8，默认第 1 章
+const m = location.search.match(/[?&]c=(\d+)/);
+buildNav();
+select(m ? +m[1]-1 : 0);
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh" data-page-node-id="2yLMs2a9wcyEG4iVQcf9cv">
+<head data-page-node-id="WbA3px8voQ4XPrIHyK9Z0a">
+<meta charset="UTF-8" data-page-node-id="DGhriIqPcFAFdxxU2EMlDd">
+<title>Places · 混合模式改造（原图打底 + 局部修改层）</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; letter-spacing:.5px; color:#161c28; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#e9f7d9; color:#4a7a12; font-size:13.5px; font-weight:700; border:1px solid #cbe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:10px; line-height:1.7; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; margin:52px 0 6px; color:#161c28; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f1fb; color:#2470a8; border:1px solid #c3ddf2; }
+  .tag.mod  { background:#e9f7d9; color:#4a7a12; border:1px solid #cbe8a8; }
+  .desc { color:#5c6472; font-size:13.5px; margin-bottom:20px; }
+
+  /* 原设计四屏 */
+  .orig { display:flex; gap:18px; flex-wrap:wrap; }
+  .orig .frame { flex:1; min-width:200px; max-width:262px; }
+  .phone { border-radius:26px; overflow:hidden; box-shadow:0 6px 22px rgba(20,28,48,.14); border:1px solid #d8dbe2; position:relative; }
+  .phone img { width:100%; display:block; }
+  .frame .cap { text-align:center; margin-top:10px; font-size:13px; color:#3a4150; font-weight:700; }
+  .frame .cap span { color:#8a8f9c; font-weight:500; }
+  .keep-note { margin-top:14px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #a9c9e4; color:#2c5d84; font-size:13.5px; line-height:1.7; }
+
+  /* 前后对比 */
+  .compare { display:flex; gap:28px; align-items:flex-start; }
+  .col { flex:1; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .col-h.before { color:#c23a3a; } .col-h.after { color:#2e7d1e; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 6px 22px rgba(20,28,48,.14); border:1px solid #d8dbe2; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.3); transform:translate(-50%,-50%); }
+  .dot.red { background:#d84040; } .dot.green { background:#0a8f4c; }
+
+  /* 清单 */
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12.5px; letter-spacing:1px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:12px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  td:first-child { color:#2e7d1e; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .muted { color:#8a8f9c; }
+</style>
+</head>
+<body data-page-node-id="zS2i8yU9iL0zr049HulWTN">
+<div class="wrap" data-page-node-id="7WIPN1pLThdwfaZMTeG01C">
+  <h1 data-page-node-id="flDGNyUIz5eU0Xku9DI9AH">Places · 混合模式改造<span class="en" data-page-node-id="MpJ3rKfxvyM9pYf8l0Fc3v">Blend by default</span></h1>
+  <p class="sub" data-page-node-id="izciQ1UnHwsuLNeAJPOE8x">下方「修改后」不是重绘——是<b style="color:#161c28" data-page-node-id="vOuZo8tARsfu0ThRWgBRQc">同一张列表屏原图</b>，叠加了从地图屏裁切的真实 Figma 地图与 2 个新增控件。</p>
+
+  <h2 data-page-node-id="ryDX2hbArCvuDmNPbB8XBX">原始 Figma 设计<span class="tag keep" data-page-node-id="JBOaux5AitWKr4aIqnkQfQ">完整保留</span></h2>
+  <div class="orig" data-page-node-id="Ezt82Uu4XEm0Ic5wt686t7">
+    <div class="frame" data-page-node-id="gGFj5YqqnHAnLpHoHJEXVT"><div class="phone" data-page-node-id="JyN2pmVB9GLlDE2lQ3R9w8"><img src="pages/places-before.png" alt="列表视图" data-page-node-id="06XJ0WcNmrJm0wJlcVZHwZ"></div><div class="cap" data-page-node-id="RymAyfqk7jTLtv5XOXZn4v">① 列表视图 <span data-page-node-id="nMw0D4wWtQiiysUJVcVtFa">· 当前默认</span></div></div>
+    <div class="frame" data-page-node-id="dVJnwwRA9UmhaCTotwB2GE"><div class="phone" data-page-node-id="CxYTS3T9EguW3VhQEjbtM5"><img src="pages/places-map.png" alt="地图视图" data-page-node-id="IPARBQZYttyTo7YwYY0TVL"></div><div class="cap" data-page-node-id="m0pfMe5rQpaWheFw4BHxkr">② 地图视图 <span data-page-node-id="vX6IGCYAqRtzcOKdAwhqYZ">· 互斥切换</span></div></div>
+    <div class="frame" data-page-node-id="9eAkiyrO4vSzAcFytf3UIm"><div class="phone" data-page-node-id="bfRtEYHoamUcqWgaK6CAom"><img src="pages/places-detail.png" alt="地点详情" data-page-node-id="wwuyDrk1CFOFxBnYDnzFlz"></div><div class="cap" data-page-node-id="4SeQpnzaowryxxfwF81y7b">③ 地点详情 <span data-page-node-id="9iVGlQUcGF0WHDQEfps8Ia">· 全屏浮层</span></div></div>
+    <div class="frame" data-page-node-id="wWKH9OuOupDHA1srCkUHgh"><div class="phone" data-page-node-id="b7TVr1WKp96S803fvWgxfe"><img src="pages/places-mapint.png" alt="地图交互模式" data-page-node-id="2r63Nm7n4J6zwxZMlUCHop"></div><div class="cap" data-page-node-id="RVIQY1SQ3DERt0AAoAKL4s">④ 地图交互模式</div></div>
+  </div>
+  <div class="keep-note" data-page-node-id="P3qqbpzmP9pZZWaOFmavZV">改造策略：纯列表 = 屏① 原样沿用；纯地图 = 屏②/④ 原样沿用；详情 = 屏③ 原样沿用。<b data-page-node-id="14aGSWpaSRwiAMo4V3vNA4">三种模式全部复用现有 Figma 页面，本稿只新增「混合模式」一屏。</b></div>
+
+  <h2 data-page-node-id="wBoNSrISFDR2u2K5aDqQGq">前后对比<span class="tag mod" data-page-node-id="gT4wIERHWreD0bLKEVAGv9">原图打底 + 修改层</span></h2>
+  <div class="compare" data-page-node-id="rFC1C5S55SxLRCqgosiVKy">
+    <div class="col" data-page-node-id="kKARpiOhlHccXC4COqF8F0">
+      <div class="col-h before" data-page-node-id="4UWtbnQR5X69vn4a7vAN4e">● 当前：默认纯列表</div>
+      <div class="stage" data-page-node-id="omCKMBqabsD1hmb6hKdYd3">
+        <img src="pages/places-before.png" alt="当前列表视图" data-page-node-id="m3P4YKQ6I2fQqi5K3oMDQs">
+        <div class="dot red" style="left:91%; top:15%;" data-page-node-id="DsZXvTfYGyFG3DSuJvNV0f">1</div>
+        <div class="dot red" style="left:91%; top:38%;" data-page-node-id="UyFrIYE76MiDQj0DvUtBGW">2</div>
+        <div class="dot red" style="left:91%; top:57%;" data-page-node-id="AMtWaelsVlWPEBYl7timhH">3</div>
+      </div>
+    </div>
+    <div class="col" data-page-node-id="ipfDKs1G9z0AuI133CoLhU">
+      <div class="col-h after" data-page-node-id="n5DdC3L55to2V84OdhYa7B">● 修改后：混合模式默认</div>
+      <div class="stage" data-page-node-id="i7wh4F31bVvpu8cgRrAcRp">
+        <img src="pages/places-blend.png" alt="混合模式" data-page-node-id="W9wwrNcKqZDsNFFiifVkXD">
+        <div class="dot green" style="left:91%; top:29%;" data-page-node-id="mAzrKG4m1U9qyp4kR7LLC6">1</div>
+        <div class="dot green" style="left:13%; top:40%;" data-page-node-id="WKaf9pABO1mReb36m33iXI">2</div>
+        <div class="dot green" style="left:88%; top:52%;" data-page-node-id="mOr2kDITxJ7bgXEE2cQgsQ">3</div>
+        <div class="dot green" style="left:91%; top:66%;" data-page-node-id="fyRQIJ58EeJjSYg76Yxgby">4</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 data-page-node-id="RqteIsR0cLuiH7t6BuMVzK">修改点清单</h2>
+  <table data-page-node-id="SkWxJxcSNVT7LEns5i0HfR">
+    <tr data-page-node-id="h2UC5YINDkAtorxUqSTVRH"><th data-page-node-id="KHD8HoypT92AtW8d6Y2F0l">#</th><th style="width:44%" data-page-node-id="irJbBpgpR5diUWfEbjOD21">修改层（绿色 · 全部为叠加，不改动原图）</th><th data-page-node-id="iDStCGbDqLfXB4ROJ7qPat">说明</th></tr>
+    <tr data-page-node-id="w3yf1neKMhIOEoMCW40djw"><td data-page-node-id="4glgfMlzO2t5q4upbwzDNx">1</td><td data-page-node-id="VOWJpRSVLEfJGa9LoelV5J"><b data-page-node-id="iikQMn6jvbCe7oJBGknQrk">三态分段控件 List / Blend / Map</b>，浮于地图顶部，Blend 默认选中（品牌绿 #b4f856，与 chips / nav 激活态一致）</td><td data-page-node-id="jalXqOTCdo9SwD2BN1DS4p">原设计只有右上角 列表⇄地图 双图标互斥切换；扩为三态后原双图标仍保留可用（点 List=屏①，点 Map=屏②）</td></tr>
+    <tr data-page-node-id="BQeqTtrFhsNFATkriih8Xg"><td data-page-node-id="RACkNjCWGzj2BWHLoyPklP">2</td><td data-page-node-id="CFYSWlvfnjeUqvBP8EmhWP"><b data-page-node-id="5USEW7Sb32AVPkbtcRmKAw">上半地图区</b>：从屏②裁切的真实 Figma 地图（含 Al-Ai-Riyadh Mosque 等标记），按位置信息显示</td><td data-page-node-id="x9WlpkFVS4BQFqkQvSKnSp">替换原区域的前 2 张列表卡片的像素；地图可交互：拖动/缩放，图钉即屏②/④ 的同一套标记</td></tr>
+    <tr data-page-node-id="ZfPfZgvtSzCpiUJAoTQDVj"><td data-page-node-id="vNvHGrhqefp2J9gxVtCEIj">3</td><td data-page-node-id="hTO1Ayx9rPbeXUmbWozvSp"><b data-page-node-id="7HpQrS6MB7o1xJS3HnKZBe">可拖拽分割手柄</b>：上下拖动调节地图/列表比例（约 40:60 默认）</td><td data-page-node-id="25EgC3SzAlBGL8uipCoSHD">向上拖满 = 纯地图（屏②），向下拖满 = 纯列表（屏①），三态无缝过渡</td></tr>
+    <tr data-page-node-id="amPSx2LuXqwPbjnHrHV0nd"><td data-page-node-id="PHTkSaXxQ3lE4UMKkDh8G0">4</td><td data-page-node-id="g9DkwrEbUGUGED6PcfT2Pd"><b data-page-node-id="vnuau6j0LuGVtQ2GAM8jPi">下半列表区原样保留</b>：Al-Hakim Grand Mosque 卡片、评分、距离均为原图像素</td><td data-page-node-id="elvx44rjY4dy3BJJbr36Fc">双向联动：点地图图钉 → 列表滚动至对应卡片并高亮；点卡片 → 地图聚焦对应图钉</td></tr>
+  </table>
+
+  <h2 data-page-node-id="0FomFK5mSnIWTdjOh3NhsY">当前问题（红点）</h2>
+  <table data-page-node-id="cZ9NZOLvy6oXOCOkP2XJSZ">
+    <tr data-page-node-id="k1JvinSLN2gHtiTDmtcogG"><th data-page-node-id="LMFpqNXtCTDxRKM0TAqJXC">#</th><th data-page-node-id="CAa1g69zzqCjx3d0mBxJJX">问题</th></tr>
+    <tr data-page-node-id="qHj4nuIs8kLthc0lKTZWG8"><td data-page-node-id="tvDzBWVTh3sFmG50WilXDr">1</td><td data-page-node-id="YBu4FvOQ9Dy75dTH3ZyCs5">默认只有列表，「附近有什么」的空间分布完全不可见</td></tr>
+    <tr data-page-node-id="YC7GO7PWClxXWHZrm2kXkg"><td data-page-node-id="kuk2Qq0NFVTPG5dVfdroN9">2</td><td data-page-node-id="H50f5OhlCAeMpeJQDX6q23">列表⇄地图互斥切换（右上小图标），切走后列表上下文全部丢失</td></tr>
+    <tr data-page-node-id="LWrpcBMdnmiQf4ez0oQEm9"><td data-page-node-id="drbkjdZ70KcOVgCSqLDiFM">3</td><td data-page-node-id="tMctwhMmM77M6y6x0CtkxD">卡片无距离排序对比（全部 300 m），且地图模式下搜索结果与图钉无联动</td></tr>
+  </table>
+
+  <p class="sub" style="margin-top:28px" data-page-node-id="bY8P7UG73muHJk7EUGXdeX">交互规则补充：定位权限降级时地图显示城市级、列表仍按距离排序；游客模式下混合视图可浏览，点图钉详情→导航/致电才触发登录墙（沿用 GUEST-FLOW 规则）。</p>
+</div>
+</body>
+</html>

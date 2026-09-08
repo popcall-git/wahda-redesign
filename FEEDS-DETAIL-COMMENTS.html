@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feeds Detail · 评论区更新示意</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font-size:30px; font-weight:800; color:#161c28; letter-spacing:.3px; }
+  h1 .en { color:#8a8f9c; font-weight:600; font-size:20px; margin-left:12px; }
+  .badge { display:inline-block; margin-top:12px; padding:6px 14px; border-radius:20px; background:#eef9dc; color:#2c5a10; font-size:13.5px; font-weight:700; border:1px solid #cfe8a8; }
+  .sub { color:#5c6472; font-size:14.5px; margin-top:12px; line-height:1.8; }
+  .sub b { color:#161c28; }
+  h2 { font-size:20px; font-weight:800; color:#161c28; margin:52px 0 6px; }
+  h2 .tag { font-size:12.5px; font-weight:700; padding:3px 10px; border-radius:12px; margin-left:10px; vertical-align:3px; }
+  .tag.keep { background:#e8f1fb; color:#2264a8; border:1px solid #c6dcf2; }
+  .tag.mod  { background:#eef9dc; color:#2c5a10; border:1px solid #cfe8a8; }
+  .desc { color:#6b7280; font-size:13.5px; margin-bottom:20px; line-height:1.7; }
+
+  .orig { display:flex; gap:18px; flex-wrap:wrap; }
+  .orig .frame { flex:1; min-width:200px; max-width:300px; }
+  .phone { border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .phone img { width:100%; display:block; }
+  .frame .cap { text-align:center; margin-top:10px; font-size:13px; color:#3a4150; font-weight:700; }
+  .frame .cap span { color:#8a8f9c; font-weight:500; }
+
+  .compare { display:flex; gap:28px; align-items:flex-start; }
+  .col { flex:1; }
+  .col-h { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .col-h.before { color:#d5453c; } .col-h.after { color:#2c5a10; }
+  .stage { position:relative; border-radius:26px; overflow:hidden; box-shadow:0 8px 30px rgba(20,28,48,.14); border:1px solid #e2e5ec; background:#fff; }
+  .stage img { width:100%; display:block; }
+  .dot { position:absolute; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.35); transform:translate(-50%,-50%); }
+  .dot.red { background:#e04040; } .dot.green { background:#0a8f4c; }
+
+  table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
+  th { text-align:left; color:#8a8f9c; font-size:12.5px; letter-spacing:1px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
+  td { padding:12px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { color:#2c5a10; font-weight:800; width:36px; }
+  td b { color:#161c28; }
+  .muted { color:#8a8f9c; }
+  .note { margin-top:16px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #c6dcf2; color:#2264a8; font-size:13.5px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Feeds Detail · 评论区更新示意 <span class="en">Based on real comment design</span></h1>
+  <div class="badge">新工作方式：Figma 原图打底 + 局部修改层 · 评论区条目直接复用原稿真实设计与文案</div>
+  <p class="sub">602 页导出稿中<b>帖子详情页整体缺失</b>，评论区无原生参照。全稿唯一的评论 UI 是 <b>「Your Comments」页（第 155 页）</b>——真实的评论条目设计与真实文案（halal 餐厅问答、kids playground 回复）。本次更新示意在其 Post 卡片 + 互动身份行（上一轮产出）的基础上，按同一设计系统补齐评论区：评论 / 回复 / 下钻 / 输入条。</p>
+
+  <h2>设计来源：My Hub Post 卡片（第 344 页）× Your Comments 条目（第 155 页）<span class="tag keep">原图直接裁切</span></h2>
+  <p class="desc">Post 卡片、评论条目版式与头像均为原稿真实像素；评论文案逐字取自第 155 页，未虚构。</p>
+  <div class="orig">
+    <div class="frame"><div class="phone"><img src="pages/hub-344.png" alt=""></div><div class="cap">① Post 卡片 <span>（评论区的内容主体）</span></div></div>
+    <div class="frame"><div class="phone"><img src="pages/hub-155.png" alt=""></div><div class="cap">② Your Comments · 第 155 页原图 <span>（评论条目设计与真实文案来源）</span></div></div>
+  </div>
+  <div class="note"><b>复用逻辑</b>：Feeds 信息流点任意帖子 → 进入 Feeds Detail，主体即这张 Post 卡片（同设计系统）；评论区条目复用第 155 页的「头像 + 名字 + 时间 + 正文 + 动作行」版式与真实文案，补齐详情页应有的评论能力。</div>
+
+  <h2>前后对比 <span class="tag mod">原图打底 + 修改层</span></h2>
+  <p class="desc">左：上一轮产出（互动身份行，评论区缺失）→ 右：本次补齐评论区（叠加 +600px，原像素一概未动）。</p>
+  <div class="compare">
+    <div class="col">
+      <div class="col-h before">● 当前：互动身份可见，但评论无处可看</div>
+      <div class="stage">
+        <img src="pages/feed-detail-post-updated.png" alt="">
+        <div class="dot red" style="left:50%; top:92%;">1</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-h after">● 更新后：完整评论区（评论 / 回复 / 下钻 / 输入）</div>
+      <div class="stage">
+        <img src="pages/feed-detail-comments.png" alt="">
+        <div class="dot green" style="left:32%; top:59%;">1</div>
+        <div class="dot green" style="left:88%; top:67%;">2</div>
+        <div class="dot green" style="left:88%; top:79%;">3</div>
+        <div class="dot green" style="left:70%; top:88.6%;">4</div>
+        <div class="dot green" style="left:42%; top:94.2%;">5</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>#</th><th>更新点</th><th>说明</th></tr>
+    <tr><td>1</td><td><b>Comments 区块标题</b></td><td>「Comments 1,204」+ 右侧「Most relevant」排序切换，与动作栏 Comment 数同口径。</td></tr>
+    <tr><td>2</td><td><b>真实评论条目</b></td><td>Brooklyn Simmons · 4m ago ·「How can I reach the destination…halal restaurants…」（第 155 页原文案），头像为原稿真实头像裁切；Like 12 / Reply 2 动作行。</td></tr>
+    <tr><td>3</td><td><b>嵌套回复</b></td><td>Leslie Alexander 回复（「Yes, you are allowed to bring your kids…」第 155 页原文案），缩进 + 分隔线体现层级；Like 28 / Reply。</td></tr>
+    <tr><td>4</td><td><b>View all 1,204 comments</b></td><td>点 › 下钻完整评论列表页，对应第 155 页的列表形态。</td></tr>
+    <tr><td>5</td><td><b>输入条 + Send</b></td><td>「Add a comment...」胶囊输入框（含图片/相机入口）+ 品牌绿 Send，固定于详情页底部。</td></tr>
+    <tr><td class="muted">–</td><td class="muted">保持不变</td><td class="muted">Post 卡片、动作栏、Liked by / Reposted by 行均为原图或上轮产出，未改动任何像素。</td></tr>
+  </table>
+
+  <p class="note">游客在评论区点头像 / Reply 同样走 <b>Guest Mode 注册墙</b>（Deferred Follow），与既有规范一致。</p>
+</div>
+</body>
+</html>
