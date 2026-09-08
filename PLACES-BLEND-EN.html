@@ -2,7 +2,7 @@
 <html lang="en" data-page-node-id="2yLMs2a9wcyEG4iVQcf9cv">
 <head data-page-node-id="WbA3px8voQ4XPrIHyK9Z0a">
 <meta charset="UTF-8" data-page-node-id="DGhriIqPcFAFdxxU2EMlDd">
-<title>Places · Blend Mode Redesign (Original Artwork Base + Local Modification Layer)</title>
+<title>Places · Hybrid Mode Redesign (Original Screenshot Base + Local Modification Layer)</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:#f5f6f8; color:#232a38; font-family:-apple-system,'PingFang SC','Helvetica Neue',sans-serif; padding:48px 32px 80px; }
@@ -18,7 +18,7 @@
   .tag.mod  { background:#e9f7d9; color:#4a7a12; border:1px solid #cbe8a8; }
   .desc { color:#5c6472; font-size:13.5px; margin-bottom:20px; }
 
-  /* Original four screens */
+  /* Four original screens */
   .orig { display:flex; gap:18px; flex-wrap:wrap; }
   .orig .frame { flex:1; min-width:200px; max-width:262px; }
   .phone { border-radius:26px; overflow:hidden; box-shadow:0 6px 22px rgba(20,28,48,.14); border:1px solid #d8dbe2; position:relative; }
@@ -27,7 +27,7 @@
   .frame .cap span { color:#8a8f9c; font-weight:500; }
   .keep-note { margin-top:14px; padding:12px 18px; border-radius:12px; background:#e8f1fb; border:1px dashed #a9c9e4; color:#2c5d84; font-size:13.5px; line-height:1.7; }
 
-  /* Before / after */
+  /* Before/after comparison */
   .compare { display:flex; gap:28px; align-items:flex-start; }
   .col { flex:1; }
   .col-h { font-size:15px; font-weight:800; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
@@ -37,7 +37,7 @@
   .dot { position:absolute; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:#fff; border:2.5px solid #fff; box-shadow:0 2px 8px rgba(0,0,0,.3); transform:translate(-50%,-50%); }
   .dot.red { background:#d84040; } .dot.green { background:#0a8f4c; }
 
-  /* Checklist */
+  /* Lists */
   table { width:100%; border-collapse:collapse; margin-top:18px; font-size:14px; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #e2e5ec; }
   th { text-align:left; color:#8a8f9c; font-size:12.5px; letter-spacing:1px; padding:10px 12px; border-bottom:1px solid #e2e5ec; background:#fafbfc; }
   td { padding:12px; border-bottom:1px solid #eef0f4; line-height:1.65; vertical-align:top; }
@@ -48,24 +48,22 @@
 </head>
 <body data-page-node-id="zS2i8yU9iL0zr049HulWTN">
 <div class="wrap" data-page-node-id="7WIPN1pLThdwfaZMTeG01C">
-  <h1 data-page-node-id="flDGNyUIz5eU0Xku9DI9AH">Places · Blend Mode Redesign<span class="en" data-page-node-id="MpJ3rKfxvyM9pYf8l0Fc3v">Blend by default</span></h1>
-  <div class="badge" data-page-node-id="TlFo66WLjmSx8v7qNEqaf6">New workflow: original Figma artwork as base + local modification layer · original design untouched pixel-for-pixel</div>
-  <p class="sub" data-page-node-id="izciQ1UnHwsuLNeAJPOE8x">Baseline: the 4 real Figma screens you provided (List view / Map view / Place detail / Map interaction mode). The "After" below is not a redraw — it is the <b style="color:#161c28" data-page-node-id="vOuZo8tARsfu0ThRWgBRQc">original list screen artwork itself</b>, overlaid with the real Figma map cropped from the map screen plus 2 new controls.</p>
+  <h1 data-page-node-id="flDGNyUIz5eU0Xku9DI9AH">Places · Hybrid Mode Redesign<span class="en" data-page-node-id="MpJ3rKfxvyM9pYf8l0Fc3v">Blend by default</span></h1>
+  <p class="sub" data-page-node-id="izciQ1UnHwsuLNeAJPOE8x">The "After" below is not a redraw — it is <b style="color:#161c28" data-page-node-id="vOuZo8tARsfu0ThRWgBRQc">the original list-screen screenshot</b> with the real Figma map cropped from the map screen and 2 new controls layered on top.</p>
 
-  <h2 data-page-node-id="ryDX2hbArCvuDmNPbB8XBX">Original Figma Design<span class="tag keep" data-page-node-id="JBOaux5AitWKr4aIqnkQfQ">Kept in full</span></h2>
-  <p class="desc" data-page-node-id="dNx7TUdmLsmE2C6to0IFZE">All four screens below are direct crops of the original artwork, with no modifications:</p>
+  <h2 data-page-node-id="ryDX2hbArCvuDmNPbB8XBX">Original Figma Design<span class="tag keep" data-page-node-id="JBOaux5AitWKr4aIqnkQfQ">Fully Kept</span></h2>
   <div class="orig" data-page-node-id="Ezt82Uu4XEm0Ic5wt686t7">
-    <div class="frame" data-page-node-id="gGFj5YqqnHAnLpHoHJEXVT"><div class="phone" data-page-node-id="JyN2pmVB9GLlDE2lQ3R9w8"><img src="pages/places-before.png" alt="List view" data-page-node-id="06XJ0WcNmrJm0wJlcVZHwZ"></div><div class="cap" data-page-node-id="RymAyfqk7jTLtv5XOXZn4v">① List view <span data-page-node-id="nMw0D4wWtQiiysUJVcVtFa">· current default</span></div></div>
-    <div class="frame" data-page-node-id="dVJnwwRA9UmhaCTotwB2GE"><div class="phone" data-page-node-id="CxYTS3T9EguW3VhQEjbtM5"><img src="pages/places-map.png" alt="Map view" data-page-node-id="IPARBQZYttyTo7YwYY0TVL"></div><div class="cap" data-page-node-id="m0pfMe5rQpaWheFw4BHxkr">② Map view <span data-page-node-id="vX6IGCYAqRtzcOKdAwhqYZ">· mutually exclusive toggle</span></div></div>
-    <div class="frame" data-page-node-id="9eAkiyrO4vSzAcFytf3UIm"><div class="phone" data-page-node-id="bfRtEYHoamUcqWgaK6CAom"><img src="pages/places-detail.png" alt="Place detail" data-page-node-id="wwuyDrk1CFOFxBnYDnzFlz"></div><div class="cap" data-page-node-id="4SeQpnzaowryxxfwF81y7b">③ Place detail <span data-page-node-id="9iVGlQUcGF0WHDQEfps8Ia">· fullscreen overlay</span></div></div>
+    <div class="frame" data-page-node-id="gGFj5YqqnHAnLpHoHJEXVT"><div class="phone" data-page-node-id="JyN2pmVB9GLlDE2lQ3R9w8"><img src="pages/places-before.png" alt="List view" data-page-node-id="06XJ0WcNmrJm0wJlcVZHwZ"></div><div class="cap" data-page-node-id="RymAyfqk7jTLtv5XOXZn4v">① List view <span data-page-node-id="nMw0D4wWtQiiysUJVcVtFa">· Current default</span></div></div>
+    <div class="frame" data-page-node-id="dVJnwwRA9UmhaCTotwB2GE"><div class="phone" data-page-node-id="CxYTS3T9EguW3VhQEjbtM5"><img src="pages/places-map.png" alt="Map view" data-page-node-id="IPARBQZYttyTo7YwYY0TVL"></div><div class="cap" data-page-node-id="m0pfMe5rQpaWheFw4BHxkr">② Map view <span data-page-node-id="vX6IGCYAqRtzcOKdAwhqYZ">· Mutually exclusive toggle</span></div></div>
+    <div class="frame" data-page-node-id="9eAkiyrO4vSzAcFytf3UIm"><div class="phone" data-page-node-id="bfRtEYHoamUcqWgaK6CAom"><img src="pages/places-detail.png" alt="Place detail" data-page-node-id="wwuyDrk1CFOFxBnYDnzFlz"></div><div class="cap" data-page-node-id="4SeQpnzaowryxxfwF81y7b">③ Place detail <span data-page-node-id="9iVGlQUcGF0WHDQEfps8Ia">· Full-screen overlay</span></div></div>
     <div class="frame" data-page-node-id="wWKH9OuOupDHA1srCkUHgh"><div class="phone" data-page-node-id="b7TVr1WKp96S803fvWgxfe"><img src="pages/places-mapint.png" alt="Map interaction mode" data-page-node-id="2r63Nm7n4J6zwxZMlUCHop"></div><div class="cap" data-page-node-id="RVIQY1SQ3DERt0AAoAKL4s">④ Map interaction mode</div></div>
   </div>
-  <div class="keep-note" data-page-node-id="P3qqbpzmP9pZZWaOFmavZV">Redesign strategy: list-only = screen ① reused as-is; map-only = screens ②/④ reused as-is; detail = screen ③ reused as-is. <b data-page-node-id="14aGSWpaSRwiAMo4V3vNA4">All three modes reuse the existing Figma pages; this draft only adds one new screen, "Blend Mode".</b></div>
+  <div class="keep-note" data-page-node-id="P3qqbpzmP9pZZWaOFmavZV">Redesign strategy: pure list = screen ① reused as-is; pure map = screens ②/④ reused as-is; detail = screen ③ reused as-is. <b data-page-node-id="14aGSWpaSRwiAMo4V3vNA4">All three modes reuse existing Figma pages; this draft only adds one new "Hybrid Mode" screen.</b></div>
 
-  <h2 data-page-node-id="wBoNSrISFDR2u2K5aDqQGq">Before / After<span class="tag mod" data-page-node-id="gT4wIERHWreD0bLKEVAGv9">Original base + modification layer</span></h2>
+  <h2 data-page-node-id="wBoNSrISFDR2u2K5aDqQGq">Before / After<span class="tag mod" data-page-node-id="gT4wIERHWreD0bLKEVAGv9">Original Base + Modification Layer</span></h2>
   <div class="compare" data-page-node-id="rFC1C5S55SxLRCqgosiVKy">
     <div class="col" data-page-node-id="kKARpiOhlHccXC4COqF8F0">
-      <div class="col-h before" data-page-node-id="4UWtbnQR5X69vn4a7vAN4e">● Current: list-only by default</div>
+      <div class="col-h before" data-page-node-id="4UWtbnQR5X69vn4a7vAN4e">● Current: pure list by default</div>
       <div class="stage" data-page-node-id="omCKMBqabsD1hmb6hKdYd3">
         <img src="pages/places-before.png" alt="Current list view" data-page-node-id="m3P4YKQ6I2fQqi5K3oMDQs">
         <div class="dot red" style="left:91%; top:15%;" data-page-node-id="DsZXvTfYGyFG3DSuJvNV0f">1</div>
@@ -74,9 +72,9 @@
       </div>
     </div>
     <div class="col" data-page-node-id="ipfDKs1G9z0AuI133CoLhU">
-      <div class="col-h after" data-page-node-id="n5DdC3L55to2V84OdhYa7B">● After: Blend mode as default</div>
+      <div class="col-h after" data-page-node-id="n5DdC3L55to2V84OdhYa7B">● After: hybrid mode by default</div>
       <div class="stage" data-page-node-id="i7wh4F31bVvpu8cgRrAcRp">
-        <img src="pages/places-blend.png" alt="Blend mode" data-page-node-id="W9wwrNcKqZDsNFFiifVkXD">
+        <img src="pages/places-blend.png" alt="Hybrid mode" data-page-node-id="W9wwrNcKqZDsNFFiifVkXD">
         <div class="dot green" style="left:91%; top:29%;" data-page-node-id="mAzrKG4m1U9qyp4kR7LLC6">1</div>
         <div class="dot green" style="left:13%; top:40%;" data-page-node-id="WKaf9pABO1mReb36m33iXI">2</div>
         <div class="dot green" style="left:88%; top:52%;" data-page-node-id="mOr2kDITxJ7bgXEE2cQgsQ">3</div>
@@ -85,24 +83,24 @@
     </div>
   </div>
 
-  <h2 data-page-node-id="RqteIsR0cLuiH7t6BuMVzK">Change List</h2>
+  <h2 data-page-node-id="RqteIsR0cLuiH7t6BuMVzK">Modification List</h2>
   <table data-page-node-id="SkWxJxcSNVT7LEns5i0HfR">
-    <tr data-page-node-id="h2UC5YINDkAtorxUqSTVRH"><th data-page-node-id="KHD8HoypT92AtW8d6Y2F0l">#</th><th style="width:44%" data-page-node-id="irJbBpgpR5diUWfEbjOD21">Modification layer (green · all overlays, original artwork unchanged)</th><th data-page-node-id="iDStCGbDqLfXB4ROJ7qPat">Notes</th></tr>
-    <tr data-page-node-id="w3yf1neKMhIOEoMCW40djw"><td data-page-node-id="4glgfMlzO2t5q4upbwzDNx">1</td><td data-page-node-id="VOWJpRSVLEfJGa9LoelV5J"><b data-page-node-id="iikQMn6jvbCe7oJBGknQrk">3-state segmented control List / Blend / Map</b>, floating at the top of the map; Blend selected by default (brand green #b4f856, matching the active state of chips / nav)</td><td data-page-node-id="jalXqOTCdo9SwD2BN1DS4p">The original design only had mutually exclusive dual icons (list⇄map) in the top-right; expanded to 3 states, the original dual icons remain usable (tap List = screen ①, tap Map = screen ②)</td></tr>
-    <tr data-page-node-id="BQeqTtrFhsNFATkriih8Xg"><td data-page-node-id="RACkNjCWGzj2BWHLoyPklP">2</td><td data-page-node-id="CFYSWlvfnjeUqvBP8EmhWP"><b data-page-node-id="5USEW7Sb32AVPkbtcRmKAw">Upper map area</b>: real Figma map cropped from screen ② (with markers such as Al-Ai-Riyadh Mosque), displayed based on location data</td><td data-page-node-id="x9WlpkFVS4BQFqkQvSKnSp">Replaces the pixels of the top 2 list cards in that area; the map is interactive: drag/zoom, pins are the same set of markers as screens ②/④</td></tr>
-    <tr data-page-node-id="ZfPfZgvtSzCpiUJAoTQDVj"><td data-page-node-id="vNvHGrhqefp2J9gxVtCEIj">3</td><td data-page-node-id="hTO1Ayx9rPbeXUmbWozvSp"><b data-page-node-id="7HpQrS6MB7o1xJS3HnKZBe">Draggable divider handle</b>: drag up/down to adjust the map/list ratio (~40:60 by default)</td><td data-page-node-id="25EgC3SzAlBGL8uipCoSHD">Drag fully up = map-only (screen ②), drag fully down = list-only (screen ①); seamless transitions between the 3 states</td></tr>
-    <tr data-page-node-id="amPSx2LuXqwPbjnHrHV0nd"><td data-page-node-id="PHTkSaXxQ3lE4UMKkDh8G0">4</td><td data-page-node-id="g9DkwrEbUGUGED6PcfT2Pd"><b data-page-node-id="vnuau6j0LuGVtQ2GAM8jPi">Lower list area kept as-is</b>: the Al-Hakim Grand Mosque card, ratings, and distances are all original pixels</td><td data-page-node-id="elvx44rjY4dy3BJJbr36Fc">Two-way linkage: tap a map pin → list scrolls to and highlights the matching card; tap a card → map focuses the matching pin</td></tr>
+    <tr data-page-node-id="h2UC5YINDkAtorxUqSTVRH"><th data-page-node-id="KHD8HoypT92AtW8d6Y2F0l">#</th><th style="width:44%" data-page-node-id="irJbBpgpR5diUWfEbjOD21">Modification layer (green · all overlays, original untouched)</th><th data-page-node-id="iDStCGbDqLfXB4ROJ7qPat">Notes</th></tr>
+    <tr data-page-node-id="w3yf1neKMhIOEoMCW40djw"><td data-page-node-id="4glgfMlzO2t5q4upbwzDNx">1</td><td data-page-node-id="VOWJpRSVLEfJGa9LoelV5J"><b data-page-node-id="iikQMn6jvbCe7oJBGknQrk">Three-state segmented control List / Blend / Map</b>, floating on top of the map, Blend selected by default (brand green #b4f856, matching the chips / nav active states)</td><td data-page-node-id="jalXqOTCdo9SwD2BN1DS4p">The original design only had a mutually exclusive List⇄Map dual-icon toggle in the top-right corner; after expanding to three states the original dual icons remain usable (tap List = screen ①, tap Map = screen ②)</td></tr>
+    <tr data-page-node-id="BQeqTtrFhsNFATkriih8Xg"><td data-page-node-id="RACkNjCWGzj2BWHLoyPklP">2</td><td data-page-node-id="CFYSWlvfnjeUqvBP8EmhWP"><b data-page-node-id="5USEW7Sb32AVPkbtcRmKAw">Upper map area</b>: real Figma map cropped from screen ② (with pins such as Al-Ai-Riyadh Mosque), shown by location info</td><td data-page-node-id="x9WlpkFVS4BQFqkQvSKnSp">Replaces the pixels of the first 2 list cards in that area; the map is interactive: drag / zoom, with the same pin set as screens ②/④</td></tr>
+    <tr data-page-node-id="ZfPfZgvtSzCpiUJAoTQDVj"><td data-page-node-id="vNvHGrhqefp2J9gxVtCEIj">3</td><td data-page-node-id="hTO1Ayx9rPbeXUmbWozvSp"><b data-page-node-id="7HpQrS6MB7o1xJS3HnKZBe">Draggable split handle</b>: drag up/down to adjust the map/list ratio (about 40:60 by default)</td><td data-page-node-id="25EgC3SzAlBGL8uipCoSHD">Drag fully up = pure map (screen ②), drag fully down = pure list (screen ①), with seamless transitions among the three states</td></tr>
+    <tr data-page-node-id="amPSx2LuXqwPbjnHrHV0nd"><td data-page-node-id="PHTkSaXxQ3lE4UMKkDh8G0">4</td><td data-page-node-id="g9DkwrEbUGUGED6PcfT2Pd"><b data-page-node-id="vnuau6j0LuGVtQ2GAM8jPi">Lower list area kept as-is</b>: the Al-Hakim Grand Mosque card, rating, and distance are all original pixels</td><td data-page-node-id="elvx44rjY4dy3BJJbr36Fc">Two-way linkage: tap a map pin → the list scrolls to the matching card and highlights it; tap a card → the map focuses the matching pin</td></tr>
   </table>
 
-  <h2 data-page-node-id="0FomFK5mSnIWTdjOh3NhsY">Current Issues (red dots)</h2>
+  <h2 data-page-node-id="0FomFK5mSnIWTdjOh3NhsY">Current Issues (Red Dots)</h2>
   <table data-page-node-id="cZ9NZOLvy6oXOCOkP2XJSZ">
     <tr data-page-node-id="k1JvinSLN2gHtiTDmtcogG"><th data-page-node-id="LMFpqNXtCTDxRKM0TAqJXC">#</th><th data-page-node-id="CAa1g69zzqCjx3d0mBxJJX">Issue</th></tr>
-    <tr data-page-node-id="qHj4nuIs8kLthc0lKTZWG8"><td data-page-node-id="tvDzBWVTh3sFmG50WilXDr">1</td><td data-page-node-id="YBu4FvOQ9Dy75dTH3ZyCs5">List-only by default — the spatial distribution of "what's nearby" is completely invisible</td></tr>
-    <tr data-page-node-id="YC7GO7PWClxXWHZrm2kXkg"><td data-page-node-id="kuk2Qq0NFVTPG5dVfdroN9">2</td><td data-page-node-id="H50f5OhlCAeMpeJQDX6q23">Mutually exclusive list⇄map toggle (small top-right icons); once switched away, all list context is lost</td></tr>
-    <tr data-page-node-id="LWrpcBMdnmiQf4ez0oQEm9"><td data-page-node-id="drbkjdZ70KcOVgCSqLDiFM">3</td><td data-page-node-id="tMctwhMmM77M6y6x0CtkxD">Cards have no distance-based sort comparison (all 300 m), and in map mode search results have no linkage with pins</td></tr>
+    <tr data-page-node-id="qHj4nuIs8kLthc0lKTZWG8"><td data-page-node-id="tvDzBWVTh3sFmG50WilXDr">1</td><td data-page-node-id="YBu4FvOQ9Dy75dTH3ZyCs5">List is the only default; the spatial distribution of "what's nearby" is completely invisible</td></tr>
+    <tr data-page-node-id="YC7GO7PWClxXWHZrm2kXkg"><td data-page-node-id="kuk2Qq0NFVTPG5dVfdroN9">2</td><td data-page-node-id="H50f5OhlCAeMpeJQDX6q23">Mutually exclusive List⇄Map toggle (small icon top-right); switching away loses all list context</td></tr>
+    <tr data-page-node-id="LWrpcBMdnmiQf4ez0oQEm9"><td data-page-node-id="drbkjdZ70KcOVgCSqLDiFM">3</td><td data-page-node-id="tMctwhMmM77M6y6x0CtkxD">Cards lack a distance-sort comparison (all 300 m), and in map mode search results are not linked to the pins</td></tr>
   </table>
 
-  <p class="sub" style="margin-top:28px" data-page-node-id="bY8P7UG73muHJk7EUGXdeX">Additional interaction rules: mode selection remembers the last preference; when location permission is downgraded, the map shows city level while the list still sorts by distance; in guest mode the blended view is browsable — tapping a pin for detail → navigate/call is what triggers the login wall (per the GUEST-FLOW rules).</p>
+  <p class="sub" style="margin-top:28px" data-page-node-id="bY8P7UG73muHJk7EUGXdeX">Additional interaction rules: when location permission is downgraded, the map falls back to city level while the list stays sorted by distance; in Guest Mode the hybrid view is fully browsable, and the login wall only triggers on pin detail → navigate / call (following GUEST-FLOW rules).</p>
 </div>
 </body>
 </html>
